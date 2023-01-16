@@ -41,7 +41,6 @@
 <script setup>
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
-import devolucion from '@/assets/evolucion/devolucion.png'
 import camioneta from '@/assets/evolucion/camioneta.png'
 import trailer from '@/assets/evolucion/trailer.png'
 import sedan from '@/assets/evolucion/sedan.png'
