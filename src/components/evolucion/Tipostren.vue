@@ -89,7 +89,7 @@ import icm7 from '@/assets/evolucion/icm/icm7.png'
 import mhev7 from '@/assets/evolucion/mhev/mhev7.png'
 import hev7 from '@/assets/evolucion/hev/hev7.png'
 import phev7 from '@/assets/evolucion/phev/phev7.png'
-import bev7 from '@/assets/evolucion/bev/bev7.png'
+import bev7 from '@/assets/evolucion/pev/pev7.png'
 import fcev7 from '@/assets/evolucion/fcev/fcev7.png'
 import { ref } from 'vue';
 
