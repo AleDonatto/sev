@@ -41,12 +41,12 @@ const router = createRouter({
     {
       path: '/correcto',
       name: 'correcto',
-      component: () => import('../views/EvolucionView.vue')
+      component: () => import('../views/CorrectoView.vue')
     },
     {
       path: '/incorrecto', 
       name: 'incorrecto',
-      component: () => import('../views/EvolucionView.vue')
+      component: () => import('../views/IncorrectoView.vue')
     }
   ]
 })

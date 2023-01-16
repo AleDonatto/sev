@@ -13,6 +13,10 @@
                 <Repaso3 v-if="step === 8" />
             </div>
         </v-main>
+        
+        <!--<v-footer color="black" class="">
+            <p>pruebas</p>
+        </v-footer>-->
     </v-app>
 </template>
 
@@ -36,4 +40,5 @@ const {step} = storeToRefs(store)
 </script>
 
 <style scoped>
+
 </style>

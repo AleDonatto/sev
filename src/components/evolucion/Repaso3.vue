@@ -2,7 +2,68 @@
     <div>
         <content-template>
             <template v-slot:content>
-                <div>repaso3 9</div>
+                <div class="mt-10">
+                    <v-row justify="start">
+                        <v-col cols="2">
+                            <v-img :src="user" max-height="170"></v-img>
+                        </v-col>
+                        <v-col cols="9" align="start">
+                            <div class="mt-10 box-color-instructions py-6 px-4">
+                                <p class="font-avenir font-size-26">
+                                    Las siglas <span class="text-yellow front-weight-bold">BEV</span> (por su acrónimo en inglés), corresponden a:
+                                </p>
+                            </div>
+                        </v-col>
+                    </v-row>
+
+                    <v-row class="mt-10 mx-16" justify="center">
+                        <v-col cols="12" lg="4" md="6">
+                            <v-radio-group v-if="answeredQuiz3 === false">
+                                <v-radio value="battery-efficient" class="my-4" color="#FDBD31" @input="answers.a1 = $event.target.value" >
+                                    <template v-slot:label>
+                                        <p class="font-avenir font-size-24">Battery Efficient Vehicle</p>
+                                    </template>
+                                </v-radio>
+                                <v-radio value="beatifull-efficent" class="my-4" color="#FDBD31" @input="answers.a1 = $event.target.value">
+                                    <template v-slot:label>
+                                        <p class="font-avenir font-size-24">Beautiful Efficient Vehicle</p>
+                                    </template>
+                                </v-radio>
+                                <v-radio value="battery-electric" class="my-4" color="#FDBD31" @input="answers.a1 = $event.target.value">
+                                    <template v-slot:label>
+                                        <p class="font-avenir font-size-24">Battery Electric Vehicle</p>
+                                    </template>
+                                </v-radio>
+                            </v-radio-group>
+                            <v-radio-group v-else v-model="response">
+                                <v-radio value="battery-efficient" class="my-4" color="#FDBD31" disabled>
+                                    <template v-slot:label>
+                                        <p class="font-avenir font-size-24">Battery Efficient Vehicle</p>
+                                    </template>
+                                </v-radio>
+                                <v-radio value="beatifull-efficent" class="my-4" color="#FDBD31" disabled>
+                                    <template v-slot:label>
+                                        <p class="font-avenir font-size-24">Beautiful Efficient Vehicle</p>
+                                    </template>
+                                </v-radio>
+                                <v-radio value="battery-electric" class="my-4" color="#FDBD31" disabled>
+                                    <template v-slot:label>
+                                        <p class="font-avenir font-size-24">Battery Electric Vehicle</p>
+                                    </template>
+                                </v-radio>
+                            </v-radio-group>
+                        </v-col>
+                    </v-row>
+
+                    <v-row justify="center" class="mt-15">
+                        <v-col cols="2">
+                            <v-btn class="" rounded color="#FDBD31" :disabled="answers.a1 === null"
+                            @click="checkQuiz">
+                                <span class="text-black text-none font-lato font-size-20">Continuar</span>
+                            </v-btn>
+                        </v-col>
+                    </v-row>
+                </div>
             </template>
         </content-template>
     </div>
@@ -10,8 +71,67 @@
 
 <script setup>
 import ContentTemplate from '../templates/ContentTemplate.vue';
+import user from '@/assets/evolucion/user.png'
+import { useCounterStore } from '../../stores/counter'
+import { storeToRefs } from 'pinia';
+import { onMounted, reactive, ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const store = useCounterStore()
+const {answeredQuiz3,canNext} = storeToRefs(store)
+const router = useRouter()
+
+onMounted(() => {
+    if(answeredQuiz3.value === false){
+        canNext.value = false
+    }
+})
+
+const answers = reactive({
+    a1: null,
+    a2: null, 
+    a3: null
+})
+
+const response = ref('battery-efficient')
+
+function checkQuiz(){
+    if(answers.a1 === 'battery-efficient'){
+        answeredQuiz3.value = true
+        router.push('/correcto')
+    }else{
+        router.push('/incorrecto')
+    }
+}
 </script>
 
-<style>
+<style scoped>
+.box-color-instructions{
+    border: 1px 1px;
+    border-style: solid;
+    border-color: #FDBD31;
+    border-width: 4px;
+    border-radius: 10px;
+}
 
+.text-yellow{
+    color: #FDBD31;
+}
+
+.v-slider--horizontal .v-slider__track-container{
+    height: 16px;
+    top: 10%
+}
+.v-slider__thumb-label{
+    background-color: transparent !important;
+}
+.v-slider__thumb{
+    display: none;
+}
+.v-slider__track-fill{
+    border-radius: 20px;
+}
+.v-slider__track-background{
+    border-radius: 20px;
+}
 </style>

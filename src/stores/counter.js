@@ -7,9 +7,13 @@ export const useCounterStore = defineStore('store', () => {
   const step = ref(0)
   const windowSize = ref(null)
   const windowHeight = ref(null)
-  const canNext = ref(null)
+  const canNext = ref(true)
   const section = ref(1)
   const audioInitialized = ref(false) 
+
+  const answeredQuiz1 = ref(false)
+  const answeredQuiz2 = ref(false)
+  const answeredQuiz3 = ref(false)
 
   function increment() {
     count.value++
@@ -29,5 +33,5 @@ export const useCounterStore = defineStore('store', () => {
     NextStep()
   }
 
-  return { count, step, windowSize, windowHeight, canNext, section, audioInitialized, increment, NextStep, PreviousStep, SetStep }
+  return { count, step, windowSize, windowHeight, canNext, section, audioInitialized, answeredQuiz1, answeredQuiz2, answeredQuiz3, increment, NextStep, PreviousStep, SetStep }
 })

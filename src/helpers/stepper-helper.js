@@ -10,7 +10,7 @@ export const InferStepperCounter = (val) => {
     if(path === '/fundamentos-de-electricidad') max = 7
     
     if(val.action === 'plus'){
-        console.log(val.stepAux + '---' + max)
+        //console.log(val.stepAux + '---' + max)
         val.stepAux = val.stepAux++ >= max ?  NextStep(val)  :  val.stepAux++
     }else{
         //console.log('se acabaron los pasos')

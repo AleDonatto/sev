@@ -2,7 +2,52 @@
     <div>
         <content-template>
             <template v-slot:content>
-                <div>paso 3</div>
+                <div class="mt-10">
+                    <v-row justify="start">
+                        <v-col cols="2">
+                            <v-img :src="user" max-height="170"></v-img>
+                        </v-col>
+                    </v-row>
+
+                    <v-row no-gutters class="mt-4">
+                        <v-col cols="4">
+                            <v-img :src="car4" max-height="240"></v-img>
+                        </v-col>
+                        <v-col cols="4" class="d-flex justify-space-between">
+                            <hr class="line-vertical">
+                            <v-img :src="car5" max-height="240"></v-img>
+                            <hr class="line-vertical">
+                        </v-col>
+                        <v-col cols="4">
+                            <v-img :src="car6" max-height="240"></v-img>
+                        </v-col>
+
+                        <v-col cols="4">
+                            <v-img :src="division" max-width="850"></v-img>
+                            <div class="bg-gray-1 size-box text-center mx-1">
+                                <span class="text-center font-weigth-thin font-avenir font-size-30 text-white">
+                                    Motores a combustión interna (ICE)
+                                </span>
+                            </div>
+                        </v-col>
+                        <v-col cols="4">
+                            <v-img :src="division" max-width="850"></v-img>
+                            <div class="bg-gray-2 size-box text-center mx-1">
+                                <span class="font-avenir front-weight-thin font-size-30 text-white">
+                                    Autos híbridos (MHEV, Full HEV y PHEV)
+                                </span>
+                            </div>
+                        </v-col>
+                        <v-col cols="4">
+                            <v-img :src="division" max-width="850"></v-img>
+                            <div class="size-box bg-gray-3 text-center mx-1">
+                                <span class="font-avenir font-weight-thin font-size-30 text-white">
+                                    Autos eléctricos (BEV)
+                                </span>
+                            </div>
+                        </v-col>
+                    </v-row>
+                </div>
             </template>
         </content-template>
     </div>
@@ -10,8 +55,37 @@
 
 <script setup>
 import ContentTemplate from '../templates/ContentTemplate.vue';
+import user from '@/assets/evolucion/user.png'
+import car4 from '@/assets/evolucion/car4.png'
+import car5 from '@/assets/evolucion/car5.png'
+import car6 from '@/assets/evolucion/car6.png'
+import division from '@/assets/evolucion/division.png'
 </script>
 
 <style scoped>
+.bg-gray-1{
+    background-color: #929292;
+    opacity: 0.6;
+}
+.bg-gray-2{
+    background-color: #929292;
+    opacity: 0.8;
+}
+.bg-gray-3{
+    background-color: #929292;
+}
 
+.size-box{
+    height: 85px !important;
+    width: 99% !important;
+}
+
+.line-vertical{
+    border: 1px 1px;
+    border-left: 1px solid;
+    height: 100%;
+    width: 1px;    
+    border-color: #FDBD31;   
+    z-index: 1;
+}
 </style>

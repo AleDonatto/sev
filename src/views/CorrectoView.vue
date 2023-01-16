@@ -1,15 +1,55 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <v-app>
+    <v-main class="bg-correcto">
+      <v-row justify="center" class="h-100">
+        <v-col cols="6" align="center" align-self="center">
+
+          <v-img :src="user" max-height="180" ></v-img>
+          <div class="rounded-xl border bg-white position-image-user">
+            <h1 class="text-center font-avenir font-weight-bold font-size-96 mt-10">¡Excelente!</h1>
+            <v-btn color="#FDBE2E" class="py-3 px-10 mx-6 mb-5 rounded-xl" @click="regresar">
+              <span class="text-white font-avenir font-size-26 text-capitalize font-weight-bold">Continuar</span>
+            </v-btn>
+          </div>
+        </v-col>
+
+      </v-row>
+    </v-main>
+  </v-app>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+<script setup>
+import user from '@/assets/evolucion/user.png'
+import { storeToRefs } from 'pinia';
+import { useRouter } from 'vue-router';
+import { useCounterStore } from '../stores/counter';
+
+const router = useRouter()
+const store = useCounterStore()
+const {canNext} = storeToRefs(store)
+
+function regresar(){
+  canNext.value = true
+  router.go(-1)
 }
+</script>
+
+<style scoped>
+.bg-correcto{
+  background: rgba(0, 0, 0, 0.64);
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+}
+
+.bg-white{
+  background: white;
+}
+
+.position-image-user{
+  margin-top: -70px;
+}
+
 </style>

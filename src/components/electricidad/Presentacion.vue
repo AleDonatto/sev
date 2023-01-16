@@ -4,11 +4,19 @@
             <template v-slot:content>
                 <v-row class="mt-3">
                     <v-col cols="12">
-                        <v-row>
-                            <v-col cols="5">
-                                <v-btn @click="continueStep">Continuar</v-btn>
+                        <v-row class="height-box bg-negro">
+                            <v-col cols="4" class="mt-10 width-box" >
+                                <h1 class="font-lato text-uppercase text-white text-center font-size-72">electricidad</h1>
+                                <p class="text-white font-size-50 ml-7">Conceptos básicos para vehículos eléctricos</p>
+                                <div class="d-flex justify-center">
+                                    <v-btn @click="continueStep" rounded color="#FDBE2E" class="mt-10">
+                                        <span class="font-avenir font-size-30 font-weight-thin">Continuar</span>
+                                    </v-btn>
+                                </div>
                             </v-col>
-                            <v-col cols="7"></v-col>
+                            <v-col cols="8">
+                                <v-img :src="electricidad" class="size-img margin-left"></v-img>
+                            </v-col>
                         </v-row>
                     </v-col>
                 </v-row>
@@ -19,6 +27,7 @@
 
 <script setup>
 import MainTemplate from '../templates/MainTemplate.vue';
+import electricidad from '../../assets/electricidad/electricidad.png'
 import { useCounterStore } from '../../stores/counter';
 import { storeToRefs } from 'pinia';
 import { useRoute } from 'vue-router';
@@ -35,4 +44,41 @@ function continueStep(){
 </script>
 
 <style scoped>
+.bg-mensajes{
+    background-image: url('../../assets/electricidad/fondotest.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+}
+
+.bg-negro{
+    background-image: url('../../assets/electricidad/fondopruebas.png');
+}
+
+.bg-mensajes1{
+    background-image: url('../../assets/welcome/fondo-left.png');
+}
+
+.height-box{
+    height: 500px;
+}
+
+.width-box{
+    max-width: 40%;
+}
+
+.bg-foco{
+    background-image: url('../../assets/electricidad/foco.png');
+    height: 900px;
+}
+
+.size-img{
+    height: 800px;
+}
+
+.margin-left{
+    margin-left: 270px;
+    margin-top: -10px;
+}
 </style>

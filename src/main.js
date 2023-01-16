@@ -1,10 +1,11 @@
 import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
-
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+
+import {Drag, Drop} from 'vue-drag-drop';
 
 import './assets/main.css'
 
@@ -27,4 +28,7 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.use(vuetify)
+app.component('drag',Drag)
+app.component('drop',Drop)
+//app.use(VueDragDrop)
 app.mount('#app')
