@@ -37,7 +37,7 @@
             </v-list>
             <v-row justify="center" :class="{'mt-16':windowHeight > 900, 'mt-2': windowHeight < 700}">
                 <v-col cols="6" align="center">
-                    <v-btn icon="mdi-arrow-left" color="white" :disabled="step < 1"></v-btn>
+                    <v-btn icon="mdi-arrow-left" color="white" :disabled="step < 1" @click="retrocederPaso"></v-btn>
                 </v-col>
                 <v-col cols="6" align="center">
                     <v-btn icon="mdi-arrow-right" color="white" @click="SiguientePaso" :disabled="canNext!==true"></v-btn>
@@ -86,7 +86,7 @@ const store = useCounterStore()
 const {step, canNext, windowHeight, windowSize} = storeToRefs(store)
 const router = useRoute()
 
-const { NextStep } = store
+const { NextStep, PreviousStep } = store
 
 
 function SiguientePaso(){
@@ -96,7 +96,8 @@ function SiguientePaso(){
 }
 
 function retrocederPaso(){
-
+    let route = router.path
+    PreviousStep(route)
 }
 </script>
 

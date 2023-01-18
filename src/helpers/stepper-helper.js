@@ -7,7 +7,7 @@ export const InferStepperCounter = (val) => {
     const store = useCounterStore()
 
     if(path === '/evolucion-de-movilidad') max = 8
-    if(path === '/fundamentos-de-electricidad') max = 7
+    if(path === '/fundamentos-de-electricidad') max = 19
     
     if(val.action === 'plus'){
         //console.log(val.stepAux + '---' + max)
@@ -41,7 +41,7 @@ export const NextStep = (val) => {
 }
 
 export const PreviousStep = (val) => {
-    let path = val.router.currentRoute.path
+    let path = val.router
     if(path === '/cultura-organizacional-concepto') {
         val.router.push('/modulo-directivo')
         return 0

@@ -3,29 +3,26 @@
         <content-template title="ELECTRICIDAD" subtitle="Conceptos básicos">
             <template v-slot:content>
                 <div class="mt-10">
-                    <v-row class="" justify="start">
+                    <v-row justify="start">
                         <v-col cols="2">
                             <v-img :src="user" max-height="170"></v-img>
                         </v-col>
                     </v-row>
 
-                    <v-row class="rounded-xl bg-color mx-10">
-                        <v-col cols="12" align="center">
-                            <p class="font-avenir font-size-34"><span class="font-weight-bold">Watt:</span> unidad de medición de la potencia eléctrica</p>
-                            <p class="font-weight-bold font-avenir font-size-34">Watt = Volt X Amper</p>
+                    <v-row justify="center" class="mx-10 rounded-xl bg-color">
+                        <v-col cols="12" align="start">
+                            <p class="front-avenir"><span class="font-weight-bold">Watt:</span> unidad de medicion de la potencía eláctrica.</p>
+                            <p class="font-avenit"><span class="font-weight-bold">Watt:</span>Volt X Amper.</p>
                         </v-col>
 
-
                         <v-col cols="5" align="center">
-                            <v-img :src="foco" max-height="230"></v-img>
-                            <p class="font-weight-bold font-avenir font-size-24">60 W</p>
+                            <v-img :src="cubito" max-height="230"></v-img>
                         </v-col>
                         <v-col cols="1" align="center">
                             <hr class="vertical-line">
                         </v-col>
                         <v-col cols="5" align="center">
-                            <v-img :src="foco" max-height="230"></v-img>
-                            <p class="font-weight-bold font-avenir text-center font-size-24">100 W</p>
+                            <v-img :src="cubo" max-height="230"></v-img>
                         </v-col>
                     </v-row>
                 </div>
@@ -37,7 +34,8 @@
 <script setup>
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
-import foco from '@/assets/electricidad/foco.png'
+import cubito from '@/assets/electricidad/cubito.png'
+import cubo from '@/assets/electricidad/cubo.png'
 </script>
 
 <style scoped>

@@ -1,8 +1,33 @@
 <template>
     <div>
-        <content-template>
+        <content-template title="ELECTRICIDAD" subtitle="Conceptos básicos">
             <template v-slot:content>
-                <div>Conceptos basicos 5</div>
+                <div class="mt-10">
+                    <v-row justify="start">
+                        <v-col cols="2">
+                            <v-img :src="user" max-height="170"></v-img>
+                        </v-col>
+                    </v-row>
+
+                    <v-row justify="center" class="rounded-xl bg-color mx-10">
+                        <v-col cols="12" align="center">
+                            <p class="font-avenir font-size-30"><span class="font-weight-bold">Amper:</span> unidad de medición de la intensidad de la corriente eléctrica</p>
+                        </v-col>
+                        
+                        <v-col cols="5" align="center" class="mt-5">
+                            <v-img :src="cubito" max-height="230"></v-img>
+                            <p class="font-weight-bold font-avenir font-size-30 mt-5">5 Volts, 1 Amper </p>
+                        </v-col>
+                        <v-col cols="1">
+                            <hr class="vertical-line">
+                        </v-col>
+                        <v-col cols="5" class="mt-5">
+                            <v-img :src="cubo" max-height="230"></v-img>
+                            <p class="font-avenir font-size-30 font-weight-bold text-center mt-5">5 Volts, 2.1 Amper</p>
+                        </v-col>
+
+                    </v-row>
+                </div>
             </template>
         </content-template>
     </div>
@@ -10,8 +35,23 @@
 
 <script setup>
 import ContentTemplate from '../templates/ContentTemplate.vue';
+import user from '@/assets/evolucion/user.png'
+import cubito from '@/assets/electricidad/cubito.png'
+import cubo from '@/assets/electricidad/cubo.png'
+
 </script>
 
 <style scoped>
+.bg-color{
+    background-color: #EDE6E6;
+}
 
+.vertical-line{
+    border: 1px 1px;
+    border-left: 1px solid;
+    height: 100%;
+    width: 1px;    
+    border-color: white;   
+    z-index: 1;
+}
 </style>

@@ -1,8 +1,33 @@
 <template>
     <div>
-        <content-template>
+        <content-template title="ELECTRICIDAD" subtitle="Conceptos básicos">
             <template v-slot:content>
-                <div>Conceptos basicos 7</div>
+                <div class="mt-10">
+                    <v-row justify="start">
+                        <v-col cols="2">
+                            <v-img :src="user" max-height="170"></v-img>
+                        </v-col>
+                    </v-row>
+
+                    <v-row justify="center" class="rounded-xl bg-color mx-10">
+                        <v-col cols="12" align="center">
+                            <p class="font-avenir font-size-34"><span class="font-weight-bold">Watt:</span> unidad de medición de la potencia eléctrica</p>
+                            <p class="font-avenir font-size-34 font-weight-bold">Watt = Volt X Amper</p>
+                        </v-col>
+
+                        <v-col cols="5" class="center">
+                            <v-img :src="foco" max-height="230"></v-img>
+                            <p class="font-weight-bold text-center font-size-24">60W</p>
+                        </v-col>
+                        <v-col cols="1">
+                            <hr class="vertical-line">
+                        </v-col>
+                        <v-col cols="5" align="center">
+                            <v-img class="" :src="focoled" max-height="230"></v-img>
+                            <p class="font-weight-bold font-size-24">Consume 8W Reemplaza 60W</p>
+                        </v-col>
+                    </v-row>
+                </div>
             </template>
         </content-template>
     </div>
@@ -10,8 +35,22 @@
 
 <script setup>
 import ContentTemplate from '../templates/ContentTemplate.vue';
+import user from '@/assets/evolucion/user.png'
+import foco from '@/assets/electricidad/foco.png'
+import focoled from '@/assets/electricidad/focoled.png'
 </script>
 
 <style scoped>
+.bg-color{
+    background-color: #EDE6E6;
+}
 
+.vertical-line{
+    border: 1px 1px;
+    border-left: 1px solid;
+    height: 100%;
+    width: 1px;    
+    border-color: white;   
+    z-index: 1;
+}
 </style>
