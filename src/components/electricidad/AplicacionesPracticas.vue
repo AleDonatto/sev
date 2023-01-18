@@ -33,7 +33,7 @@
 <script setup>
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
-import bateriasev from '@/assets/electricidad/bateriasev.png'
+import bateriasev from '@/assets/electricidad/bateria-sev.png'
 </script>
 
 <style scoped>
