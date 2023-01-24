@@ -19,7 +19,7 @@
                     <v-row justify="center">
                         <v-col cols="11">
                             <v-radio-group color="#FDBD31">
-                                <v-radio value="1">
+                                <v-radio value="1" @input="answers.a1 = $event.target.value">
                                     <template v-slot:label>
                                         <p class="font-avenir font-size-24">
                                             El tamaño de la batería, el nivel de carga deseado y la potencia del cargador
@@ -27,7 +27,7 @@
                                     </template>
                                 </v-radio>
 
-                                <v-radio value="2">
+                                <v-radio value="2" @input="answers.a2 = $event.target.value">
                                     <template v-slot:label>
                                         <p class="font-avenir font-size-24">
                                             El peso de la batería, el contacto utilizado y la potencia del motor
@@ -35,7 +35,7 @@
                                     </template>
                                 </v-radio>
 
-                                <v-radio value="3">
+                                <v-radio value="3" @input="answers.a3 = $event.target.value">
                                     <template v-slot:label>
                                         <p class="font-avenir font-size-24">
                                             El tamaño de la batería, la potencia del motor y el OBD
@@ -47,7 +47,9 @@
                     </v-row>
                     <v-row justify="center">
                         <v-col cols="12" align="center">
-                            <v-btn class="" color="#FDBD31" rounded>Continuar</v-btn>
+                            <v-btn class="text-none" color="#FDBD31" rounded @click="checkQuiz" :disabled="answers.a2 === null">
+                                <span class="font-weight-bold">Continuar</span>
+                            </v-btn>
                         </v-col>
                     </v-row>
                 </div>
@@ -59,7 +61,33 @@
 <script setup>
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
+import { reactive } from '@vue/reactivity';
+import { useCounterStore } from '../../stores/counter';
+import { storeToRefs } from 'pinia';
+import { useRoute } from 'vue-router';
+import { onMounted } from '@vue/runtime-core';
 
+const answers = reactive({
+    a1: null, 
+    a2: null, 
+    a3: null
+})
+
+const store = useCounterStore()
+const {NextStep} = store 
+const {canNext} = storeToRefs(store)
+const router = useRoute()
+
+onMounted( () => {
+    canNext.value = false
+} )
+
+function checkQuiz(){
+    if(answers.a2 === '2'){
+        const path = router.path 
+        NextStep(path)
+    }
+}
 </script>
 
 <style scoped>

@@ -20,8 +20,11 @@
                 <AplicacionesPracticas4 v-if="step === 15" />
                 <Einstein v-if="step === 16"/>
                 <Quiz v-if="step === 17"/>
-                <Quiz2 v-if="step === 18" />
-                <Quiz3 v-if="step === 19" />
+                <Correcto v-if="step === 18" />
+                <Quiz2 v-if="step === 19" />
+                <Correcto v-if="step === 20"/>
+                <Quiz3 v-if="step === 21" />
+                <Correcto v-if="step === 22"/>
             </div>
         </v-main>
     </v-app>
@@ -48,6 +51,7 @@ import Einstein from '../components/electricidad/Einstein.vue';
 import Quiz from '../components/electricidad/Quiz.vue';
 import Quiz2 from '../components/electricidad/Quiz2.vue';
 import Quiz3 from '../components/electricidad/Quiz3.vue';
+import Correcto from '../components/Correcto.vue';
 import { useCounterStore } from '../stores/counter';
 import { storeToRefs } from 'pinia';
 

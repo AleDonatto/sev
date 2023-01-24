@@ -17,21 +17,21 @@
                     <v-row justify="center">
                         <v-col cols="8">
                             <v-radio-group color="#FDBD31">
-                                <v-radio value="1">
+                                <v-radio value="1" @input="answers.a1 = $event.target.value">
                                     <template v-slot:label>
                                         <p class="font-avenir font-size-24">
                                             De Litio fosfato-ferros LiFePO4.
                                         </p>
                                     </template>
                                 </v-radio>
-                                <v-radio value="2">
+                                <v-radio value="2" @input="answers.a2 = $event.target.value">
                                     <template v-slot:label>
                                         <p class="font-avenir font-size-24">
                                             De iones de Litio de larga durabilidad.
                                         </p>
                                     </template>
                                 </v-radio>
-                                <v-radio value="3">
+                                <v-radio value="3" @input="answers.a3 = $event.target.value">
                                     <template v-slot:label>
                                         <p class="font-avenir font-size-24">
                                             De polímero de Litio.
@@ -44,8 +44,8 @@
 
                     <v-row justify="center">
                         <v-col cols="12" align="center">
-                            <v-btn color="#FDBD31" class="rounded-xl">
-                                Continuar
+                            <v-btn color="#FDBD31" class="rounded-xl text-none" @click="checkQuiz" :disabled="answers.a2 === null">
+                                <span class="font-weight-bold">Continuar</span>
                             </v-btn>
                         </v-col>
                     </v-row>
@@ -58,6 +58,32 @@
 <script setup>
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
+import { useCounterStore } from '../../stores/counter';
+import { storeToRefs } from 'pinia';
+import { onMounted, reactive } from '@vue/runtime-core';
+import { useRoute } from 'vue-router';
+
+const store = useCounterStore()
+const {NextStep} = store
+const {canNext} = storeToRefs(store) 
+const router = useRoute()
+
+const answers = reactive({
+    a1: null, 
+    a2: null, 
+    a3: null
+})
+
+onMounted(() => {
+    canNext.value = false
+})
+
+function checkQuiz(){
+    if(answers.a2 === '2'){
+        const path = router.path 
+        NextStep(path)
+    }
+}
 </script>
 
 <style scoped>
