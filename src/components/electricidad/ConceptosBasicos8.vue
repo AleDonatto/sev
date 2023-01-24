@@ -11,18 +11,20 @@
 
                     <v-row justify="center" class="mx-10 rounded-xl bg-color">
                         <v-col cols="12" align="start">
-                            <p class="front-avenir"><span class="font-weight-bold">Watt:</span> unidad de medicion de la potencía eláctrica.</p>
-                            <p class="font-avenit"><span class="font-weight-bold">Watt:</span>Volt X Amper.</p>
+                            <p class="front-avenir font-size-30"><span class="font-weight-bold">Watt:</span> unidad de medicion de la potencía eláctrica.</p>
+                            <p class="font-avenit font-size-30"><span class="font-weight-bold">Watt:</span>Volt X Amper.</p>
                         </v-col>
 
                         <v-col cols="5" align="center">
                             <v-img :src="cubito" max-height="230"></v-img>
+                            <p class="font-weight-bold font-size-22 mt-2">5 Volts, <br> 1 Amper <br> 5W</p>
                         </v-col>
                         <v-col cols="1" align="center">
                             <hr class="vertical-line">
                         </v-col>
                         <v-col cols="5" align="center">
                             <v-img :src="cubo" max-height="230"></v-img>
+                            <p class="font-weight-bold font-size-22 mt-2">5 Volts, <br> 2.1 Amper <br> 10.2W</p>
                         </v-col>
                     </v-row>
                 </div>

@@ -39,6 +39,11 @@ const router = createRouter({
       component: () => import('../views/ElectricidadView.vue')
     },
     {
+      path: '/cargando-bev',
+      name: 'cargandobrv',
+      component: () => import('../views/BEVView.vue')
+    },
+    {
       path: '/correcto',
       name: 'correcto',
       component: () => import('../views/CorrectoView.vue')

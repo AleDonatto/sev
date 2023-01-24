@@ -1,6 +1,6 @@
 <template>
     <div>
-        <content-template>
+        <content-template subtitle="REPASO">
             <template v-slot:content>
                 <div class="mt-10">
                     <v-row justify="start">
@@ -152,6 +152,7 @@ import { storeToRefs } from 'pinia';
 import { useRouter } from 'vue-router';
 
 const store = useCounterStore()
+const {NextStep} = store
 const {canNext, answeredQuiz2} = storeToRefs(store)
 
 const router = useRouter()
@@ -269,9 +270,8 @@ function dropZoneFive(ev){
 function checkQuiz(){
     if(answers.a1 === true && answers.a2 === true && answers.a3 === true && answers.a4 === true && answers.a5 === true){
         answeredQuiz2.value = true
-        router.push('/correcto')
-    }else{
-        router.push('/incorrecto')
+        let route = router.path
+        NextStep(route)
     }
 }
 </script>

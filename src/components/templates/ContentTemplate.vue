@@ -12,26 +12,26 @@
             
             <v-divider></v-divider>
 
-            <v-list density="compact" nav class="">
-                <v-list-item class="text-center bg-nav-yellow my-0 py-0 h-nav" value="inicio" :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
+            <v-list density="compact" nav class="pa-0">
+                <v-list-item class="text-center bg-nav-yellow my-0 py-0" value="inicio" :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
                     <span>Inicio</span>
                 </v-list-item>
-                <v-list-item class="text-center bg-nav-yellow my-0 py-0 h-nav" value="actualidad" :class="{'h-nav' : windowHeight > 900, 'h-nav-md' : windowHeight < 700}">
+                <v-list-item class="text-center bg-nav-yellow my-0 py-0" value="actualidad" :class="{'h-nav' : windowHeight > 900, 'h-nav-md' : windowHeight < 700}">
                     <span>Actualidad</span>
                 </v-list-item>
-                <v-list-item class="text-center bg-nav-yellow my-0 py-0 h-nav" value="proximamente" :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
+                <v-list-item class="text-center bg-nav-yellow my-0 py-0" value="proximamente" :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
                     <span>Próximamente</span>
                 </v-list-item>
-                <v-list-item class="text-center bg-nav-yellow my-0 py-0 h-nav" value="tipos" :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
+                <v-list-item class="text-center bg-nav-yellow my-0 py-0" value="tipos" :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
                     <span>Tipos de tren motriz</span>
                 </v-list-item>
-                <v-list-item class="text-center bg-nav-yellow my-0 py-0 h-nav" value="repaso" :class="{'h-nav':windowHeight > 900, 'h-nav-md': windowHeight < 700}">
+                <v-list-item class="text-center bg-nav-yellow my-0 py-0" value="repaso" :class="{'h-nav':windowHeight > 900, 'h-nav-md': windowHeight < 700}">
                     <span>Repaso de Sección</span>
                 </v-list-item>
-                <v-list-item color="#000000" class="text-center bg-nav-black my-0 py-0 h-nav" value="fundamentos" :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
+                <v-list-item color="#000000" class="text-center bg-nav-black my-0 py-0" value="fundamentos" :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
                     <span class="text-white">Fundamentos de electricidad</span>
                 </v-list-item>
-                <v-list-item class="text-center bg-nav-black my-0 py-0 h-nav" :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
+                <v-list-item class="text-center bg-nav-black my-0 py-0" :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
                     <span class="text-white">Aplicaciones prácticas</span>
                 </v-list-item>
             </v-list>
@@ -104,6 +104,8 @@ function retrocederPaso(){
 <style scoped>
 .h-nav {
     height: 59px !important;
+    width: 450px !important;
+    margin-top: 1px !important;
 }
 
 .h-nav-md {
@@ -120,6 +122,8 @@ function retrocederPaso(){
 
 .bg-nav-yellow {
     background-color: #f0ce86 !important;
+    /*background-color: #FDBD31 !important;
+    opacity: 0.5;*/
 }
 
 .bg-nav-black {

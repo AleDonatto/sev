@@ -11,11 +11,11 @@
 
                     <v-row justify="center" class="mx-10 bg-color rounded-xl">
                         <v-col cols="12">
-                            <p class="font-avenir">
+                            <p class="font-avenir font-size-24">
                                 <span class="font-weight-bold">kWh:</span> El kilowatt hora es la undad de medida
                                 de medida que se usa para medir el consumom energético.
                             </p>
-                            <p class="text-center">
+                            <p class="text-center font-size-24 my-5 px-10">
                                 Si tengo una lampara con 10 focos de 100w cada uno y lo dejo encendido durante un hora,
                                 el consumo sera de un kWh.
                             </p>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <content-template>
+        <content-template subtitle="REPASO">
             <template v-slot:content>
                 <div class="mt-10">
                     <v-row justify="start">
@@ -118,16 +118,17 @@ import { useCounterStore } from '../../stores/counter';
 import { reactive, ref } from 'vue';
 import { storeToRefs } from 'pinia';
 import { onMounted } from '@vue/runtime-core';
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 
 const zoneOne = ref(null)
 const zoneTwo = ref(null)
 const zoneThree = ref(null)
 
 const store = useCounterStore()
+const {NextStep} = store
 const {canNext, answeredQuiz1, windowHeight, windowSize} = storeToRefs(store)
 
-const router = useRouter()
+const router = useRoute()
 
 const answers = reactive({
     a1: false,
@@ -226,9 +227,8 @@ function drag(ev) {
 function checkQuiz(){
     if(answers.a1 === true && answers.a2 === true && answers.a3 === true){
         answeredQuiz1.value = true
-        router.push('/correcto')
-    }else{
-        router.push('/incorrecto')
+        let route = router.path
+        NextStep(route)
     }
 }
 

@@ -9,8 +9,11 @@
                 <Tipostren v-if="step === 4" />
                 <TipotrenTable v-if="step === 5" />
                 <Repaso v-if="step === 6" />
-                <Repaso2 v-if="step === 7" />
-                <Repaso3 v-if="step === 8" />
+                <Correcto v-if="step === 7" />
+                <Repaso2 v-if="step === 8" />
+                <Correcto v-if="step === 9" />
+                <Repaso3 v-if="step === 10" />
+                <Correcto v-if="step === 11" />
             </div>
         </v-main>
         
@@ -30,6 +33,7 @@ import TipotrenTable from '../components/evolucion/TipotrenTable.vue';
 import Repaso from '../components/evolucion/Repaso.vue';
 import Repaso2 from '../components/evolucion/Repaso2.vue';
 import Repaso3 from '../components/evolucion/Repaso3.vue';
+import Correcto from '..//components/Correcto.vue'
 import { storeToRefs } from 'pinia';
 import { useCounterStore } from '../stores/counter';
 

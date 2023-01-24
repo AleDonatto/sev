@@ -49,6 +49,10 @@
   font-size: 1.87rem !important;
 }
 
+.font-size-28{
+  font-size: 1.75rem !important
+}
+
 .font-size-24{
   font-size: 1.5rem !important;
 }
@@ -66,4 +70,8 @@
 
 .decoration-none{
   text-decoration: none !important;
+}
+
+.text-yellow-p{
+  color: #FDBD31
 }

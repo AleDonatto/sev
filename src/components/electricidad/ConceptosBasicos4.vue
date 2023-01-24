@@ -15,8 +15,8 @@
                         </v-col>
                         <v-col cols="5">
                             <v-img :src="convertidor" max-height="220"></v-img>
-                            <p class="font-avenir font-size-22 mx-7 mt-5">Convertidor de corriente: cambia de corriente alterna a corriente directa.</p>
-                            <p class="font-avenir font-size-22 mx-7 mt-3 mb-5">
+                            <p class="font-avenir font-size-20 mx-7 mt-5">Convertidor de corriente: cambia de corriente alterna a corriente directa.</p>
+                            <p class="font-avenir font-size-20 mx-7 mt-3 mb-5">
                                 Ejemplo: el “cuadrito” para conectar un celular cambia de 110 V de CA (la toma de pared) a 5 V de CD (la salida a USB)
                             </p>
                         </v-col>
@@ -25,8 +25,8 @@
                         </v-col>
                         <v-col cols="5" class="">
                             <v-img :src="inversor" max-height="207"></v-img>
-                            <p class="font-avenir font-size-22 mx-7 mt-5">Inversor de corriente: cambia de corriente directa a corriente alterna.</p>
-                            <p class="font-avenir font-size-22 mx-7 mt-3 mb-5">
+                            <p class="font-avenir font-size-20 mx-7 mt-5">Inversor de corriente: cambia de corriente directa a corriente alterna.</p>
+                            <p class="font-avenir font-size-20 mx-7 mt-3 mb-5">
                                 Ejemplo: un inversor de corriente para uso automotriz puede conectarse a la toma de accesorios de un auto 12 V de CD y transformarlo a 110 V de CA para conectar otros aparatos.
                             </p>
                         </v-col>

@@ -6,7 +6,7 @@ export const InferStepperCounter = (val) => {
     let max 
     const store = useCounterStore()
 
-    if(path === '/evolucion-de-movilidad') max = 8
+    if(path === '/evolucion-de-movilidad') max = 11
     if(path === '/fundamentos-de-electricidad') max = 19
     
     if(val.action === 'plus'){

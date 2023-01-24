@@ -1,6 +1,6 @@
 <template>
     <div>
-        <content-template>
+        <content-template title="ELECTRICIDAD" subtitle="Conceptos básicos">
             <template v-slot:content>
                 <div class="mt-10">
                     <v-row justify="start">

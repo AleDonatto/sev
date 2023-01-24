@@ -2,14 +2,10 @@
     <div>
         <content-template>
             <template v-slot:content>
-                <div class="mt-10 w-auto h-auto bg-conceptos">
-                    <v-row justify="start">
+                <div class="mt-5">
+                    <v-row justify="start" class="bg-conceptos">
                         <v-col cols="12" align-self="center" class="h-100">
-                            <v-row>
-                                <v-col cols="6">
-                                    <h1 class="text-white">Hablemos de electricidad de manera sencilla y fácil de comprender.</h1>
-                                </v-col>
-                            </v-row>
+                            <v-img :src="conceptos" max-height="910" cover></v-img>
                         </v-col>
                     </v-row>
                 </div>
@@ -20,11 +16,12 @@
 
 <script setup>
 import ContentTemplate from '../templates/ContentTemplate.vue';
+import conceptos from '@/assets/electricidad/conceptos.png'
 </script>
 
 <style scoped>
 .bg-conceptos{
-    background-image: url('../../assets/electricidad/bg-conceptos.png');
+    background: linear-gradient(90deg, #9A9A9A 0%, rgba(217, 217, 217, 0) 40.7%, #9A9A9A 83.8%);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

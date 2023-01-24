@@ -1,6 +1,6 @@
 <template>
     <div>
-        <content-template>
+        <content-template title="PRÓXIMAMENTE" subtitle='<p>Evolución <br/> <span class="font-weight-bold">de la movilidad</span></p>'>
             <template v-slot:content>
                 <div class="mt-10">
                     <v-row justify="start">

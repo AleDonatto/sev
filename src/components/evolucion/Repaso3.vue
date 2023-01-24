@@ -1,6 +1,6 @@
 <template>
     <div>
-        <content-template>
+        <content-template subtitle="REPASO">
             <template v-slot:content>
                 <div class="mt-10">
                     <v-row justify="start">
@@ -75,11 +75,12 @@ import user from '@/assets/evolucion/user.png'
 import { useCounterStore } from '../../stores/counter'
 import { storeToRefs } from 'pinia';
 import { onMounted, reactive, ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 
 const store = useCounterStore()
+const {NextStep} = store
 const {answeredQuiz3,canNext} = storeToRefs(store)
-const router = useRouter()
+const router = useRoute()
 
 onMounted(() => {
     if(answeredQuiz3.value === false){
@@ -98,9 +99,8 @@ const response = ref('battery-efficient')
 function checkQuiz(){
     if(answers.a1 === 'battery-efficient'){
         answeredQuiz3.value = true
-        router.push('/correcto')
-    }else{
-        router.push('/incorrecto')
+        let route = router.path
+        NextStep(route)
     }
 }
 </script>

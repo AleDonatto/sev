@@ -15,7 +15,7 @@
                                 </div>
                             </v-col>
                             <v-col cols="8">
-                                <v-img :src="electricidad" class="size-img margin-left"></v-img>
+                                <v-img :src="electricidad" class="size-img margin-left" max-heignt="450"></v-img>
                             </v-col>
                         </v-row>
                     </v-col>

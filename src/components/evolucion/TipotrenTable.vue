@@ -1,6 +1,6 @@
 <template>
     <div>
-        <content-template>
+        <content-template subtitle="Tipos de tren <br/> motriz mas comunes">
             <template v-slot:content>
                 <div class="mt-10">
                     <v-row justify="start">
