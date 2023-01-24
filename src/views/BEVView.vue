@@ -11,7 +11,7 @@
 
 <script setup>
 import CargandoBev from '../components/bev/CargandoBev.vue';
-import Inquietudes from ',,/components/bev/Inquietudes.vue'
+import Inquietudes from '../components/bev/Inquietudes.vue'
 import { storeToRefs } from 'pinia';
 import { useCounterStore } from '../stores/counter';
 
