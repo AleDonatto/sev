@@ -24,14 +24,14 @@
                                         </p>
                                     </template>
                                 </v-radio>
-                                <v-radio value="2" @input="answers.a2 = $event.target.value">
+                                <v-radio value="2" @input="answers.a1 = $event.target.value">
                                     <template v-slot:label>
                                         <p class="font-avenir font-size-24">
                                             De iones de Litio de larga durabilidad.
                                         </p>
                                     </template>
                                 </v-radio>
-                                <v-radio value="3" @input="answers.a3 = $event.target.value">
+                                <v-radio value="3" @input="answers.a1 = $event.target.value">
                                     <template v-slot:label>
                                         <p class="font-avenir font-size-24">
                                             De polímero de Litio.
@@ -44,7 +44,7 @@
 
                     <v-row justify="center">
                         <v-col cols="12" align="center">
-                            <v-btn color="#FDBD31" class="rounded-xl text-none" @click="checkQuiz" :disabled="answers.a2 === null">
+                            <v-btn color="#FDBD31" class="rounded-xl text-none" @click="checkQuiz" :disabled="answers.a1 !== '2'">
                                 <span class="font-weight-bold">Continuar</span>
                             </v-btn>
                         </v-col>
@@ -79,7 +79,7 @@ onMounted(() => {
 })
 
 function checkQuiz(){
-    if(answers.a2 === '2'){
+    if(answers.a1 === '2'){
         const path = router.path 
         NextStep(path)
     }

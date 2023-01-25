@@ -9,8 +9,11 @@
                 <TiposCargadores v-if="step === 4" />
                 <TableCargadores v-if="step === 5" />
                 <Quiz v-if="step === 6" />
-                <Quiz2 v-if="step === 7" />
-                <Quiz3 v-if="step === 8" />
+                <Correcto v-if="step === 7"/>
+                <Quiz2 v-if="step === 8" />
+                <Correcto v-if="step === 9"/>
+                <Quiz3 v-if="step === 10" />
+                <Correcto v-if="step === 11" />
             </div>
         </v-main>
     </v-app>
@@ -26,6 +29,7 @@ import TableCargadores from '../components/bev/TableCargadores.vue';
 import Quiz from '../components/bev/Quiz.vue'
 import Quiz2 from '../components/bev/Quiz2.vue'
 import Quiz3 from '../components/bev/Quiz3.vue'
+import Correcto from '../components/Correcto.vue';
 import { storeToRefs } from 'pinia';
 import { useCounterStore } from '../stores/counter';
 

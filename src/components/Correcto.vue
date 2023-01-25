@@ -6,9 +6,14 @@
 
                     <v-img :src="user" max-height="180" ></v-img>
                     <div class="rounded-xl border bg-white position-image-user">
-                        <h1 class="text-center font-avenir font-weight-bold font-size-96 mt-10">¡Excelente!</h1>
-                        <p>{{step}}</p>
-                        <v-btn color="#FDBE2E" class="py-3 px-10 mx-6 mb-5 rounded-xl" @click="continuar">
+                        <h1 class="text-center font-avenir font-weight-bold font-size-96 mt-10" v-if="$route.path === '/cargando-un-bev' && step === 9">
+                          ¡Muy bien!
+                        </h1>
+                        <h1 class="text-center font-avenir font-weight-bold font-size-96 mt-10" v-else-if="$route.path === '/cargando-un-bev' && step === 11">
+                          ¡Lo has hecho increíble!
+                        </h1>
+                        <h1 class="text-center font-avenir font-weight-bold font-size-96 mt-10" v-else>¡Excelente!</h1>
+                        <v-btn color="#FDBE2E" class="py-1 px-10 mx-6 mb-5 rounded-xl" @click="continuar">
                             <span class="text-white font-avenir font-size-26 text-capitalize font-weight-bold">Continuar</span>
                         </v-btn>
                     </div>

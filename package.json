@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
     "vue-dndrop": "^1.2.13",

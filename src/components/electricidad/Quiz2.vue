@@ -27,7 +27,7 @@
                                     </template>
                                 </v-radio>
 
-                                <v-radio value="2" @input="answers.a2 = $event.target.value">
+                                <v-radio value="2" @input="answers.a1 = $event.target.value">
                                     <template v-slot:label>
                                         <p class="font-avenir font-size-24">
                                             El peso de la batería, el contacto utilizado y la potencia del motor
@@ -35,7 +35,7 @@
                                     </template>
                                 </v-radio>
 
-                                <v-radio value="3" @input="answers.a3 = $event.target.value">
+                                <v-radio value="3" @input="answers.a1 = $event.target.value">
                                     <template v-slot:label>
                                         <p class="font-avenir font-size-24">
                                             El tamaño de la batería, la potencia del motor y el OBD
@@ -47,7 +47,7 @@
                     </v-row>
                     <v-row justify="center">
                         <v-col cols="12" align="center">
-                            <v-btn class="text-none" color="#FDBD31" rounded @click="checkQuiz" :disabled="answers.a2 === null">
+                            <v-btn class="text-none" color="#FDBD31" rounded @click="checkQuiz" :disabled="answers.a1 !== '2'">
                                 <span class="font-weight-bold">Continuar</span>
                             </v-btn>
                         </v-col>
@@ -83,7 +83,7 @@ onMounted( () => {
 } )
 
 function checkQuiz(){
-    if(answers.a2 === '2'){
+    if(answers.a1 === '2'){
         const path = router.path 
         NextStep(path)
     }

@@ -57,7 +57,7 @@
 
                     <v-row justify="center" class="mt-15">
                         <v-col cols="2">
-                            <v-btn class="" rounded color="#FDBD31" :disabled="answers.a1 === null"
+                            <v-btn class="" rounded color="#FDBD31" :disabled="answers.a1 !== 'battery-efficient'"
                             @click="checkQuiz">
                                 <span class="text-black text-none font-lato font-size-20">Continuar</span>
                             </v-btn>

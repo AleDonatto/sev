@@ -23,7 +23,7 @@
                                     </template>
                                 </v-radio>
 
-                                <v-radio value="falso" @input="answers.a2 = $event.target.value">
+                                <v-radio value="falso" @input="answers.a1 = $event.target.value">
                                     <template v-slot:label>
                                         <p class="font-avenir font-size-24">Falso</p>
                                     </template>
@@ -33,7 +33,7 @@
                     </v-row>
                     <v-row justify="center">
                         <v-col cols="12" align="center">
-                            <v-btn class="text-none" rounded color="#FDBD31" @click="checkQuiz" :disabled="answers.a2 === null">
+                            <v-btn class="text-none" rounded color="#FDBD31" @click="checkQuiz" :disabled="answers.a1 !== 'falso'">
                                 <span class="font-weight-bold">Continuar</span>
                             </v-btn>
                         </v-col>
@@ -68,7 +68,7 @@ onMounted(() => {
 })
 
 function checkQuiz(){
-    if(answers.a2 === 'falso'){
+    if(answers.a1 === 'falso'){
         let route = router.path
         NextStep(route)
     }
