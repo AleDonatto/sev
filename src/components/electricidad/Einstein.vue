@@ -6,7 +6,7 @@
               <v-col cols="8" align="center" >
                 <v-dialog v-model="dialog" persistent width="880">
                   <v-img :src="user" max-height="170" class="index-3"></v-img>
-                  <v-card class="position-card overflow-hidden" color="#D9D9D9;">
+                  <v-card class="position-card overflow-hidden" color="#D9D9D9">
                     <v-card-title class="mt-7">
                       <p class="font-weight-bold text-center mt-7 font-avenir font-size-30">Recordatorio amistoso</p>
                     </v-card-title>

@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
@@ -39,7 +39,7 @@ const router = createRouter({
       component: () => import('../views/ElectricidadView.vue')
     },
     {
-      path: '/cargando-bev',
+      path: '/cargando-un-bev',
       name: 'cargandobrv',
       component: () => import('../views/BEVView.vue')
     },

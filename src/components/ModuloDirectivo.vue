@@ -25,6 +25,12 @@
                   <v-btn>inicar</v-btn>
                 </router-link>
               </v-col>
+              <v-col cols="8" v-if="section === 4">
+                <v-img :src="cargando" class="position-image" :class="{'height-box-images': windowHeight>900, 'height-box-images-sm': windowHeight<700}"></v-img>
+                <router-link to="/cargando-un-bev">
+                  <v-btn>iniciar</v-btn>
+                </router-link>
+              </v-col>
             </v-row>
           </v-col>
         </v-row>
@@ -40,6 +46,7 @@
   import movilidad from '../assets/welcome/movilidad.png'
   import fundamentos from '../assets/welcome/electricidad.png'
   import logoS from '../assets/welcome/logoS.png'
+  import cargando from '../assets/welcome/cargando-bev.png'
   import { useCounterStore } from '../stores/counter';
   import { storeToRefs } from 'pinia'
 

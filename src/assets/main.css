@@ -73,5 +73,21 @@
 }
 
 .text-yellow-p{
-  color: #FDBD31
+  color: #FDBD31;
+}
+
+.bg-boxstep-content{
+  background-color: #EDE6E6;
+}
+
+.bg-yellow-p{
+  background-color: #FDBD31;
+}
+
+.border-box-quiz{
+  border: 1px 1px;
+  border-style: solid;
+  border-color: #FDBD31;
+  border-width: 4px;
+  border-radius: 15px;
 }
