@@ -60,6 +60,16 @@ import car4 from '@/assets/evolucion/car4.png'
 import car5 from '@/assets/evolucion/car5.png'
 import car6 from '@/assets/evolucion/car6.png'
 import division from '@/assets/evolucion/division.png'
+import { useCounterStore } from '../../stores/counter';
+import { storeToRefs } from 'pinia';
+import { onMounted } from '@vue/runtime-core';
+
+const store = useCounterStore()
+const {canNext} = storeToRefs(store)
+
+onMounted(() => {
+    canNext.value = true
+})
 </script>
 
 <style scoped>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <content-template :title="titleMotors" subtitle="Tipos de tren <br/> motriz mas comunes">
+        <content-template title="" subtitle="Tipos de tren <br/> motriz mas comunes">
             <template v-slot:content>
                 <div class="mt-10">
                     <v-row justify="start">
@@ -91,9 +91,18 @@ import hev7 from '@/assets/evolucion/hev/hev7.png'
 import phev7 from '@/assets/evolucion/phev/phev7.png'
 import bev7 from '@/assets/evolucion/pev/pev7.png'
 import fcev7 from '@/assets/evolucion/fcev/fcev7.png'
-import { ref } from 'vue';
+import { useCounterStore } from '../../stores/counter';
+import { storeToRefs } from 'pinia';
+import { onMounted } from '@vue/runtime-core';
 
-const titleMotors = ref('')
+const store = useCounterStore()
+const {canNext} = storeToRefs(store)
+
+onMounted(() => {
+    canNext.value = true
+})
+
+
 </script>
 
 <style scoped>

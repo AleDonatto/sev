@@ -48,6 +48,7 @@
         
     </div>
 </template>
+
 <script setup>
 import ContentTemplate from "../templates/ContentTemplate.vue";
 import user from '../../assets/evolucion/user.png'
@@ -55,6 +56,16 @@ import men from '../../assets/evolucion/men.png'
 import guerrero from '../../assets/evolucion/guerrero.png'
 import siglo from '../../assets/evolucion/siglo.png'
 import division from '../../assets/evolucion/division.png'
+import { useCounterStore } from "../../stores/counter";
+import { storeToRefs } from "pinia";
+import { onMounted } from "@vue/runtime-core";
+
+const store = useCounterStore()
+const {canNext} = storeToRefs(store)
+
+onMounted(() => {
+    canNext.value = true
+})
 
 </script>
 

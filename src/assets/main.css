@@ -13,7 +13,7 @@
 }
 
 .font-avenir{
-  font-family: 'Avenir Next LT Pro' serif !important;
+  font-family: 'Avenir Next LT Pro' 'serif' !important;
 }
 
 .font-size-h1{
@@ -93,4 +93,8 @@
   border-color: #FDBD31;
   border-width: 4px;
   border-radius: 15px;
+}
+
+.not-cursor{
+  cursor: not-allowed;
 }

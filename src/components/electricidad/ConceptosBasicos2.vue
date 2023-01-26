@@ -60,6 +60,16 @@ import user from '@/assets/evolucion/user.png'
 import pila from '@/assets/electricidad/pila.png'
 import bateria from '@/assets/electricidad/bateria.png'
 import contacto from '@/assets/electricidad/contacto.png'
+import { useCounterStore } from '../../stores/counter';
+import { storeToRefs } from 'pinia';
+import { onMounted } from '@vue/runtime-core';
+
+const store = useCounterStore()
+const {canNext} = storeToRefs(store)
+
+onMounted(() => {
+    canNext.value = true 
+})
 </script>
 
 <style scoped>

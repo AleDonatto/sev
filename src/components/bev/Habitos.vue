@@ -1,6 +1,6 @@
 <template>
     <div>
-        <content-template subtitle="Habitos de Ca4rga de un BEV">
+        <content-template subtitle="Habitos de Carga de un BEV">
             <template v-slot:content>
                 <div class="mt-10">
                     <v-row justify="start">

@@ -50,6 +50,16 @@
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
 import bateriasev from '@/assets/electricidad/bateria-sev.png'
+import { useCounterStore } from '../../stores/counter';
+import { storeToRefs } from 'pinia';
+import { onMounted } from '@vue/runtime-core';
+
+const store = useCounterStore()
+const {canNext} = storeToRefs(store)
+
+onMounted(() => {
+    canNext.value = true
+})
 </script>
 
 <style scoped>
