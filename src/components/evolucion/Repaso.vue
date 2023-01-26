@@ -18,51 +18,56 @@
                         </v-col>
                     </v-row>
 
-                    <v-row :class="{'mt-15':windowHeight>900, 'mt-4': windowHeight<700}">
-                        <v-col cols="4" align-self="center" align="start">
-                            <div class="d-flex">
-                                <v-img :src="one" max-height="80" class="mt-6"></v-img>
-                                <div  class="size-box-drop-lg" @drop="dropZoneOne" @dragover="zoneDropOver" 
-                                :class="{
-                                    'border-box-zone':answers.a1 === false, 
-                                    'border-box-zone-correct text-center pt-10':answers.a1===true,
-                                    'margin-box-zone-lg': windowHeight > 900,
-                                    'margin-box-zone-md': windowHeight < 700}">
-                                    <!--<drag :transfer-data="{name:'hidrogeno-gasolina-electrico'}" :effect-allowed="['move']" drop-effect="move" >
-                                        <p>Arrastre aqui</p>
-                                    </drag>-->
-                                </div>
-                            </div>
+                    <v-row :class="{'mt-15':windowHeight>900, 'mt-4': windowHeight<700}" justify="center">
+                        <v-col cols="4" align-self="center">
+                            <v-row no-gutters>
+                                <v-col cols="2">
+                                    <v-img :src="one" max-height="80" class="mt-6"></v-img>
+                                </v-col>
+                                <v-col cols="10">
+                                    <div  class="size-box-drop-lg" @drop="dropZoneOne" @dragover="zoneDropOver" 
+                                    :class="{'border-box-zone':answers.a1 === false, 'border-box-zone-correct text-center pt-10':answers.a1===true}">
+                                            <!--<drag :transfer-data="{name:'hidrogeno-gasolina-electrico'}" :effect-allowed="['move']" drop-effect="move" >
+                                                <p>Arrastre aqui</p>
+                                            </drag>-->
+                                    </div>
+                                </v-col>
+                            </v-row>
                         </v-col>
                         <v-col cols="4" align-self="center">
-                            <div class="d-flex">
-                                <v-img :src="two" max-height="70" class="mt-6"></v-img>
-                                <div class="size-box-drop-lg"  @drop="dropZoneTwo" @dragover="zoneDropOverTwo" 
-                                :class="{
-                                    'border-box-zone':answers.a2 === false, 
-                                    'border-box-zone-correct text-center pt-10':answers.a2 === true,
-                                    'margin-box-zone-lg': windowHeight > 900,
-                                    'margin-box-zone-md' : windowHeight < 700}">
-                                    <!--<drag :transfer-data="{name: 'vehiculos-celda-hidorgeno'}" :effect-allowed="['move']" drop-effect="move">
-                                        <p>Arrastre aqui</p>
-                                    </drag>-->
-                                </div>
-                            </div>
+                            <v-row no-gutters>
+                                <v-col cols="2">
+                                    <v-img :src="two" max-height="80" class="mt-6"></v-img>
+                                </v-col>
+                                <v-col cols="10">
+                                    <div class="size-box-drop-lg"  @drop="dropZoneTwo" @dragover="zoneDropOverTwo" 
+                                    :class="{'border-box-zone':answers.a2 === false, 'border-box-zone-correct text-center pt-10':answers.a2 === true}">
+                                            <!--<drag :transfer-data="{name: 'vehiculos-celda-hidorgeno'}" :effect-allowed="['move']" drop-effect="move">
+                                                <p>Arrastre aqui</p>
+                                            </drag>-->
+                                    </div>
+                                </v-col>
+                            </v-row>
                         </v-col>
                         <v-col cols="4" align-self="center">
+                            <v-row no-gutters>
+                                <v-col cols="2">
+                                    <v-img :src="three" max-height="80" class="mt-6"></v-img>
+                                </v-col>
+                                <v-col cols="10">
+                                    <div class="size-box-drop-lg" @drop="dropZoneThree" @dragover="zoneDropOverThree" 
+                                    :class="{
+                                        'border-box-zone': answers.a3 === false, 
+                                        'border-box-zone-correct text-center pt-10':answers.a3 === true}">
+                                        <!--<drag :transfer-data="{name: 'electrico-gasolina-electrico'}" :effect-allowed="['move']" drop-effect="move">
+                                            <p>Arrastre aqui</p>
+                                        </drag>-->
+                                    </div>
+                                </v-col>
+                            </v-row>
                             <div class="d-flex">
-                                <v-img :src="three" max-height="80" class="mt-6"></v-img>
-                                <div class="size-box-drop-lg" @drop="dropZoneThree" @dragover="zoneDropOverThree" 
-                                :class="{
-                                    'border-box-zone': answers.a3 === false, 
-                                    'border-box-zone-correct text-center pt-10':answers.a3 === true,
-                                    'margin-box-zone-lg': windowHeight > 900,
-                                    'margin-box-zone-md': windowHeight < 700
-                                    }">
-                                    <!--<drag :transfer-data="{name: 'electrico-gasolina-electrico'}" :effect-allowed="['move']" drop-effect="move">
-                                        <p>Arrastre aqui</p>
-                                    </drag>-->
-                                </div>
+                                
+                                
                             </div>
                         </v-col>
                     </v-row>

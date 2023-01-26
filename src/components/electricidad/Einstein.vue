@@ -1,10 +1,10 @@
 <template>
-    <div>
-        <content-template title="ELECTRICIDAD">
+  <div>
+    <content-template title="ELECTRICIDAD">
           <template v-slot:content>
             <v-row justify="center">
               <v-col cols="8" align="center" >
-                <v-dialog v-model="dialog" persistent width="880">
+                <v-dialog v-model="dialog" persistent width="880" class="bg-overlay">
                   <v-img :src="user" max-height="170" class="index-3"></v-img>
                   <v-card class="position-card overflow-hidden" color="#D9D9D9">
                     <v-card-title class="mt-7">
@@ -37,8 +37,8 @@
               </v-row>
             </div>
           </template>
-        </content-template>
-    </div>
+    </content-template>
+  </div>
 </template>
 
 <script setup>
@@ -68,5 +68,7 @@ const dialog = ref(true)
   z-index: 3;
 }
 
-
+.bg-overlay{
+  background-color: rgba(0,0,0,0.9);
+}
 </style>

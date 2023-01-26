@@ -195,7 +195,7 @@ function moduloEvolucion(){
 }
 
 function moduloElectricidad(){
-    route.path('/fundamentos-de-electricidad')
+    route.push('/fundamentos-de-electricidad')
 }
 </script>
 

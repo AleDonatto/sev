@@ -27,6 +27,12 @@
                         </v-col>
 
                     </v-row>
+
+                    <v-snackbar v-model="snackbar" location="bottom right" color="#FDBD31" timeout="10000" class="mx-16" height="200" width="320" rounded="xl" multi-line vertical>
+                        <p class="font-weight-bold text-black font-avenir font-size-20 px-5 py-4">
+                            El amperaje hace referencia a qué tan intensa es la corriente. Por ejemplo: a mayor amperaje, mayor velocidad de carga
+                        </p>
+                    </v-snackbar>
                 </div>
             </template>
         </content-template>
@@ -38,6 +44,9 @@ import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
 import cubito from '@/assets/electricidad/cubito.png'
 import cubo from '@/assets/electricidad/cubo.png'
+import { ref } from '@vue/reactivity';
+
+const snackbar = ref(true)
 
 </script>
 

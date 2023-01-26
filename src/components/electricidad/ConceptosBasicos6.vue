@@ -28,6 +28,12 @@
                             <p class="font-weight-bold font-avenir text-center font-size-24">100 W</p>
                         </v-col>
                     </v-row>
+
+                    <v-snackbar v-model="snackbar" location="bottom right" color="#FDBD31" timeout="10000" class="mx-16" height="200" width="320" rounded="xl" multi-line vertical>
+                        <p class="font-weight-bold text-black font-avenir font-size-20 px-5 py-4">
+                            A mayor potencia eléctrica, mayor consumo de energía.
+                        </p>
+                    </v-snackbar>
                 </div>
             </template>
         </content-template>
@@ -38,6 +44,9 @@
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
 import foco from '@/assets/electricidad/foco.png'
+import { ref } from '@vue/reactivity';
+
+const snackbar = ref(true)
 </script>
 
 <style scoped>
