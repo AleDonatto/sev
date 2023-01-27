@@ -6,7 +6,7 @@
               <v-col cols="8" align="center" >
                 <v-dialog v-model="dialog" persistent width="880" class="bg-overlay">
                   <v-img :src="user" max-height="170" class="index-3"></v-img>
-                  <v-card class="position-card overflow-hidden" color="#D9D9D9">
+                  <v-card class="position-card overflow-hidden rounded-xl" color="#D9D9D9">
                     <v-card-title class="mt-7">
                       <p class="font-weight-bold text-center mt-7 font-avenir font-size-30">Recordatorio amistoso</p>
                     </v-card-title>
@@ -32,7 +32,7 @@
             <div class="bg-black">
               <v-row justify="center" class="m-0 p-0 bg-black" no-gutters>
                 <v-col cols="12">
-                  <v-img :src="albert" max-height="870"></v-img>
+                  <v-img :src="albert" max-height="840"></v-img>
                 </v-col>
               </v-row>
             </div>

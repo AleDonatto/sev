@@ -1,9 +1,9 @@
 <template>
-    <v-app>
+    <v-layout>
         <v-main class="bg-image">
             <instrucciones></instrucciones>
         </v-main>
-    </v-app>
+    </v-layout>
 </template>
 
 <script setup>

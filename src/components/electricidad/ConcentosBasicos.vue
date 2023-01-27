@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <div class="">
         <content-template>
             <template v-slot:content>
-                <div class="mt-5">
-                    <v-row justify="start" class="bg-conceptos">
+                <div class="mt-6">
+                    <v-row justify="center" class="">
                         <v-col cols="12" align-self="center" class="h-100">
-                            <v-img :src="conceptos" max-height="910" cover></v-img>
+                            <v-img :src="conceptos" max-height="815" cover></v-img>
                         </v-col>
                     </v-row>
                 </div>

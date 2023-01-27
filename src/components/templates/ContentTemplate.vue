@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-navigation-drawer permanent location="left" color="#FDBD31">
+        <v-navigation-drawer permanent location="left" color="#FDBD31" class="index-1">
             <template v-slot:prepend>
                 <v-list-item :class="{'my-4': windowHeight > 900, 'my-2':windowHeight < 700}">
                     <v-img :src="solologo" contain heigh max-height="40"></v-img>
@@ -233,5 +233,12 @@ function moduloElectricidad(){
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+.index-1{
+    z-index: 1 !important;
+}
+.index-2{
+    z-index:3 !important;
 }
 </style>

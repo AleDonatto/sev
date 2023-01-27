@@ -1,5 +1,5 @@
 <template>
-    <v-app>
+    <v-layout>
         <v-main class="bg-image">
             <div v-if="$route.path === '/evolucion-de-movilidad'">
                 <Evolucion1 v-if="step === 0"/>
@@ -20,7 +20,10 @@
         <!--<v-footer color="black" class="">
             <p>pruebas</p>
         </v-footer>-->
-    </v-app>
+    </v-layout>
+    <v-footer color="black" class="index-2" inset app v-if="!(step === 7) && !(step === 9) && !(step === 11)">
+        <p>© 2022 Todos los derechos reservados</p>
+    </v-footer>
 </template>
 
 <script setup>
@@ -33,7 +36,7 @@ import TipotrenTable from '../components/evolucion/TipotrenTable.vue';
 import Repaso from '../components/evolucion/Repaso.vue';
 import Repaso2 from '../components/evolucion/Repaso2.vue';
 import Repaso3 from '../components/evolucion/Repaso3.vue';
-import Correcto from '..//components/Correcto.vue'
+import Correcto from '../components/Correcto.vue'
 import { storeToRefs } from 'pinia';
 import { useCounterStore } from '../stores/counter';
 

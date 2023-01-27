@@ -8,7 +8,11 @@
                             <v-img :src="objeciones" max-height="872"></v-img>
                         </v-col>
                     </v-row>-->
-                    <v-img :src="objeciones" max-height="873"></v-img>
+                    <v-row justify="end">
+                        <v-col cols="12" align="end">
+                            <v-img :src="objeciones" max-height="870" cover></v-img>
+                        </v-col>
+                    </v-row>
                 </div>
             </template>
         </content-template>

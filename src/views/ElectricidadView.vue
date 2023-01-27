@@ -1,6 +1,6 @@
 <template>
-    <v-app>
-        <v-main :class="{'bg-image' : step === 0}">
+    <v-layout>
+        <v-main :class="{'bg-image' : step <= 1, 'bg-black': step === 16}">
             <div v-if="$route.path === '/fundamentos-de-electricidad'">
                 <Presentacion v-if="step === 0"/>
                 <ConceptosBasicos v-if="step === 1"/>
@@ -27,7 +27,10 @@
                 <Correcto v-if="step === 22"/>
             </div>
         </v-main>
-    </v-app>
+    </v-layout>
+    <v-footer color="black" class="index-2" inset app v-if="!(step === 0) && !(step === 18) && !(step === 20) && !(step === 22)">
+        <p>© 2022 Todos los derechos reservados</p>
+    </v-footer>
 </template>
 
 <script setup>
@@ -67,5 +70,13 @@ const {step} = storeToRefs(store)
   background-repeat: no-repeat;
   background-position: center center;
   height: 100%;
+}
+
+.bg-black{
+    background-color: black;
+}
+
+.index-3{
+    z-index: 3;
 }
 </style>

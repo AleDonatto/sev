@@ -2,7 +2,7 @@
     <div>
         <content-template title="ELECTRICIDAD" subtitle="Conceptos básicos">
             <template v-slot:content>
-                <div class="mt-10">
+                <div class="mt-5">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img :src="user" max-height="170"></v-img>
@@ -11,7 +11,7 @@
 
                     <v-row justify="center">
                         <v-col cols="12" align="center">
-                            <v-img :src="kilowatt" max-height="650"></v-img>
+                            <v-img :src="kilowatt" max-height="620"></v-img>
                         </v-col>
                     </v-row>
                 </div>

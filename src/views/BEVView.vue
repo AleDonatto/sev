@@ -1,6 +1,6 @@
 <template>
-    <v-app>
-        <v-main :class="{'bg-image': step === 0}">
+    <v-layout>
+        <v-main :class="{'bg-image': step === 0, 'bg-gradient': step === 1}">
             <div v-if="$route.path === '/cargando-un-bev'">
                 <CargandoBev  v-if="step === 0"/>
                 <Inquietudes v-if="step === 1"/>
@@ -16,7 +16,10 @@
                 <Correcto v-if="step === 11" />
             </div>
         </v-main>
-    </v-app>
+    </v-layout>
+    <v-footer color="black" class="index-2" inset app v-if="!(step === 0) && !(step === 7) && !(step === 9) && !(step === 11)">
+        <p>© 2022 Todos los derechos reservados</p>
+    </v-footer>
 </template>
 
 <script setup>
@@ -44,5 +47,13 @@ const {step} = storeToRefs(store)
   background-repeat: no-repeat;
   background-position: center center;
   height: 100%;
+}
+
+.index-2{
+    z-index: 3;
+}
+
+.bg-gradient{
+    background: linear-gradient(to right, black, gray);
 }
 </style>
