@@ -10,9 +10,25 @@
                     </v-row>
 
                     <v-row justify="center" class="bg-boxstep-content rounded-xl mx-10 px-5 py-5">
-                        <v-col cols="12"></v-col>
                         <v-col cols="12">
-                            <p>pruebas</p>
+                            <p class="font-avenir font-size-22">
+                                <span class="font-weight-bold">El comportamiento o hábitos de recarga de un</span> <span class="text-yellow-p font-weight-bold">BEV</span> por parte de un cliente son 
+                                muy distintos a los <span class="fonbt-weight-bold">hábitos de recarga de un tanque de combustible.</span>
+                            </p>
+                        </v-col>
+                        <v-col cols="4">
+                            <ul class="font-avenir font-size-22 px-7">
+                                <li>
+                                    La recarga de un vehículo eléctrico se puede integrar de manera fácil al día a día del usuario 
+                                    aprovechando los periodos en los que el vehículo está estacionado.
+                                </li>
+                                <li>
+                                    Los requerimientos de carga oscilan entre el 20% y 80%, y difícilmente se realizara una carga de 0% a 100%.
+                                </li>
+                            </ul>
+                        </v-col>
+                        <v-col cols="8" align="center" align-self="center">
+                            <v-img :src="habitoscar" max-height="310"></v-img>
                         </v-col>
                     </v-row>
                 </div>
@@ -24,6 +40,7 @@
 <script setup>
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
+import habitoscar from '@/assets/cargando/habitoscar.png'
 </script>
 
 <style>
