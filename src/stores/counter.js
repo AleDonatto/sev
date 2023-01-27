@@ -8,7 +8,7 @@ export const useCounterStore = defineStore('store', () => {
   const windowSize = ref(null)
   const windowHeight = ref(null)
   const canNext = ref(true)
-  const section = ref(3)
+  const section = ref(1)
   const audioInitialized = ref(false) 
 
   const answeredQuiz1 = ref(false)

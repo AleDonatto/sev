@@ -15,7 +15,7 @@
               </v-col>
               <v-col cols="8" v-if="section === 2" >
                 <v-img :src="evolucion" class="position-image" :class="{'height-box-images': windowHeight>900, 'height-box-images-sm': windowHeight<700}"></v-img>
-                <router-link to="/evolucion-de-movilidad">
+                <router-link to="/evolucion-de-movilidad" >
                   <v-btn>inicar</v-btn>
                 </router-link>
               </v-col>
