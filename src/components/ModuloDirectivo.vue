@@ -9,13 +9,13 @@
                 <v-img :src="logoS" max-height="310"></v-img>
               </v-col>
               <v-col cols="8" v-if="section === 2">
-                <v-img :src="evolucion" :max-height="windowHeight>900 ? '760': '495'" contain :class="{'position-menu': windowHeight>900, 'position-menu-md': windowHeight < 700}"></v-img>
+                <v-img :src="evolucion" :max-height="windowHeight>900 ? '745': '495'" contain :class="{'position-menu': windowHeight>900, 'position-menu-md': windowHeight < 700}"></v-img>
               </v-col>
               <v-col cols="8" v-if="section === 3">
-                <v-img :src="electricidad" :max-height="windowHeight>900 ? '760': '495'" contain :class="{'position-menu': windowHeight>900, 'position-menu-md': windowHeight < 700}"></v-img>
+                <v-img :src="electricidad" :max-height="windowHeight>900 ? '745': '495'" contain :class="{'position-menu': windowHeight>900, 'position-menu-md': windowHeight < 700}"></v-img>
               </v-col>
               <v-col cols="8" v-if="section === 4">
-                <v-img :src="cargando" :max-height="windowHeight >900 ? '760': '495'" contain :class="{'position-menu': windowHeight>900, 'position-menu-md': windowHeight < 700}"></v-img>
+                <v-img :src="cargando" :max-height="windowHeight >900 ? '745': '495'" contain :class="{'position-menu': windowHeight>900, 'position-menu-md': windowHeight < 700}"></v-img>
               </v-col>
             </v-row>
           </v-col>

@@ -2,20 +2,22 @@
     <div>
         <main-template>
             <template v-slot:content>
-                <v-row class="mt-3">
-                    <v-col cols="12">
-                        <v-row class="height-box bg-negro">
-                            <v-col cols="4" class="mt-10 width-box" align="center">
-                                <h1 class="font-lato font-size-50 ml-7 text-left text-white text-uppercase font-weight-smibold">Cargando un BEV</h1>
+                <v-row class="" :class="{'mt-3':windowHeight>900}">
+                    <v-col cols="12" :class="{'bg-cargando-bev':windowHeight>900, 'bg-cargando-bev-md': windowHeight<700}">
+                        <v-row class="">
+                            <v-col cols="5" align="center">
+                                <div :class="{'position-text':windowHeight>900, 'position-text-md': windowHeight<700}">
+                                    <h1 class="font-lato ml-7 text-left text-white text-uppercase font-weight-semibold px-10" :class="{'font-size-72':windowHeight> 900, 'font-size-48':windowHeight<700}">Cargando un BEV</h1>
 
-                                <p class="text-white font-size-50 ml-7 text-left">Tipos de cargador, conectores y mejores prácticas</p>
+                                    <p class="text-white ml-7 text-left pl-10" :class="{'font-size-50': windowHeight>900, 'font-size-34':windowHeight<700}">Tipos de cargador, conectores y mejores prácticas</p>
 
-                                <v-btn rounded class="px-5" color="#FDBE2E" @click="continueStep">
-                                    <span class="font-avenir font-size-30">Continuar</span>
-                                </v-btn>
+                                    <v-btn rounded class="px-5 mt-10" color="#FDBE2E" @click="continueStep">
+                                        <span class="font-avenir font-size-30">Continuar</span>
+                                    </v-btn>
+                                </div>
+                                
                             </v-col>
-                            <v-col cols="8">
-                                <v-img :src="poligono" class="size-img margin-left" max-heignt="450"></v-img>
+                            <v-col cols="7">
                             </v-col>
                         </v-row>
                     </v-col>
@@ -27,13 +29,15 @@
 
 <script setup>
 import MainTemplate from '../templates/MainTemplate.vue';
-import poligono from '../../assets/cargando/poligonoYellow.png'
 import { useCounterStore } from '../../stores/counter';
 import { useRoute, useRouter } from 'vue-router';
+import { storeToRefs } from 'pinia';
 
 
 const router = useRoute()
 const store = useCounterStore()
+
+const {windowHeight, windowSize} = storeToRefs(store)
 
 const {NextStep} = store
 
@@ -44,22 +48,27 @@ function continueStep(){
 </script>
 
 <style scoped>
+.bg-cargando-bev{
+    background-image: url('../../assets/electricidad/presentacion.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 835px;
+}
+
+.bg-cargando-bev-md{
+    background-image: url('../../assets/electricidad/presentacion.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 510px;
+    margin-top: -1.3vh;
+}
 .bg-negro{
     background-image: url('../../assets/electricidad/fondopruebas.png');
 }
-.height-box{
-    height: 500px;
-}
-.width-box{
-    max-width: 40%;
-}
 
-.size-img{
-    height: 800px;
-}
-
-.margin-left{
-    margin-left: 270px;
-    margin-top: -10px;
+.position-text{
+    margin-top: 5vh;
 }
 </style>
