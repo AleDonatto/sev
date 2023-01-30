@@ -3,8 +3,8 @@
         <main-template>
             <template v-slot:content>
                 <v-row class="mt-3">
-                    <v-col cols="12" class="bg-instructions">
-                        <v-row class="size-instruction" style="background-color: black;">
+                    <v-col cols="12" class="p-0 m-0" :class="{'bg-instructions': windowHeight>900, 'bg-instructions-md': windowHeight< 700}">
+                        <v-row class="">
                             <v-col cols="5">
                                 <div class="ml-5">
                                     <h1 class="text-white font-lato font-weight-light text-center" :class="{'font-size-96': windowHeight > 900, 'font-size-50':windowHeight < 700}">Instrucciones</h1>
@@ -25,8 +25,9 @@
                                     </div>
                                 </div>
                             </v-col>
-                            <v-col cols="7" align-self="end">
-                                <v-img :src="Mens" class="position-image" :class="{'size-image' : windowHeight > 900, 'size-image-md': windowHeight < 700}"></v-img>
+                            <v-col cols="4"></v-col>
+                            <v-col cols="3">
+                                <v-img :src="user" max-height="410" class="position-image"></v-img>
                             </v-col>
                         </v-row>
                     </v-col>
@@ -39,6 +40,7 @@
 <script setup>
 import MainTemplate from './templates/MainTemplate.vue';
 import Mens from '@/assets/instrucciones/narrador.png'
+import user from '@/assets/instrucciones/user.png'
 import { useCounterStore } from '../stores/counter';
 import { useRoute, useRouter } from 'vue-router';
 import { storeToRefs } from 'pinia';
@@ -56,23 +58,28 @@ function gotoModuloDirectivo(){
 <style scoped>
 
 .bg-instructions{
-  background-image: url('../assets/welcome/fondo-left.png');
+  background-image: url('../assets/instrucciones/instrucciones2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 810px;
 }
 
-.size.image{
-  height: 910px;
+.bg-instructions-md{
+  background-image: url('../assets/instrucciones/instrucciones2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 540px;
+  margin-top: -22px;
 }
 
-.size-image-md{
-    height: 530px;
-}
 @media(max-height: 700px) {
     .size-instruction{
         height: 450px;
     }
     .position-image{
-        margin-top: -5.3vh;
-        margin-left: 130px;
+        margin-top: -6vh;
     }
 }
 
@@ -81,8 +88,7 @@ function gotoModuloDirectivo(){
         height: 580px;
     }
     .position-image{
-        margin-top: -4.8vh;
-        margin-left: 150px;
+        margin-top: -6vh;
     }
 }
 </style>

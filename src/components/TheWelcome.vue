@@ -2,13 +2,13 @@
   <div class="content">  
     <main-template>
       <template v-slot:content>
-        <v-row class="mt-3">
-          <v-col cols="12">
+        <v-row :class="{'mt-3': windowHeight > 700, 'margin-top': windowHeight < 700}">
+          <v-col cols="12" :class="{'bg-mensajes': windowHeight> 900, 'bg-mensajes-md': windowHeight< 900}">
             <!--height-box bg-mensajes-->
-            <v-row class="bg-mensajes size-bienvenidos">
+            <v-row class="size-bienvenidos">
               <!--height-box-->
               <v-col cols="5" align="center" class="height-box">
-                <div class="mx-4 top-text">
+                <div class="mx-4 top-text" :class="{'top-text': windowHeight > 900, 'top-text-md': windowHeight < 700}">
                   <h1 class="text-white font-lato font-size-h1 font-weight-bold text-center">Bienvenidos</h1>
 
                   <router-link to="/temario" class="decoration-none">
@@ -20,7 +20,7 @@
                 </div>
               </v-col>
               <v-col cols="7">
-                <v-img :src="images" class="top-images" :class="{'height-box-images': windowHeight > 900, 'height-box-images-sm': windowHeight < 700}"></v-img>
+                <!--<v-img :src="images" class="top-images" :class="{'height-box-images': windowHeight > 900, 'height-box-images-sm': windowHeight < 700}"></v-img>-->
                 <!--<v-img :src="images" class="mt-images" :mx-height="windowHeight <900 ? 410 : 1200"></v-img>-->
               </v-col>
             </v-row>
@@ -50,24 +50,47 @@ const {windowHeight, windowSize} = storeToRefs(store)
   max-width: 1850px;
 }
 .height-box-images-sm {
-  max-width: 760px;
+  max-width: 910px;
+  /*height: 880px;*/
 }
 
 .top-text{
-  margin-top: 24vh;
+  margin-top: 35vh;
+}
+
+.top-text-md{
+  margin-top: 26vh;
+}
+
+.margin-top{
+  margin-top: -22px;
+}
+
+.bg-mensajes-md{
+  background-image: url('../assets/welcome/pruebasInicio.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 500px;
 }
 
 .bg-mensajes{
-  background-image: url('../assets/welcome/fondo-left.png');
+  background-image: url('../assets/welcome/pruebasInicio.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 790px;
 }
+
+
 @media(max-height: 700px){
   .size-bienvenidos{
     height: 360px;
   }
 
   .top-images{
-    margin-top: -1.9vh;
-    margin-left: -1.7vh;
+    margin-top: -1.6vh;
+    margin-left: -10vh;
   }
 }
 
