@@ -2,7 +2,7 @@
     <div>
         <content-template title="ELECTRICIDAD" subtitle="Aplicaciones prácticas">
             <template v-slot:content>
-                <div class="mt-10">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-6': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img :src="user" max-height="170"></v-img>
@@ -11,13 +11,13 @@
 
                     <v-row justify="center" class="rounded-xl bg-color mx-10 px-5 py-5">
                         <v-col cols="12" class="animate__animated animate__backInLeft">
-                            <p class="font-avenir font-size-24">
+                            <p class="font-avenir" :class="{'font-size-24': windowHeight>900, 'font-size-19': windowHeight<700}">
                                 La autonomía hace referencia a la <span class="text-yellow-p">distancia que puede recorrer un vehículo eléctrico con una 
                                 carga completa de su batería</span>. Para SEV E-WAN la autonomía es de 200 km (versión Lite) y 335 km 
                                 (versión Bold) de acuerdo a la homologación NEDC.
                             </p>
-                            <p class="font-avenir font-size-24">Existen diferentes homologaciones.</p>
-                            <ul class="font-avenir font-size-22 pl-5 mt-5">
+                            <p class="font-avenir" :class="{'font-size-24': windowHeight>900, 'font-size-10': windowHeight<700}">Existen diferentes homologaciones.</p>
+                            <ul class="font-avenir pl-5" :class="{'mt-5 font-size-24': windowHeight>900, 'mt-2 font-size-19': windowHeight<700}">
                                 <li>
                                     NEDC (New European Driving Cycle):
                                     <ul class="pl-6">
@@ -42,6 +42,12 @@
 <script setup>
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
+import { useCounterStore } from '../../stores/counter';
+import { storeToRefs } from 'pinia';
+
+const store = useCounterStore()
+const {windowHeight, windowSize} = storeToRefs(store)
+
 </script>
 
 <style scoped>

@@ -11,13 +11,13 @@
 
                     <v-row justify="center" class="mx-10 bg-color rounded-xl">
                         <v-col cols="12" class="animate__animated animate__backInLeft">
-                            <p class="font-avenir font-size-30">¿Y qué pasa si tengo panales fotovoltaícos?</p>
+                            <p class="font-avenir" :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">¿Y qué pasa si tengo panales fotovoltaícos?</p>
                         </v-col>
                         <v-col cols="1" align-self="center" align="center" class="animate__animated animate__backInLeft">
-                            <p class="vertical-text font-avenir font-weight-bold font-size-30">Consumo Historico</p>
+                            <p class="vertical-text font-avenir font-weight-bold"  :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">Consumo Historico</p>
                         </v-col>
                         <v-col cols="11" class="animate__animated animate__backInRight">
-                            <v-img :src="consumo" max-height="450" @click="images.visible = !images.visible"></v-img>
+                            <v-img :src="consumo" :max-height="windowHeight>900 ? '450': '260'"  @click="images.visible = !images.visible"></v-img>
                         </v-col>
                     </v-row>
 
@@ -48,9 +48,13 @@ import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
 import consumo from '@/assets/electricidad/consumo.png'
 import { reactive, ref } from '@vue/reactivity';
-
+import { useCounterStore } from '../../stores/counter';
 import VueEasyLightbox from 'vue-easy-lightbox'
+import { storeToRefs } from 'pinia';
 //import 'vue-easy-lightbox/external-css/vue-easy-lightbox.css'
+
+const store = useCounterStore()
+const {windowHeight, windowSize} = storeToRefs(store)
 
 const images = reactive({
     imgs: consumo,

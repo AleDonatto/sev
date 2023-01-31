@@ -11,7 +11,7 @@
 
                     <v-row justify="center">
                         <v-col cols="12" align="center">
-                            <v-img :src="kilowatt" max-height="620"></v-img>
+                            <v-img :src="kilowatt" :max-height="windowHeight>900 ? '620': '350'"></v-img>
                         </v-col>
                     </v-row>
                 </div>
@@ -24,6 +24,11 @@
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
 import kilowatt from '@/assets/electricidad/kilowatt.png'
+import { useCounterStore } from '../../stores/counter';
+import { storeToRefs } from 'pinia';
+
+const store = useCounterStore()
+const {windowHeight, windowSize} = storeToRefs(store)
 </script>
 
 <style scoped>

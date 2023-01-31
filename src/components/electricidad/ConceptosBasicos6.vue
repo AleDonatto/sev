@@ -11,19 +11,21 @@
 
                     <v-row class="rounded-xl bg-color mx-10">
                         <v-col cols="12" align="center" class="animate__animated animate__backInDown">
-                            <p class="font-avenir font-size-34"><span class="font-weight-bold">Watt:</span> unidad de medición de la potencia eléctrica</p>
-                            <p class="font-weight-bold font-avenir font-size-34">Watt = Volt X Amper</p>
+                            <p class="font-avenir" :class="{'font-size-34': windowHeight>900, 'font-size-24': windowHeight<700}">
+                                <span class="font-weight-bold">Watt:</span> unidad de medición de la potencia eléctrica
+                            </p>
+                            <p class="font-weight-bold font-avenir" :class="{'font-size-34': windowHeight>900, 'font-size-24': windowHeight<700}">Watt = Volt X Amper</p>
                         </v-col>
 
                         <v-col cols="5" align="center" class="animate__animated animate__backInLeft">
-                            <v-img :src="foco" max-height="230"></v-img>
+                            <v-img :src="foco" :max-height="windowHeight>900 ? '230': '150'"></v-img>
                             <p class="font-weight-bold font-avenir font-size-24">60 W</p>
                         </v-col>
                         <v-col cols="1" align="center">
                             <hr class="vertical-line">
                         </v-col>
                         <v-col cols="5" align="center" class="animate__animated animate__backInRight">
-                            <v-img :src="foco" max-height="230"></v-img>
+                            <v-img :src="foco" :max-height="windowHeight>900 ? '230': '150'"></v-img>
                             <p class="font-weight-bold font-avenir text-center font-size-24">100 W</p>
                         </v-col>
                     </v-row>
@@ -43,7 +45,12 @@
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
 import foco from '@/assets/electricidad/foco.png'
+import { useCounterStore } from '../../stores/counter';
 import { ref } from '@vue/reactivity';
+import { storeToRefs } from 'pinia';
+
+const store = useCounterStore()
+const {windowHeight, windowSize} = storeToRefs(store)
 
 const snackbar = ref(true)
 </script>

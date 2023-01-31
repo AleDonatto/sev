@@ -9,18 +9,24 @@
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" class="bg-color mx-10 rounded-xl">
+                    <v-row justify="center" class="bg-color mx-10 rounded-xl" v-if="pasos.paso1">
                         <v-col cols="12" class="animate__animated animate__backInDown">
-                            <p class="text-center font-avenir font-size-36">El tiempo de carga de una batería dependerá principalmente de:</p>
+                            <p class="text-center font-avenir" :class="{'font-size-36': windowHeight>900, 'font-size-24': windowHeight<700}">El tiempo de carga de una batería dependerá principalmente de:</p>
                         </v-col>
                         <v-col cols="12" align="start" class="px-10 animate__animated animate__backInLeft">
-                            <p class="font-size-30"><span class="font-weight-bold pr-3">1</span> La Capacidad de batería (kWh)</p>
-                            <p class="font-size-30"><span class="text-yellow-p font-weight-bold pr-3">2</span> Estado de carga (% de bateria)</p>
-                            <p class="font-size-30"><span class="font-weight-bold pr-3">3</span> La potencia del cargador utilizado (Voltaje X Amperaje/1,000) kW.</p>
+                            <p class="" :class="{'font-size-36': windowHeight>900, 'font-size-24': windowHeight<700}">
+                                <span class="font-weight-bold pr-3">1</span> La Capacidad de batería (kWh)
+                            </p>
+                            <p class="" :class="{'font-size-36': windowHeight>900, 'font-size-24': windowHeight<700}">
+                                <span class="text-yellow-p font-weight-bold pr-3">2</span> Estado de carga (% de bateria)
+                            </p>
+                            <p class="" :class="{'font-size-36': windowHeight>900, 'font-size-24': windowHeight<700}">
+                                <span class="font-weight-bold pr-3">3</span> La potencia del cargador utilizado (Voltaje X Amperaje/1,000) kW.
+                            </p>
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" class="bg-color mx-10 rounded-xl">
+                    <v-row justify="center" class="bg-color mx-10 rounded-xl" v-if="pasos.paso2">
                         <v-col cols="3">
                             <v-img :src="lowBaterry" max-height="130"></v-img>
                         </v-col>
@@ -55,6 +61,17 @@ import user from '@/assets/evolucion/user.png'
 import lowBaterry from '@/assets/electricidad/low-battery.png'
 import completBattery from '@/assets/electricidad/complet-battery.png'
 import comparation from '@/assets/electricidad/comparation.png'
+import { useCounterStore } from '../../stores/counter';
+import { storeToRefs } from 'pinia';
+import { reactive } from '@vue/reactivity';
+
+const store = useCounterStore()
+const {windowHeight, windowSize} = storeToRefs(store)
+
+const pasos = reactive({
+    paso1: true,
+    paso2: false
+})
 </script>
 
 <style scoped>

@@ -32,7 +32,7 @@
             <div class="bg-black">
               <v-row justify="center" class="m-0 p-0 bg-black" no-gutters>
                 <v-col cols="12">
-                  <v-img :src="albert" max-height="840"></v-img>
+                  <v-img :src="albert" :max-height="windowHeight>900 ? '840': '560'"></v-img>
                 </v-col>
               </v-row>
             </div>
@@ -45,7 +45,12 @@
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import albert from '@/assets/electricidad/albert.png'
 import user from '@/assets/evolucion/user.png'
+import { useCounterStore } from '../../stores/counter';
 import { ref } from 'vue';
+import { storeToRefs } from 'pinia';
+
+const store = useCounterStore()
+const {windowHeight, windowSize} = storeToRefs(store)
 
 const dialog = ref(true)
 </script>
