@@ -9,7 +9,7 @@
                         </v-col>
                     </v-row>
 
-                    <v-row no-gutters class="mt-4">
+                    <v-row no-gutters class="mt-4 animate__animated animate__backInLeft">
                         <v-col cols="4">
                             <v-img :src="car4" max-height="240"></v-img>
                         </v-col>

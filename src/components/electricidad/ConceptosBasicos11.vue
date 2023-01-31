@@ -10,13 +10,13 @@
                     </v-row>
 
                     <v-row justify="center" class="mx-10 bg-color rounded-xl">
-                        <v-col cols="12">
+                        <v-col cols="12" class="animate__animated animate__backInLeft">
                             <p class="font-avenir font-size-30">¿Y qué pasa si tengo panales fotovoltaícos?</p>
                         </v-col>
-                        <v-col cols="1" align-self="center" align="center">
+                        <v-col cols="1" align-self="center" align="center" class="animate__animated animate__backInLeft">
                             <p class="vertical-text font-avenir font-weight-bold font-size-30">Consumo Historico</p>
                         </v-col>
-                        <v-col cols="11">
+                        <v-col cols="11" class="animate__animated animate__backInRight">
                             <v-img :src="consumo" max-height="450" @click="images.visible = !images.visible"></v-img>
                         </v-col>
                     </v-row>

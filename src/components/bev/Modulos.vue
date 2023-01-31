@@ -10,7 +10,7 @@
                     </v-row>
 
                     <v-row justify="center" class="h-100 mx-10 px-5 py-5 rounded-xl bg-boxstep-content">
-                        <v-col cols="3">
+                        <v-col cols="3" class="animate__animated animate__backInDown">
                             <v-card class="rounded-lg" height="580">
                                 <template v-slot:title>
                                     <div class="bg-yellow-p rounded-lg">
@@ -31,7 +31,7 @@
                                 </v-card-text>
                             </v-card>
                         </v-col>
-                        <v-col cols="3">
+                        <v-col cols="3" class="animate__animated animate__backInUp">
                             <v-card class="rounded-lg" height="580">
                                 <template v-slot:title>
                                     <div class="bg-yellow-p rounded-lg">
@@ -56,7 +56,7 @@
                                 </v-card-text>
                             </v-card>
                         </v-col>
-                        <v-col cols="3">
+                        <v-col cols="3" class="animate__animated animate__backInDown">
                             <v-card class="rounded-lg" height="580">
                                 <template v-slot:title>
                                     <div class="bg-yellow-p rounded-lg">
@@ -81,7 +81,7 @@
                                 </v-card-text>
                             </v-card>
                         </v-col>
-                        <v-col cols="3">
+                        <v-col cols="3" class="animate__animated animate__backInUp">
                             <v-card class="rounded-lg" height="580">
                                 <template v-slot:title>
                                     <div class="bg-yellow-p rounded-lg">

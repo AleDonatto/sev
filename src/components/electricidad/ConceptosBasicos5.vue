@@ -10,18 +10,18 @@
                     </v-row>
 
                     <v-row justify="center" class="rounded-xl bg-color mx-10">
-                        <v-col cols="12" align="center">
+                        <v-col cols="12" align="center" class="animate__animated animate__backInDown">
                             <p class="font-avenir font-size-30"><span class="font-weight-bold">Amper:</span> unidad de medición de la intensidad de la corriente eléctrica</p>
                         </v-col>
                         
-                        <v-col cols="5" align="center" class="mt-5">
+                        <v-col cols="5" align="center" class="animate__animated animate__backInLeft mt-5">
                             <v-img :src="cubito" max-height="230"></v-img>
                             <p class="font-weight-bold font-avenir font-size-30 mt-5">5 Volts, 1 Amper </p>
                         </v-col>
                         <v-col cols="1">
                             <hr class="vertical-line">
                         </v-col>
-                        <v-col cols="5" class="mt-5">
+                        <v-col cols="5" class="mt-5 animate__animated animate__backInRight">
                             <v-img :src="cubo" max-height="230"></v-img>
                             <p class="font-avenir font-size-30 font-weight-bold text-center mt-5">5 Volts, 2.1 Amper</p>
                         </v-col>

@@ -10,10 +10,10 @@
                     </v-row>
 
                     <v-row justify="center" class="bg-color mx-10 rounded-xl">
-                        <v-col cols="12">
+                        <v-col cols="12" class="animate__animated animate__backInDown">
                             <p class="text-center font-avenir font-size-36">El tiempo de carga de una batería dependerá principalmente de:</p>
                         </v-col>
-                        <v-col cols="12" align="start" class="px-10">
+                        <v-col cols="12" align="start" class="px-10 animate__animated animate__backInLeft">
                             <p class="font-size-30"><span class="font-weight-bold pr-3">1</span> La Capacidad de batería (kWh)</p>
                             <p class="font-size-30"><span class="text-yellow-p font-weight-bold pr-3">2</span> Estado de carga (% de bateria)</p>
                             <p class="font-size-30"><span class="font-weight-bold pr-3">3</span> La potencia del cargador utilizado (Voltaje X Amperaje/1,000) kW.</p>

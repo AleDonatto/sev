@@ -10,10 +10,10 @@
                     </v-row>
 
                     <v-row justify="center" class="bg-color rounded-xl mx-10">
-                        <v-col cols="12" align="center">
+                        <v-col cols="12" align="center" class="animate__animated animate__backInDown">
                             <h1 class="">Inversior de corriente o convertidor de corriente</h1>
                         </v-col>
-                        <v-col cols="5">
+                        <v-col cols="5" class="animate__animated animate__backInLeft">
                             <v-img :src="convertidor" max-height="220"></v-img>
                             <p class="font-avenir font-size-20 mx-7 mt-5">Convertidor de corriente: cambia de corriente alterna a corriente directa.</p>
                             <p class="font-avenir font-size-20 mx-7 mt-3 mb-5">
@@ -23,7 +23,7 @@
                         <v-col cols="1">
                             <hr class="vertical-line">
                         </v-col>
-                        <v-col cols="5" class="">
+                        <v-col cols="5" class="animate__animated animate__backInRight">
                             <v-img :src="inversor" max-height="207"></v-img>
                             <p class="font-avenir font-size-20 mx-7 mt-5">Inversor de corriente: cambia de corriente directa a corriente alterna.</p>
                             <p class="font-avenir font-size-20 mx-7 mt-3 mb-5">

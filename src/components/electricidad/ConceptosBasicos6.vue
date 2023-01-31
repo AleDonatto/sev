@@ -10,20 +10,19 @@
                     </v-row>
 
                     <v-row class="rounded-xl bg-color mx-10">
-                        <v-col cols="12" align="center">
+                        <v-col cols="12" align="center" class="animate__animated animate__backInDown">
                             <p class="font-avenir font-size-34"><span class="font-weight-bold">Watt:</span> unidad de medición de la potencia eléctrica</p>
                             <p class="font-weight-bold font-avenir font-size-34">Watt = Volt X Amper</p>
                         </v-col>
 
-
-                        <v-col cols="5" align="center">
+                        <v-col cols="5" align="center" class="animate__animated animate__backInLeft">
                             <v-img :src="foco" max-height="230"></v-img>
                             <p class="font-weight-bold font-avenir font-size-24">60 W</p>
                         </v-col>
                         <v-col cols="1" align="center">
                             <hr class="vertical-line">
                         </v-col>
-                        <v-col cols="5" align="center">
+                        <v-col cols="5" align="center" class="animate__animated animate__backInRight">
                             <v-img :src="foco" max-height="230"></v-img>
                             <p class="font-weight-bold font-avenir text-center font-size-24">100 W</p>
                         </v-col>

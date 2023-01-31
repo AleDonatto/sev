@@ -7,16 +7,16 @@
                         <v-col cols="2" align="start">
                             <v-img :src="user" max-height="170"></v-img>
                         </v-col>
-                        <v-col cols="2" align="end">
+                        <v-col cols="2" align="end" class="animate__animated animate__backInDown">
                             <v-img :src="bateriasev" max-height="310" class="position-image"></v-img>
                         </v-col>
                     </v-row>
 
                     <v-row justify="center" class="rounded-xl mx-10 bg-color position-box">
-                        <v-col cols="12" align="center" class="mt-8">
+                        <v-col cols="12" align="center" class="mt-8 animate__animated animate__backInLeft" >
                             <p class="font-avenir font-size-30">Las <span class="font-weight-bold">características</span> de un bateria del <span class="font-weight-bold text-yellow-p">para un vehículo eléctrico:</span></p>
                         </v-col>
-                        <v-col cols="9" class="my-10">
+                        <v-col cols="9" class="my-10 animate__animated animate__backInRight" >
                             <div class="my-2">
                                 <div class="d-inline">
                                     <p class="font-size-30"><span class="font-weight-bold pr-3">1</span> Tecnología: Litio fosfato-ferroso LiFePO4</p>

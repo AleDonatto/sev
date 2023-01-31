@@ -9,7 +9,7 @@
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" class="mx-10 px-5 py-5 rounded-xl bg-boxstep-content">
+                    <v-row justify="center" class="mx-10 px-5 py-5 rounded-xl bg-boxstep-content animate__animated animate__backInLeft">
                         <v-col cols="3">
                             <v-img :src="conector1" max-height="240"></v-img>
                         </v-col>

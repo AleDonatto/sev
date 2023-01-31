@@ -10,19 +10,19 @@
                     </v-row>
 
                     <v-row justify="center" class="rounded-xl bg-color mx-10 px-5">
-                        <v-col cols="12" align="start">
+                        <v-col cols="12" align="start" class="animate__animated animate__backInDown">
                             <p class="font-avenir font-size-30">El costo de carga de una bateria dependerá de: </p>
                         </v-col>
-                        <v-col cols="10">
+                        <v-col cols="10" class="animate__animated animate__backInLeft">
                             <p class="font-avenir font-size-24"><span class="font-weight-bold pr-3">1</span> La capacidad de la bateria (kWh) y su estado de carga.</p>
                             <p class="font-avenir font-size-24"><span class="font-weight-bold text-yellow-p pr-3">2</span> El precio por kWh sumistrado.</p>
                         </v-col>
 
-                        <v-col cols="12">
+                        <v-col cols="12" class="animate__animated animate__backInLeft">
                             <p class="font-avenir font-size-30">¿Cuanto cuesta cargar 20% hasta 100% de la bateria de un SEV E-WAN Bold (29.4 kWh)?</p>
                         </v-col>
 
-                        <v-col cols="9">
+                        <v-col cols="9" class="animate__animated animate__backInLeft">
                             <p class="font-avenir font-size-24">Consumo básico: $0.859/kWh 🡪 23.5 X 0.859 = $20.18.</p>
                             <p class="font-size-24 font-avenir">Consumo excedente: $3.042/kWh 🡪 23.5 X 3.042 = $71.48.</p>
                         </v-col>

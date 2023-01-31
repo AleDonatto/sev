@@ -10,7 +10,7 @@
                         <v-col cols="9"></v-col>
                     </v-row>
 
-                    <v-row justify="center" class="mt-4 mx-5">
+                    <v-row justify="center" class="mt-4 mx-5 animate__animated animate__backInLeft">
                         <v-col cols="3">
                             <v-img :src="combustion" max-height="450"></v-img>
                         </v-col>
@@ -25,7 +25,7 @@
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" class="bg-gradient mx-5">
+                    <v-row justify="center" class="bg-gradient mx-5 animate__animated animate__backInRight">
                         <v-col cols="3" align="center">
                             <p class="font-weight-bold font-avenir font-size-30">Altas</p>
                         </v-col>
@@ -38,36 +38,36 @@
                     </v-row>
 
                     <!--ICE-->
-                    <v-row justify="center">
+                    <v-row justify="center" v-if="tipos.ice">
                         <v-col cols="12">
                             <v-img :src="icm7" max-height="650"></v-img>
                         </v-col>
                     </v-row>
                     <!--MHEV-->
-                    <v-row justify="center">
+                    <v-row justify="center" v-if="tipos.mhev">
                         <v-col cols="12">
                             <v-img :src="mhev7" max-height="650"></v-img>
                         </v-col>
                     </v-row>
                     <!--HEV-->
-                    <v-row justify="center">
+                    <v-row justify="center" v-if="tipos.hev">
                         <v-col cols="12">
                             <v-img :src="hev7" max-height="650"></v-img>
                         </v-col>
                     </v-row>
                     <!--PHEV-->
-                    <v-row justify="center">
+                    <v-row justify="center" v-if="tipos.phev">
                         <v-col cols="12">
                             <v-img :src="phev7" max-height="650"></v-img>
                         </v-col>
                     </v-row>
                     <!--BEV-->
-                    <v-row justify="center">
+                    <v-row justify="center" v-if="tipos.bev">
                         <v-col cols="12">
                             <v-img :src="bev7" max-height="650"></v-img>
                         </v-col>
                     </v-row>
-                    <v-row justify="center">
+                    <v-row justify="center" v-if="tipos.fcev">
                         <v-col cols="12">
                             <v-img :src="fcev7" max-height="650"></v-img>
                         </v-col>
@@ -93,7 +93,7 @@ import bev7 from '@/assets/evolucion/pev/pev7.png'
 import fcev7 from '@/assets/evolucion/fcev/fcev7.png'
 import { useCounterStore } from '../../stores/counter';
 import { storeToRefs } from 'pinia';
-import { onMounted } from '@vue/runtime-core';
+import { onMounted, reactive } from '@vue/runtime-core';
 
 const store = useCounterStore()
 const {canNext} = storeToRefs(store)
@@ -102,7 +102,15 @@ onMounted(() => {
     canNext.value = true
 })
 
-
+const tipos = reactive({
+    motors: true,
+    ice: false,
+    mhev: false,
+    hev: false,
+    phev: false,
+    bev: false,
+    fcev: false
+})
 </script>
 
 <style scoped>

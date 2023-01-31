@@ -6,7 +6,9 @@
           <v-col cols="12" class="m-0 p-0" >
             <v-row>
               <v-col cols="4" align="center">
-                <v-img :src="logoS" max-height="310"></v-img>
+                <div class="size-content bg-logo">
+                  <v-img :src="logoS" max-height="310" class="position-logo"></v-img>
+                </div>
               </v-col>
               <v-col cols="8" v-if="section === 2">
                 <v-img :src="evolucion" :max-height="windowHeight>900 ? '745': '495'" contain :class="{'position-menu': windowHeight>900, 'position-menu-md': windowHeight < 700}"></v-img>
@@ -65,13 +67,12 @@
 </script>
   
 <style scoped>
-  .bg-evolucion{
-    background-image: url('../assets/welcome/pruebasEvolucion.png');
-    background-size: contain;
+  .bg-logo{
+    background-image: url('../assets/welcome/fondo-left.png');
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    max-width: 100%;
-    min-height: 880px;
+    margin-top: -1vh;
   }
 
   .bg-evolucion-md{
@@ -82,6 +83,16 @@
     height: 610px;
     margin-top: -10px;
   }
+
+  .size-content{
+    width: 1025px;
+    height: 450px;
+  }
+  .position-logo{
+    margin-left: -40vh;
+    padding-top: 10vh;
+  }
+
 
   .margin-left{
     margin-left: 5vh;

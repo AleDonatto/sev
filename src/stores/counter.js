@@ -33,5 +33,20 @@ export const useCounterStore = defineStore('store', () => {
     NextStep()
   }
 
-  return { count, step, windowSize, windowHeight, canNext, section, audioInitialized, answeredQuiz1, answeredQuiz2, answeredQuiz3, increment, NextStep, PreviousStep, SetStep }
+  return { 
+    count, 
+    step, 
+    windowSize, 
+    windowHeight, 
+    canNext, 
+    section, 
+    audioInitialized, 
+    answeredQuiz1, 
+    answeredQuiz2, 
+    answeredQuiz3, 
+    increment, 
+    NextStep, 
+    PreviousStep, 
+    SetStep 
+  }
 })

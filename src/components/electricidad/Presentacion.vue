@@ -5,7 +5,7 @@
                 <v-row :class="{'mt-3':windowHeight > 900}">
                     <v-col cols="12" class="" :class="{'bg-presentacion': windowHeight> 900, 'bg-presentacion-md': windowHeight<700}">
                         <v-row class="">
-                            <v-col cols="4" class="mt-10" >
+                            <v-col cols="4" class="margin-top-text">
                                 <h1 class="font-lato text-uppercase text-white text-center" :class="{'font-size-72': windowHeight>900, 'font-size-48': windowHeight<700}">electricidad</h1>
                                 <p class="text-white font-size-50 ml-7" :class="{'font-size-50': windowHeight > 900, 'font-size-36': windowHeight < 700}">Conceptos básicos para vehículos eléctricos</p>
                                 <p class="text-white">{{windowHeight}}</p>
@@ -97,5 +97,10 @@ function continueStep(){
 .margin-left{
     margin-left: 270px;
     margin-top: -10px;
+}
+
+.margin-top-text{
+    margin-top: 10vh;
+    margin-left: 7vh;
 }
 </style>

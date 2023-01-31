@@ -10,7 +10,7 @@
                     </v-row>
 
                     <v-row class="mt-10 rounded-xl mx-10 bg-color" justify="center">
-                        <v-col cols="5" align="center">
+                        <v-col cols="5" align="center" class="animate__animated animate__backInLeft">
                             <p class="font-weight-bold font-size-30 font-avenir">Corriente Alterna (CA)</p>
                             <v-img :src="talalterno" max-height="320" class="mt-0"></v-img>
                             <ul class="w-50 mt-2">
@@ -22,7 +22,7 @@
                         <v-col cols="1">
                             <hr class="line-vertical">
                         </v-col>
-                        <v-col cols="5">
+                        <v-col cols="5" class="animate__animated animate__backInRight">
                             <p class="font-weight-bold font-size-30 font-avenir text-center">Corriente Directa (CD)</p>
                             <v-img :src="taldirecta" max-height="320" class="mt-5"></v-img>
                             <ul class="w-50 mt-2">

@@ -10,12 +10,12 @@
                     </v-row>
 
                     <v-row justify="center" class="rounded-xl mt-10 bg-color mx-10">
-                        <v-col cols="12">
+                        <v-col cols="12" class="animate__animated animate__backInDown">
                             <p class="text-center font-size-36 font-avenir">
                                 <span class="font-weight-bold">Volt:</span> unidad de medicion de fuerza eléctrica.
                             </p>
                         </v-col>
-                        <v-col cols="5" align="center">
+                        <v-col cols="5" align="center" class="animate__animated animate__backInLeft">
                             <p class="font-weight-bold font-avenir font-size-34">Corriente Directa</p>
                             <v-row justify="center">
                                 <v-col cols="6">
@@ -31,7 +31,7 @@
                         <v-col cols="1">
                             <hr class="line-vertical">
                         </v-col>
-                        <v-col cols="5">
+                        <v-col cols="5" class="animate__animated animate__backInRight">
                             <p class="font-weight-bold font-avenir text-center font-size-34">Corriente Alterna</p>
                             <v-row justify="center">
                                 <v-col cols="12">

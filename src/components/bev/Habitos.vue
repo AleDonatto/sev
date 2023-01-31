@@ -10,13 +10,13 @@
                     </v-row>
 
                     <v-row justify="center" class="bg-boxstep-content rounded-xl mx-10 px-5 py-5">
-                        <v-col cols="12">
+                        <v-col cols="12" class="animate__animated animate__backInDown">
                             <p class="font-avenir font-size-22">
                                 <span class="font-weight-bold">El comportamiento o hábitos de recarga de un</span> <span class="text-yellow-p font-weight-bold">BEV</span> por parte de un cliente son 
                                 muy distintos a los <span class="fonbt-weight-bold">hábitos de recarga de un tanque de combustible.</span>
                             </p>
                         </v-col>
-                        <v-col cols="4">
+                        <v-col cols="4" class="animate__animated animate__backInLeft">
                             <ul class="font-avenir font-size-22 px-7">
                                 <li>
                                     La recarga de un vehículo eléctrico se puede integrar de manera fácil al día a día del usuario 
@@ -27,7 +27,7 @@
                                 </li>
                             </ul>
                         </v-col>
-                        <v-col cols="8" align="center" align-self="center">
+                        <v-col cols="8" align="center" align-self="center" class="animate__animated animate__backInRight">
                             <v-img :src="habitoscar" max-height="310"></v-img>
                         </v-col>
                     </v-row>

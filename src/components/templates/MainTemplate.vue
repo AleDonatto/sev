@@ -23,6 +23,7 @@
 
 <script setup>
 import LogoSev from '@/assets/logosev.png';
+import fondo from '@/assets/welcome/fondo-left.png'
 import { storeToRefs } from 'pinia';
 import { useCounterStore } from '../../stores/counter';
 
@@ -31,6 +32,14 @@ const {windowHeight, windowSize} = storeToRefs(store)
 </script>
 
 <style scoped>
+.bg-fondo{
+    background-image: url('../assets/welcome/pruebasEvolucion.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    max-width: 100%;
+    min-height: 880px;
+}
 .size-height{
     height: 162px !important;
 }

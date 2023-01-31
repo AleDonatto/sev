@@ -10,7 +10,7 @@
                     </v-row>
 
                     <v-row justify="center" class="mx-10 bg-color rounded-xl">
-                        <v-col cols="12">
+                        <v-col cols="12" class="animate__animated animate__backInDown">
                             <p class="font-avenir font-size-24">
                                 <span class="font-weight-bold">kWh:</span> El kilowatt hora es la undad de medida
                                 de medida que se usa para medir el consumom energético.
@@ -21,7 +21,7 @@
                             </p>
                         </v-col>
 
-                        <v-col cols="12" align="center">
+                        <v-col cols="12" align="center" class="animate__animated animate__backInRight">
                             <v-img :src="table" max-height="350"></v-img>
                         </v-col>
                     </v-row>

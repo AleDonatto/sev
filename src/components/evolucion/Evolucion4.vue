@@ -9,7 +9,7 @@
                         </v-col>
                     </v-row>
 
-                    <v-row no-gutters class="mt-2">
+                    <v-row no-gutters class="mt-2 animate__animated animate__backInLeft">
                         <v-col cols="6">
                             <v-img :src="camioneta" max-height="220"></v-img>
                         </v-col>
@@ -25,7 +25,7 @@
                         </v-col>
                     </v-row>
 
-                    <v-row no-gutters>
+                    <v-row no-gutters class="animate__animated animate__backInRight">
                         <v-col cols="12" align-self="center">
                             <div class="text-center bg-gray">
                                 <span class="font-avenir font-size-48 text-white">Autos eléctricos (BEV) y otras tecnologías 0 emisiones</span>
