@@ -22,11 +22,16 @@
                         <v-col cols="4" align-self="center">
                             <v-row no-gutters>
                                 <v-col cols="2">
-                                    <v-img :src="one" max-height="80" class="mt-6"></v-img>
+                                    <v-img :src="one" max-height="80" class="mt-6" :class="{'mt-6':windowHeight>900, 'mt-0':windowHeight<700}"></v-img>
                                 </v-col>
                                 <v-col cols="10">
-                                    <div  class="size-box-drop-lg" @drop="dropZoneOne" @dragover="zoneDropOver" 
-                                    :class="{'border-box-zone':answers.a1 === false, 'border-box-zone-correct text-center pt-10':answers.a1===true}">
+                                    <div @drop="dropZoneOne" @dragover="zoneDropOver" 
+                                    :class="{
+                                        'border-box-zone':answers.a1 === false, 
+                                        'border-box-zone-correct text-center pt-5':answers.a1===true,
+                                        'size-box-drop-lg': windowHeight>900, 
+                                        'size-box-drop-sm':windowHeight<700
+                                    }">
                                             <!--<drag :transfer-data="{name:'hidrogeno-gasolina-electrico'}" :effect-allowed="['move']" drop-effect="move" >
                                                 <p>Arrastre aqui</p>
                                             </drag>-->
@@ -40,8 +45,13 @@
                                     <v-img :src="two" max-height="80" class="mt-6"></v-img>
                                 </v-col>
                                 <v-col cols="10">
-                                    <div class="size-box-drop-lg"  @drop="dropZoneTwo" @dragover="zoneDropOverTwo" 
-                                    :class="{'border-box-zone':answers.a2 === false, 'border-box-zone-correct text-center pt-10':answers.a2 === true}">
+                                    <div @drop="dropZoneTwo" @dragover="zoneDropOverTwo" 
+                                    :class="{
+                                        'border-box-zone':answers.a2 === false, 
+                                        'border-box-zone-correct text-center pt-5':answers.a2 === true,
+                                        'size-box-drop-lg': windowHeight>900, 
+                                        'size-box-drop-sm':windowHeight<700
+                                    }">
                                             <!--<drag :transfer-data="{name: 'vehiculos-celda-hidorgeno'}" :effect-allowed="['move']" drop-effect="move">
                                                 <p>Arrastre aqui</p>
                                             </drag>-->
@@ -55,24 +65,23 @@
                                     <v-img :src="three" max-height="80" class="mt-6"></v-img>
                                 </v-col>
                                 <v-col cols="10">
-                                    <div class="size-box-drop-lg" @drop="dropZoneThree" @dragover="zoneDropOverThree" 
+                                    <div @drop="dropZoneThree" @dragover="zoneDropOverThree" 
                                     :class="{
                                         'border-box-zone': answers.a3 === false, 
-                                        'border-box-zone-correct text-center pt-10':answers.a3 === true}">
+                                        'border-box-zone-correct text-center pt-5':answers.a3 === true,
+                                        'size-box-drop-lg': windowHeight>900, 
+                                        'size-box-drop-sm':windowHeight<700
+                                    }">
                                         <!--<drag :transfer-data="{name: 'electrico-gasolina-electrico'}" :effect-allowed="['move']" drop-effect="move">
                                             <p>Arrastre aqui</p>
                                         </drag>-->
                                     </div>
                                 </v-col>
                             </v-row>
-                            <div class="d-flex">
-                                
-                                
-                            </div>
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" :class="{'mt-15': windowHeight > 900, 'mt-4' : windowHeight < 700}">
+                    <v-row justify="center" :class="{'mt-15': windowHeight > 900, 'mt-1' : windowHeight < 700}">
                         <v-col cols="2">
                             <div class="text-center border-box-drag px-5 py-3" draggable="true" @dragstart="drag" v-if="drags.d1 === true">
                                 <p id="gasolina_electricos">MCI híbridos hidrógeno-gasolina y eléctricos</p>

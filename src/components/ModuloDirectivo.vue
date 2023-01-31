@@ -6,7 +6,7 @@
           <v-col cols="12" class="m-0 p-0" >
             <v-row>
               <v-col cols="4" align="center">
-                <div class="size-content bg-logo">
+                <div class="" :class="{'size-content bg-logo':windowHeight>900, 'size-content-md bg-logo-md': windowHeight<700}">
                   <v-img :src="logoS" max-height="310" class="position-logo"></v-img>
                 </div>
               </v-col>
@@ -75,19 +75,25 @@
     margin-top: -1vh;
   }
 
-  .bg-evolucion-md{
-    background-image: url('../assets/welcome/pruebasEvolucion.png');
+  .bg-logo-md{
+    background-image: url('../assets/welcome/fondo-left.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 610px;
-    margin-top: -10px;
+    margin-top: -5vh;
   }
 
   .size-content{
     width: 1025px;
     height: 450px;
   }
+
+  .size-content-md{
+    width: 770px;
+    height: 320px;
+  }
+
+
   .position-logo{
     margin-left: -40vh;
     padding-top: 10vh;

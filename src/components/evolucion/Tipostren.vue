@@ -10,30 +10,30 @@
                         <v-col cols="9"></v-col>
                     </v-row>
 
-                    <v-row justify="center" class="mt-4 mx-5 animate__animated animate__backInLeft">
+                    <v-row justify="center" class="mx-5 animate__animated animate__backInLeft" :class="{'mt-4': windowHeight>900, 'mt-0': windowHeight<700}">
                         <v-col cols="3">
-                            <v-img :src="combustion" max-height="450"></v-img>
+                            <v-img :src="combustion" :max-height="windowHeight>900 ? '450': '270'"></v-img>
                         </v-col>
                         <v-col cols="3">
-                            <v-img :src="hibridos" max-height="450"></v-img>
+                            <v-img :src="hibridos" :max-height="windowHeight>900 ? '450': '270'"></v-img>
                         </v-col>
                         <v-col cols="3">
-                            <v-img :src="electricos" max-height="450"></v-img>
+                            <v-img :src="electricos" :max-height="windowHeight>900 ? '450': '270'"></v-img>
                         </v-col>
                         <v-col cols="3">
-                            <v-img :src="otros" max-height="450"></v-img>
+                            <v-img :src="otros" :max-height="windowHeight>900 ? '450': '270'"></v-img>
                         </v-col>
                     </v-row>
 
                     <v-row justify="center" class="bg-gradient mx-5 animate__animated animate__backInRight">
                         <v-col cols="3" align="center">
-                            <p class="font-weight-bold font-avenir font-size-30">Altas</p>
+                            <p class="font-weight-bold font-avenir" :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">Altas</p>
                         </v-col>
                         <v-col cols="3" align="center">
-                            <p class="font-weight-bold font-avenir font-size-30">Medias/bajas</p>
+                            <p class="font-weight-bold font-avenir" :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">Medias/bajas</p>
                         </v-col>
                         <v-col cols="6" align="center">
-                            <p class="font-weight-bold font-avenir font-size-30">Cero emisiones</p>
+                            <p class="font-weight-bold font-avenir" :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">Cero emisiones</p>
                         </v-col>
                     </v-row>
 
@@ -96,7 +96,7 @@ import { storeToRefs } from 'pinia';
 import { onMounted, reactive } from '@vue/runtime-core';
 
 const store = useCounterStore()
-const {canNext} = storeToRefs(store)
+const {canNext, windowHeight, windowSize} = storeToRefs(store)
 
 onMounted(() => {
     canNext.value = true

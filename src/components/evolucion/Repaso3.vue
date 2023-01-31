@@ -8,7 +8,7 @@
                             <v-img :src="user" max-height="170"></v-img>
                         </v-col>
                         <v-col cols="9" align="start">
-                            <div class="mt-10 box-color-instructions py-6 px-4">
+                            <div class="box-color-instructions py-6 px-4" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                                 <p class="font-avenir font-size-26">
                                     Las siglas <span class="text-yellow front-weight-bold">BEV</span> (por su acrónimo en inglés), corresponden a:
                                 </p>
@@ -16,8 +16,8 @@
                         </v-col>
                     </v-row>
 
-                    <v-row class="mt-10 mx-16" justify="center">
-                        <v-col cols="12" lg="4" md="6">
+                    <v-row class="mx-16" justify="center" :class="{'mt-10': windowHeight>900, 'mt-0': windowHeight<700}">
+                        <v-col cols="12" lg="5" md="6">
                             <v-radio-group v-if="answeredQuiz3 === false">
                                 <v-radio value="battery-efficient" class="my-4" color="#FDBD31" @input="answers.a1 = $event.target.value" >
                                     <template v-slot:label>
@@ -55,7 +55,7 @@
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" class="mt-15">
+                    <v-row justify="center" :class="{'mt-15': windowHeight>900, 'mt-0': windowHeight<700}">
                         <v-col cols="2">
                             <v-btn class="" rounded color="#FDBD31" :disabled="answers.a1 !== 'battery-efficient'"
                             @click="checkQuiz">
@@ -79,7 +79,7 @@ import { useRouter, useRoute } from 'vue-router';
 
 const store = useCounterStore()
 const {NextStep} = store
-const {answeredQuiz3,canNext} = storeToRefs(store)
+const {answeredQuiz3,canNext, windowHeight, windowSize} = storeToRefs(store)
 const router = useRoute()
 
 onMounted(() => {

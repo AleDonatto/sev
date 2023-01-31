@@ -9,17 +9,17 @@
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" class="rounded-xl mt-10 bg-color mx-10">
+                    <v-row justify="center" class="rounded-xl bg-color mx-10" :class="{'mt-10':windowHeight>900, 'mt-0':windowHeight<700}">
                         <v-col cols="12" class="animate__animated animate__backInDown">
-                            <p class="text-center font-size-36 font-avenir">
+                            <p class="text-center font-avenir" :class="{'font-size-36':windowHeight>900, 'font-size-28':windowHeight<700}">
                                 <span class="font-weight-bold">Volt:</span> unidad de medicion de fuerza eléctrica.
                             </p>
                         </v-col>
                         <v-col cols="5" align="center" class="animate__animated animate__backInLeft">
-                            <p class="font-weight-bold font-avenir font-size-34">Corriente Directa</p>
+                            <p class="font-weight-bold font-avenir" :class="{'font-size-36':windowHeight>900, 'font-size-28':windowHeight<700}">Corriente Directa</p>
                             <v-row justify="center">
                                 <v-col cols="6">
-                                    <v-img :src="pila" max-height="220"></v-img>
+                                    <v-img :src="pila" :max-height="windowHeight >900 ? '220': '150'"></v-img>
                                     <p class="font-weight-bold font-avenir font-size-24">9 V</p>
                                 </v-col>
                                 <v-col cols="6">
@@ -32,11 +32,11 @@
                             <hr class="line-vertical">
                         </v-col>
                         <v-col cols="5" class="animate__animated animate__backInRight">
-                            <p class="font-weight-bold font-avenir text-center font-size-34">Corriente Alterna</p>
+                            <p class="font-weight-bold font-avenir text-center" :class="{'font-size-36':windowHeight>900, 'font-size-28':windowHeight<700}">Corriente Alterna</p>
                             <v-row justify="center">
                                 <v-col cols="12">
-                                    <v-img :src="contacto" max-height="220"></v-img>
-                                    <v-row justify="center" class="mx-10">
+                                    <v-img :src="contacto" :max-height="windowHeight >900 ? '220': '150'" ></v-img>
+                                    <v-row justify="center" :class="{'mx-10':windowHeight>900, 'mx-2': windowHeight<700}">
                                         <v-col cols="6" align="center">
                                             <p class="font-avenir">El voltaje hace referencia a la “cantidad” de corriente</p>
                                         </v-col>
@@ -65,7 +65,7 @@ import { storeToRefs } from 'pinia';
 import { onMounted } from '@vue/runtime-core';
 
 const store = useCounterStore()
-const {canNext} = storeToRefs(store)
+const {canNext, windowHeight, windowSize} = storeToRefs(store)
 
 onMounted(() => {
     canNext.value = true 

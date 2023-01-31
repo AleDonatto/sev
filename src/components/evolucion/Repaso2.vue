@@ -8,40 +8,40 @@
                             <v-img :src="user" max-height="170"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="mt-10 border-box-instructions py-6 px-4">
-                                <p class="font-avenir font-size-24">Acomoda de mayor a menor generación de emisiones contaminantes las siguentes tecnologías</p>
+                            <div class="border-box-instructions py-6 px-4" :class="{'mt-10': windowHeight>900, 'mt-2': windowHeight<700}">
+                                <p class="font-avenir" :class="{'font-size-24':windowHeight>900, 'font-size-19': windowHeight<700}">Acomoda de mayor a menor generación de emisiones contaminantes las siguentes tecnologías</p>
                             </div>
                         </v-col>
                     </v-row>
 
-                    <v-row class="mt-10 mx-16" justify="center" v-if="answeredQuiz2 === false">
+                    <v-row class="mx-16" :class="{'mt-10': windowHeight>900, 'mt-0': windowHeight<700}" justify="center" v-if="answeredQuiz2 === false">
                         <v-col cols="5">
                             <v-row>
-                                <v-col cols="12">
+                                <v-col cols="12" :class="{'margin-top-md':windowHeight<700}">
                                     <div class="d-flex">
                                         <p class="text-yellow font-avenir font-size-24 font-weight-bold mx-2">1</p>
                                         <div id="drop1" class="box-zone-drop size-zone-drop" @drop="dropZoneOne" @dragover="zoneDropOver"></div>
                                     </div>
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" :class="{'margin-top-md':windowHeight<700}">
                                     <div class="d-flex">
                                         <p class="text-yellow font-avenir font-size-24 font-weight-bold mx-2">2</p>
                                         <div id="drop2" class="box-zone-drop size-zone-drop" @drop="dropZoneTwo" @dragover="zoneDropOverTwo"></div>
                                     </div>
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" :class="{'margin-top-md':windowHeight<700}">
                                     <div class="d-flex">
                                         <p class="text-yellow font-avenir font-size-24 font-weight-bold mx-2">3</p>
                                         <div id="drop3" class="box-zone-drop size-zone-drop" @drop="dropZoneThree" @dragover="zoneDropOverThree"></div>
                                     </div>
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" :class="{'margin-top-md':windowHeight<700}">
                                     <div class="d-flex">
                                         <p class="text-yellow font-avenir font-size-24 font-weight-bold mx-2">4</p>
                                         <div id="drop4" class="box-zone-drop size-zone-drop" @drop="dropZoneFour" @dragover="zoneDropOverFour"></div>
                                     </div>
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" :class="{'margin-top-md':windowHeight<700}">
                                     <div class="d-flex">
                                         <p class="text-yellow font-avenir font-size-24 font-weight-bold mx-2">5</p>
                                         <div id="drop5" class="box-zone-drop size-zone-drop" @drop="dropZoneFive" @dragover="zoneDropOverFive"></div>
@@ -52,27 +52,27 @@
                         <v-col cols="2"></v-col>
                         <v-col cols="5" align-self="center">
                             <v-row>
-                                <v-col cols="12">
+                                <v-col cols="12" :class="{'margin-top-md':windowHeight<700}">
                                     <div class="box-zone-drag size-zone-drop text-center" @dragstart="drag" draggable="true" v-if="answers.a2 !== true">
                                         <p class="pa-2" id="electronicos">Eléctronicos</p>
                                     </div>
                                 </v-col>
-                                <v-col cols="12" align-self="center">
+                                <v-col cols="12" align-self="center" :class="{'mt-0':windowHeight<700}">
                                     <div class="box-zone-drag size-zone-drop text-center" @dragstart="drag" draggable="true" v-if="answers.a4 !== true">
                                         <p class="pa-2" id="hibridos_enchufables">Híbridos Enchufables</p>
                                     </div>
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" :class="{'margin-top-md':windowHeight<700}">
                                     <div class="box-zone-drag size-zone-drop text-center" @dragstart="drag" draggable="true" v-if="answers.a5 !== true">
                                         <p class="pa-2" id="semihibridos">Semihíbridos</p>
                                     </div>
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" :class="{'margin-top-md':windowHeight<700}">
                                     <div class="box-zone-drag size-zone-drop text-center" @dragstart="drag" draggable="true" v-if="answers.a3 !== true">
                                         <p class="pa-2" id="hibridos_fuertes">Híbridos Fuertes</p>
                                     </div>
                                 </v-col>
-                                <v-col cols="12">
+                                <v-col cols="12" :class="{'margin-top-md':windowHeight<700}">
                                     <div class="box-zone-drag size-zone-drop text-center" @dragstart="drag" draggable="true" v-if="answers.a1 !== true">
                                         <p class="pa-2" id="ice">ICE</p>
                                     </div>
@@ -129,7 +129,7 @@
                         <v-col cols="5" align-self="center">
                         </v-col>
                     </v-row>
-                    <v-row justify="center" class="mt-15">
+                    <v-row justify="center" :class="{'mt-15': windowHeight>900, 'mt-0': windowHeight<700}">
                         <v-col cols="2">
                             <v-btn class="" rounded color="#FDBD31" :disabled="(answers.a1 === false && answers.a2 === false && answers.a3 === false && answers.a4 === false && answers.a5 === false)"
                             @click="checkQuiz">
@@ -153,7 +153,7 @@ import { useRouter } from 'vue-router';
 
 const store = useCounterStore()
 const {NextStep} = store
-const {canNext, answeredQuiz2} = storeToRefs(store)
+const {canNext, answeredQuiz2, windowHeight, windowSize} = storeToRefs(store)
 
 const router = useRouter()
 
@@ -308,5 +308,9 @@ function checkQuiz(){
 .size-zone-drop{
     height: 45px;
     width: 100%;
+}
+
+.margin-top-md{
+    margin-top: -1vh;
 }
 </style>

@@ -11,18 +11,18 @@
 
                     <v-row justify="center" class="rounded-xl bg-color mx-10">
                         <v-col cols="12" align="center" class="animate__animated animate__backInDown">
-                            <p class="font-avenir font-size-30"><span class="font-weight-bold">Amper:</span> unidad de medición de la intensidad de la corriente eléctrica</p>
+                            <p class="font-avenir" :class="{'font-size-30':windowHeight>900, 'font-size-26':windowHeight<700}"><span class="font-weight-bold">Amper:</span> unidad de medición de la intensidad de la corriente eléctrica</p>
                         </v-col>
                         
                         <v-col cols="5" align="center" class="animate__animated animate__backInLeft mt-5">
-                            <v-img :src="cubito" max-height="230"></v-img>
+                            <v-img :src="cubito" :max-height="windowHeight>900 ? '230': '150'"></v-img>
                             <p class="font-weight-bold font-avenir font-size-30 mt-5">5 Volts, 1 Amper </p>
                         </v-col>
                         <v-col cols="1">
                             <hr class="vertical-line">
                         </v-col>
                         <v-col cols="5" class="mt-5 animate__animated animate__backInRight">
-                            <v-img :src="cubo" max-height="230"></v-img>
+                            <v-img :src="cubo" :max-height="windowHeight>900 ? '230': '150'"></v-img>
                             <p class="font-avenir font-size-30 font-weight-bold text-center mt-5">5 Volts, 2.1 Amper</p>
                         </v-col>
 
@@ -44,9 +44,13 @@ import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
 import cubito from '@/assets/electricidad/cubito.png'
 import cubo from '@/assets/electricidad/cubo.png'
+import { useCounterStore } from '../../stores/counter';
 import { ref } from '@vue/reactivity';
+import { storeToRefs } from 'pinia';
 
 const snackbar = ref(true)
+const store = useCounterStore()
+const {windowHeight, windowSize} = storeToRefs(store)
 
 </script>
 

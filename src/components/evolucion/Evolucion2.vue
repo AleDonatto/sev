@@ -11,15 +11,15 @@
 
                     <v-row no-gutters class="mt-4 animate__animated animate__backInLeft">
                         <v-col cols="4">
-                            <v-img :src="car1" max-height="240"></v-img>
+                            <v-img :src="car1" :max-height="windowHeight > 900 ? '240' : '190'"></v-img>
                         </v-col>
                         <v-col cols="4" class="d-flex justify-space-between ">
                             <hr class="line-vertical">
-                            <v-img :src="car2" max-height="240"></v-img>
+                            <v-img :src="car2" :max-height="windowHeight > 900 ? '240' : '190'"></v-img>
                             <hr class="line-vertical">
                         </v-col>
                         <v-col cols="4">
-                            <v-img :src="car3" max-height="240"></v-img>
+                            <v-img :src="car3" :max-height="windowHeight > 900 ? '240' : '190'"></v-img>
                         </v-col>
 
                         <v-col cols="4">

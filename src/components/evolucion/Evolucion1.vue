@@ -11,15 +11,15 @@
 
                     <v-row no-gutters class="mt-4 animate__animated animate__backInLeft">
                         <v-col cols="4">
-                            <v-img :src="men" max-height="240"></v-img>
+                            <v-img :src="men" :max-height="windowHeight > 900 ? '240' : '190'"></v-img>
                         </v-col>
                         <v-col cols="4" class="d-flex justify-space-between ">
                             <hr class="line-vertical">
-                            <v-img :src="guerrero" max-height="240"></v-img>
+                            <v-img :src="guerrero" :max-height="windowHeight > 900 ? '240' : '190'"></v-img>
                             <hr class="line-vertical">
                         </v-col>
                         <v-col cols="4" class="">
-                            <v-img :src="siglo" max-height="240"></v-img>
+                            <v-img :src="siglo" :max-height="windowHeight > 900 ? '240' : '190'"></v-img>
                         </v-col>
                         
                         <v-col cols="4">
@@ -60,7 +60,7 @@ import { storeToRefs } from "pinia";
 import { onMounted } from "@vue/runtime-core";
 
 const store = useCounterStore()
-const {canNext} = storeToRefs(store)
+const {canNext, windowHeight, windowSize} = storeToRefs(store)
 
 onMounted(() => {
     canNext.value = true
