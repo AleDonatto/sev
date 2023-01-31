@@ -10,7 +10,7 @@
                     </v-row>-->
                     <v-row justify="end">
                         <v-col cols="12" align="end">
-                            <v-img :src="objeciones" max-height="870" cover></v-img>
+                            <v-img :src="objeciones" :max-height="windowHeight> 900 ? '870': '560'" cover></v-img>
                         </v-col>
                     </v-row>
                 </div>
@@ -22,6 +22,11 @@
 <script setup>
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import objeciones from '@/assets/cargando/objeciones.png'
+import { useCounterStore } from '../../stores/counter';
+import { storeToRefs } from 'pinia';
+
+const store = useCounterStore()
+const {windowHeight, windowSize} = storeToRefs(store)
 </script>
 
 <style scoped>

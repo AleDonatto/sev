@@ -2,7 +2,7 @@
     <div>
         <content-template subtitle="<p class='font-avenir'>Cargando un BEV</p>">
             <template v-slot:content>
-                <div class="mt-10">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-5': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img :src="user" max-height="170"></v-img>
@@ -11,17 +11,17 @@
 
                     <v-row justify="center" class="h-100 mx-10 px-5 py-5 rounded-xl bg-boxstep-content">
                         <v-col cols="3" class="animate__animated animate__backInDown">
-                            <v-card class="rounded-lg" height="580">
+                            <v-card class="rounded-lg" :height="windowHeight>900 ? '580': '480'">
                                 <template v-slot:title>
                                     <div class="bg-yellow-p rounded-lg">
-                                        <p class="px-5 py-2 font-weight-bold font-avenir font-size-28 text-center">Modo 1</p>
+                                        <p class="px-5 font-weight-bold font-avenir text-center" :class="{'py-2 font-size-28': windowHeight>900, 'font-size-20': windowHeight<700}">Modo 1</p>
                                     </div>
                                 </template>
 
                                 <v-card-text>
-                                    <v-img :src="vehicles" max-height="80" cover></v-img>
+                                    <v-img :src="vehicles" max-height="80"></v-img>
 
-                                    <div class="bg-yellow-p mt-5">
+                                    <div class="bg-yellow-p mt-5" :class="{'font-size-12': windowHeight<700}">
                                         <p class="px-1 py-2">
                                             Conexión de baja corriente (AC) por medio de un enchufe normal.
                                             <br><br>
@@ -32,18 +32,18 @@
                             </v-card>
                         </v-col>
                         <v-col cols="3" class="animate__animated animate__backInUp">
-                            <v-card class="rounded-lg" height="580">
+                            <v-card class="rounded-lg" :height="windowHeight>900 ? '580': '480'">
                                 <template v-slot:title>
                                     <div class="bg-yellow-p rounded-lg">
-                                        <p class="px-5 py-2 font-weight-bold font-avenir font-size-28 text-center">Modo 2</p>
+                                        <p class="px-5 font-weight-bold font-avenir text-center" :class="{'py-2 font-size-28': windowHeight>900, 'font-size-20': windowHeight<700}">Modo 2</p>
                                     </div>
                                 </template>
 
                                 <v-card-text>
-                                    <v-img :src="control" max-height="80" cover></v-img>
+                                    <v-img :src="control" max-height="80"></v-img>
 
-                                    <div class="bg-yellow-p mt-5">
-                                        <p class="px-1 py-2">
+                                    <div class="bg-yellow-p mt-5 h-100">
+                                        <p class="px-1 py-2" :class="{'font-size-12': windowHeight<700}">
                                             Se utiliza un cable que contiene una unidad de control y se conecta a un enchufe ordinario (CA).
                                             <br><br>
                                             Puede conectarse a 110V o a 220V, y con ello aumentar la velocidad de carga.
@@ -57,17 +57,17 @@
                             </v-card>
                         </v-col>
                         <v-col cols="3" class="animate__animated animate__backInDown">
-                            <v-card class="rounded-lg" height="580">
+                            <v-card class="rounded-lg" :height="windowHeight>900 ? '580': '480'">
                                 <template v-slot:title>
                                     <div class="bg-yellow-p rounded-lg">
-                                        <p class="px-5 py-2 font-weight-bold font-avenir font-size-28 text-center">Modo 3</p>
+                                        <p class="px-5 font-weight-bold font-avenir text-center" :class="{'py-2 font-size-28': windowHeight>900, 'font-size-20': windowHeight<700}">Modo 3</p>
                                     </div>
                                 </template>
 
                                 <v-card-text>
-                                    <v-img :src="comunicacion" max-height="80" cover></v-img>
+                                    <v-img :src="comunicacion" max-height="80"></v-img>
 
-                                    <div class="bg-yellow-p mt-5">
+                                    <div class="bg-yellow-p mt-5" :class="{'font-size-12': windowHeight<700}">
                                         <p class="px-1 py-2">
                                             Cargador de pared conectado a la red eléctrica (CA) a 220V.
                                             <br><br>
@@ -82,16 +82,16 @@
                             </v-card>
                         </v-col>
                         <v-col cols="3" class="animate__animated animate__backInUp">
-                            <v-card class="rounded-lg" height="580">
+                            <v-card class="rounded-lg" :height="windowHeight>900 ? '580': '480'">
                                 <template v-slot:title>
                                     <div class="bg-yellow-p rounded-lg">
-                                        <p class="px-5 py-2 font-weight-bold font-avenir font-size-28 text-center">Modo 4</p>
+                                        <p class="px-5 font-weight-bold font-avenir text-center" :class="{'py-2 font-size-28': windowHeight>900, 'font-size-20': windowHeight<700}">Modo 4</p>
                                     </div>
                                 </template>
                                 <v-card-text>
-                                    <v-img :src="cable" max-height="80" cover></v-img>
+                                    <v-img :src="cable" max-height="80"></v-img>
 
-                                    <div class="bg-yellow-p mt-5">
+                                    <div class="bg-yellow-p mt-5" :class="{'font-size-12': windowHeight<700}">
                                         <p class="px-1 py-2">
                                             Carga rápida de Corriente Directa (CD).
                                             <br><br>
@@ -120,6 +120,11 @@ import cable from '@/assets/cargando/cable.png'
 import comunicacion from '@/assets/cargando/comunicacion.png'
 import control from '@/assets/cargando/control.png'
 import vehicles from '@/assets/cargando/vehicles.png'
+import { useCounterStore } from '../../stores/counter';
+import { storeToRefs } from 'pinia';
+
+const store = useCounterStore()
+const {windowHeight, windowSize} = storeToRefs(store)
 </script>
 
 <style scoped>

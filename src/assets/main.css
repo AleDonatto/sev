@@ -68,7 +68,11 @@
   font-size: 1.25rem !important;
 }
 .font.size-19{
-  font-size: 1.188 !important;
+  font-size: 1.188rem !important;
+}
+
+.font-size-12{
+  font-size: 0.77rem !important
 }
 
 .decoration-none{

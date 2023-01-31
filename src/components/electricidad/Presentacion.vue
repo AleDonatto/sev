@@ -9,6 +9,7 @@
                                 <h1 class="font-lato text-uppercase text-white text-center" :class="{'font-size-72': windowHeight>900, 'font-size-48': windowHeight<700}">electricidad</h1>
                                 <p class="text-white font-size-50 ml-7" :class="{'font-size-50': windowHeight > 900, 'font-size-36': windowHeight < 700}">Conceptos básicos para vehículos eléctricos</p>
                                 <p class="text-white">{{windowHeight}}</p>
+                                <p class="text-white">{{windowSize}}</p>
                                 <div class="d-flex justify-center">
                                     <v-btn @click="continueStep" rounded color="#FDBE2E" class="mt-10">
                                         <span class="font-avenir font-size-30 font-weight-thin">Continuar</span>
