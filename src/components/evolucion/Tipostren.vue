@@ -10,7 +10,7 @@
                         <v-col cols="9"></v-col>
                     </v-row>
 
-                    <v-row justify="center" class="mx-5 animate__animated animate__backInLeft" :class="{'mt-4': windowHeight>900, 'mt-0': windowHeight<700}">
+                    <v-row justify="center" class="mx-5 animate__animated animate__backInLeft" :class="{'mt-4': windowHeight>900, 'mt-0': windowHeight<700}" v-if="count === 0">
                         <v-col cols="3">
                             <v-img :src="combustion" :max-height="windowHeight>900 ? '450': '270'"></v-img>
                         </v-col>
@@ -25,7 +25,7 @@
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" class="bg-gradient mx-5 animate__animated animate__backInRight">
+                    <v-row justify="center" class="bg-gradient mx-5 animate__animated animate__backInRight" v-if="count === 0">
                         <v-col cols="3" align="center">
                             <p class="font-weight-bold font-avenir" :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">Altas</p>
                         </v-col>
@@ -38,36 +38,36 @@
                     </v-row>
 
                     <!--ICE-->
-                    <v-row justify="center" v-if="tipos.ice">
+                    <v-row justify="center" v-if="count === 1">
                         <v-col cols="12">
                             <v-img :src="icm7" max-height="650"></v-img>
                         </v-col>
                     </v-row>
                     <!--MHEV-->
-                    <v-row justify="center" v-if="tipos.mhev">
+                    <v-row justify="center" v-if="count === 2">
                         <v-col cols="12">
                             <v-img :src="mhev7" max-height="650"></v-img>
                         </v-col>
                     </v-row>
                     <!--HEV-->
-                    <v-row justify="center" v-if="tipos.hev">
+                    <v-row justify="center" v-if="count === 3">
                         <v-col cols="12">
                             <v-img :src="hev7" max-height="650"></v-img>
                         </v-col>
                     </v-row>
                     <!--PHEV-->
-                    <v-row justify="center" v-if="tipos.phev">
+                    <v-row justify="center" v-if="count === 4">
                         <v-col cols="12">
                             <v-img :src="phev7" max-height="650"></v-img>
                         </v-col>
                     </v-row>
                     <!--BEV-->
-                    <v-row justify="center" v-if="tipos.bev">
+                    <v-row justify="center" v-if="count === 5">
                         <v-col cols="12">
                             <v-img :src="bev7" max-height="650"></v-img>
                         </v-col>
                     </v-row>
-                    <v-row justify="center" v-if="tipos.fcev">
+                    <v-row justify="center" v-if="count === 6">
                         <v-col cols="12">
                             <v-img :src="fcev7" max-height="650"></v-img>
                         </v-col>
@@ -96,20 +96,10 @@ import { storeToRefs } from 'pinia';
 import { onMounted, reactive } from '@vue/runtime-core';
 
 const store = useCounterStore()
-const {canNext, windowHeight, windowSize} = storeToRefs(store)
+const {canNext, windowHeight, windowSize, count} = storeToRefs(store)
 
 onMounted(() => {
     canNext.value = true
-})
-
-const tipos = reactive({
-    motors: true,
-    ice: false,
-    mhev: false,
-    hev: false,
-    phev: false,
-    bev: false,
-    fcev: false
 })
 </script>
 

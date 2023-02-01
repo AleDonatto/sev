@@ -56,6 +56,11 @@ import car1 from '@/assets/evolucion/car1.png'
 import car2 from '@/assets/evolucion/car2.png'
 import car3 from '@/assets/evolucion/car3.png'
 import division from '@/assets/evolucion/division.png'
+import { useCounterStore } from '../../stores/counter';
+import { storeToRefs } from 'pinia';
+
+const store = useCounterStore()
+const {windowHeight, windowSize} = storeToRefs(store)
 </script>
 
 <style scoped>

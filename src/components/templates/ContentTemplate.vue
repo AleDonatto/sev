@@ -172,17 +172,21 @@ const props = defineProps({
 })
 
 const store = useCounterStore()
-const {step, canNext, windowHeight, windowSize} = storeToRefs(store)
+const {step, canNext, windowHeight, windowSize, count} = storeToRefs(store)
 const router = useRoute()
 
-const { NextStep, PreviousStep } = store
+const { NextStep, PreviousStep, increment } = store
 const route = useRouter()
 
 
 function SiguientePaso(){
     //console.log(router.path)
     let route = router.path
-    NextStep(route)
+    if(route === '/evolucion-de-movilidad' && step.value === 4 && count.value < 6){
+        increment()
+    }else{
+        NextStep(route)
+    }
 }
 
 function retrocederPaso(){
