@@ -10,7 +10,8 @@
               <v-col cols="5" align="center" class="height-box">
                 <div class="mx-4 top-text" :class="{'top-text': windowHeight > 900, 'top-text-md': windowHeight < 700}">
                   <h1 class="text-white font-lato font-size-h1 font-weight-bold text-center">Bienvenidos</h1>
-
+                  <p class="text-white">{{windowHeight}}</p>
+                  <p class="text-white">{{windowSize}}</p>
                   <router-link to="/temario" class="decoration-none">
                     <v-btn class="text-white" rounded color="#929292">
                       <span class="font-weight-thin">Inicio</span>

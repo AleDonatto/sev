@@ -2,7 +2,7 @@
     <div>
         <content-template title="ACTUALIDAD" subtitle='<p>Evolución <br/> <span class="font-weight-bold">de la movilidad</span></p>'>
             <template v-slot:content>
-                <div class="mt-10">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img :src="user" max-height="170"></v-img>
@@ -65,7 +65,7 @@ import { storeToRefs } from 'pinia';
 import { onMounted } from '@vue/runtime-core';
 
 const store = useCounterStore()
-const {canNext} = storeToRefs(store)
+const {canNext, windowHeight, windowSize} = storeToRefs(store)
 
 onMounted(() => {
     canNext.value = true

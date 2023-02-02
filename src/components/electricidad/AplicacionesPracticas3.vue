@@ -2,14 +2,14 @@
     <div>
         <content-template title="ELECTRICIDAD" subtitle="Aplicaciones prácticas">
             <template v-slot:content>
-                <div class="mt-10">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}" >
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img :src="user" max-height="170"></v-img>
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" class="rounded-xl bg-color mx-10 px-5" v-if="pasos.paso1">
+                    <v-row justify="center" class="rounded-xl bg-color mx-10 px-5" v-if="count === 0">
                         <v-col cols="12" align="start" class="animate__animated animate__backInDown">
                             <p class="font-avenir" :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">El costo de carga de una bateria dependerá de: </p>
                         </v-col>
@@ -32,23 +32,23 @@
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" class="rounded-xl bg-color mx-10 px-5" v-if="pasos.paso2">
+                    <v-row justify="center" class="rounded-xl bg-color mx-10 px-5" v-if="count === 1">
                         <v-col cols="3">
-                            <v-img :src="costoLowBaterry" max-height="130"></v-img>
+                            <v-img :src="costoLowBaterry" :max-height="windowHeight>900 ? '130': '90'"></v-img>
                         </v-col>
                         <v-col cols="2" align-self="center">
                             <v-img :src="comparation" max-height="50"></v-img>
                         </v-col>
                         <v-col cols="3">
-                            <v-img :src="costoCompleteBattery" max-height="130"></v-img>
+                            <v-img :src="costoCompleteBattery" :max-height="windowHeight>900 ? '130': '90'"></v-img>
                         </v-col>
 
                         <v-col cols="12">
-                            <p class="font-avenir font-size-30">Ejercicio: ¿Cuánto cuesta cargar de 20% hasta 100% la batería de un vehículo eléctrico que cuenta con una batería de 50 kWh?</p>
+                            <p class="font-avenir" :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">Ejercicio: ¿Cuánto cuesta cargar de 20% hasta 100% la batería de un vehículo eléctrico que cuenta con una batería de 50 kWh?</p>
                         </v-col>
                         <v-col cols="9">
-                            <p class="font-avenir font-size-24">Consumo básico: $0.859/kWh 🡪 23.5 X 0.859 = $20.18.</p>
-                            <p class="font-size-24 font-avenir">Consumo excedente: $3.042/kWh 🡪 23.5 X 3.042 = $71.48.</p>
+                            <p class="font-avenir" :class="{'font-size-30': windowSize>900, 'font-size-20': windowHeight<700}">Consumo básico: $0.859/kWh 🡪 23.5 X 0.859 = $20.18.</p>
+                            <p class="font-avenir" :class="{'font-size-30': windowSize>900, 'font-size-20': windowHeight<700}">Consumo excedente: $3.042/kWh 🡪 23.5 X 3.042 = $71.48.</p>
                         </v-col>
 
                         <v-col cols="12" align="end">
@@ -70,14 +70,15 @@ import comparation from '@/assets/electricidad/comparation.png'
 import { useCounterStore } from '../../stores/counter';
 import { storeToRefs } from 'pinia';
 import { reactive } from '@vue/reactivity';
+import { onMounted } from '@vue/runtime-core';
 
 const store = useCounterStore()
-const {windowHeight, windowSize} = storeToRefs(store)
+const {windowHeight, windowSize, count} = storeToRefs(store)
 
-const pasos = reactive({
-    paso1: true,
-    paso2: false
+onMounted(() => {
+    count.value = 0
 })
+
 </script>
 
 <style scoped>

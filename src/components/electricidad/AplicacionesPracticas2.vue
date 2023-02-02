@@ -2,14 +2,14 @@
     <div>
         <content-template title="ELECTRICIDAD" subtitle="Aplicaciones prácticas">
             <template v-slot:content>
-                <div class="mt-10">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img :src="user" max-height="170"></v-img>
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" class="bg-color mx-10 rounded-xl" v-if="pasos.paso1">
+                    <v-row justify="center" class="bg-color mx-10 rounded-xl" v-if="count === 0">
                         <v-col cols="12" class="animate__animated animate__backInDown">
                             <p class="text-center font-avenir" :class="{'font-size-36': windowHeight>900, 'font-size-24': windowHeight<700}">El tiempo de carga de una batería dependerá principalmente de:</p>
                         </v-col>
@@ -26,27 +26,27 @@
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" class="bg-color mx-10 rounded-xl" v-if="pasos.paso2">
+                    <v-row justify="center" class="bg-color mx-10 rounded-xl" v-if="count === 1">
                         <v-col cols="3">
-                            <v-img :src="lowBaterry" max-height="130"></v-img>
+                            <v-img :src="lowBaterry" :max-height="windowHeight>900 ? '130': '90'"></v-img>
                         </v-col>
                         <v-col cols="2" align-self="center">
                             <v-img :src="comparation" max-height="50"></v-img>
                         </v-col>
                         <v-col cols="3">
-                            <v-img :src="completBattery" max-height="130"></v-img>
+                            <v-img :src="completBattery" :max-height="windowHeight>900 ? '130': '90'"></v-img>
                         </v-col>
 
                         <v-col cols="12" class="mt-6">
-                            <p class="font-size-30 font-avenir">
+                            <p class="font-avenir" :class="{'font-size-30': windowHeight>900, 'font-size-20': windowHeight<700}">
                                 Ejemplo: Cuánto tiempo tardará en cargarse de 20% hasta 100% la batería de un vehículo eléctrico con 
                                 una batería de 50 kWh si se utiliza una cargador que trabaja a 220 volts y 10 amper?
                             </p>
                         </v-col>
                         <v-col cols="8">
-                            <p class="font-size-24 font-avenir">Potencia del cargador: 220 V X 10 A /1000 = 2.2 kW</p>
-                            <p class="font-size-24 font-avenir">50 kWh X 0.8 = 40 kWh</p>
-                            <p class="font-size-24 font-avenir">40 kWh / 2.2 kW = 18.8 h</p>
+                            <p class="font-avenir" :class="{'font-size-24': windowHeight>900, 'font-size-20': windowHeight<700}">Potencia del cargador: 220 V X 10 A /1000 = 2.2 kW</p>
+                            <p class="font-avenir" :class="{'font-size-24': windowHeight>900, 'font-size-20': windowHeight<700}">50 kWh X 0.8 = 40 kWh</p>
+                            <p class="font-avenir" :class="{'font-size-24': windowHeight>900, 'font-size-20': windowHeight<700}">40 kWh / 2.2 kW = 18.8 h</p>
                         </v-col>
                     </v-row>
                 </div>
@@ -64,13 +64,13 @@ import comparation from '@/assets/electricidad/comparation.png'
 import { useCounterStore } from '../../stores/counter';
 import { storeToRefs } from 'pinia';
 import { reactive } from '@vue/reactivity';
+import { onMounted } from '@vue/runtime-core';
 
 const store = useCounterStore()
-const {windowHeight, windowSize} = storeToRefs(store)
+const {windowHeight, windowSize, count} = storeToRefs(store)
 
-const pasos = reactive({
-    paso1: true,
-    paso2: false
+onMounted(() => {
+    count.value = 0
 })
 </script>
 

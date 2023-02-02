@@ -2,7 +2,7 @@
     <div>
         <content-template title="ELECTRICIDAD" subtitle="Aplicaciones prácticas">
             <template v-slot:content>
-                <div class="mt-10">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="space-between">
                         <v-col cols="2" align="start">
                             <v-img :src="user" max-height="170"></v-img>

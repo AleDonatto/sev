@@ -2,7 +2,7 @@
     <div>
         <content-template>
             <template v-slot:content>
-                <div class="mt-10">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img :src="user" max-height="170"></v-img>
@@ -60,7 +60,7 @@ const answers = reactive({
 
 const store = useCounterStore()
 const {NextStep} = store
-const {canNext} = storeToRefs(store)
+const {canNext, windowHeight, windowSize} = storeToRefs(store)
 const router = useRoute()
 
 onMounted(() => {

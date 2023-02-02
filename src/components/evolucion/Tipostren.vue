@@ -2,7 +2,7 @@
     <div>
         <content-template title="" subtitle="Tipos de tren <br/> motriz mas comunes">
             <template v-slot:content>
-                <div class="mt-10">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img :src="user" max-height="170"></v-img>
@@ -100,6 +100,7 @@ const {canNext, windowHeight, windowSize, count} = storeToRefs(store)
 
 onMounted(() => {
     canNext.value = true
+    count.value = 0
 })
 </script>
 

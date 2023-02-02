@@ -2,7 +2,7 @@
     <div>
         <content-template subtitle="Tipos de tren <br/> motriz mas comunes">
             <template v-slot:content>
-                <div class="mt-10">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img :src="user" max-height="170"></v-img>
@@ -213,6 +213,11 @@
 <script setup>
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
+import { useCounterStore } from '../../stores/counter';
+import { storeToRefs } from 'pinia';
+
+const store = useCounterStore()
+const {windowHeight, windowSize} = storeToRefs(store)
 </script>
 
 <style scoped>

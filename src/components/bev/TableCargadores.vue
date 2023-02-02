@@ -2,7 +2,7 @@
     <div>
         <content-template>
             <template v-slot:content>
-                <div class="mt-4">
+                <div class="" :class="{'mt-4': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start" class="mb-0">
                         <v-col cols="2">
                             <v-img :src="user" max-height="170"></v-img>

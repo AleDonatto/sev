@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-navigation-drawer permanent location="left" color="#FDBD31" class="index-1">
+        <v-navigation-drawer permanent location="left" color="#FDBD31" class="index-1" :width="windowHeight<700 ? '210': '280'">
             <template v-slot:prepend>
                 <v-list-item :class="{'my-4': windowHeight > 900, 'my-2':windowHeight < 700}">
                     <v-img :src="solologo" contain heigh max-height="40"></v-img>
@@ -67,32 +67,31 @@
             <v-list density="compact" nav class="pa-0 font-avenir" v-if="$route.path === '/fundamentos-de-electricidad'">
                 <v-list-item class="text-center bg-nav-black my-0 py-0" @click="moduloEvolucion"
                 :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="font-avenir font-size-20 text-white">Inicio</span>
+                    <span class="font-avenir text-white" :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Inicio</span>
                 </v-list-item>
 
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" :class="{'h-nav' : windowHeight > 900, 'h-nav-md' : windowHeight < 700}"
-                :disabled="step <1"
-                @click="step = 1">
-                    <span class="font-avenir font-size-20" :class="{'font-weight-bold': step === 1}">Fundamentos de Electricidad</span>
+                :disabled="step <1" @click="step = 1">
+                    <span class="font-avenir" :class="{'font-weight-bold': step === 1, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Fundamentos de Electricidad</span>
                 </v-list-item>
 
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="step = 2" :disabled="step<2"
                 :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="font-avenir font-size-20" :class="{'font-weight-bold': step>=2 && step <12 }">Conceptos Basicos</span>
+                    <span class="font-avenir" :class="{'font-weight-bold': step>=2 && step <12, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700 }">Conceptos Basicos</span>
                 </v-list-item>
 
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="step = 12" :disabled="step<12"
                 :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="font-avenir font-size-20" :class="{'font-weight-bold': step>=12 && step <17 }">Aplicaciones Practicas</span>
+                    <span class="font-avenir" :class="{'font-weight-bold': step>=12 && step <17, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700 }">Aplicaciones Practicas</span>
                 </v-list-item>
 
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="step = 17" :disabled="step<16"
                 :class="{'h-nav':windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="font-avenir font-size-20" :class="{'font-weight-bold': step >=17}">Repaso de Sección</span>
+                    <span class="font-avenir" :class="{'font-weight-bold': step >=17, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Repaso de Sección</span>
                 </v-list-item>
 
                 <v-list-item class="text-center bg-nav-black my-0 py-0 not-cursor" :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="text-white font-avenir font-size-20">Cargando un BEV</span>
+                    <span class="text-white font-avenir" :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Cargando un BEV</span>
                 </v-list-item>
             </v-list>
 
@@ -142,14 +141,13 @@
             </v-row>
         </v-navigation-drawer>
         <div>
-            <v-app-bar class="bg-appbar h-appbar" >
+            <v-app-bar class="bg-appbar" :class="{'h-appbar': windowHeight>900, 'h-appbar-md':windowHeight<700}" >
                 <v-row>
                     <v-col cols="6" align="start" align-self="center">
-                        <h1 class="mt-2 ml-7">{{props.title}}</h1>
+                        <h1 class="ml-7" :class="{'font-size-20': windowHeight<700}">{{props.title}}</h1>
                     </v-col>
                     <v-col cols="6" align="start" align-self="center">
-                        <!--<div v-html="props.subtitle"></div>-->
-                        <h1 class="text-white font-weight-thin m-left" v-html="props.subtitle"></h1> 
+                        <h1 class="text-white font-weight-thin m-left" :class="{'font-size-20 mt-0': windowHeight<700}" v-html="props.subtitle"></h1> 
                     </v-col>
                 </v-row> 
             </v-app-bar>
@@ -184,7 +182,14 @@ function SiguientePaso(){
     let route = router.path
     if(route === '/evolucion-de-movilidad' && step.value === 4 && count.value < 6){
         increment()
-    }else{
+    }else if(route === '/fundamentos-de-electricidad' && step.value === 11 && count.value<2){
+        increment()
+    }else if(route === '/fundamentos-de-electricidad' && step.value === 13 && count.value<1){
+        increment()
+    }else if(route === '/fundamentos-de-electricidad' && step.value === 14 && count.value<1){
+        increment()
+    }
+    else{
         NextStep(route)
     }
 }
@@ -216,6 +221,10 @@ function moduloElectricidad(){
 
 .h-appbar{
     height: 95px !important;
+}
+
+.h-appbar-md{
+    height: 80px !important;
 }
 .m-left{
     margin-top: 25px;

@@ -2,7 +2,7 @@
     <div>
         <content-template title="ELECTRICIDAD" subtitle="Conceptos básicos">
             <template v-slot:content>
-                <div class="mt-10">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img :src="user" max-height="170"></v-img>
@@ -16,8 +16,15 @@
                         <v-col cols="1" align-self="center" align="center" class="animate__animated animate__backInLeft">
                             <p class="vertical-text font-avenir font-weight-bold"  :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">Consumo Historico</p>
                         </v-col>
-                        <v-col cols="11" class="animate__animated animate__backInRight">
+                        <v-col cols="11" class="animate__animated animate__backInRight" v-if="count === 0">
                             <v-img :src="consumo" :max-height="windowHeight>900 ? '450': '260'"  @click="images.visible = !images.visible"></v-img>
+                        </v-col>
+                        <v-col cols="11" class="animate__animated animate__backInRight" v-if="count === 1" align-self="xcenter">
+                            <v-img :src="importante" :max-height="windowHeight>900 ? '450': '260'"  @click="images.visible = !images.visible"></v-img>
+                        </v-col>
+                        <v-col cols="11" class="animate__animated animate__backInRight" v-if="count === 2" align-self="xcenter">
+                            <v-img :src="consumo" :max-height="windowHeight>900 ? '450': '160'"  @click="images.visible = !images.visible"></v-img>
+                            <v-img :src="importante" :max-height="windowHeight>900 ? '450': '110'"  @click="images.visible = !images.visible"></v-img>
                         </v-col>
                     </v-row>
 
@@ -47,17 +54,23 @@
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
 import consumo from '@/assets/electricidad/consumo.png'
+import importante from '@/assets/electricidad/importante.png'
 import { reactive, ref } from '@vue/reactivity';
 import { useCounterStore } from '../../stores/counter';
 import VueEasyLightbox from 'vue-easy-lightbox'
 import { storeToRefs } from 'pinia';
+import { onMounted } from '@vue/runtime-core';
 //import 'vue-easy-lightbox/external-css/vue-easy-lightbox.css'
 
 const store = useCounterStore()
-const {windowHeight, windowSize} = storeToRefs(store)
+const {windowHeight, windowSize, count} = storeToRefs(store)
+
+onMounted(() => {
+    count.value = 0
+})
 
 const images = reactive({
-    imgs: consumo,
+    imgs: [consumo, importante],
     visible: false,
     index: 0
 })
