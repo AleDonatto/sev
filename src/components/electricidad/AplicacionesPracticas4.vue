@@ -5,7 +5,7 @@
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img :src="user" max-height="170"></v-img>
+                            <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                     </v-row>
 

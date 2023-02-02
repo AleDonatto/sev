@@ -3,7 +3,10 @@
         <main-template>
             <template v-slot:content>
                 <v-row class="mt-3">
-                    <v-col cols="12" class="p-0 m-0" :class="{'bg-instructions': windowHeight>900, 'bg-instructions-md': windowHeight< 700}">
+                    <v-col cols="12" class="p-0 m-0" :class="{
+                        'bg-instructions': windowHeight>900, 
+                        'bg-instructions-md': windowHeight< 700 && windowHeight> 660, 
+                        'bg-instructions-sm': windowHeight<660}">
                         <v-row class="">
                             <v-col cols="5">
                                 <div class="ml-5">
@@ -71,6 +74,15 @@ function gotoModuloDirectivo(){
   background-repeat: no-repeat;
   background-position: center center;
   height: 540px;
+  margin-top: -22px;
+}
+
+.bg-instructions-sm{
+  background-image: url('../assets/instrucciones/instrucciones2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 510px;
   margin-top: -22px;
 }
 

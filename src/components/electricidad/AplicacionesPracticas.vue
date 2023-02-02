@@ -5,7 +5,7 @@
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="space-between">
                         <v-col cols="2" align="start">
-                            <v-img :src="user" max-height="170"></v-img>
+                            <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="2" align="end" class="animate__animated animate__backInDown">
                             <v-img :src="bateriasev" max-height="310" class="" :class="{'position-image': windowHeight>900, 'position-image-md': windowHeight<700}"></v-img>

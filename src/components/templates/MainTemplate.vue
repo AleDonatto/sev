@@ -8,8 +8,11 @@
                 <svg class="" v-if="windowHeight > 900">
                     <polygon points="0 0, 0 400, 400 500, 70 0" style="fill:#FDBE2E;stroke:#FDBE2E;stroke-width:5"></polygon>
                 </svg>
-                <svg class="" v-else>
+                <svg class="" v-else-if="windowHeight<700 && windowHeight>650">
                     <polygon points="0 0, 0 125, 140 125, 60 0" style="fill:#FDBE2E;stroke:#FDBE2E;stroke-width:5"></polygon>
+                </svg>
+                <svg class="" v-else>
+                    <polygon points="0 0, 0 125, 157 125, 75 0" style="fill:#FDBE2E;stroke:#FDBE2E;stroke-width:5"></polygon>
                 </svg>
                 
             </v-col>

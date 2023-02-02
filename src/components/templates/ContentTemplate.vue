@@ -16,7 +16,7 @@
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" 
                 :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}" 
                 @click="step = 0">
-                    <span class="font-avenir font-size-20" :class="{'font-weight-bold': step >= 0 && step <2}">
+                    <span class="font-avenir" :class="{'font-weight-bold': step >= 0 && step <2, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
                         Inicio
                     </span>
                 </v-list-item>
@@ -24,7 +24,7 @@
                 :class="{'h-nav' : windowHeight > 900, 'h-nav-md' : windowHeight < 700}" 
                 :disabled="step < 2"
                 @click="step = 2">
-                    <span class="font-avenir font-size-20" :class="{'font-weight-bold': step === 2}">
+                    <span class="font-avenir" :class="{'font-weight-bold': step === 2, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
                         Actualidad
                     </span>
                 </v-list-item>
@@ -32,7 +32,7 @@
                 :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}"
                 :disabled="step < 3"
                 @click="step = 3">
-                    <span class="font-size-20 font-avenir" :class="{'font-weight-bold': step === 3}">
+                    <span class="font-avenir" :class="{'font-weight-bold': step === 3, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
                         Próximamente
                     </span>
                 </v-list-item>
@@ -40,7 +40,7 @@
                 :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}"
                 :disabled="step<4"
                 @click="step = 4">
-                    <span class="font-size-20 font-avenir" :class="{'font-weight-bold': step >= 4 && step <6}">
+                    <span class="font-avenir" :class="{'font-weight-bold': step >= 4 && step <6, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
                         Tipos de tren motriz
                     </span>
                 </v-list-item>
@@ -48,17 +48,17 @@
                 :class="{'h-nav':windowHeight > 900, 'h-nav-md': windowHeight < 700}"
                 :disabled="step <6"
                 @click="step = 6">
-                    <span class="font-size-20 font-avenir" :class="{'font-weight-bold': step >= 6}">
+                    <span class="font-avenir" :class="{'font-weight-bold': step >= 6, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
                         Repaso de Sección
                     </span>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-black my-0 py-0 not-cursor" :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="text-white font-avenir font-size-20">
+                    <span class="text-white font-avenir" :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
                         Electricidad
                     </span>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-black my-0 py-0 not-cursor" :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="text-white font-avenir font-size-20">
+                    <span class="text-white font-avenir" :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
                         Cargando un BEV
                     </span>
                 </v-list-item>
@@ -98,28 +98,28 @@
             <v-list density="compact" nav class="pa-0" v-if="$route.path === '/cargando-un-bev'">
                 <v-list-item class="text-center bg-nav-black my-0 py-0" @click="moduloEvolucion"
                 :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="text-white font-avenir font-size-20">Inicio</span>
+                    <span class="text-white font-avenir" :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Inicio</span>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-black my-0 py-0" value="actualidad"  @click="moduloElectricidad"
                 :class="{'h-nav' : windowHeight > 900, 'h-nav-md' : windowHeight < 700}">
-                    <span class="text-white font-avenir font-size-20">Electricidad</span>
+                    <span class="text-white font-avenir" :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Electricidad</span>
                 </v-list-item>
 
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="step = 1"
                 :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="font-avenir font-size-20" :class="{'font-weight-bold': step === 1}">Cargando un BEV</span>
+                    <span class="font-avenir" :class="{'font-weight-bold': step === 1, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Cargando un BEV</span>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="step = 2"
                 :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="font-avenir font-size-20" :class="{'font-weight-bold': step === 2}">Modos de Carga</span>
+                    <span class="font-avenir" :class="{'font-weight-bold': step === 2, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Modos de Carga</span>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="step = 3"
                 :class="{'h-nav':windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="font-avenir font-size-20" :class="{'font-weight-bold': step === 3}">Hábitos de carga</span>
+                    <span class="font-avenir" :class="{'font-weight-bold': step === 3, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Hábitos de carga</span>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="step = 4"
                 :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="font-avenir font-size-20" :class="{'font-weight-bold': step > 4}">Tipos de Cargadores</span>
+                    <span class="font-avenir" :class="{'font-weight-bold': step > 4, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Tipos de Cargadores</span>
                 </v-list-item>
             </v-list>
 
