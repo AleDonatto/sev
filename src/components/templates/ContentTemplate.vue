@@ -190,6 +190,8 @@ function SiguientePaso(){
         increment()
     }else if(route === '/fundamentos-de-electricidad' && step.value === 14 && count.value<1){
         increment()
+    }else if(route === '/cargando-un-bev' && step.value === 2 && count.value<1){
+        increment()
     }
     else{
         NextStep(route)
