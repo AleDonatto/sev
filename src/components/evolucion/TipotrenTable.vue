@@ -9,199 +9,48 @@
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" style="height: 80px;" >
-                        <v-col class="mx-5"></v-col>
-                        <v-col class="bg-black mx-5">
-                            <div>
-                                <p class="text-center">Motor a combustión interna (ICE)</p>
-                            </div>
+                    <v-row justify="center" :class="{'margin-top': windowHeight>900, 'margin-top-md': windowHeight<700 && windowHeight>660, 'margin-top-sm': windowHeight<660}">
+                        <v-col></v-col>
+                        <v-col>
+                            <v-img :src="h1" :max-height="windowHeight> 900 ? '115': '80'"></v-img>
                         </v-col>
-                        <v-col class="bg-black mx-5">
-                            <div>
-                                <p class="text-center">Semi-hibrido (MHEV)</p>
-                            </div>
+                        <v-col>
+                            <v-img :src="h2" :max-height="windowHeight> 900 ? '115': '80'"></v-img>
                         </v-col>
-                        <v-col class="bg-black mx-5">
-                            <div>
-                                <p class="text-center">Hibrido fuerte (Full HEV)</p>
-                            </div>
+                        <v-col>
+                            <v-img :src="h3" :max-height="windowHeight> 900 ? '115': '80'"></v-img>
                         </v-col>
-                        <v-col class="bg-black mx-5">
-                            <div>
-                                <p class="text-center">Hibrido enchufable (PHEV)</p>
-                            </div>
+                        <v-col>
+                            <v-img :src="h4" :max-height="windowHeight> 900 ? '115': '80'"></v-img>
                         </v-col>
-                        <v-col class="bg-black mx-5">
-                            <div>
-                                <p class="text-center">Eléctrico a baterias (BEV)</p>
-                            </div>
+                        <v-col>
+                            <v-img :src="h5" :max-height="windowHeight> 900 ? '115': '80'"></v-img>
                         </v-col>
-                        <v-col class="bg-black mx-5">
-                            <div>
-                                <p class="text-center">Electricidad de celdas de combustible (FCEV)</p>
-                            </div>
+                        <v-col>
+                            <v-img :src="h6" :max-height="windowHeight> 900 ? '115': '80'"></v-img>
                         </v-col>
                     </v-row>
-
-                    <v-row justify="center" class="mt-10">
-                        <v-col class="bg-black mx-5">
-                            <p class="text-center">Motor a gasolina</p>
+                    <v-row justify="center">
+                        <v-col>
+                            <v-img :src="opciones" :max-height="windowHeight> 900 ? '510': '350'"></v-img>
                         </v-col>
-                        <v-col class="mx-5 bg-poligono1">
-                            <p class="text-center">Fundamental</p>
+                        <v-col >
+                            <v-img :src="tice" :max-height="windowHeight>900 ? '510': '350'"></v-img>
                         </v-col>
-                        <v-col class="mx-5 bg-poligono1">
-                            <p class="text-center">Fundamental</p>
+                        <v-col>
+                            <v-img :src="tmhev" :max-height="windowHeight>900 ? '510': '350'"></v-img>
                         </v-col>
-                        <v-col class="mx-5 bg-poligono1">
-                            <p class="text-center">Fundamental</p>
+                        <v-col>
+                            <v-img :src="tfullhev" :max-height="windowHeight>900 ? '510': '350'"></v-img>
                         </v-col>
-                        <v-col class="mx-5 bg-poligono1">
-                            <p class="text-center">Importante</p>
+                        <v-col>
+                            <v-img :src="tphev" :max-height="windowHeight>900 ? '510': '350'"></v-img>
                         </v-col>
-                        <v-col class="mx-5 bg-poligono1">
-                            <p class="text-center">No Exixte</p>
+                        <v-col>
+                            <v-img :src="tbev" :max-height="windowHeight>900 ? '510': '350'"></v-img>
                         </v-col>
-                        <v-col class="mx-5 bg-poligono1">
-                            <p class="text-center">No Existe</p>
-                        </v-col>
-                    </v-row>
-                    <v-row justify="center" style="height: 80px;">
-                        <v-col class="bg-black mx-5">
-                            <p class="text-center">Motor (es) eléctricos</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">No existe</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">Muy pequeño</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">Robusto, puede mover al auto (1-3 motores eléctricos)</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">Robusto, puede mover al auto (1-3 motores eléctricos)</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">Robusto (1-4 motores eléctricos)</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">Robusto (1-2 motores eléctricos)</p>
-                        </v-col>
-                    </v-row>
-                    <v-row justify="center" style="height: 80px;">
-                        <v-col class="bg-black mx-5">
-                            <p class="text-center">Batería (V)</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono2" align-self="center">
-                            <p class="text-center">Accesorios 12 V</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono2" align-self="center">
-                            <p class="text-center">Bajo voltaje (12-48 V)</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono2">
-                            <p class="text-center">Alto voltaje (150 + V)</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono2" align-self="center">
-                            <p class="t4xt-center">Alto voltaje (200 + V)</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono2" align-self="center">
-                            <p class="text-center">Alto voltaje (250 + V)</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono2" align-self="center">
-                            <p class="text-center">Alto voltaje (300 + V)</p>
-                        </v-col>
-                    </v-row>
-                    <v-row justify="center" style="height: 80px;">
-                        <v-col class="bg-black mx-5">
-                            <p class="text-center">Batería (kWh)</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">N.A</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">N.A</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">0.9 - 2.5 kWh</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">0.9 - 24 kWh</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">30 - 110 kWh</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">1.2 - 13 kWh</p>
-                        </v-col>
-                    </v-row>
-                    <v-row justify="center" style="height: 80px;">
-                        <v-col class="bg-black mx-5">
-                            <p class="text-center">Autonomía eléctrica (km)</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono3">
-                            <p class="text-center">N.A.</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono3">
-                            <p class="text-center">N.A.</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono3">
-                            <p class="text-center">3 - 5 km</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono3">
-                            <p class="text-center">25 - 80 km</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono3">
-                            <p class="text-center">150 - 500 km</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono3">
-                            <p class="text-center px-1">450+ km (según carga H2)</p>
-                        </v-col>
-                    </v-row>
-                    <v-row justify="center" style="height: 80px;">
-                        <v-col class="bg-black mx-5">
-                            <p class="text-center">Emisiones contaminantes</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">Altas</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">Altas</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">Medias</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">Medias/bajas</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">Cero</p>
-                        </v-col>
-                        <v-col class="mx-5">
-                            <p class="text-center">Cero</p>
-                        </v-col>
-                    </v-row>
-                    <v-row justify="center" style="height: 80px;">
-                        <v-col class="bg-black mx-5">
-                            <p class="text-center">Tiempo de recarga</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono4" align-self="center">
-                            <p class="text-center">Muy corto</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono4" align-self="center">
-                            <p class="text-center">Muy corto</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono4" align-self="center">
-                            <p class="text-center">Muy corto</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono4" align-self="center">
-                            <p class="text-center">Muy corto (gasolina) medio (eléctrico)</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono4" align-self="center">
-                            <p class="text-center">Medio a largo</p>
-                        </v-col>
-                        <v-col class="mx-5 bg-poligono4" align-self="center">
-                            <p class="text-center px-1">Muy corto (hidrógeno)</p>
+                        <v-col>
+                            <v-img :src="tfcev" :max-height="windowHeight>900 ? '510': '350'"></v-img>
                         </v-col>
                     </v-row>
                 </div>
@@ -213,6 +62,19 @@
 <script setup>
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
+import h1 from '@/assets/evolucion/h1.png'
+import h2 from '@/assets/evolucion/h2.png'
+import h3 from '@/assets/evolucion/h3.png'
+import h4 from '@/assets/evolucion/h4.png'
+import h5 from '@/assets/evolucion/h5.png'
+import h6 from '@/assets/evolucion/h6.png'
+import opciones from '@/assets/evolucion/opciones.png'
+import tice from '@/assets/evolucion/tice.png'
+import tmhev from '@/assets/evolucion/tmhev.png'
+import tfullhev from '@/assets/evolucion/tfullhev.png'
+import tphev from '@/assets/evolucion/tphev.png'
+import tbev from '@/assets/evolucion/tbev.png'
+import tfcev from '@/assets/evolucion/tfsev.png'
 import { useCounterStore } from '../../stores/counter';
 import { storeToRefs } from 'pinia';
 
@@ -261,5 +123,17 @@ const {windowHeight, windowSize} = storeToRefs(store)
     background-position: center center;
     height: 100%;
     width: 110px;
+}
+
+.margin-top{
+    margin-top: -10vh;
+}
+
+.margin-top-md{
+    margin-top: -14vh;
+}
+
+.margin-top-sm{
+    margin-top: -17vh;
 }
 </style>

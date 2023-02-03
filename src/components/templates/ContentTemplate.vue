@@ -182,6 +182,8 @@ function SiguientePaso(){
     let route = router.path
     if(route === '/evolucion-de-movilidad' && step.value === 4 && count.value < 6){
         increment()
+    }else if(route === '/fundamentos-de-electricidad' && step.value === 10 && count.value<3){
+        increment()
     }else if(route === '/fundamentos-de-electricidad' && step.value === 11 && count.value<2){
         increment()
     }else if(route === '/fundamentos-de-electricidad' && step.value === 13 && count.value<1){

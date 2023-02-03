@@ -21,8 +21,17 @@
                             </p>
                         </v-col>
 
-                        <v-col cols="12" align="center" class="animate__animated animate__backInRight">
+                        <v-col cols="12" align="center" class="animate__animated animate__backInRight" v-if="count === 0">
                             <v-img :src="table" :max-height="windowHeight>900 ? '350': '180'"></v-img>
+                        </v-col>
+                        <v-col cols="12" align="center" class="animate__animated animate__backInRight" v-if="count === 1">
+                            <v-img :src="table1" :max-height="windowHeight>900 ? '350': '180'"></v-img>
+                        </v-col>
+                        <v-col cols="12" align="center" class="animate__animated animate__backInRight" v-if="count === 2">
+                            <v-img :src="table2" :max-height="windowHeight>900 ? '350': '180'"></v-img>
+                        </v-col>
+                        <v-col cols="12" align="center" class="animate__animated animate__backInRight" v-if="count === 3">
+                            <v-img :src="table3" :max-height="windowHeight>900 ? '350': '180'"></v-img>
                         </v-col>
                     </v-row>
                 </div>
@@ -35,11 +44,19 @@
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
 import table from '@/assets/electricidad/table.png'
+import table1 from '@/assets/electricidad/table1.png'
+import table2 from '@/assets/electricidad/table2.png'
+import table3 from '@/assets/electricidad/table3.png'
 import { useCounterStore } from '../../stores/counter';
 import { storeToRefs } from 'pinia';
+import { onMounted } from '@vue/runtime-core';
 
 const store = useCounterStore()
-const {windowHeight, windowSize} = storeToRefs(store)
+const {windowHeight, windowSize, count} = storeToRefs(store)
+
+onMounted(() => {
+    count.value = 0
+})
 
 </script>
 

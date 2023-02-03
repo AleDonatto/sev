@@ -23,8 +23,8 @@
                             <v-img :src="importante" :max-height="windowHeight>900 ? '450': '260'"  @click="images.visible = !images.visible"></v-img>
                         </v-col>
                         <v-col cols="11" class="animate__animated animate__backInRight" v-if="count === 2" align-self="xcenter">
-                            <v-img :src="consumo" :max-height="windowHeight>900 ? '450': '160'"  @click="images.visible = !images.visible"></v-img>
-                            <v-img :src="importante" :max-height="windowHeight>900 ? '450': '110'"  @click="images.visible = !images.visible"></v-img>
+                            <v-img :src="consumo" :max-height="windowHeight>900 ? '310': '160'"  @click="images.visible = !images.visible"></v-img>
+                            <v-img :src="importante" :max-height="windowHeight>900 ? '210': '110'"  @click="images.visible = !images.visible"></v-img>
                         </v-col>
                     </v-row>
 
