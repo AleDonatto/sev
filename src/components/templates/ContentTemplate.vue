@@ -180,7 +180,7 @@ const route = useRouter()
 function SiguientePaso(){
     //console.log(router.path)
     let route = router.path
-    if(route === '/evolucion-de-movilidad' && step.value === 4 && count.value < 6){
+    if(route === '/evolucion-de-movilidad' && step.value === 4 && count.value < 42){
         increment()
     }else if(route === '/fundamentos-de-electricidad' && step.value === 10 && count.value<3){
         increment()
