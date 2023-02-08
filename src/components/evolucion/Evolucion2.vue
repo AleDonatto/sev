@@ -7,6 +7,18 @@
                         <v-col cols="2">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="9">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text>
+                                        Es a fines del siglo XIX que se empieza a dar una evolución. En 1885 Karl Benz presentó al mundo su 
+                                        "motorwagen"; considerado el primer automóvil con motor de combustión interna. Poco tiempo después, 
+                                        Thomas Parker presentó un vehículo eléctrico en Gran Bretaña y Ferdinand Porsche el primer automóvil 
+                                        híbrido eléctrico-gasolina.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                     </v-row>
 
                     <v-row no-gutters class="mt-4 animate__animated animate__backInLeft">
@@ -40,6 +52,7 @@
                             <v-img :src="division" max-width="850"></v-img>
                             <div class="text-center bg-gray-3 size-box mx-1">
                                 <span class="font-avenir font-size-34 font-weight-thin text-white">1898</span>
+                                <p class="font-avenir font-size-22 font-weight-thin text-white">Ferdinand Porsche. Auto híbrido eléctrico-gasolina</p>
                             </div>
                         </v-col>
                     </v-row>

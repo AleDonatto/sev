@@ -7,6 +7,144 @@
                         <v-col cols="2">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="10" v-if="count === 0">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1" >
+                                    <v-card-text>
+                                        Vamos a revisar rápidamente una manera en la que podemos clasificar los diferentes tipos de tren 
+                                        motriz de acuerdo al nivel de emisiones de gases de efecto invernadero que generan.
+                                        Los autos que ocupan motores a gasolina o diesel serían aquéllos que más emisiones generan. 
+                                        Los vehículos híbridos, que combinan motores de combustión interna con motores eléctricos, 
+                                        serían un punto medio. Finalmente los vehículos eléctricos a baterías así como los vehículos 
+                                        de celdas de combustible (FCEV) o aquellos que utilizan hidrógeno en un motor de combustión 
+                                        interna (H-ICE) se consideran los más limpios ya que no generan emisiones contaminantes.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
+                        <v-col cols="8" v-if="count >= 1">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count >= 1 && count <= 7"
+                            :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text>
+                                        A continuación vamos a analizar los componentes principales que conforman cada tipo de tren motriz y la función que desempeñan.
+                                    
+                                        Vamos a iniciar con los vehículos con motor a combustión interna también llamados ICE.
+
+                                        En ellos, el motor a combustión es fundamental y es quien genera toda la energía y la fuerza para el 
+                                        movimiento del vehículo. No cuentan con un motor eléctrico que pueda propulsar al automóvil y 
+                                        la batería presente es una de bajo voltaje que suministra corriente eléctrica a los diferentes sistemas 
+                                        eléctricos.
+
+                                        Este tipo de unidades no cuenta con una batería de alto voltaje (también conocida como batería de tracción). Al no haber motores eléctricos que puedan mover al auto, no tienen una autonomía eléctrica.
+
+                                        Sus niveles de emisiones contaminantes se consideran altas ya que están quemando combustibles fósiles para generar el movimiento del vehículo.
+
+                                        La recarga de este tipo de vehículos es muy rápida. En unos cuantos minutos puedes llenar el tanque de combustible en una estación de servicio.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                            <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count >= 8 && count <=14"
+                            :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text>
+                                        Los vehículos semihíbridos (también conocidos como MHEV o mild hybrid), son el primer paso hacia 
+                                        la electrificación.  Estos cuentan ya con un motor eléctrico pequeño y de baja potencia. Si bien no 
+                                        se pueden mover únicamente con la fuerza de este motor eléctrico, si se tiene un pequeño beneficio 
+                                        por la aportación de energía que hace al sistema. Es decir, el motor eléctrico es una asistencia para 
+                                        el motor de gasolina bajo ciertas condiciones. De tal manera que podríamos concluir que el motor de 
+                                        gasolina es primordial mientras que el motor eléctrico es simplemente un sistema de asistencia.
+
+                                        Los sistemas semihíbridos suelen ocupar baterías de bajo voltaje (12 a 48 voltios dependiendo del fabricante) y no cuentan con baterías de tracción de alto voltaje.
+
+                                        Al no poder moverse únicamente con el motor eléctrico, no se considera que tengan autonomía eléctrica.
+
+                                        Sus emisiones contaminantes son ligeramente más bajas que en un vehiculo tradicional pero aún se consideran elevadas.
+
+                                        Finalmente, el tiempo de recarga es corto ya que en unos minutos se puede cargar combustible y llenar el tanque.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                            <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count >= 15 && count <=21"
+                            :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text>
+                                        Vehículos híbridos fuertes (también conocidos como Full HEV o híbridos autorecargables). 
+                                        Estos son con seguridad los híbridos más conocidos y más comercializados a nivel mundial. 
+                                        Se trata de sistemas que ya cuentan con motor o motores eléctricos suficientemente fuertes 
+                                        para mover al vehículo y que almacenan la energía eléctrica en baterías de tracción de alto voltaje.
+
+                                        Las baterías de tracción son de alto voltaje pero tienen una capacidad de carga relativamente 
+                                        pequeña (0.9 a 2.5 kilowatthora) y que permiten un movimiento 100% eléctrico por distancias 
+                                        limitadas (normalmente de 3 a 5 km).
+
+                                        Es debido a estas limitantes al movimiento 100% eléctrico que la mayor parte del tiempo operan en 
+                                        un ciclo combinado eléctrico-gasolina. Gracias a sus motores eléctricos, las emisiones contaminantes 
+                                        son mucho más reducidas que las de los ICE o MHEV.
+
+                                        Debido a que las baterías de tracción de estos vehículos se cargan durante el rodamiento del 
+                                        vehículo o con el motor de combustible, no deben (ni pueden) conectarse a una fuente de corriente 
+                                        eléctrica. De esta manera el usuario únicamente debe llenar el tanque de combustible, un proceso 
+                                        que lleva muy poco tiempo.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                            <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count>=22 && count <=28"
+                            :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text>
+                                        En años recientes se ha incrementado el número de vehículos híbridos enchufables que se 
+                                        ofrecen en diferentes marcas. Este tipo de autos, también conocidos como PHEV o plug-in 
+                                        hybrid cuentan con uno o varios motores eléctricos de alta potencia que son capaces de mover 
+                                        al vehículo de manera 100% eléctrica. La diferencia principal con un Full Hybrid o híbrido 
+                                        autorecargable es que en los PHEV las baterías de tracción suelen tener mayor capacidad 
+                                        (de 9 a 24 kilo watt hora o incluso más grandes en algunos casos).
+
+                                        Gracias a estas baterías de gran capacidad, pueden tener la capacidad de recorrer largas 
+                                        distancias de manera 100% eléctrico (entre 24 a 80 kilómetros de autonomía es algo normal y 
+                                        hay algunos que ofrecen hasta 100 km). Esto implica que durante el uso cotidiano en ciudad, 
+                                        la mayor parte del tiempo se mueven de forma 100% eléctrica, pero cuando es necesario pueden 
+                                        recurrir al motor de combustión para extender sus capacidades y funcionar en ciclo combinado 
+                                        eléctrico-gasolina por distancias mucho más largas.
+
+                                        Este tipo de vehículos pueden tener emisiones contaminantes de medias a muy bajas dependiendo 
+                                        del uso que se haga de ellos y de los hábitos de carga del usuario.
+
+                                        En cuanto al tiempo de recarga podemos decir que el abastecimiento de combustible es muy rápido 
+                                        y que el tiempo en que se cargan las baterías es medio. Este último puede variar mucho dependiendo 
+                                        de la capacidad de la batería y el tipo de cargador utilizado. Normalmente se aprovechan los 
+                                        tiempos en los que el auto no está siendo utilizado para la recarga de las baterías.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                            <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count>=29 && count <=35"
+                            :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text>
+                                        Finalmente hablaremos de los vehículos eléctricos a batería también conocidos como BEV. 
+                                        En este tipo de unidades, el motor de combustible desaparece por completo y es el motor 
+                                        o los motores eléctricos quienes son responsables del movimiento del auto. Las baterías 
+                                        de tracción son de alto voltaje y normalmente son de gran capacidad; desde 20 hasta 100 
+                                        kilo watt hora es habitual.
+
+                                        Los BEV son los vehículos más ecológicos en el sentido de que no generan emisiones de gases de efecto invernadero.
+
+                                        La autonomía eléctrica suele ser bastante grande y dependerá de varios factores como pueden ser: 
+                                        la capacidad de la batería, las condiciones de operación (velocidad, tráfico, pendientes, 
+                                        temperatura ambiente, etc.) y el peso vehícular. Es normal encontrar vehículos eléctricos con 
+                                        autonomías desde los 100 hasta los 1000 km.
+
+                                        El tiempo de recarga de estos autos es uno de los obstáculos más grandes que se presentan. 
+                                        Dependiendo de varios factores como pueden ser la capacidad de la batería, la potencia del 
+                                        cargador utilizado, la temperatura ambiente y la temperatura de funcionamiento del sistema, 
+                                        se puede tardar desde unos 30 minutos hasta más de 60 horas para abastecer carga a las baterías.
+
+                                        Es por esto que resulta sumamente importante poder guiar a los compradores de este tipo de unidad 
+                                        a una solución satisfactoria de acuerdo a sus necesidades.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                         <v-col cols="2" align="end">
                             <v-img :src="Mcombustion" :max-height="windowHeight> 900 ? '190': windowHeight<660 ? '160': '170'" v-if="count >= 1 && count <= 7"></v-img>
                             <v-img :src="Mcombustion" :max-height="windowHeight> 900 ? '190': windowHeight<660 ? '160': '170'" v-if="count >= 8 && count <=14"></v-img>

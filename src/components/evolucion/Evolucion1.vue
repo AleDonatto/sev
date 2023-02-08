@@ -7,6 +7,25 @@
                         <v-col cols="2">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="9">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text>
+                                        Como te lo podrás imaginar, la historia de la movilidad se remonta a tiempos muy remotos. 
+                                        Hace más de 3,600 millones de años que los homínidos empezaron a caminar erguidos y de acuerdo a 
+                                        su evolución, empezaron a buscar formas más eficientes para moverse o para mover los objetos de su 
+                                        vida cotidiana.
+
+                                        Existen testimonios de que hace más de 3000 años ya se utilizaban bestias de carga y de tiro. 
+                                        Al rededor del año 800 antes de Cristo, se hacía uso de los carruajes tirados por caballos para 
+                                        propósitos diversos.
+
+                                        Curiosamente, a fines del siglo XIX, los carros tirados por caballos u otras bestias de tiro seguían 
+                                        siendo utilizados ampliamente. En más de 2500 años la evolución había sido muy lenta.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                     </v-row>
 
                     <v-row no-gutters class="mt-4 animate__animated animate__backInLeft">
