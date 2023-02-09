@@ -10,7 +10,7 @@
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
                                 <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text>
+                                    <v-card-text class="font-size-22 font-avenir">
                                         Es a fines del siglo XIX que se empieza a dar una evolución. En 1885 Karl Benz presentó al mundo su 
                                         "motorwagen"; considerado el primer automóvil con motor de combustión interna. Poco tiempo después, 
                                         Thomas Parker presentó un vehículo eléctrico en Gran Bretaña y Ferdinand Porsche el primer automóvil 

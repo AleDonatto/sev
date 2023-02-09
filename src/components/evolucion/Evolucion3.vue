@@ -10,11 +10,12 @@
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
                                 <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text>
+                                    <v-card-text class="font-size-22 font-avenir">
                                         Algo curioso es que en estos últimos 100 años nuevamente el cambio ha sido paulatino. Si observamos el 
-                                    mercado automotriz actual vamos a encontrar que predominan los vehículos con motor a combustión 
-                                    interna y que también se encuentran presentes los vehículos híbridos y los vehículos eléctricos. 
-                                    Estos últimos han incrementado notablemente en volumen de ventas en años recientes.
+                                        mercado automotriz actual vamos a encontrar que predominan los vehículos con motor a combustión 
+                                        interna y que también se encuentran presentes los vehículos híbridos y los vehículos eléctricos. 
+                                        <br><br>
+                                        Estos últimos han incrementado notablemente en volumen de ventas en años recientes.
                                     </v-card-text>
                                 </v-card>
                             </div>
