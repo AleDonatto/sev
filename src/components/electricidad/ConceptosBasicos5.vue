@@ -1,6 +1,6 @@
 <template>
     <div>
-        <content-template title="ELECTRICIDAD" subtitle="Conceptos básicos">
+        <content-template title="ELECTRICIDAD" subtitle="Conceptos Básicos">
             <template v-slot:content>
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
@@ -29,6 +29,9 @@
                     </v-row>
 
                     <v-snackbar v-model="snackbar" location="bottom right" color="#FDBD31" timeout="10000" class="mx-16" height="200" width="320" rounded="xl" multi-line vertical>
+                        <template v-slot:actions>
+                            <v-btn @click="snackbar=!snackbar"><span class="text-black">Cerrar</span></v-btn>
+                        </template>
                         <p class="font-weight-bold text-black font-avenir font-size-20 px-5 py-4">
                             El amperaje hace referencia a qué tan intensa es la corriente. Por ejemplo: a mayor amperaje, mayor velocidad de carga
                         </p>

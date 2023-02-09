@@ -1,6 +1,6 @@
 <template>
     <div>
-        <content-template title="" subtitle="Tipos de tren <br/> motriz mas comunes">
+        <content-template title="" subtitle="Tipos de tren <br/> motriz más comúnes">
             <template v-slot:content>
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="space-between">

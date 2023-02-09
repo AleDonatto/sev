@@ -1,6 +1,6 @@
 <template>
     <div>
-        <content-template title="ELECTRICIDAD" subtitle="Aplicaciones prácticas">
+        <content-template title="ELECTRICIDAD" subtitle="Aplicaciones Prácticas">
             <template v-slot:content>
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="space-between">

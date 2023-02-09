@@ -1,6 +1,6 @@
 <template>
     <div>
-        <content-template title="ELECTRICIDAD" subtitle="Conceptos básicos">
+        <content-template title="ELECTRICIDAD" subtitle="Conceptos Básicos">
             <template v-slot:content>
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
@@ -36,6 +36,9 @@
                         <p class="font-weight-bold text-black font-avenir font-size-20 px-5 py-4">
                             <span class="text-white">A</span> mayor potencia eléctrica <span class="text-white">en un cargador</span> más rápido <span class="text-white">se puede cargar una batería.</span>
                         </p>
+                        <template v-slot:actions>
+                            <v-btn @click="snackbar = !snackbar"><span class="text-black">Cerrar</span></v-btn>
+                        </template>
                     </v-snackbar>
                 </div>
             </template>

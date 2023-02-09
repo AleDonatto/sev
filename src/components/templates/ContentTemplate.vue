@@ -144,7 +144,7 @@
             <v-app-bar class="bg-appbar" :class="{'h-appbar': windowHeight>900, 'h-appbar-md':windowHeight<700}" >
                 <v-row>
                     <v-col cols="6" align="start" align-self="center">
-                        <h1 class="ml-7" :class="{'font-size-20': windowHeight<700}">{{props.title}}</h1>
+                        <h1 class="ml-7 mt-5" :class="{'font-size-20': windowHeight<700}">{{props.title}}</h1>
                     </v-col>
                     <v-col cols="6" align="start" align-self="center">
                         <h1 class="text-white font-weight-thin m-left" :class="{'font-size-20 mt-0': windowHeight<700}" v-html="props.subtitle"></h1> 

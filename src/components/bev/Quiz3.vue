@@ -1,6 +1,6 @@
 <template>
         <div>
-        <content-template title="REAPSO DE SECCION" subtitle="Cargando un BEV">
+        <content-template title="REPASO DE SECCION" subtitle="Cargando un BEV">
             <template v-slot:content>
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
