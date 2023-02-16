@@ -57,7 +57,7 @@ import user from '@/assets/evolucion/user.png'
 import camioneta from '@/assets/evolucion/camioneta.png'
 import trailer from '@/assets/evolucion/trailer.png'
 import sedan from '@/assets/evolucion/sedan.png'
-import cars from '@/assets/evolucion/cars.png' 
+import cars from '@/assets/evolucion/nuevos.png' 
 import { useCounterStore } from '../../stores/counter';
 import { storeToRefs } from 'pinia';
 import { onMounted } from '@vue/runtime-core';

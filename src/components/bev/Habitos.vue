@@ -57,7 +57,7 @@
 <script setup>
 import ContentTemplate from '../templates/ContentTemplate.vue';
 import user from '@/assets/evolucion/user.png'
-import habitoscar from '@/assets/cargando/habitoscar.png'
+import habitoscar from '@/assets/cargando/sev1034.png'
 import { useCounterStore } from '../../stores/counter';
 import { storeToRefs } from 'pinia';
 

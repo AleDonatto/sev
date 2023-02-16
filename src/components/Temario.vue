@@ -48,7 +48,7 @@ const {windowHeight, windowSize} = storeToRefs(store)
 
 <style scoped>
 .bg-temario{
-  background-image: url('../assets/temario/temario.png');
+  background-image: url('../assets/temario/temariopruebas.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -56,7 +56,7 @@ const {windowHeight, windowSize} = storeToRefs(store)
 }
 
 .bg-temario-md{
-  background-image: url('../assets/temario/temario.png');
+  background-image: url('../assets/temario/temariopruebas.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

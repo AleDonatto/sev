@@ -12,8 +12,10 @@
                                 <v-card height="130" class="overflow-auto rounded-lg ma-1">
                                     <v-card-text class="font-size-22 font-avenir" v-if="count === 0">
                                         Cuando se desea calcular el costo de carga de una batería, hay que tener en cuenta dos factores 
-                                        principales: 1) la capacidad de la batería y su estado de carga, es decir, cuantos kilowatt hora 
-                                        se desean cargar; y 2) el precio del kilowatt hora suministrado en el cargador o por parte de 
+                                        principales: <br>
+                                        1) la capacidad de la batería y su estado de carga, es decir, cuantos kilowatt hora 
+                                        se desean cargar; y <br>
+                                        2) el precio del kilowatt hora suministrado en el cargador o por parte de 
                                         quien distribuye la corriente eléctrica.
                                     </v-card-text>
                                     <v-card-text class="font-size-22 font-avenir" v-if="count === 1">
@@ -22,8 +24,6 @@
                                         Si el usuario paga una tarifa de consumo básico equivalente a $0.859 por kilowatt hora, el costo 
                                         total es de $34.36; si la tarifa corresponde a un consumo excedente a $3.042 por kilowatt hora, 
                                         el costo será de $121.68.
-                                        <br><br>
-                                        Ojo, no se actualizaron los números en esta parte, la cantidad de energía a cargar son 40 kwh.
                                     </v-card-text>
                                 </v-card>
                             </div>
@@ -67,9 +67,9 @@
                         <v-col cols="12">
                             <p class="font-avenir" :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">Ejercicio: ¿Cuánto cuesta cargar de 20% hasta 100% la batería de un vehículo eléctrico que cuenta con una batería de 50 kWh?</p>
                         </v-col>
-                        <v-col cols="9">
-                            <p class="font-avenir" :class="{'font-size-30': windowSize>900, 'font-size-20': windowHeight<700}">Consumo básico: $0.859/kWh 🡪 23.5 X 0.859 = $20.18.</p>
-                            <p class="font-avenir" :class="{'font-size-30': windowSize>900, 'font-size-20': windowHeight<700}">Consumo excedente: $3.042/kWh 🡪 23.5 X 3.042 = $71.48.</p>
+                        <v-col cols="10">
+                            <p class="font-avenir" :class="{'font-size-30': windowSize>900, 'font-size-20': windowHeight<700}">Tarifa CFE en consumo básico: $0.859/kWh 🡪 40 kWh X $0.859/kWh = $34.36</p>
+                            <p class="font-avenir" :class="{'font-size-30': windowSize>900, 'font-size-20': windowHeight<700}">Tarifa CFE en consumo excedente: $3.042/kWh 🡪 40 kWh X $3.042/kWh = $121.68</p>
                         </v-col>
 
                         <v-col cols="12" align="end">
