@@ -20,7 +20,7 @@
                                 <v-radio value="1" @input="answers.a1 = $event.target.value">
                                     <template v-slot:label>
                                         <p class="font-avenir font-size-24">
-                                            De Litio fosfato-ferros LiFePO4.
+                                            De Litio fosfato-ferroso LiFePO4.
                                         </p>
                                     </template>
                                 </v-radio>

@@ -7,6 +7,26 @@
                         <v-col cols="2">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="9">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="font-avenir font-size-22">
+                                        La segunda unidad que vamos a conocer se llama Amperio o Amper. Esta unidad mide la intensidad de 
+                                        la corriente eléctrica, en palabras coloquiales, que tan "fuerte" es esta corriente.
+                                        <br><br>
+                                        En este ejemplo podemos observar un convertidor de corriente para conectar un teléfono móvil. 
+                                        En ambos casos se pasa de 110 Voltios de corriente alterna (la toma de corriente de "pared") y 
+                                        se transforma a 5 Voltios de corriente directa que es lo que manejan los dispositivos USB. 
+                                        Sin embargo, en el "cuadrito" pequeño de la izquierda se maneja 1 amperio de intensidad y en 
+                                        el de la derecha es de 2.1 amperios.
+                                        <br><br>
+                                        En consecuencia, la corriente eléctrica suministrada por el adaptador de la derecha tiene un 
+                                        poco más del doble de intensidad y, por lo mismo, podrá cargar los dispositivos con mayor 
+                                        velocidad. Por eso es que se les conoce como "cargadores rápidos".
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                     </v-row>
 
                     <v-row justify="center" class="rounded-xl bg-color mx-10">

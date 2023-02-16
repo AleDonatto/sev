@@ -7,6 +7,24 @@
                         <v-col cols="2">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="9">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="font-size-22 font-avenir">
+                                        Abundando un poco en los diferentes tipos de corriente eléctrica.
+                                        <br><br>
+                                        La corriente alterna tiene como ventaja principal que puede ser transmitida a través de cableado 
+                                        por distancias muy largas sin tener perdidas considerables. La desventaja es que no puede ser 
+                                        almacenada en baterías. Las tomas de corriente que encontramos habitualmente en nuestras casas 
+                                        son de corriente alterna.
+                                        <br><br>
+                                        La corriente directa, por otra parte, es la que puede ser almacenada en baterías y todas las 
+                                        baterías y pilas utilizan este tipo de corriente. Una de sus desventajas es que no puede ser 
+                                        transmitida por largas distancias usando cableado ya que habría grandes pérdidas energéticas.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                     </v-row>
 
                     <v-row class="rounded-xl mx-10 bg-color" justify="center" :class="{'mt-10': windowHeight>900, 'mt-1': windowHeight<700}">

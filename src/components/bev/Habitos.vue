@@ -7,6 +7,23 @@
                         <v-col cols="2">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="9">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text  class="font-size-22 font-avenir">
+                                        Algo que se puede percibir en la mayoría de los usuarios de vehículos eléctricos es que han 
+                                        integrado los procesos de carga de sus vehículos fácilmente a su vida diaria. Va a ser en 
+                                        los momentos en que no están ocupando el automóvil que aprovechan para conectarlo y recargar 
+                                        las baterías. Como ejemplo se puede mencionar la carga durante la noche mientras el propietario 
+                                        duerme, durante el día mientras se encuentra en su trabajo o cuando visita un centro comercial, 
+                                        restaurante, cine, etc.
+                                        <br><br>
+                                        También vale la pena comentar que es más frecuente observar una carga parcial para la batería de 
+                                        uno de estos autos que una carga completa desde 0 hasta el 100%.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                     </v-row>
 
                     <v-row justify="center" class="bg-boxstep-content rounded-xl mx-10 px-5 py-5">

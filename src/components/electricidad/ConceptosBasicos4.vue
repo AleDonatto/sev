@@ -7,6 +7,26 @@
                         <v-col cols="2">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="9">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="font-avenir font-size-22">
+                                        Un punto importante a considerar es que la corriente eléctrica puede ser transformada de 
+                                        corriente alterna a a corriente directa y viceversa.
+                                        <br><br>
+                                        Un convertidor de corriente, como el que usamos para conectar nuestro teléfono móvil o nuestra 
+                                        laptop hace precisamente la función de cambiar la corriente alterna del contacto de pared 
+                                        (habitualmente 110 Voltios de corriente alterna) y lo transforma en corriente directa con el 
+                                        voltaje requerido por nuestro dispositivo.
+                                        <br><br>
+                                        Por otro lado, un inversor de corriente hará el cambio contrario. Tomará la corriente directa 
+                                        para transformarla en corriente alterna. En el ejemplo vemos un inversor de corriente portátil 
+                                        que se conecta a una toma de 12 Voltios CD de un auto y te permite conectar aparatos que requieren 
+                                        corriente alterna a 110 Voltios.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                     </v-row>
 
                     <v-row justify="center" class="bg-color rounded-xl mx-10" :class="{'margin-top': windowHeight<700}">

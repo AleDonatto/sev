@@ -7,6 +7,22 @@
                         <v-col cols="2">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="9">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="font-size-22 font-avenir">
+                                        En este ejemplo podemos notar como los consumos históricos 
+                                        para un mismo domicilio pasaron de ser muy altos (hasta $3,500 bimestrales) a realmente bajos 
+                                        (menos de $50 pesos al bimestre). Esto es posible gracias a la instalación de páneles 
+                                        fotovoltaícos para la generación de corriente eléctrica a partir de la luz solar.
+                                        <br><br>
+                                        De hecho, en este caso particular, los páneles de generación de electricidad por medio de la luz 
+                                        del Sol están generando más energía eléctrica que la que consume el dueño de esa residencia. 
+                                        Por eso se menciona en el recibo que se cuenta con un saldo a favor por 812 kilowatt hora.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                     </v-row>
 
                     <v-row justify="center" class="mx-10 bg-color rounded-xl">

@@ -7,6 +7,16 @@
                         <v-col cols="2" align="start">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="8">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="font-size-22 font-avenir">
+                                        Hay un cambio total de esta diapositiva, me parece que está incluido con los cambios que ya se }
+                                        ven reflejados en las siguientes. Si no lo tienen, por favor háganmelo saber para poder generarlo.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                         <v-col cols="2" align="end" class="animate__animated animate__backInDown">
                             <v-img :src="bateriasev" max-height="310" class="" :class="{'position-image': windowHeight>900, 'position-image-md': windowHeight<700}"></v-img>
                         </v-col>

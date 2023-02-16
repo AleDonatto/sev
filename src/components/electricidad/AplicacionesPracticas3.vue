@@ -7,6 +7,27 @@
                         <v-col cols="2">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="9">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="font-size-22 font-avenir" v-if="count === 0">
+                                        Cuando se desea calcular el costo de carga de una batería, hay que tener en cuenta dos factores 
+                                        principales: 1) la capacidad de la batería y su estado de carga, es decir, cuantos kilowatt hora 
+                                        se desean cargar; y 2) el precio del kilowatt hora suministrado en el cargador o por parte de 
+                                        quien distribuye la corriente eléctrica.
+                                    </v-card-text>
+                                    <v-card-text class="font-size-22 font-avenir" v-if="count === 1">
+                                        En este ejemplo, calcularemos el costo de llenar una batería de 50 kilowatt hora desde el 20% 
+                                        hasta el 100% de su capacidad. De tal manera que la carga total resultante es de 40 kilowatt hora. 
+                                        Si el usuario paga una tarifa de consumo básico equivalente a $0.859 por kilowatt hora, el costo 
+                                        total es de $34.36; si la tarifa corresponde a un consumo excedente a $3.042 por kilowatt hora, 
+                                        el costo será de $121.68.
+                                        <br><br>
+                                        Ojo, no se actualizaron los números en esta parte, la cantidad de energía a cargar son 40 kwh.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                     </v-row>
 
                     <v-row justify="center" class="rounded-xl bg-color mx-10 px-5" v-if="count === 0">

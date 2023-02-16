@@ -7,6 +7,28 @@
                         <v-col cols="2">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="9">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="font-avenir font-size-22">
+                                        El primer concepto que vamos a explorar el VOLTIO o Volt. Se trata de unidad que mide 
+                                        la diferencia de potencial eléctrico entre dos puntos; pero como esto no resulta del 
+                                        todo claro, podemos decir también que el Voltaje nos habla de la "cantidad" de corriente 
+                                        eléctrica.
+                                        <br><br>
+                                        Las pilas que conocemos pueden tener diferentes voltajes; las pequeñas AAA 1.5 Volts, las 
+                                        cuadradas que se usaban para los despertadores tienen 9 Volts y los acumuladores de autos 
+                                        normalmente trabajan a 12 Volts. Todas las pilas o baterías utilizan lo que se denomina 
+                                        corriente directa.
+                                        <br><br>
+                                        Por otra parte, cuando vemos el enchufe de electricidad que tenemos en casa, ahi circula 
+                                        corriente eléctrica que puede oscilar entre los 110 y los 240 Voltios dependiendo de la 
+                                        instalación que se tenga en casa. A este tipo de contactos se suministra la corriente que 
+                                        conocemos como corriente alterna.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                     </v-row>
 
                     <v-row justify="center" class="rounded-xl bg-color mx-10" :class="{'mt-10':windowHeight>900, 'mt-0':windowHeight<700}">

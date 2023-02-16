@@ -7,6 +7,23 @@
                         <v-col cols="2">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="9">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="font-avenir font-size-22">
+                                        La siguiente unidad que vamos a presentar se llama el Watt o vatio. Esta es mucho más conocida ya 
+                                        que cuando tenemos, o teníamos, que reemplazar una bombilla en casa, debíamos decidir de cuantos 
+                                        Watts debería de ser.
+                                        <br><br>
+                                        El foco de la izquierda tiene una potencia de 60 Watts mientras que el de la derecha tiene una 
+                                        potencia de 100 Watts. Evidentemente, el de la derecha tiene capacidad de emitir más luz, 
+                                        pero también va a generar un mayor consumo de energía eléctrica.
+                                        <br><br>
+                                        La potencia eléctrica está determinada por la multiplicación del voltaje y el amperaje.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                     </v-row>
 
                     <v-row class="rounded-xl bg-color mx-10">

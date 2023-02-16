@@ -7,6 +7,22 @@
                         <v-col cols="2">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="9">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="font-size-22 font-avenir">
+                                        Para los autos eléctricos es igual. En México la mayor parte de los cargadores corresponden al 
+                                        Type 1 también conocido como SAE J 1772. Existen también varios del tipo GBT. Lo que es un hecho, 
+                                        es que el conector del vehículo debe ser compatible con el del cargador, o bien, puede utilizarse 
+                                        un adaptador.
+                                        <br><br>
+                                        También es importante destacar que hay tomas de corriente y cargadores específicos para carga 
+                                        con corriente alterna (cargadores modo 2 y 3) y otros para carga con corriente directa 
+                                        (cargadores modo 4).
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                     </v-row>
 
                     <v-row justify="start" class="mx-10 px-5 py-5 rounded-xl bg-boxstep-content mt-0">

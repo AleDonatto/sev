@@ -7,12 +7,24 @@
                         <v-col cols="2">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="9">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="font-size-22 font-avenir">
+                                        Regresando al ejemplo anterior. Si multiplicamos el voltaje por el amperaje de cada uno 
+                                        de estos adaptadores USB, podremos notar que el de la izquierda trabaja a 5 Watts de potencia 
+                                        mientras que el de la derecha trabaja a 10.2 Watts de potencia. Es por esto que carga más 
+                                        rápido a los dispositivos eléctricos.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                     </v-row>
 
                     <v-row justify="center" class="mx-10 rounded-xl bg-color">
                         <v-col cols="12" align="start" class="animate__animated animate__backInDown">
                             <p class="front-avenir" :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">
-                                <span class="font-weight-bold">Watt:</span> unidad de medicion de la potencía eláctrica.
+                                <span class="font-weight-bold">Watt:</span> unidad de medicion de la potencía eléctrica.
                             </p>
                             <p class="font-avenit" :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">
                                 <span class="font-weight-bold">Watt:</span>Volt X Amper.

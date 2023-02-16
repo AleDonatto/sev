@@ -7,6 +7,24 @@
                         <v-col cols="2">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="9">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="font-size-22 font-avenir">
+                                        Una lámpara que tengamos en casa pero que no esté encendida no va a generar un consumo de 
+                                        corriente eléctrica. Sin embargo, cuando está siendo utilizada va a consumir energía eléctrica 
+                                        por todo el tiempo que permanezca en uso.
+                                        <br><br>
+                                        Cuando analizamos el recibo de cobro de la CFE vamos a notar que la unidad que se utiliza para 
+                                        el cobro de la energía eléctrica suministrada es el kilowatt hora.
+                                        <br><br>
+                                        Como ejemplo, si tuvieramos una lámpara que tiene 10 focos de 100 Watts cada uno, la 
+                                        potencia total sería de 1,000 Watts o 1 kilowatt. En caso de que se dejara encendida durante 
+                                        una hora, el consumo sería de 1 kilowatt hora.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                     </v-row>
 
                     <v-row justify="center" class="mx-10 bg-color rounded-xl">

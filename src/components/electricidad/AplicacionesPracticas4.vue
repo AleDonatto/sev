@@ -7,6 +7,33 @@
                         <v-col cols="2">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="9">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="font-size-22 font-avenir">
+                                        Uno de los aspectos que más importa a los clientes potenciales de un vehículo eléctrico es la 
+                                        autonomía. Esto se entiende como la distancia que se puede recorrer con una sola carga de la 
+                                        batería de dicho automóvil.
+                                        <br><br>
+                                        Para poder responder a esta pregunta, se realizan una serie de pruebas en condiciones controladas 
+                                        según una homologación. En nuestras tablas utilizamos los datos resultantes de la prueba según el 
+                                        NEDC. Esta prueba consta en una sesión de manejo que dura 20 minutos y en la que se recorren 11 
+                                        km en total. Se consideran dos tipos de conducción (urbana 66% y no urbana el 34% de la prueba). 
+                                        La velocidad promedio es de 34 km/h y la velocidad máxima permitida es de 120 km/h. La temperatura 
+                                        del ambiente debe estar entre 20 y 30 grados centígrados y el terreno es llano y sin pendientes.
+                                        <br><br>
+                                        Como resulta evidente, este tipo de conducción no es representativa a la realidad de la mayor 
+                                        parte de las personas en su día a día. Es por esto que los resultados de autonomía pueden cambiar 
+                                        dramáticamente dependiendo de las condiciones reales de operación. Algunos de los puntos a 
+                                        considerar serían las pendientes del trayecto, si se trata de un avance continuo u hay 
+                                        operaciones frecuentes de aceleración y frenado, el uso de la calefacción y aire acondicionado 
+                                        entre otros.
+                                        <br><br>
+                                        Además de la homologación NEDC existen otras como podría ser la WLTP y la EPA.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                     </v-row>
 
                     <v-row justify="center" class="rounded-xl bg-color mx-10 px-5 py-5">
@@ -29,7 +56,7 @@
                                         <li>Temperatura 20 – 30 °C.</li>
                                     </ul>
                                 </li>
-                                <li>WLPT (Worldwide Harmonized Light Vehicle Test Procedure).</li>
+                                <li>WLTP (Worldwide Harmonized Light Vehicle Test Procedure).</li>
                             </ul>
                         </v-col>
                     </v-row>

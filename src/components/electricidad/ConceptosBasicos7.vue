@@ -7,6 +7,22 @@
                         <v-col cols="2">
                             <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
+                        <v-col cols="9">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="font-avenir font-size-22">
+                                        En la actualidad, la mayor parte de los usuarios han reemplazado las bombillas 
+                                        tradicionales (incandescentes) como la de la izquierda por focos de bajo consumo 
+                                        (casi siempre LEDs) como el de la derecha. En este ejemplo, se tiene un ahorro 
+                                        impresionante ya que el foco de LED consume 8 Watts y emite la luz equivalente a una 
+                                        bombilla de 60 Watts.
+                                        <br><br>
+                                        El ahorro que genera el foco de LED se debe principalmente a que no se calienta como 
+                                        lo hace una bombilla incandescente.
+                                    </v-card-text>
+                                </v-card>
+                            </div>
+                        </v-col>
                     </v-row>
 
                     <v-row justify="center" class="rounded-xl bg-color mx-10">
