@@ -1,39 +1,42 @@
 <template>
-    <v-layout>
-        <v-main :class="{'bg-image' : step <= 1, 'bg-black': step === 16}">
-            <div v-if="$route.path === '/fundamentos-de-electricidad'">
-                <Presentacion v-if="step === 0"/>
-                <ConceptosBasicos v-if="step === 1"/>
-                <ConceptosBasicos2 v-if="step === 2"/>
-                <ConceptosBasicos3 v-if="step === 3"/>
-                <ConceptosBasicos4 v-if="step === 4"/>
-                <ConceptosBasicos5 v-if="step === 5"/>
-                <ConceptosBasicos6 v-if="step === 6"/>
-                <ConceptosBasicos7 v-if="step === 7"/>
-                <ConceptosBasicos8 v-if="step === 8"/>
-                <ConceptosBasicos9 v-if="step === 9"/>
-                <ConceptosBasicos10 v-if="step === 10" />
-                <ConceptosBasicos11 v-if="step === 11" />
-                <AplicacionesPracticas v-if="step === 12" />
-                <AplicacionesPracticas2 v-if="step === 13" />
-                <AplicacionesPracticas3 v-if="step === 14"/>
-                <AplicacionesPracticas4 v-if="step === 15" />
-                <Einstein v-if="step === 16"/>
-                <Quiz v-if="step === 17"/>
-                <Correcto v-if="step === 18" />
-                <Quiz2 v-if="step === 19" />
-                <Correcto v-if="step === 20"/>
-                <Quiz3 v-if="step === 21" />
-                <Correcto v-if="step === 22"/>
-            </div>
-        </v-main>
-    </v-layout>
-    <v-footer color="black" class="index-2" inset app v-if="!(step === 0) && !(step === 18) && !(step === 20) && !(step === 22)">
-        <p>© 2022 Todos los derechos reservados</p>
-    </v-footer>
+    <div>
+        <v-app>
+            <v-main :class="{'bg-image' : step <= 1, 'bg-black': step === 16}">
+                <div v-if="$route.path === '/fundamentos-de-electricidad'">
+                    <Presentacion v-if="step === 0"/>
+                    <ConceptosBasicos v-if="step === 1"/>
+                    <ConceptosBasicos2 v-if="step === 2"/>
+                    <ConceptosBasicos3 v-if="step === 3"/>
+                    <ConceptosBasicos4 v-if="step === 4"/>
+                    <ConceptosBasicos5 v-if="step === 5"/>
+                    <ConceptosBasicos6 v-if="step === 6"/>
+                    <ConceptosBasicos7 v-if="step === 7"/>
+                    <ConceptosBasicos8 v-if="step === 8"/>
+                    <ConceptosBasicos9 v-if="step === 9"/>
+                    <ConceptosBasicos10 v-if="step === 10" />
+                    <ConceptosBasicos11 v-if="step === 11" />
+                    <!--<AplicacionesPracticas v-if="step === 12" />-->
+                    <AplicacionesPracticas2 v-if="step === 12" />
+                    <AplicacionesPracticas3 v-if="step === 13"/>
+                    <AplicacionesPracticas4 v-if="step === 14" />
+                    <Einstein v-if="step === 15"/>
+                    <Quiz v-if="step === 16"/>
+                    <Correcto v-if="step === 17" />
+                    <Quiz2 v-if="step === 18" />
+                    <Correcto v-if="step === 19"/>
+                    <Quiz3 v-if="step === 20" />
+                    <Correcto v-if="step === 21"/>
+                </div>
+            </v-main>
+            <v-footer dark padless app v-if="!(step === 0) && !(step === 18) && !(step === 20) && !(step === 22)">
+                <p>© {{ date.getFullYear() }} Todos los derechos reservados</p>
+            </v-footer>
+        </v-app>
+        
+    </div>
 </template>
 
-<script setup>
+<script>
 import Presentacion from '../components/electricidad/Presentacion.vue';
 import ConceptosBasicos from '../components/electricidad/ConcentosBasicos.vue';
 import ConceptosBasicos2 from '../components/electricidad/ConceptosBasicos2.vue';
@@ -55,12 +58,41 @@ import Quiz from '../components/electricidad/Quiz.vue';
 import Quiz2 from '../components/electricidad/Quiz2.vue';
 import Quiz3 from '../components/electricidad/Quiz3.vue';
 import Correcto from '../components/Correcto.vue';
-import { useCounterStore } from '../stores/counter';
-import { storeToRefs } from 'pinia';
+import { mapState } from 'vuex';
 
-
-const store = useCounterStore()
-const {step} = storeToRefs(store)
+export default {
+    components: {
+        Presentacion,
+        ConceptosBasicos,
+        ConceptosBasicos2,
+        ConceptosBasicos3,
+        ConceptosBasicos4,
+        ConceptosBasicos5,
+        ConceptosBasicos6,
+        ConceptosBasicos7,
+        ConceptosBasicos8,
+        ConceptosBasicos9,
+        ConceptosBasicos10,
+        ConceptosBasicos11,
+        AplicacionesPracticas,
+        AplicacionesPracticas2,
+        AplicacionesPracticas3,
+        AplicacionesPracticas4,
+        Einstein,
+        Quiz,
+        Quiz2,
+        Quiz3,
+        Correcto
+    },
+    data(){
+        return {
+            date: new Date(),
+        }
+    },
+    computed: {
+        ...mapState(['step'])
+    }
+}
 </script>
 
 <style scoped>

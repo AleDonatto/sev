@@ -5,12 +5,12 @@
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
                                 <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-size-22 font-avenir">
+                                    <v-card-text class="font-size-22 ">
                                         Regresando al ejemplo anterior. Si multiplicamos el voltaje por el amperaje de cada uno 
                                         de estos adaptadores USB, podremos notar que el de la izquierda trabaja a 5 Watts de potencia 
                                         mientras que el de la derecha trabaja a 10.2 Watts de potencia. Es por esto que carga más 
@@ -23,33 +23,33 @@
 
                     <v-row justify="center" class="mx-10 rounded-xl bg-color">
                         <v-col cols="12" align="start" class="animate__animated animate__backInDown">
-                            <p class="front-avenir" :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">
+                            <p class="" :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">
                                 <span class="font-weight-bold">Watt:</span> unidad de medicion de la potencía eléctrica.
                             </p>
-                            <p class="font-avenit" :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">
+                            <p class="" :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">
                                 <span class="font-weight-bold">Watt:</span>Volt X Amper.
                             </p>
                         </v-col>
 
                         <v-col cols="5" align="center" class="animate__animated animate__backInLeft">
-                            <v-img :src="cubito" :max-height="windowHeight>900 ? '230': '140'"></v-img>
+                            <v-img src="@/assets/electricidad/cubito.png" contain :max-height="windowHeight>900 ? '230': '140'"></v-img>
                             <p class="font-weight-bold mt-2" :class="{'font-size-22': windowHeight>900, 'font-size-19': windowHeight<700}">5 Volts, <br> 1 Amper <br> 5W</p>
                         </v-col>
                         <v-col cols="1" align="center">
                             <hr class="vertical-line">
                         </v-col>
                         <v-col cols="5" align="center" class="animate__animated animate__backInRight">
-                            <v-img :src="cubo" :max-height="windowHeight>900 ? '230': '140'"></v-img>
+                            <v-img src="@/assets/electricidad/cubo.png" contain :max-height="windowHeight>900 ? '230': '140'"></v-img>
                             <p class="font-weight-bold mt-2" :class="{'font-size-22': windowHeight>900, 'font-size-19': windowHeight<700}">5 Volts, <br> 2.1 Amper <br> 10.2W</p>
                         </v-col>
                     </v-row>
 
-                    <v-snackbar v-model="snackbar" location="bottom right" color="#FDBD31" timeout="10000" class="mx-16" height="200" width="320" rounded="xl" multi-line vertical>
-                        <p class="font-weight-bold text-black font-avenir font-size-20 px-5 py-4">
+                    <v-snackbar v-model="snackbar" bottom right color="#FDBD31" timeout="10000" height="200" width="320" rounded="xl" multi-line vertical>
+                        <p class="font-weight-bold text-black  font-size-20 px-5 py-4">
                             <span class="text-white">A</span> mayor potencia eléctrica <span class="text-white">en un cargador</span> más rápido <span class="text-white">se puede cargar una batería.</span>
                         </p>
-                        <template v-slot:actions>
-                            <v-btn @click="snackbar = !snackbar"><span class="text-black">Cerrar</span></v-btn>
+                        <template v-slot:action>
+                            <v-btn @click="snackbar = !snackbar" text><span class="black--text">Cerrar</span></v-btn>
                         </template>
                     </v-snackbar>
                 </div>
@@ -58,18 +58,23 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import ContentTemplate from '../templates/ContentTemplate.vue';
-import user from '@/assets/evolucion/user.png'
-import cubito from '@/assets/electricidad/cubito.png'
-import cubo from '@/assets/electricidad/cubo.png'
-import { useCounterStore } from '../../stores/counter';
-import { ref } from '@vue/reactivity';
-import { storeToRefs } from 'pinia';
+import { mapState } from 'vuex';
 
-const snackbar = ref(true)
-const store = useCounterStore()
-const {windowHeight, windowSize} = storeToRefs(store)
+export default {
+    data(){
+        return {
+            snackbar: true,
+        }
+    },
+    components: {
+        ContentTemplate
+    },
+    computed: {
+        ...mapState(['windowHeight', 'windowSize'])
+    }
+}
 </script>
 
 <style scoped>

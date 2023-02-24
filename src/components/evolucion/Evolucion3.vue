@@ -5,12 +5,12 @@
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
                                 <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-size-22 font-avenir">
+                                    <v-card-text class="font-size-22 ">
                                         Algo curioso es que en estos últimos 100 años nuevamente el cambio ha sido paulatino. Si observamos el 
                                         mercado automotriz actual vamos a encontrar que predominan los vehículos con motor a combustión 
                                         interna y que también se encuentran presentes los vehículos híbridos y los vehículos eléctricos. 
@@ -24,37 +24,37 @@
 
                     <v-row no-gutters class="mt-4 animate__animated animate__backInLeft">
                         <v-col cols="4">
-                            <v-img :src="car4" max-height="240"></v-img>
+                            <v-img src="@/assets/evolucion/car4.png" contain max-height="240"></v-img>
                         </v-col>
                         <v-col cols="4" class="d-flex justify-space-between">
                             <hr class="line-vertical">
-                            <v-img :src="car5" max-height="240"></v-img>
+                            <v-img src="@/assets/evolucion/car5.png" contain max-height="240"></v-img>
                             <hr class="line-vertical">
                         </v-col>
                         <v-col cols="4">
-                            <v-img :src="car6" max-height="240"></v-img>
+                            <v-img src="@/assets/evolucion/car6.png" contain max-height="240"></v-img>
                         </v-col>
 
                         <v-col cols="4">
-                            <v-img :src="division" max-width="850"></v-img>
+                            <v-img src="@/assets/evolucion/division.png" max-width="850"></v-img>
                             <div class="bg-gray-1 size-box text-center mx-1">
-                                <span class="text-center font-weigth-thin font-avenir font-size-30 text-white">
+                                <span class="text-center font-weigth-normal font-size-30 text-white">
                                     Motores a combustión interna (ICE)
                                 </span>
                             </div>
                         </v-col>
                         <v-col cols="4">
-                            <v-img :src="division" max-width="850"></v-img>
+                            <v-img src="@/assets/evolucion/division.png" max-width="850"></v-img>
                             <div class="bg-gray-2 size-box text-center mx-1">
-                                <span class="font-avenir front-weight-thin font-size-30 text-white">
+                                <span class=" front-weight-normal font-size-30 text-white">
                                     Autos híbridos (MHEV, Full HEV y PHEV)
                                 </span>
                             </div>
                         </v-col>
                         <v-col cols="4">
-                            <v-img :src="division" max-width="850"></v-img>
+                            <v-img src="@/assets/evolucion/division.png" max-width="850"></v-img>
                             <div class="size-box bg-gray-3 text-center mx-1">
-                                <span class="font-avenir font-weight-thin font-size-30 text-white">
+                                <span class=" font-weight-normal font-size-30 text-white">
                                     Autos eléctricos (BEV)
                                 </span>
                             </div>
@@ -66,23 +66,27 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import ContentTemplate from '../templates/ContentTemplate.vue';
-import user from '@/assets/evolucion/user.png'
-import car4 from '@/assets/evolucion/car4.png'
-import car5 from '@/assets/evolucion/car5.png'
-import car6 from '@/assets/evolucion/car6.png'
-import division from '@/assets/evolucion/division.png'
-import { useCounterStore } from '../../stores/counter';
-import { storeToRefs } from 'pinia';
-import { onMounted } from '@vue/runtime-core';
+import { mapState } from 'vuex';
 
-const store = useCounterStore()
-const {canNext, windowHeight, windowSize} = storeToRefs(store)
+export default{
+    data(){
+        return {
 
-onMounted(() => {
-    canNext.value = true
-})
+        }
+    },
+    components: {
+        ContentTemplate,
+    },
+    computed: {
+        ...mapState(['canNext', 'windowHeight', 'windowSize'])
+    },
+    mounted(){
+        this.$store.commit('StateAssign', {canNext: true})
+        //this.canNext = true
+    }
+}
 </script>
 
 <style scoped>

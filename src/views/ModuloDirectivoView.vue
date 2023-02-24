@@ -1,13 +1,22 @@
 <template>
-    <v-layout>
+    <v-app>
         <v-main class="bg-image">
             <modulo></modulo>
         </v-main>
-    </v-layout>
+    </v-app>
 </template>
 
-<script setup>
+<script>
 import Modulo from '../components/ModuloDirectivo.vue';
+
+export default {
+    data(){
+        return {}
+    },
+    components: {
+        Modulo
+    }
+}
 </script>
 
 <style scoped>

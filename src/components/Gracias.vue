@@ -5,12 +5,12 @@
                 <v-row justify="start" class="" :class="{'bg-gracias mt-2': windowHeight> 900, 'bg-gracias-md': windowHeight<700}">
                     <v-row justify="start" class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                         <v-col cols="4">
-                            <v-img :src="userLG" :max-height="windowHeight>900 ? '350': '210'"></v-img>
+                            <v-img src="@/assets/user-lg.png" contain :max-height="windowHeight>900 ? '350': '210'"></v-img>
                         </v-col>
                     </v-row>
                     <v-row justify="start" class="mt-0 mb-16">
                         <v-col cols="5">
-                            <p class="font-avenir text-white px-10" :class="{'font-size-26':windowHeight>900, 'font-size-22': windowHeight<700}">
+                            <p class="font-avenir white--text px-10" :class="{'font-size-26':windowHeight>900, 'font-size-22': windowHeight<700}">
                                 Haz acabado el primer módulo de nuestra series de cursos que tenemos preparados para ti.
                                 <span class="font-weight-bold">Estamos muy contentos de que hayas formado una parte activa de este curso</span>
                                 y de parte del equipo de SEV agradecemos el tiempo que le dedicaste al curso. <br>
@@ -24,14 +24,23 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import MainTemplate from './templates/MainTemplate.vue';
-import userLG from '@/assets/user-lg.png'
-import { useCounterStore } from '../stores/counter';
-import { storeToRefs } from 'pinia';
+import { mapState } from 'vuex';
 
-const store = useCounterStore()
-const {windowHeight, windowSize} = storeToRefs(store)
+export default {
+    data () {
+        return{
+
+        }
+    }, 
+    components: {
+        MainTemplate,
+    },
+    computed: {
+        ...mapState(['windowHeight', 'windowSize'])
+    }
+}
 </script>
 
 <style scoped>

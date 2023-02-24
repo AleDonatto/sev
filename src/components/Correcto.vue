@@ -1,10 +1,10 @@
 <template>
     <v-app>
         <v-main class="bg-correcto">
-            <v-row justify="center" class="h-100">
-                <v-col cols="6" align="center" align-self="center">
+            <v-row justify="center" align="center" class="fill-height">
+                <v-col cols="6" align="center" class="" align-self="center">
 
-                    <v-img :src="user" max-height="180" ></v-img>
+                    <v-img src="@/assets/evolucion/user.png" contain max-height="180" ></v-img>
                     <div class="rounded-xl border bg-white position-image-user">
                         <h1 class="text-center font-avenir font-weight-bold font-size-96 mt-10" v-if="$route.path === '/cargando-un-bev' && step === 9">
                           ¡Muy bien!
@@ -25,22 +25,30 @@
 </template>
 
 
-<script setup>
-import user from '@/assets/evolucion/user.png'
-import { storeToRefs } from 'pinia';
-import { useRouter, useRoute } from 'vue-router';
-import { useCounterStore } from '../stores/counter';
+<script>
+import { mapActions, mapState } from 'vuex';
 
-const router = useRoute()
-const store = useCounterStore()
-const {NextStep} = store
-const {canNext, step} = storeToRefs(store)
+export default{
+  data(){
+    return{}
+  },
+  components: {
+    
+  },
+  computed: {
+    ...mapState(['canNext', 'step'])
+  },
+  methods: {
+    ...mapActions(['NextStep']),
+    continuar(){
+      let route = this.$route.path
+      this.$store.commit('StateAssign', {canNext: true})
+      console.log(route)
+      this.$store.dispatch('NextStep', route)
+      //NextStep(route)
+    }
+  },
 
-function continuar(){
-  let route = router.path
-  canNext.value = true
-  console.log(route)
-  NextStep(route)
 }
 </script>
 

@@ -1,13 +1,22 @@
 <template>
-    <v-layout>
+    <v-app>
         <v-main class="bg-image">
             <temario></temario>
         </v-main>
-    </v-layout>
+    </v-app>
 </template>
 
-<script setup>
+<script>
 import Temario from '../components/Temario.vue';
+
+export default {
+    data(){
+        return{}
+    },
+    components: {
+        Temario
+    }
+}
 </script>
 
 <style scoped>

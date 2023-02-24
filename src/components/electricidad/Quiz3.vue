@@ -5,35 +5,35 @@
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
                             <div class="border-yellow mt-6">
-                                <p class="font-avenir font-size-24 px-5 py-5 mx-5">La baterías utilizadas en los vehículos SEV-E-wan son:</p>
+                                <p class=" font-size-24 px-5 py-5 mx-5">La baterías utilizadas en los vehículos SEV-E-wan son:</p>
                             </div>
                         </v-col>
                     </v-row>
 
                     <v-row justify="center">
                         <v-col cols="8">
-                            <v-radio-group color="#FDBD31">
-                                <v-radio value="1" @input="answers.a1 = $event.target.value">
+                            <v-radio-group v-model="answers.a1" color="#FDBD31">
+                                <v-radio value="1" @input="answers.a1 = $event.target.value" color="#FDBD31">
                                     <template v-slot:label>
-                                        <p class="font-avenir font-size-24">
+                                        <p class=" font-size-24 mt-5">
                                             De Litio fosfato-ferroso LiFePO4.
                                         </p>
                                     </template>
                                 </v-radio>
-                                <v-radio value="2" @input="answers.a1 = $event.target.value">
+                                <v-radio value="2" @input="answers.a1 = $event.target.value" color="#FDBD31">
                                     <template v-slot:label>
-                                        <p class="font-avenir font-size-24">
+                                        <p class=" font-size-24 mt-5">
                                             De iones de Litio de larga durabilidad.
                                         </p>
                                     </template>
                                 </v-radio>
-                                <v-radio value="3" @input="answers.a1 = $event.target.value">
+                                <v-radio value="3" @input="answers.a1 = $event.target.value" color="#FDBD31">
                                     <template v-slot:label>
-                                        <p class="font-avenir font-size-24">
+                                        <p class=" font-size-24 mt-5">
                                             De polímero de Litio.
                                         </p>
                                     </template>
@@ -55,33 +55,38 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import ContentTemplate from '../templates/ContentTemplate.vue';
-import user from '@/assets/evolucion/user.png'
-import { useCounterStore } from '../../stores/counter';
-import { storeToRefs } from 'pinia';
-import { onMounted, reactive } from '@vue/runtime-core';
-import { useRoute } from 'vue-router';
+import { mapState } from 'vuex';
 
-const store = useCounterStore()
-const {NextStep} = store
-const {canNext, windowHeight, windowSize} = storeToRefs(store) 
-const router = useRoute()
-
-const answers = reactive({
-    a1: null, 
-    a2: null, 
-    a3: null
-})
-
-onMounted(() => {
-    canNext.value = false
-})
-
-function checkQuiz(){
-    if(answers.a1 === '2'){
-        const path = router.path 
-        NextStep(path)
+export default {
+    data(){
+        return {
+            answers: {
+                a1: null, 
+                a2: null, 
+                a3: null
+            }
+        }
+    },
+    components: {
+        ContentTemplate,
+    },
+    computed: {
+        ...mapState(['canNext', 'windowHeight', 'windowSize'])
+    },
+    mounted() {
+        //this.canNext = false
+        this.$store.commit('StateAssign', {canNext: false})
+    },
+    methods: {
+        checkQuiz(){
+            if(this.answers.a1 === '2'){
+                const path = this.$route.path
+                this.$store.dispatch('NextStep', path)
+                //NextStep(path)
+            }
+        }
     }
 }
 </script>

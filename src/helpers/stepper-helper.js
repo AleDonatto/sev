@@ -1,52 +1,61 @@
-import { useCounterStore } from "../stores/counter"
+//import { useCounterStore } from "../stores/counter"
 import router from "../router"
 
 export const InferStepperCounter = (val) => {
-    let path = val.router
+    //let path = val.router
+    let path = val.route
     let max 
-    const store = useCounterStore()
+    //const store = useCounterStore()
 
     if(path === '/evolucion-de-movilidad') max = 11
-    if(path === '/fundamentos-de-electricidad') max = 22
+    if(path === '/fundamentos-de-electricidad') max = 21
     if(path === '/cargando-un-bev') max = 11
     
     if(val.action === 'plus'){
         //console.log(val.stepAux + '---' + max)
-        val.stepAux = val.stepAux++ >= max ?  NextStep(val)  :  val.stepAux++
+        val.step = val.step++ >= max ?  NextStep(val)  :  val.step++
     }else{
         //console.log('se acabaron los pasos')
-        //val.commit('StateAssign', {canNext:true})
-        store.canNext = true
-        val.stepAux = val.stepAux-- <= 0 ?  PreviousStep(val) : val.stepAux--
+        val.commit('StateAssign', {canNext:true})
+        //store.canNext = true
+        val.step = val.step-- <= 0 ?  PreviousStep(val) : val.step--
     }
-    return val.stepAux
+    return val.step
 }
 
 export const NextStep = (val) => {
     console.log('siguiente modulo')
-    let path = val.router
-    const store = useCounterStore()
+    //let path = val.router
+    let path = val.route
+    //const store = useCounterStore()
 
     if(path === '/evolucion-de-movilidad'){
-        store.section = 3
+        //store.section = 3
+        val.commit('StateAssign', {section:3})
+        //router.push('/modulo-directivo')
         router.push('/modulo-directivo')
-        //val.router.push('/modulo-directivo')
     }
 
     if(path === '/fundamentos-de-electricidad'){
-        store.section = 4
+        //store.section = 4
+        val.commit('StateAssign', {section:4})
+
         router.push('/modulo-directivo')
+        //router.push('/modulo-directivo')
     }
 
     if(path === '/cargando-un-bev'){
+        //router.push('/muchas-gracias')
         router.push('/muchas-gracias')
+
     }
     
     return 0
 }
 
 export const PreviousStep = (val) => {
-    let path = val.router
+    //let path = val.router
+    let path = val.route
     if(path === '/cultura-organizacional-concepto') {
         val.router.push('/modulo-directivo')
         return 0
@@ -70,7 +79,7 @@ export const PreviousStep = (val) => {
     
 }
 
-export const CheckIfContinue = (val) => {
+export const CheckIfContinue = () => {
     //console.log(val)
     return true
 }

@@ -5,7 +5,7 @@
                 <div class="mt-6">
                     <v-row justify="center" class="">
                         <v-col cols="12" align-self="center" class="h-100">
-                            <v-img :src="conceptos" max-height="815" cover></v-img>
+                            <v-img src="@/assets/electricidad/conceptos.png" max-height="815" cover></v-img>
                         </v-col>
                     </v-row>
                 </div>
@@ -14,19 +14,24 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import ContentTemplate from '../templates/ContentTemplate.vue';
-import conceptos from '@/assets/electricidad/conceptos.png'
-import { useCounterStore } from '../../stores/counter';
-import { storeToRefs } from 'pinia';
-import { onMounted } from '@vue/runtime-core';
+import { mapState } from 'vuex';
 
-const store = useCounterStore()
-const {canNext} = storeToRefs(store)
-
-onMounted(() => {
-    canNext.value = true
-})
+export default{
+    data(){
+        return {}
+    },
+    components: {
+        ContentTemplate,
+    },
+    mounted(){
+        this.$store.commit('StateAssign', {canNext: true})
+    },
+    computed: {
+        ...mapState(['canNext'])
+    }
+}
 </script>
 
 <style scoped>

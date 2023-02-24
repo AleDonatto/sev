@@ -5,13 +5,13 @@
             <v-row justify="center">
               <v-col cols="8" align="center" >
                 <v-dialog v-model="dialog" persistent width="880" class="bg-overlay">
-                  <v-img :src="user" max-height="170" class="index-3"></v-img>
+                  <v-img src="@/assets/evolucion/user.png" contain max-height="170" class="index-3"></v-img>
                   <v-card class="position-card overflow-hidden rounded-xl" color="#D9D9D9">
                     <v-card-title class="mt-7">
-                      <p class="font-weight-bold text-center mt-7 font-avenir font-size-30">Recordatorio amistoso</p>
+                      <p class="font-weight-bold text-center mt-7 font-size-30">Recordatorio amistoso</p>
                     </v-card-title>
                     <v-card-text>
-                      <p class="text-center font-avenir font-size-24">
+                      <p class="text-center font-size-24">
                         La información brindada en este curso es para tu bienestar y el de toda nuestra comunidad. La mejor manera de aprender es enseñándolo a 
                         los demás así que es responsabilidad de cada persona reflexionar y entender la información de este curso.
                       </p>
@@ -32,7 +32,7 @@
             <div class="bg-black">
               <v-row justify="center" class="m-0 p-0 bg-black" no-gutters>
                 <v-col cols="12">
-                  <v-img :src="albert" :max-height="windowHeight>900 ? '840': '560'"></v-img>
+                  <v-img src="@/assets/electricidad/albert.png" contain :max-height="windowHeight>900 ? '840': '560'"></v-img>
                 </v-col>
               </v-row>
             </div>
@@ -41,18 +41,23 @@
   </div>
 </template>
 
-<script setup>
+<script>
 import ContentTemplate from '../templates/ContentTemplate.vue';
-import albert from '@/assets/electricidad/albert.png'
-import user from '@/assets/evolucion/user.png'
-import { useCounterStore } from '../../stores/counter';
-import { ref } from 'vue';
-import { storeToRefs } from 'pinia';
+import { mapState } from 'vuex';
 
-const store = useCounterStore()
-const {windowHeight, windowSize} = storeToRefs(store)
-
-const dialog = ref(true)
+export default {
+  data(){
+    return {
+      dialog: false
+    }
+  },
+  components: {
+    ContentTemplate,
+  },
+  computed: {
+    ...mapState(['windowHeight', 'windowSize'])
+  }
+}
 </script>
 
 <style scoped>

@@ -5,12 +5,12 @@
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
                                 <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-size-22 font-avenir">
+                                    <v-card-text class="font-size-22 ">
                                         Uno de los aspectos que más importa a los clientes potenciales de un vehículo eléctrico es la 
                                         autonomía. Esto se entiende como la distancia que se puede recorrer con una sola carga de la 
                                         batería de dicho automóvil.
@@ -38,13 +38,13 @@
 
                     <v-row justify="center" class="rounded-xl bg-color mx-10 px-5 py-5">
                         <v-col cols="12" class="animate__animated animate__backInLeft">
-                            <p class="font-avenir" :class="{'font-size-24': windowHeight>900, 'font-size-19': windowHeight<700}">
+                            <p class="" :class="{'font-size-24': windowHeight>900, 'font-size-19': windowHeight<700}">
                                 La autonomía hace referencia a la <span class="text-yellow-p">distancia que puede recorrer un vehículo eléctrico con una 
                                 carga completa de su batería</span>. Para SEV E-WAN la autonomía es de 200 km (versión Lite) y 335 km 
                                 (versión Bold) de acuerdo a la homologación NEDC.
                             </p>
-                            <p class="font-avenir" :class="{'font-size-24': windowHeight>900, 'font-size-10': windowHeight<700}">Existen diferentes homologaciones.</p>
-                            <ul class="font-avenir pl-5" :class="{'mt-5 font-size-24': windowHeight>900, 'mt-2 font-size-19': windowHeight<700}">
+                            <p class="" :class="{'font-size-24': windowHeight>900, 'font-size-10': windowHeight<700}">Existen diferentes homologaciones.</p>
+                            <ul class=" pl-5" :class="{'mt-5 font-size-24': windowHeight>900, 'mt-2 font-size-19': windowHeight<700}">
                                 <li>
                                     NEDC (New European Driving Cycle):
                                     <ul class="pl-6">
@@ -66,15 +66,23 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import ContentTemplate from '../templates/ContentTemplate.vue';
-import user from '@/assets/evolucion/user.png'
-import { useCounterStore } from '../../stores/counter';
-import { storeToRefs } from 'pinia';
+import { mapState } from 'vuex';
 
-const store = useCounterStore()
-const {windowHeight, windowSize} = storeToRefs(store)
+export default {
+    data(){
+        return {
 
+        }
+    },
+    components: {
+        ContentTemplate,
+    },
+    computed: {
+        ...mapState(['windowHeight', 'windowSize'])
+    }
+}
 </script>
 
 <style scoped>

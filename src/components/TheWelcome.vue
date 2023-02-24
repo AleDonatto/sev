@@ -1,45 +1,51 @@
 <template>
-  <div class="content">  
-    <main-template>
-      <template v-slot:content>
-        <v-row :class="{'mt-3': windowHeight > 700, 'margin-top': windowHeight < 700}">
-          <v-col cols="12" :class="{'bg-mensajes': windowHeight> 900, 'bg-mensajes-md': windowHeight< 900}">
-            <!--height-box bg-mensajes-->
-            <v-row class="size-bienvenidos">
-              <!--height-box-->
-              <v-col cols="5" align="center" class="height-box">
-                <div class="mx-4 top-text" :class="{'top-text': windowHeight > 900, 'top-text-md': windowHeight < 700}">
-                  <h1 class="text-white font-lato font-size-h1 font-weight-bold text-center">Bienvenidos</h1>
-                  <p class="text-white">{{windowHeight}}</p>
-                  <p class="text-white">{{windowSize}}</p>
-                  <router-link to="/temario" class="decoration-none">
-                    <v-btn class="text-white" rounded color="#929292">
-                      <span class="font-weight-thin">Inicio</span>
-                      <v-icon class="" color="white" end icon="mdi-chevron-right-circle"></v-icon>
-                    </v-btn>
-                  </router-link>
-                </div>
-              </v-col>
-              <v-col cols="7">
-                <!--<v-img :src="images" class="top-images" :class="{'height-box-images': windowHeight > 900, 'height-box-images-sm': windowHeight < 700}"></v-img>-->
-                <!--<v-img :src="images" class="mt-images" :mx-height="windowHeight <900 ? 410 : 1200"></v-img>-->
-              </v-col>
-            </v-row>
-          </v-col>
-        </v-row>
-      </template>
-    </main-template>
-  </div>
+    <div class="content">  
+        <main-template>
+            <template v-slot:content>
+                <v-row :class="{'mt-3': windowHeight > 700, 'margin-top': windowHeight < 700}">
+                    <v-col cols="12" :class="{'bg-mensajes': windowHeight> 900, 'bg-mensajes-md': windowHeight< 900}">
+                        <!--height-box bg-mensajes-->
+                        <v-row class="size-bienvenidos">
+                            <!--height-box-->
+                            <v-col cols="5" align="center" class="height-box">
+                                <div class="mx-4 top-text" :class="{'top-text': windowHeight > 900, 'top-text-md': windowHeight < 700}">
+                                    <h1 class="white--text font-lato font-size-h1 font-weight-bold text-center">Bienvenidos</h1>
+                                    <router-link to="/temario" class="decoration-none">
+                                        <v-btn class="white--text" rounded color="#929292">
+                                          <span class="font-weight-bold">Inicio</span>
+                                        <v-icon class="" color="white" end icon="mdi-chevron-right-circle"></v-icon>
+                                        </v-btn>
+                                    </router-link>
+                                </div>
+                            </v-col>
+                            <v-col cols="7">
+                                <!--<v-img :src="images" class="top-images" :class="{'height-box-images': windowHeight > 900, 'height-box-images-sm': windowHeight < 700}"></v-img>-->
+                                <!--<v-img :src="images" class="mt-images" :mx-height="windowHeight <900 ? 410 : 1200"></v-img>-->
+                            </v-col>
+                        </v-row>
+                    </v-col>
+                </v-row>
+            </template>
+        </main-template>
+    </div>
 </template>
 
-<script setup>
+<script>
 import MainTemplate from './templates/MainTemplate.vue'
-import images from '../assets/welcome/images.png'
-import { useCounterStore } from '../stores/counter';
-import { storeToRefs } from 'pinia';
+import { mapState } from 'vuex';
 
-const store = useCounterStore()
-const {windowHeight, windowSize} = storeToRefs(store)
+export default {
+    components: {
+        MainTemplate
+    },
+    data(){
+        return {}
+    },
+    computed: {
+        ...mapState(['windowHeight', 'windowSize'])
+    }
+
+}
 </script>
 
 <style scoped>

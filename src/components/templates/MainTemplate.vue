@@ -2,7 +2,7 @@
     <div>
         <v-row>
             <v-col cols="4" :class="{'size-height': windowHeight > 900, 'size-height-mb': windowHeight < 700}" style="background: rgba(253, 190, 46, 1)"> 
-                <v-img :src="LogoSev" containt></v-img>
+                <v-img src="../../assets/logosev.png" contain max-height="140"></v-img>
             </v-col>
             <v-col cols="2" class="size-height margin-left" >
                 <svg class="" v-if="windowHeight > 900">
@@ -24,19 +24,26 @@
     </div>
 </template>
 
-<script setup>
-import LogoSev from '@/assets/logosev.png';
+<script>
 import fondo from '@/assets/welcome/fondo-left.png'
-import { storeToRefs } from 'pinia';
-import { useCounterStore } from '../../stores/counter';
 
-const store = useCounterStore()
-const {windowHeight, windowSize} = storeToRefs(store)
+import { mapActions, mapGetters, mapState } from 'vuex'
+export default {
+    data() {
+        return{
+
+        }
+    },
+    computed: {
+        ...mapState(['windowHeight','windowSize']),
+    },
+    
+}
 </script>
 
 <style scoped>
 .bg-fondo{
-    background-image: url('../assets/welcome/pruebasEvolucion.png');
+    background-image: url('../../assets/welcome/pruebasEvolucion.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -53,4 +60,5 @@ const {windowHeight, windowSize} = storeToRefs(store)
 .margin-left {
     margin-left: -12px;
 }
+
 </style>

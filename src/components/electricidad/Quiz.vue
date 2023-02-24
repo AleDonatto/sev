@@ -5,27 +5,27 @@
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9" class="">
                             <div class="border-yellow mt-6">
-                                <p class="font-avenir font-size-24 mx-5 py-5 px-5">El voltaje y el amperaje determinan la potencia <span class="text-yellow-p">(watt):</span></p>
+                                <p class=" font-size-24 mx-5 py-5 px-5">El voltaje y el amperaje determinan la potencia <span class="text-yellow-p">(watt):</span></p>
                             </div>
                         </v-col>
                     </v-row>
 
                     <v-row justify="center">
                         <v-col cols="3">
-                            <v-radio-group color="#FDBD31">
-                                <v-radio value="cierto" @input="answers.a1 = $event.target.value">
+                            <v-radio-group v-model="answers.a1" color="#FDBD31">
+                                <v-radio value="cierto" @input="answers.a1 = $event.target.value" color="#FDBD31">
                                     <template v-slot:label>
-                                        <p class="font-avenir- font-size-24">Cierto</p>
+                                        <p class=" font-size-24 mt-5">Cierto</p>
                                     </template>
                                 </v-radio>
 
-                                <v-radio value="falso" @input="answers.a1 = $event.target.value">
+                                <v-radio value="falso" @input="answers.a1 = $event.target.value" color="#FDBD31">
                                     <template v-slot:label>
-                                        <p class="font-avenir font-size-24">Falso</p>
+                                        <p class=" font-size-24 mt-5">Falso</p>
                                     </template>
                                 </v-radio>
                             </v-radio-group>
@@ -44,33 +44,38 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import ContentTemplate from '../templates/ContentTemplate.vue';
-import user from '@/assets/evolucion/user.png'
-import { reactive } from '@vue/reactivity';
-import { onMounted } from '@vue/runtime-core';
-import { useCounterStore } from '../../stores/counter';
-import { storeToRefs } from 'pinia';
-import { useRoute } from 'vue-router';
+import { mapActions, mapState } from 'vuex';
 
-const answers = reactive({
-    a1: null,
-    a2: null, 
-})
-
-const store = useCounterStore()
-const {NextStep} = store
-const {canNext, windowHeight, windowSize} = storeToRefs(store)
-const router = useRoute()
-
-onMounted(() => {
-    canNext.value = false
-})
-
-function checkQuiz(){
-    if(answers.a1 === 'falso'){
-        let route = router.path
-        NextStep(route)
+export default {
+    data(){
+        return {
+            answers: {
+                a1: null,
+                a2: null, 
+            }
+        }
+    },
+    components: {
+        ContentTemplate,
+    },
+    computed: {
+        ...mapState(['canNext', 'windowHeight', 'windowSize'])
+    },
+    mounted(){
+        //this.canNext = false
+        this.$store.commit('StateAssign', {canNext: false})
+    },
+    methods: {
+        ...mapActions(['NextStep']),
+        checkQuiz(){
+            if(this.answers.a1 === 'falso'){
+                let route = this.$route.path
+                this.$store.dispatch('NextStep', route)
+                //NextStep(route)
+            }
+        }
     }
 }
 </script>

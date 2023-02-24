@@ -10,7 +10,7 @@
                     </v-row>-->
                     <v-row justify="end">
                         <v-col cols="12" align="end">
-                            <v-img :src="objeciones" :max-height="windowHeight> 900 ? '870': '560'" cover></v-img>
+                            <v-img src="@/assets/cargando/objeciones.png" contain :max-height="windowHeight> 900 ? '870': '560'"></v-img>
                         </v-col>
                     </v-row>
                 </div>
@@ -19,14 +19,21 @@
     </div>
 </template>
 
-<script setup>
+<script >
 import ContentTemplate from '../templates/ContentTemplate.vue';
-import objeciones from '@/assets/cargando/objeciones.png'
-import { useCounterStore } from '../../stores/counter';
-import { storeToRefs } from 'pinia';
+import { mapState } from 'vuex';
 
-const store = useCounterStore()
-const {windowHeight, windowSize} = storeToRefs(store)
+export default {
+    data() {
+        return{}
+    },
+    computed: {
+        ...mapState(['windowHeight', 'windowSize'])
+    },
+    components: {
+        ContentTemplate
+    }
+}
 </script>
 
 <style scoped>

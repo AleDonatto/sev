@@ -7,21 +7,21 @@
             <!--:class="{'bg-instructions' : windowHeight > 900, 'bg-instructions-sm': windowHeight < 700}"-->
             <v-row class="m-0" >
               <v-col cols="4">
-                <h1 class="text-white font-lato font-weight-light text-center" :class="{'mt-7 font-size-96':windowHeight > 900, 'mt-0 font-size-50':windowHeight < 700}">Temario</h1>
-                <p class="text-white font-avenir font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-19' : windowHeight < 700}">
+                <h1 class="white--text font-lato font-weight-light text-center" :class="{'mt-7 font-size-96':windowHeight > 900, 'mt-0 font-size-50':windowHeight < 700}">Temario</h1>
+                <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-19' : windowHeight < 700}">
                   Evolución de la movilidad: desde los primeros vehículos automóviles hasta las tecnologías 0 emisiones.
                 </p>
-                <p class="text-white font-avenir font-weight-regular ml-5 my-4" :class="{'font-size-22': windowHeight > 900, 'font-size-19' : windowHeight < 700}">
+                <p class="white--text  font-weight-regular ml-5 my-4" :class="{'font-size-22': windowHeight > 900, 'font-size-19' : windowHeight < 700}">
                   Fundamentos de electricidad en un vehículo eléctrico: cómo entenderlos y explicarlos de manera sencilla.
                 </p>
-                <p class="text-white font-avenir font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-19' : windowHeight < 700}">
+                <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-19' : windowHeight < 700}">
                   Autos eléctricos: entendiendo un BEV (vehículo eléctrico a baterías) y aplicaciones reales.
                 </p>
                 
                 <div class="d-flex justify-center mt-4" >
                   <router-link to="/instrucciones" class="decoration-none">
                     <v-btn class="" rounded="" color="#FDBE2E">
-                      <span class="font-avenir font-size-30 font-weight-thin" :class="{'font-size-30': windowHeight > 900, 'font-size-22': windowHeight < 700}">Continuar</span>
+                      <span class=" font-size-30 font-weight-semibold" :class="{'font-size-30': windowHeight > 900, 'font-size-22': windowHeight < 700}">Continuar</span>
                     </v-btn>
                   </router-link>
                 </div>
@@ -37,13 +37,23 @@
   </div>
 </template>
 
-<script setup>
+<script>
 import MainTemplate from './templates/MainTemplate.vue';
 import cooper from '@/assets/temario/other.png'
-import { useCounterStore } from '../stores/counter';
-import { storeToRefs } from 'pinia';
-const store = useCounterStore()
-const {windowHeight, windowSize} = storeToRefs(store)
+import { mapState } from 'vuex';
+
+export default{
+  data(){
+    return{}
+  },
+  components: {
+    MainTemplate
+  },
+  computed: {
+    ...mapState(['windowHeight', 'windowSize'])
+  }
+
+}
 </script>
 
 <style scoped>

@@ -1,13 +1,22 @@
 <template>
-    <v-layout>
+    <v-app>
         <v-main class="bg-image">
             <instrucciones></instrucciones>
         </v-main>
-    </v-layout>
+    </v-app>
 </template>
 
-<script setup>
+<script>
 import Instrucciones from '../components/Instrucciones.vue'
+
+export default {
+    data() {
+        return {}
+    },
+    components: {
+        Instrucciones
+    }
+}
 </script>
 
 <style scoped>

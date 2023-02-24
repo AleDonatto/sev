@@ -5,12 +5,12 @@
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
                                 <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-size-22 font-avenir">
+                                    <v-card-text class="font-size-22 ">
                                         Una lámpara que tengamos en casa pero que no esté encendida no va a generar un consumo de 
                                         corriente eléctrica. Sin embargo, cuando está siendo utilizada va a consumir energía eléctrica 
                                         por todo el tiempo que permanezca en uso.
@@ -29,7 +29,7 @@
 
                     <v-row justify="center" class="mx-10 bg-color rounded-xl">
                         <v-col cols="12" class="animate__animated animate__backInDown">
-                            <p class="font-avenir" :class="{'font-size-24': windowHeight>900, 'font-size-20': windowHeight<700}">
+                            <p class="" :class="{'font-size-24': windowHeight>900, 'font-size-20': windowHeight<700}">
                                 <span class="font-weight-bold">kWh:</span> El kilowatt hora es la undad de medida
                                 de medida que se usa para medir el consumom energético.
                             </p>
@@ -40,16 +40,16 @@
                         </v-col>
 
                         <v-col cols="12" align="center" class="animate__animated animate__backInRight" v-if="count === 0">
-                            <v-img :src="table" :max-height="windowHeight>900 ? '350': '180'"></v-img>
+                            <v-img src="@/assets/electricidad/table.png" contain :max-height="windowHeight>900 ? '350': '180'"></v-img>
                         </v-col>
                         <v-col cols="12" align="center" class="animate__animated animate__backInRight" v-if="count === 1">
-                            <v-img :src="table1" :max-height="windowHeight>900 ? '350': '180'"></v-img>
+                            <v-img src="@/assets/electricidad/table1.png" contain :max-height="windowHeight>900 ? '350': '180'"></v-img>
                         </v-col>
                         <v-col cols="12" align="center" class="animate__animated animate__backInRight" v-if="count === 2">
-                            <v-img :src="table2" :max-height="windowHeight>900 ? '350': '180'"></v-img>
+                            <v-img src="@/assets/electricidad/table2.png" contain :max-height="windowHeight>900 ? '350': '180'"></v-img>
                         </v-col>
                         <v-col cols="12" align="center" class="animate__animated animate__backInRight" v-if="count === 3">
-                            <v-img :src="table3" :max-height="windowHeight>900 ? '350': '180'"></v-img>
+                            <v-img src="@/assets/electricidad/table3.png" contain :max-height="windowHeight>900 ? '350': '180'"></v-img>
                         </v-col>
                     </v-row>
                 </div>
@@ -58,23 +58,27 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import ContentTemplate from '../templates/ContentTemplate.vue';
-import user from '@/assets/evolucion/user.png'
-import table from '@/assets/electricidad/table.png'
-import table1 from '@/assets/electricidad/table1.png'
-import table2 from '@/assets/electricidad/table2.png'
-import table3 from '@/assets/electricidad/table3.png'
-import { useCounterStore } from '../../stores/counter';
-import { storeToRefs } from 'pinia';
-import { onMounted } from '@vue/runtime-core';
+import { mapState } from 'vuex';
 
-const store = useCounterStore()
-const {windowHeight, windowSize, count} = storeToRefs(store)
+export default{
+    data(){
+        return{
 
-onMounted(() => {
-    count.value = 0
-})
+        }
+    },
+    components: {
+        ContentTemplate,
+    },
+    mounted(){
+        //this.count = 0
+        this.$store.commit('StateAssign', {count: 0})
+    },
+    computed: {
+        ...mapState(['windowHeight', 'windowSize', 'count'])
+    }
+}
 
 </script>
 

@@ -6,8 +6,17 @@
     </v-app>
 </template>
 
-<script setup>
+<script>
 import Gracias from '../components/Gracias.vue';
+
+export default {
+    data(){
+        return {}
+    },
+    components: {
+        Gracias
+    }
+}
 </script>
 
 <style scoped>

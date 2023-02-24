@@ -5,12 +5,12 @@
                 <div class="mt-5">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
                                 <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-avenir font-size-22">
+                                    <v-card-text class=" font-size-22">
                                         Utilizando algunos ejemplos cotidianos: si caminamos una distancia corta, normalmente 
                                         expresamos la distancia en metros, pero cuando son distancias mucho más largas, utilizamos 
                                         la unidad kilómetros. Un kilómetro es equivalente a mil metros.
@@ -25,7 +25,7 @@
 
                     <v-row justify="center">
                         <v-col cols="12" align="center">
-                            <v-img :src="kilowatt" :max-height="windowHeight>900 ? '620': '350'"></v-img>
+                            <v-img src="@/assets/electricidad/kilowatt.png" contain :max-height="windowHeight>900 ? '620': '350'"></v-img>
                         </v-col>
                     </v-row>
                 </div>
@@ -34,15 +34,23 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import ContentTemplate from '../templates/ContentTemplate.vue';
-import user from '@/assets/evolucion/user.png'
-import kilowatt from '@/assets/electricidad/kilowatt.png'
-import { useCounterStore } from '../../stores/counter';
-import { storeToRefs } from 'pinia';
+import { mapState } from 'vuex';
 
-const store = useCounterStore()
-const {windowHeight, windowSize} = storeToRefs(store)
+export default {
+    data(){
+        return {
+
+        }
+    },
+    components: {
+        ContentTemplate,
+    },
+    computed: {
+        ...mapState(['windowHeight', 'windowSize'])
+    }
+}
 </script>
 
 <style scoped>

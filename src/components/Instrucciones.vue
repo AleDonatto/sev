@@ -10,27 +10,27 @@
                         <v-row class="">
                             <v-col cols="5">
                                 <div class="ml-5">
-                                    <h1 class="text-white font-lato font-weight-light text-center" :class="{'font-size-96': windowHeight > 900, 'font-size-50':windowHeight < 700}">Instrucciones</h1>
-                                    <p class="text-white font-avenir font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-20': windowHeight < 700}">
+                                    <h1 class="white--text font-lato font-weight-light text-center" :class="{'font-size-96': windowHeight > 900, 'font-size-50':windowHeight < 700}">Instrucciones</h1>
+                                    <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-20': windowHeight < 700}">
                                         Evolución de la movilidad: desde los primeros vehículos automóviles hasta las tecnologías 0 emisiones.
                                     </p>
-                                    <p class="text-white font-avenir font-weight-regular ml-5 my-4" :class="{'font-size-22':windowHeight > 900, 'font-size-20': windowHeight < 700}">
+                                    <p class="white--text  font-weight-regular ml-5 my-4" :class="{'font-size-22':windowHeight > 900, 'font-size-20': windowHeight < 700}">
                                         Fundamentos de electricidad en un vehículo eléctrico: cómo entenderlos y explicarlos de manera sencilla.
                                     </p>
-                                    <p class="text-white font-avenir font-weight-regular ml-5" :class="{'font-size-22':windowHeight > 900,  'font-size-20': windowHeight < 700}">
+                                    <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22':windowHeight > 900,  'font-size-20': windowHeight < 700}">
                                         Autos eléctricos: entendiendo un BEV (vehículo eléctrico a baterías) y aplicaciones reales.
                                     </p>
                                     
                                     <div class="d-flex justify-center mt-4">
                                         <v-btn class="" rounded color="#FDBE2E" @click="gotoModuloDirectivo">
-                                            <span class="font-avenir font-size-30 font-weight-thin" :class="{'font-size-30': windowHeight > 900, 'font-size-24': windowHeight < 700}">Continuar</span>
+                                            <span class=" font-size-30 font-weight-semibold" :class="{'font-size-30': windowHeight > 900, 'font-size-24': windowHeight < 700}">Continuar</span>
                                         </v-btn>
                                     </div>
                                 </div>
                             </v-col>
                             <v-col cols="4"></v-col>
                             <v-col cols="3">
-                                <v-img :src="user" max-height="410" class="position-image"></v-img>
+                                <v-img src="@/assets/instrucciones/user.png" max-height="410" class="position-image"></v-img>
                             </v-col>
                         </v-row>
                     </v-col>
@@ -40,21 +40,29 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import MainTemplate from './templates/MainTemplate.vue';
-import Mens from '@/assets/instrucciones/narrador.png'
-import user from '@/assets/instrucciones/user.png'
-import { useCounterStore } from '../stores/counter';
-import { useRoute, useRouter } from 'vue-router';
-import { storeToRefs } from 'pinia';
+import { mapState } from 'vuex';
 
-const store = useCounterStore()
-const {section, windowSize, windowHeight} = storeToRefs(store)
-const router = useRouter()
+export default {
+    data(){
+        return {
 
-function gotoModuloDirectivo(){
-    section.value = 2
-    router.push('/modulo-directivo')
+        }
+    }, 
+    components: {
+        MainTemplate,
+    },
+    computed: {
+        ...mapState(['section', 'windowSize', 'windowHeight'])
+    },
+    methods: {
+        gotoModuloDirectivo(){
+            //this.section = 2
+            this.$store.commit('StateAssign', {section:2})
+            this.$router.push('/modulo-directivo')
+        }
+    }
 }
 </script>
 

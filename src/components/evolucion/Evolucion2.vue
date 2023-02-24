@@ -5,12 +5,12 @@
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
                                 <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-size-22 font-avenir">
+                                    <v-card-text class="font-size-22 ">
                                         Es a fines del siglo XIX que se empieza a dar una evolución. En 1885 Karl Benz presentó al mundo su 
                                         "motorwagen"; considerado el primer automóvil con motor de combustión interna. Poco tiempo después, 
                                         Thomas Parker presentó un vehículo eléctrico en Gran Bretaña y Ferdinand Porsche el primer automóvil 
@@ -23,36 +23,36 @@
 
                     <v-row no-gutters class="mt-4 animate__animated animate__backInLeft">
                         <v-col cols="4">
-                            <v-img :src="car1" :max-height="windowHeight > 900 ? '240' : '190'"></v-img>
+                            <v-img src="@/assets/evolucion/car1.png" contain :max-height="windowHeight > 900 ? '240' : '190'"></v-img>
                         </v-col>
                         <v-col cols="4" class="d-flex justify-space-between ">
                             <hr class="line-vertical">
-                            <v-img :src="car2" :max-height="windowHeight > 900 ? '240' : '190'"></v-img>
+                            <v-img src="@/assets/evolucion/car2.png" contain :max-height="windowHeight > 900 ? '240' : '190'"></v-img>
                             <hr class="line-vertical">
                         </v-col>
                         <v-col cols="4">
-                            <v-img :src="car3" :max-height="windowHeight > 900 ? '240' : '190'"></v-img>
+                            <v-img src="@/assets/evolucion/car3.png" contain :max-height="windowHeight > 900 ? '240' : '190'"></v-img>
                         </v-col>
 
                         <v-col cols="4">
-                            <v-img :src="division" max-width="850"></v-img>
+                            <v-img src="@/assets/evolucion/division.png" max-width="850"></v-img>
                             <div class="text-center bg-gray-1 size-box mx-1">
-                                <span class="font-avenir font-size-34 font-weight-thin text-white">1885</span>
-                                <p class="font-avenir font-size-22 font-weight-thin text-white mx-2">Benz motorwagen. Primer automóvil a gasolina.</p>
+                                <span class=" font-size-34 font-weight-normal text-white">1885</span>
+                                <p class=" font-size-22 font-weight-normal text-white mx-2">Benz motorwagen. Primer automóvil a gasolina.</p>
                             </div>
                         </v-col>
                         <v-col cols="4">
-                            <v-img :src="division" max-width="850"></v-img>
+                            <v-img src="@/assets/evolucion/division.png" max-width="850"></v-img>
                             <div class="text-center bg-gray-2 size-box mx-1">
-                                <span class="font-avenir font-size-34 font-weight-thin text-white">1895</span>
-                                <p class="font-avenir font-size-22 font-weight-thin text-white">Thomas Parker. Auto eléctrico.</p>
+                                <span class=" font-size-34 font-weight-normal text-white">1895</span>
+                                <p class=" font-size-22 font-weight-normal text-white">Thomas Parker. Auto eléctrico.</p>
                             </div>
                         </v-col>
                         <v-col cols="4">
-                            <v-img :src="division" max-width="850"></v-img>
+                            <v-img src="@/assets/evolucion/division.png" max-width="850"></v-img>
                             <div class="text-center bg-gray-3 size-box mx-1">
-                                <span class="font-avenir font-size-34 font-weight-thin text-white">1898</span>
-                                <p class="font-avenir font-size-22 font-weight-thin text-white">Ferdinand Porsche. Auto híbrido eléctrico-gasolina</p>
+                                <span class=" font-size-34 font-weight-normal text-white">1898</span>
+                                <p class=" font-size-22 font-weight-normal text-white">Ferdinand Porsche. Auto híbrido eléctrico-gasolina</p>
                             </div>
                         </v-col>
                     </v-row>
@@ -62,18 +62,21 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import ContentTemplate from '../templates/ContentTemplate.vue';
-import user from '@/assets/evolucion/user.png'
-import car1 from '@/assets/evolucion/car1.png'
-import car2 from '@/assets/evolucion/car2.png'
-import car3 from '@/assets/evolucion/car3.png'
-import division from '@/assets/evolucion/division.png'
-import { useCounterStore } from '../../stores/counter';
-import { storeToRefs } from 'pinia';
+import { mapState } from 'vuex';
 
-const store = useCounterStore()
-const {windowHeight, windowSize} = storeToRefs(store)
+export default{
+    data(){
+        return {}
+    },
+    components: {
+        ContentTemplate,
+    },
+    computed: {
+        ...mapState(['windowHeight', 'windowSize'])
+    }
+}
 </script>
 
 <style scoped>

@@ -6,13 +6,13 @@
                     <v-col cols="12" class="" :class="{'bg-presentacion': windowHeight> 900, 'bg-presentacion-md': windowHeight<700}">
                         <v-row class="">
                             <v-col cols="4" class="margin-top-text">
-                                <h1 class="font-lato text-uppercase text-white text-center" :class="{'font-size-72': windowHeight>900, 'font-size-48': windowHeight<700}">electricidad</h1>
-                                <p class="text-white font-size-50 ml-7" :class="{'font-size-50': windowHeight > 900, 'font-size-36': windowHeight < 700}">Conceptos básicos para vehículos eléctricos</p>
-                                <p class="text-white">{{windowHeight}}</p>
-                                <p class="text-white">{{windowSize}}</p>
+                                <h1 class="font-lato text-uppercase white--text text-center" :class="{'font-size-72': windowHeight>900, 'font-size-48': windowHeight<700}">electricidad</h1>
+                                <p class="white--text font-size-50 ml-7" :class="{'font-size-50': windowHeight > 900, 'font-size-36': windowHeight < 700}">Conceptos básicos para vehículos eléctricos</p>
+                                <p class="white--text">{{windowHeight}}</p>
+                                <p class="white--text">{{windowSize}}</p>
                                 <div class="d-flex justify-center">
                                     <v-btn @click="continueStep" rounded color="#FDBE2E" class="mt-10">
-                                        <span class="font-avenir font-size-30 font-weight-thin">Continuar</span>
+                                        <span class=" font-size-30 font-weight-semibold">Continuar</span>
                                     </v-btn>
                                 </div>
                             </v-col>
@@ -27,21 +27,30 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import MainTemplate from '../templates/MainTemplate.vue';
-import electricidad from '../../assets/electricidad/electricidad.png'
-import { useCounterStore } from '../../stores/counter';
-import { storeToRefs } from 'pinia';
-import { useRoute } from 'vue-router';
+import { mapActions, mapState } from 'vuex';
 
-const store = useCounterStore()
-const {step, windowHeight, windowSize} =  storeToRefs(store)
-const {NextStep} = store 
-const router = useRoute()
+export default {
+    data(){
+        return {
 
-function continueStep(){
-    let route = router.path
-    NextStep(route)
+        }
+    },
+    components: {
+        MainTemplate,
+    },
+    computed: {
+        ...mapState(['step', 'windowHeight', 'windowSize'])
+    },
+    methods: {
+        ...mapActions(['NextStep']),
+        continueStep(){
+            let route = this.$route.path
+            this.$store.dispatch('NextStep', route)
+            //NextStep(route)
+        }
+    }
 }
 </script>
 
@@ -62,13 +71,13 @@ function continueStep(){
     height: 510px;
     margin-top: -1.3vh;
 }
-.bg-mensajes{
+/*.bg-mensajes{
     background-image: url('../../assets/electricidad/fondotest.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     height: 100%;
-}
+}*/
 
 .bg-negro{
     background-image: url('../../assets/electricidad/fondopruebas.png');

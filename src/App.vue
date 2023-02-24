@@ -1,29 +1,47 @@
 <template>
   <div>
-    <v-app>
-      <RouterView />
-    </v-app>
+    <router-view/>
   </div>
+  <!--<v-app>
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>-->
 </template>
 
-<script setup>
-import { storeToRefs } from 'pinia';
-import { onMounted } from 'vue';
-import { RouterView } from 'vue-router'
-import { useCounterStore } from './stores/counter';
+<script>
+import {SCORM} from 'pipwerks-scorm-api-wrapper';
 
-const store = useCounterStore()
+export default {
+  name: 'App',
 
-const { windowSize, windowHeight, PreviousStep} = storeToRefs(store)
-
-function Rezise(){
-  windowSize.value = window.innerWidth
-  windowHeight.value = window.innerHeight
-}
-
-onMounted( () => {
-  windowSize.value = window.innerWidth
-  windowHeight.value = window.innerHeight
-  window.addEventListener('resize', Rezise())
-})
+  data: () => ({
+    //
+  }),
+  mounted(){
+    this.start() 
+    
+    this.$store.commit('StateAssign', {windowSize:window.innerWidth})
+    this.$store.commit('StateAssign', {windowHeight:window.innerHeight})
+    window.addEventListener('resize', this.Resize)
+    //window.audio = document.createElement('audio')
+    /*setInterval(() => {
+      this.$store.commit('StateAssign', {audioPaused: window.audio.paused})
+    },200)*/
+  },
+  methods: {
+    Resize(){
+      this.$store.commit('StateAssign', {windowSize:window.innerWidth})
+      this.$store.commit('StateAssign', {windowHeight:window.innerHeight})
+    },
+    Previous(){
+      this.$store.dispatch('PreviousStep')
+    },
+    start() {
+      SCORM.init();
+      SCORM.set("cmi.core.lesson_mode", "normal");
+      SCORM.save();
+    }
+  }
+};
 </script>

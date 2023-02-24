@@ -21,7 +21,7 @@
                   'size-content bg-logo':windowHeight>900, 
                   'size-content-md bg-logo-md': windowHeight<700 && windowHeight>660,
                   'size-content-sm bg-logo-sm':windowHeight<660}"-->
-                  <v-img :src="logoS" max-height="310" class="position-logo"></v-img>
+                  <v-img src="@/assets/welcome/logoS.png" contain max-height="310" class="position-logo"></v-img>
                 </div>
               </v-col>
               <v-col cols="8" v-if="section === 2" class="animate__animated animate__backInRight">
@@ -49,19 +49,19 @@
         <v-row justify="end" no-gutters>
           <v-col cols="5" align="end" v-if="section === 2" class="animate__animated animate__backInRight">
             <router-link to="/evolucion-de-movilidad">
-              <v-img :src="options" :max-height="windowHeight > 900 ? '80': windowHeight<660 ? '53':'53'" width="100%" 
+              <v-img src="@/assets/welcome/opciones.png" :max-height="windowHeight > 900 ? '80': windowHeight<660 ? '53':'53'" width="100%" 
                 :class="{'mt-2 margin-left': windowHeight> 900, 'mt-1 margin-left-md': windowHeight<700 && windowHeight>660, 'mt-1 margin-left-sm':windowHeight<660 }"></v-img>
             </router-link>
           </v-col>
           <v-col cols="5" align="end" v-if="section === 3" class="animate__animated animate__backInRight">
             <router-link to="/fundamentos-de-electricidad">
-              <v-img :src="opcionesFundamentos" :max-height="windowHeight > 900 ? '80': windowHeight<660 ? '53':'53'" width="100%" 
+              <v-img src="@/assets/welcome/optionsElectricidad.png" :max-height="windowHeight > 900 ? '80': windowHeight<660 ? '53':'53'" width="100%" 
                 :class="{'mt-5 margin-left': windowHeight> 900, 'mt-1 margin-left-md': windowHeight<700 && windowHeight>660, 'mt-1 margin-left-sm':windowHeight<660 }"></v-img>
             </router-link>
           </v-col>
           <v-col cols="5" align="end" v-if="section === 4" class="animate__animated animate__backInRight">
             <router-link to="/cargando-un-bev">
-              <v-img :src="opcionesCragando" :max-height="windowHeight > 900 ? '85': windowHeight<660 ? '58':'54'" width="100%"
+              <v-img src="@/assets/welcome/cargandoOptions.png" :max-height="windowHeight > 900 ? '85': windowHeight<660 ? '58':'54'" width="100%"
                 :class="{'mt-5 margin-left': windowHeight> 900, 'mt-1 margin-left-md': windowHeight<700 && windowHeight>660, 'mt-1 margin-left-sm':windowHeight<660 }"></v-img>
             </router-link>
           </v-col>
@@ -71,7 +71,7 @@
   </div>
 </template>
   
-<script setup>
+<script>
   import MainTemplate from './templates/MainTemplate.vue'
   import images from '@/assets/welcome/images.png'
   import logoS from '@/assets/welcome/logoS.png'
@@ -84,11 +84,19 @@
   import cargando from '@/assets/welcome/cargandotext.png'
   import opcionesCragando from '@/assets/welcome/cargandoOptions.png'
 
-  import { useCounterStore } from '../stores/counter';
-  import { storeToRefs } from 'pinia'
+  import { mapState } from 'vuex'
 
-  const store = useCounterStore()
-  const {section, windowSize, windowHeight} = storeToRefs(store) 
+  export default{
+    data(){
+      return{}
+    },
+    components: {
+      MainTemplate,
+    },
+    computed: {
+      ...mapState(['section', 'windowSize', 'windowHeight'])
+    }
+  }
 </script>
   
 <style scoped>

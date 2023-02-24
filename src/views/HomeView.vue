@@ -1,13 +1,21 @@
 <template>
-  <v-layout>
+  <v-app>
     <v-main class="bg-image">
       <the-welcome></the-welcome>
     </v-main>
-  </v-layout>
+  </v-app>
 </template>
 
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+<script>
+  import TheWelcome from '../components/TheWelcome.vue'
+
+  export default {
+    name: 'Home',
+
+    components: {
+      TheWelcome,
+    },
+  }
 </script>
 
 <style scoped>
@@ -19,4 +27,3 @@ import TheWelcome from '../components/TheWelcome.vue'
   height: 100%;
 }
 </style>
-

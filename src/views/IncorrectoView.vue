@@ -19,14 +19,18 @@
     </v-app>
 </template>
 
-<script setup>
+<script>
 import user from '@/assets/evolucion/user.png'
-import { useRouter } from 'vue-router';
 
-const router = useRouter()
-
-function regresar(){
-    router.go(-1)
+export default {
+    data(){
+        return {}
+    },
+    methods: {
+        regresar(){
+            this.$router.go(-1)
+        }
+    }
 }
 </script>
 

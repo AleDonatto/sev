@@ -1,153 +1,243 @@
 <template>
     <div>
-        <v-navigation-drawer permanent location="left" color="#FDBD31" class="index-1" :width="windowHeight<700 ? '210': '280'">
+        <v-navigation-drawer class="" app permanent color="#FDBD31" :width="windowHeight<700 ? '210': '280'">
             <template v-slot:prepend>
                 <v-list-item :class="{'my-4': windowHeight > 900, 'my-2':windowHeight < 700}">
-                    <v-img :src="solologo" contain heigh max-height="40"></v-img>
+                    <v-img src="@/assets/solo-logo.png" contain heigh max-height="40"></v-img>
                 </v-list-item>
                 <v-list-item class="text-center" :class="{'my-2': windowHeight > 900, 'my-1': windowHeight < 700}">
-                    <v-icon icon="mdi-home" color="black" size="x-large"></v-icon>
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <v-icon color="black" large>mdi-home</v-icon>
+                        </v-col>
+                    </v-row>
                 </v-list-item>
             </template>
             
             <v-divider></v-divider>
 
-            <v-list density="compact" nav class="pa-0" v-if="$route.path === '/evolucion-de-movilidad'">
-                <v-list-item class="text-center bg-nav-yellow my-0 py-0" 
-                :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}" 
-                @click="step = 0">
-                    <span class="font-avenir" :class="{'font-weight-bold': step >= 0 && step <2, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
-                        Inicio
-                    </span>
+            <v-list dense nav class="pa-0 text-center" v-if="this.$route.path === '/evolucion-de-movilidad'" :width="windowHeight<700 ? '210': '280'">
+                
+                <v-list-item class=" bg-nav-yellow my-0 py-0" 
+                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}" 
+                @click="() => {this.$store.commit('StateAssign', {step: 0})}" >
+                    <v-row justify="center">
+                        <v-col cols="10" align="center">
+                            <span class="" :class="{'font-weight-bold': step >= 0 && step <2, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
+                                Inicio
+                            </span>
+                        </v-col>
+                    </v-row>
+                   
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" 
-                :class="{'h-nav' : windowHeight > 900, 'h-nav-md' : windowHeight < 700}" 
+                :class="{'h-nav width-lg' : windowHeight > 900, 'h-nav-md width-md' : windowHeight < 700}" 
                 :disabled="step < 2"
-                @click="step = 2">
-                    <span class="font-avenir" :class="{'font-weight-bold': step === 2, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
-                        Actualidad
-                    </span>
+                @click="() => {this.$store.commit('StateAssign', {step: 2})}">
+                    <v-row justify="center">
+                        <v-col cols="">
+                            <span class="" :class="{'font-weight-bold': step === 2, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
+                                Actualidad
+                            </span>
+                        </v-col>
+                    </v-row>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" 
-                :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}"
+                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}"
                 :disabled="step < 3"
-                @click="step = 3">
-                    <span class="font-avenir" :class="{'font-weight-bold': step === 3, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
-                        Próximamente
-                    </span>
+                @click="() => {this.$store.commit('StateAssign', {step: 3})}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class="" :class="{'font-weight-bold': step === 3, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
+                                Próximamente
+                            </span>
+                        </v-col>
+                    </v-row>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" 
-                :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}"
+                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}"
                 :disabled="step<4"
-                @click="step = 4">
-                    <span class="font-avenir" :class="{'font-weight-bold': step >= 4 && step <6, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
-                        Tipos de tren motriz
-                    </span>
+                @click="() => {this.$store.commit('StateAssign', {step: 4})}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class="" :class="{'font-weight-bold': step >= 4 && step <6, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
+                                Tipos de tren motriz
+                            </span>
+                        </v-col>
+                    </v-row>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" 
-                :class="{'h-nav':windowHeight > 900, 'h-nav-md': windowHeight < 700}"
+                :class="{'h-nav width-lg':windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}"
                 :disabled="step <6"
-                @click="step = 6">
-                    <span class="font-avenir" :class="{'font-weight-bold': step >= 6, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
-                        Repaso de Sección
-                    </span>
+                @click="() => {this.$store.commit('StateAssign', {step: 6})}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class="" :class="{'font-weight-bold': step >= 6, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
+                                Repaso de Sección
+                            </span>
+                        </v-col>
+                    </v-row>
                 </v-list-item>
-                <v-list-item class="text-center bg-nav-black my-0 py-0 not-cursor" :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="text-white font-avenir" :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
-                        Electricidad
-                    </span>
+                <v-list-item class="text-center bg-nav-black my-0 py-0 not-cursor" :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class="white--text " :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
+                                Electricidad
+                            </span>
+                        </v-col>
+                    </v-row>
                 </v-list-item>
-                <v-list-item class="text-center bg-nav-black my-0 py-0 not-cursor" :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="text-white font-avenir" :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
-                        Cargando un BEV
-                    </span>
-                </v-list-item>
-            </v-list>
-
-            <v-list density="compact" nav class="pa-0 font-avenir" v-if="$route.path === '/fundamentos-de-electricidad'">
-                <v-list-item class="text-center bg-nav-black my-0 py-0" @click="moduloEvolucion"
-                :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="font-avenir text-white" :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Inicio</span>
-                </v-list-item>
-
-                <v-list-item class="text-center bg-nav-yellow my-0 py-0" :class="{'h-nav' : windowHeight > 900, 'h-nav-md' : windowHeight < 700}"
-                :disabled="step <1" @click="step = 1">
-                    <span class="font-avenir" :class="{'font-weight-bold': step === 1, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Fundamentos de Electricidad</span>
-                </v-list-item>
-
-                <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="step = 2" :disabled="step<2"
-                :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="font-avenir" :class="{'font-weight-bold': step>=2 && step <12, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700 }">Conceptos Basicos</span>
-                </v-list-item>
-
-                <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="step = 12" :disabled="step<12"
-                :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="font-avenir" :class="{'font-weight-bold': step>=12 && step <17, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700 }">Aplicaciones Practicas</span>
-                </v-list-item>
-
-                <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="step = 17" :disabled="step<16"
-                :class="{'h-nav':windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="font-avenir" :class="{'font-weight-bold': step >=17, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Repaso de Sección</span>
-                </v-list-item>
-
-                <v-list-item class="text-center bg-nav-black my-0 py-0 not-cursor" :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="text-white font-avenir" :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Cargando un BEV</span>
+                <v-list-item class="text-center bg-nav-black my-0 py-0 not-cursor" :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class="white--text " :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
+                                Cargando un BEV
+                            </span>
+                        </v-col>
+                    </v-row>
                 </v-list-item>
             </v-list>
 
-            <v-list density="compact" nav class="pa-0" v-if="$route.path === '/cargando-un-bev'">
+            <v-list density="compact" nav class="pa-0 " v-if="this.$route.path === '/fundamentos-de-electricidad'">
                 <v-list-item class="text-center bg-nav-black my-0 py-0" @click="moduloEvolucion"
-                :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="text-white font-avenir" :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Inicio</span>
+                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class=" white--text" :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Inicio</span>
+                        </v-col>
+                    </v-row>
+                </v-list-item>
+
+                <v-list-item class="text-center bg-nav-yellow my-0 py-0" :class="{'h-nav width-lg' : windowHeight > 900, 'h-nav-md width-md' : windowHeight < 700}"
+                :disabled="step <1" @click="() => {this.$store.commit('StateAssign', {step: 1})}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class="" :class="{'font-weight-bold': step === 1, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Fundamentos de Electricidad</span>
+                        </v-col>
+                    </v-row>
+                </v-list-item>
+
+                <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="() => {this.$store.commit('StateAssign', {step: 2})}" :disabled="step<2"
+                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class="" :class="{'font-weight-bold': step>=2 && step <12, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700 }">Conceptos Basicos</span>
+                        </v-col>
+                    </v-row>
+                </v-list-item>
+
+                <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="() => {this.$store.commit('StateAssign', {step: 12})}" :disabled="step<12"
+                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class="" :class="{'font-weight-bold': step>=12 && step <17, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700 }">Aplicaciones Practicas</span>
+                        </v-col>
+                    </v-row>
+                </v-list-item>
+
+                <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="() => {this.$store.commit('StateAssign', {step: 17})}" :disabled="step<16"
+                :class="{'h-nav width-lg':windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class="" :class="{'font-weight-bold': step >=17, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Repaso de Sección</span>
+                        </v-col>
+                    </v-row>
+                </v-list-item>
+
+                <v-list-item class="text-center bg-nav-black my-0 py-0 not-cursor" :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class="white--text " :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Cargando un BEV</span>
+                        </v-col>
+                    </v-row>
+                </v-list-item>
+            </v-list>
+
+            <v-list density="compact" nav class="pa-0" v-if="this.$route.path === '/cargando-un-bev'">
+                <v-list-item class="text-center bg-nav-black my-0 py-0" @click="moduloEvolucion"
+                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class="white--text " :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Inicio</span>
+                        </v-col>
+                    </v-row>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-black my-0 py-0" value="actualidad"  @click="moduloElectricidad"
-                :class="{'h-nav' : windowHeight > 900, 'h-nav-md' : windowHeight < 700}">
-                    <span class="text-white font-avenir" :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Electricidad</span>
+                :class="{'h-nav width-lg' : windowHeight > 900, 'h-nav-md width-md' : windowHeight < 700}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class="white--text " :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Electricidad</span>
+                        </v-col>
+                    </v-row>
                 </v-list-item>
 
-                <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="step = 1"
-                :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="font-avenir" :class="{'font-weight-bold': step === 1, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Cargando un BEV</span>
+                <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="() => {this.$store.commit('StateAssign', {step: 1})}"
+                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class="" :class="{'font-weight-bold': step === 1, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Cargando un BEV</span>
+                        </v-col>
+                    </v-row>
                 </v-list-item>
-                <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="step = 2"
-                :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="font-avenir" :class="{'font-weight-bold': step === 2, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Modos de Carga</span>
+                <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="() => {this.$store.commit('StateAssign', {step: 2})}"
+                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': wdindowHeight < 700}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class="" :class="{'font-weight-bold': step === 2, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Modos de Carga</span>
+                        </v-col>
+                    </v-row>
                 </v-list-item>
-                <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="step = 3"
-                :class="{'h-nav':windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="font-avenir" :class="{'font-weight-bold': step === 3, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Hábitos de carga</span>
+                <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="() => {this.$store.commit('StateAssign', {step: 3})}"
+                :class="{'h-nav width-lg':windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class="" :class="{'font-weight-bold': step === 3, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Hábitos de carga</span>
+                        </v-col>
+                    </v-row>
                 </v-list-item>
-                <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="step = 4"
-                :class="{'h-nav': windowHeight > 900, 'h-nav-md': windowHeight < 700}">
-                    <span class="font-avenir" :class="{'font-weight-bold': step > 4, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Tipos de Cargadores</span>
+                <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="() => {this.$store.commit('StateAssign', {step: 4})}"
+                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                    <v-row justify="center">
+                        <v-col cols="10">
+                            <span class="" :class="{'font-weight-bold': step > 4, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Tipos de Cargadores</span>
+                        </v-col>
+                    </v-row>
                 </v-list-item>
             </v-list>
 
             <v-row justify="center" :class="{'mt-16':windowHeight > 900, 'mt-2': windowHeight < 700}">
                 <v-col cols="6" align="center">
-                    <v-btn icon="mdi-arrow-left" color="white" :disabled="step < 1" @click="retrocederPaso"></v-btn>
+                    <v-btn color="white" :disabled="step < 1" @click="retrocederPaso" fab>
+                        <v-icon>mdi-arrow-left</v-icon>
+                    </v-btn>
                 </v-col>
                 <v-col cols="6" align="center">
-                    <v-btn icon="mdi-arrow-right" color="white" @click="SiguientePaso" :disabled="canNext!==true"></v-btn>
+                    <v-btn color="white" fab @click="SiguientePaso" :disabled="canNext!==true">
+                        <v-icon>mdi-arrow-right</v-icon>
+                    </v-btn>
                 </v-col>
             </v-row>
             <v-row justify="center">
                 <v-col cols="6" align="center">
-                    <v-btn icon="mdi-volume-high" color="black"></v-btn>
+                    <v-btn color="black" fab>
+                        <v-icon color="white">mdi-volume-high</v-icon>
+                    </v-btn>
                 </v-col>
                 <v-col cols="6" align="center">
-                    <v-btn icon="mdi-comment-processing-outline" color="black"></v-btn>
+                    <v-btn color="black" fab>
+                        <v-icon color="white">mdi-comment-processing-outline</v-icon>
+                    </v-btn>
                 </v-col>
             </v-row>
         </v-navigation-drawer>
         <div>
-            <v-app-bar class="bg-appbar" :class="{'h-appbar': windowHeight>900, 'h-appbar-md':windowHeight<700}" >
+            <v-app-bar app class="bg-appbar" :class="{'h-appbar': windowHeight>900, 'h-appbar-md':windowHeight<700}" >
                 <v-row>
                     <v-col cols="6" align="start" align-self="center">
-                        <h1 class="ml-7 mt-5" :class="{'font-size-20': windowHeight<700}">{{props.title}}</h1>
+                        <h1 class="ml-7 mt-5" :class="{'font-size-20': windowHeight<700}">{{this.title}}</h1>
                     </v-col>
                     <v-col cols="6" align="start" align-self="center">
-                        <h1 class="text-white font-weight-thin m-left" :class="{'font-size-20 mt-0': windowHeight<700}" v-html="props.subtitle"></h1> 
+                        <h1 class="white--text font-weight-thin m-left" :class="{'font-size-20 mt-0': windowHeight<700, 'mt-11': windowHeight>900}" v-html="this.subtitle"></h1> 
                     </v-col>
                 </v-row> 
             </v-app-bar>
@@ -158,57 +248,69 @@
     </div>
 </template>
 
-<script setup>
-import solologo from '@/assets/solo-logo.png'
-import { storeToRefs } from 'pinia';
-import { useRoute, useRouter } from 'vue-router';
-import { useCounterStore } from '../../stores/counter';
+<script>
+import { mapActions, mapState } from 'vuex';
 
-const props = defineProps({
-    title: String,
-    subtitle: String
-})
+export default {
+    props: ['title', 'subtitle'],
+    data(){
+        return{
 
-const store = useCounterStore()
-const {step, canNext, windowHeight, windowSize, count} = storeToRefs(store)
-const router = useRoute()
+        }
+    },
+    computed: {
+        ...mapState(['step', 'canNext', 'windowHeight', 'windowSize', 'count'])
+    },
+    methods: {
+        ...mapActions(['NextStep', 'PreviousStep',]),
+        SiguientePaso(){
+            //console.log(router.path)
+            let route = this.$route.path 
+            if(route === '/evolucion-de-movilidad' && this.step === 4 && this.count < 42){
+                this.$store.commit('Increment')
+                //increment()
+            }else if(route === '/fundamentos-de-electricidad' && this.step === 10 && this.count<3){
+                //this.$store.dispatch('increment')
+                this.$store.commit('Increment')
+                //increment()
+            }else if(route === '/fundamentos-de-electricidad' && this.step === 11 && this.count<2){
+                //this.$store.dispatch('increment')
+                this.$store.commit('Increment')
+                //increment()
+            }else if(route === '/fundamentos-de-electricidad' && this.step === 13 && this.count<1){
+                //this.$store.dispatch('increment')
+                this.$store.commit('Increment')
+                //increment()
+            }else if(route === '/fundamentos-de-electricidad' && this.step === 14 && this.count<1){
+                //this.$store.dispatch('increment')
+                this.$store.commit('Increment')
+                //increment()
+            }else if(route === '/cargando-un-bev' && this.step === 2 && this.count<1){
+                //this.$store.dispatch('increment')
+                this.$store.commit('Increment')
+                //increment()
+            }
+            else{
+                this.$store.dispatch('NextStep', route)
+                //NextStep(route)
+            }
+        },
+        
+        retrocederPaso(){
+            let route = this.$route.path
+            this.$store.dispatch('PreviousStep', route)
+            //PreviousStep(route)
+        },
 
-const { NextStep, PreviousStep, increment } = store
-const route = useRouter()
+        moduloEvolucion(){
+            this.$router.push('/evolucion-de-movilidad')
+        },
 
+        moduloElectricidad(){
+            this.$router.push('/fundamentos-de-electricidad')
+        }
+    },
 
-function SiguientePaso(){
-    //console.log(router.path)
-    let route = router.path
-    if(route === '/evolucion-de-movilidad' && step.value === 4 && count.value < 42){
-        increment()
-    }else if(route === '/fundamentos-de-electricidad' && step.value === 10 && count.value<3){
-        increment()
-    }else if(route === '/fundamentos-de-electricidad' && step.value === 11 && count.value<2){
-        increment()
-    }else if(route === '/fundamentos-de-electricidad' && step.value === 13 && count.value<1){
-        increment()
-    }else if(route === '/fundamentos-de-electricidad' && step.value === 14 && count.value<1){
-        increment()
-    }else if(route === '/cargando-un-bev' && step.value === 2 && count.value<1){
-        increment()
-    }
-    else{
-        NextStep(route)
-    }
-}
-
-function retrocederPaso(){
-    let route = router.path
-    PreviousStep(route)
-}
-
-function moduloEvolucion(){
-    route.push('/evolucion-de-movilidad')
-}
-
-function moduloElectricidad(){
-    route.push('/fundamentos-de-electricidad')
 }
 </script>
 
@@ -257,5 +359,13 @@ function moduloElectricidad(){
 }
 .index-2{
     z-index:3 !important;
+}
+
+.width-lg{
+    max-width: 280px;
+}
+
+.width-sm{
+    max-width: 210px;
 }
 </style>

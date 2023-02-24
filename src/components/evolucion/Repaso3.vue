@@ -5,50 +5,50 @@
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9" align="start">
                             <div class="box-color-instructions py-6 px-4" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
-                                <p class="font-avenir font-size-26">
+                                <p class=" font-size-26">
                                     Las siglas <span class="text-yellow front-weight-bold">BEV</span> (por su acrónimo en inglés), corresponden a:
                                 </p>
                             </div>
                         </v-col>
                     </v-row>
-
+                    
                     <v-row class="mx-16" justify="center" :class="{'mt-10': windowHeight>900, 'mt-0': windowHeight<700}">
                         <v-col cols="12" lg="5" md="6">
-                            <v-radio-group v-if="answeredQuiz3 === false">
+                            <v-radio-group v-model="answers.a1" v-if="answeredQuiz3 === false">
                                 <v-radio value="battery-efficient" class="my-4" color="#FDBD31" @input="answers.a1 = $event.target.value" >
                                     <template v-slot:label>
-                                        <p class="font-avenir font-size-24">Battery Efficient Vehicle</p>
+                                        <p class=" font-size-24 mt-3">Battery Efficient Vehicle</p>
                                     </template>
                                 </v-radio>
                                 <v-radio value="beatifull-efficent" class="my-4" color="#FDBD31" @input="answers.a1 = $event.target.value">
                                     <template v-slot:label>
-                                        <p class="font-avenir font-size-24">Beautiful Efficient Vehicle</p>
+                                        <p class=" font-size-24 mt-3">Beautiful Efficient Vehicle</p>
                                     </template>
                                 </v-radio>
                                 <v-radio value="battery-electric" class="my-4" color="#FDBD31" @input="answers.a1 = $event.target.value">
                                     <template v-slot:label>
-                                        <p class="font-avenir font-size-24">Battery Electric Vehicle</p>
+                                        <p class=" font-size-24 mt-3">Battery Electric Vehicle</p>
                                     </template>
                                 </v-radio>
                             </v-radio-group>
                             <v-radio-group v-else v-model="response">
                                 <v-radio value="battery-efficient" class="my-4" color="#FDBD31" disabled>
                                     <template v-slot:label>
-                                        <p class="font-avenir font-size-24">Battery Efficient Vehicle</p>
+                                        <p class=" font-size-24">Battery Efficient Vehicle</p>
                                     </template>
                                 </v-radio>
                                 <v-radio value="beatifull-efficent" class="my-4" color="#FDBD31" disabled>
                                     <template v-slot:label>
-                                        <p class="font-avenir font-size-24">Beautiful Efficient Vehicle</p>
+                                        <p class=" font-size-24">Beautiful Efficient Vehicle</p>
                                     </template>
                                 </v-radio>
                                 <v-radio value="battery-electric" class="my-4" color="#FDBD31" disabled>
                                     <template v-slot:label>
-                                        <p class="font-avenir font-size-24">Battery Electric Vehicle</p>
+                                        <p class=" font-size-24">Battery Electric Vehicle</p>
                                     </template>
                                 </v-radio>
                             </v-radio-group>
@@ -69,38 +69,45 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import ContentTemplate from '../templates/ContentTemplate.vue';
-import user from '@/assets/evolucion/user.png'
-import { useCounterStore } from '../../stores/counter'
-import { storeToRefs } from 'pinia';
-import { onMounted, reactive, ref } from 'vue';
-import { useRouter, useRoute } from 'vue-router';
+import { mapActions, mapState } from 'vuex';
 
-const store = useCounterStore()
-const {NextStep} = store
-const {answeredQuiz3,canNext, windowHeight, windowSize} = storeToRefs(store)
-const router = useRoute()
+export default{
+    data() {
+        return {
+            answers: {
+                a1: null, 
+                a2: null,
+                a3: null,
+            },
+            response: 'battery-efficient'
+        }
+    },
+    components: {
+        ContentTemplate,   
 
-onMounted(() => {
-    if(answeredQuiz3.value === false){
-        canNext.value = false
-    }
-})
-
-const answers = reactive({
-    a1: null,
-    a2: null, 
-    a3: null
-})
-
-const response = ref('battery-efficient')
-
-function checkQuiz(){
-    if(answers.a1 === 'battery-efficient'){
-        answeredQuiz3.value = true
-        let route = router.path
-        NextStep(route)
+    },
+    computed: {
+        ...mapState(['answeredQuiz3','canNext', 'windowHeight', 'windowSize'])
+    },
+    mounted() {
+        if(this.answeredQuiz3 === false){
+            //this.canNext = false
+            this.$store.commit('StateAssign', {canNext: false})
+        }
+    },
+    methods: {
+        ...mapActions(['NextStep']),
+        checkQuiz(){
+            if(this.answers.a1 === 'battery-efficient'){
+                this.$store.commit('StateAssign', {answeredQuiz3: true})
+                //this.answeredQuiz3 = true
+                let route = this.$route.path
+                this.$store.dispatch('NextStep', route)
+                //NextStep(route)
+            }
+        }
     }
 }
 </script>

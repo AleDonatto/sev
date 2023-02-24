@@ -5,12 +5,12 @@
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
                                 <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-avenir font-size-22">
+                                    <v-card-text class=" font-size-22">
                                         La segunda unidad que vamos a conocer se llama Amperio o Amper. Esta unidad mide la intensidad de 
                                         la corriente eléctrica, en palabras coloquiales, que tan "fuerte" es esta corriente.
                                         <br><br>
@@ -31,28 +31,28 @@
 
                     <v-row justify="center" class="rounded-xl bg-color mx-10">
                         <v-col cols="12" align="center" class="animate__animated animate__backInDown">
-                            <p class="font-avenir" :class="{'font-size-30':windowHeight>900, 'font-size-26':windowHeight<700}"><span class="font-weight-bold">Amper:</span> unidad de medición de la intensidad de la corriente eléctrica</p>
+                            <p class="" :class="{'font-size-30':windowHeight>900, 'font-size-26':windowHeight<700}"><span class="font-weight-bold">Amper:</span> unidad de medición de la intensidad de la corriente eléctrica</p>
                         </v-col>
                         
                         <v-col cols="5" align="center" class="animate__animated animate__backInLeft mt-5">
-                            <v-img :src="cubito" :max-height="windowHeight>900 ? '230': '150'"></v-img>
-                            <p class="font-weight-bold font-avenir font-size-30 mt-5">5 Volts, 1 Amper </p>
+                            <v-img src="@/assets/electricidad/cubito.png" contain :max-height="windowHeight>900 ? '230': '150'"></v-img>
+                            <p class="font-weight-bold  font-size-30 mt-5">5 Volts, 1 Amper </p>
                         </v-col>
                         <v-col cols="1">
                             <hr class="vertical-line">
                         </v-col>
                         <v-col cols="5" class="mt-5 animate__animated animate__backInRight">
-                            <v-img :src="cubo" :max-height="windowHeight>900 ? '230': '150'"></v-img>
-                            <p class="font-avenir font-size-30 font-weight-bold text-center mt-5">5 Volts, 2.1 Amper</p>
+                            <v-img src="@/assets/electricidad/cubo.png" contain :max-height="windowHeight>900 ? '230': '150'"></v-img>
+                            <p class=" font-size-30 font-weight-bold text-center mt-5">5 Volts, 2.1 Amper</p>
                         </v-col>
 
                     </v-row>
 
-                    <v-snackbar v-model="snackbar" location="bottom right" color="#FDBD31" timeout="10000" class="mx-16" height="200" width="320" rounded="xl" multi-line vertical>
-                        <template v-slot:actions>
-                            <v-btn @click="snackbar=!snackbar"><span class="text-black">Cerrar</span></v-btn>
+                    <v-snackbar v-model="snackbar" bottom right color="#FDBD31" timeout="10000" height="200" width="320" rounded="xl" multi-line vertical>
+                        <template v-slot:action>
+                            <v-btn @click="snackbar=!snackbar" text><span class="black--text">Cerrar</span></v-btn>
                         </template>
-                        <p class="font-weight-bold text-black font-avenir font-size-20 px-5 py-4">
+                        <p class="font-weight-bold text-black  font-size-20 px-5">
                             El amperaje hace referencia a qué tan intensa es la corriente. Por ejemplo: a mayor amperaje, mayor velocidad de carga
                         </p>
                     </v-snackbar>
@@ -62,19 +62,23 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import ContentTemplate from '../templates/ContentTemplate.vue';
-import user from '@/assets/evolucion/user.png'
-import cubito from '@/assets/electricidad/cubito.png'
-import cubo from '@/assets/electricidad/cubo.png'
-import { useCounterStore } from '../../stores/counter';
-import { ref } from '@vue/reactivity';
-import { storeToRefs } from 'pinia';
+import { mapState } from 'vuex';
 
-const snackbar = ref(true)
-const store = useCounterStore()
-const {windowHeight, windowSize} = storeToRefs(store)
-
+export default{
+    data(){
+        return{
+            snackbar : true
+        }
+    },
+    components: {
+        ContentTemplate,
+    },
+    computed: {
+        ...mapState(['windowHeight', 'windowSize'])
+    }
+}
 </script>
 
 <style scoped>

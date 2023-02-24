@@ -5,26 +5,26 @@
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img :src="user" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz">
-                                <p class="py-5 px-4 font-avenir font-size-24">El cable de carga portátil que normalmente se entrega con un vehículo eléctrico es un cargador modo 2</p>
+                                <p class="py-5 px-4  font-size-24">El cable de carga portátil que normalmente se entrega con un vehículo eléctrico es un cargador modo 2</p>
                             </div>
                         </v-col>
                     </v-row>
 
                     <v-row justify="center">
                         <v-col cols="12" lg="4" md="6">
-                            <v-radio-group>
+                            <v-radio-group v-model="answers.a1">
                                 <v-radio class="my-4" color="#FDBD31" @input="answers.a1 = $event.target.value" value="cierto">
                                     <template v-slot:label>
-                                        <p class="font-avenir font-size-24">Cierto</p>
+                                        <p class=" font-size-24 mt-5">Cierto</p>
                                     </template>
                                 </v-radio>
                                 <v-radio value="falso" class="my-4" color="#FDBD31" @input="answers.a1 = $event.target.value" >
                                     <template v-slot:label>
-                                        <p class="font-avenir font-size-24">Falso</p>
+                                        <p class=" font-size-24 mt-5">Falso</p>
                                     </template>
                                 </v-radio>
                             </v-radio-group>
@@ -44,33 +44,39 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import ContentTemplate from '../templates/ContentTemplate.vue';
-import user from '@/assets/evolucion/user.png'
-import { useCounterStore } from '../../stores/counter';
-import { onMounted, reactive } from 'vue';
-import { useRoute } from 'vue-router';
-import { storeToRefs } from 'pinia';
+import { mapActions, mapState } from 'vuex';
 
-const answers = reactive({
-    a1: null, 
-    a2: null,
-})
-
-const router = useRoute()
-const store = useCounterStore()
-const {canNext, windowHeight, windowSize} = storeToRefs(store)
-const {NextStep} = store
-
-onMounted(() => {
-    canNext.value = false
-})
-
-function checkQuiz(){
-    if(answers.a1 === 'cierto'){
-        const path = router.path
-        NextStep(path)
-    }
+export default {
+    data(){
+        return {
+            answers: {
+                a1: null,
+                a2: null, 
+            }
+        }
+    },
+    components: {
+        ContentTemplate
+    },
+    computed: {
+        ...mapState(['canNext', 'windowHeight', 'windowSize'])
+    },
+    mounted(){
+        //this.canNext = false
+        this.$store.commit('StateAssign', {canNext: false})
+    },
+    methods: {
+        ...mapActions(['NextStep']),
+        checkQuiz(){
+            if(this.answers.a1 === 'cierto'){
+                const path = this.$route.path
+                //NextStep(path)
+                this.$store.dispatch('NextStep', path)
+            }
+        }
+    },
 }
 </script>
 
