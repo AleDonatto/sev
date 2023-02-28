@@ -9,8 +9,8 @@
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
-                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-size-22 ">
+                                <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
                                         Los cargadores Modo 1 son cargadores para vehículos ligeros como bicicletas eléctricas o scooters. 
                                         Al tener baterías de baja capacidad, el cargador utilizado no requiere tener una potencia elevada. 
                                         Normalmente trabajan entre 110 y 240 volts de corriente alterna y se conectan directamente a los 

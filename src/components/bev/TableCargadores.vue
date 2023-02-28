@@ -9,8 +9,8 @@
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
-                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-size-22 ">
+                                <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
                                         Para los autos eléctricos es igual. En México la mayor parte de los cargadores corresponden al 
                                         Type 1 también conocido como SAE J 1772. Existen también varios del tipo GBT. Lo que es un hecho, 
                                         es que el conector del vehículo debe ser compatible con el del cargador, o bien, puede utilizarse 
