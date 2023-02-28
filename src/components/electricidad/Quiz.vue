@@ -9,7 +9,7 @@
                         </v-col>
                         <v-col cols="9" class="">
                             <div class="border-yellow mt-6">
-                                <p class=" font-size-24 mx-5 py-5 px-5">El voltaje y el amperaje determinan la potencia <span class="text-yellow-p">(watt):</span></p>
+                                <p class="font-size-24 mx-5 py-5 px-5">El voltaje y el amperaje determinan la potencia <span class="text-yellow-p">(watt):</span></p>
                             </div>
                         </v-col>
                     </v-row>
@@ -19,13 +19,13 @@
                             <v-radio-group v-model="answers.a1" color="#FDBD31">
                                 <v-radio value="cierto" @input="answers.a1 = $event.target.value" color="#FDBD31">
                                     <template v-slot:label>
-                                        <p class=" font-size-24 mt-5">Cierto</p>
+                                        <p class="font-size-24 mt-5">Cierto</p>
                                     </template>
                                 </v-radio>
 
                                 <v-radio value="falso" @input="answers.a1 = $event.target.value" color="#FDBD31">
                                     <template v-slot:label>
-                                        <p class=" font-size-24 mt-5">Falso</p>
+                                        <p class="font-size-24 mt-5">Falso</p>
                                     </template>
                                 </v-radio>
                             </v-radio-group>

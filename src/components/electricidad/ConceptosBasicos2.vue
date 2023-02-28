@@ -9,8 +9,8 @@
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
-                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class=" font-size-22">
+                                <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
                                         El primer concepto que vamos a explorar el VOLTIO o Volt. Se trata de unidad que mide 
                                         la diferencia de potencial eléctrico entre dos puntos; pero como esto no resulta del 
                                         todo claro, podemos decir también que el Voltaje nos habla de la "cantidad" de corriente 
@@ -33,12 +33,12 @@
 
                     <v-row justify="center" class="rounded-xl bg-color mx-10" :class="{'mt-10':windowHeight>900, 'mt-0':windowHeight<700}">
                         <v-col cols="12" class="animate__animated animate__backInDown">
-                            <p class="text-center " :class="{'font-size-36':windowHeight>900, 'font-size-28':windowHeight<700}">
+                            <p class="text-center " :class="{'font-size-36':windowHeight>900, 'font-size-26':windowHeight<700}">
                                 <span class="font-weight-bold">Volt:</span> unidad de medicion de fuerza eléctrica.
                             </p>
                         </v-col>
                         <v-col cols="5" align="center" class="animate__animated animate__backInLeft">
-                            <p class="font-weight-bold " :class="{'font-size-36':windowHeight>900, 'font-size-28':windowHeight<700}">Corriente Directa</p>
+                            <p class="font-weight-bold " :class="{'font-size-36':windowHeight>900, 'font-size-26':windowHeight<700}">Corriente Directa</p>
                             <v-row justify="center">
                                 <v-col cols="6">
                                     <v-img src="@/assets/electricidad/pila.png" contain :max-height="windowHeight >900 ? '220': '150'"></v-img>
@@ -46,7 +46,7 @@
                                 </v-col>
                                 <v-col cols="6">
                                     <v-img src="@/assets/electricidad/bateria.png" contain max-height="219"></v-img>
-                                    <p class="font-weight-bold  font-size-24">12 V</p>
+                                    <p class="font-weight-bold font-size-24">12 V</p>
                                 </v-col>
                             </v-row>
                         </v-col>
@@ -54,15 +54,15 @@
                             <hr class="line-vertical">
                         </v-col>
                         <v-col cols="5" class="animate__animated animate__backInRight">
-                            <p class="font-weight-bold  text-center" :class="{'font-size-36':windowHeight>900, 'font-size-28':windowHeight<700}">Corriente Alterna</p>
+                            <p class="font-weight-bold  text-center" :class="{'font-size-36':windowHeight>900, 'font-size-26':windowHeight<700}">Corriente Alterna</p>
                             <v-row justify="center">
                                 <v-col cols="12">
                                     <v-img src="@/assets/electricidad/contacto.png" contain :max-height="windowHeight >900 ? '220': '150'" ></v-img>
                                     <v-row justify="center" :class="{'mx-10':windowHeight>900, 'mx-2': windowHeight<700}">
-                                        <v-col cols="6" align="center">
+                                        <v-col cols="7" align="center">
                                             <p class="">El voltaje hace referencia a la “cantidad” de corriente</p>
                                         </v-col>
-                                        <v-col cols="6" align="center">
+                                        <v-col cols="5" align="center">
                                             <p class="font-weight-bold  font-size-24">110 V</p>
                                         </v-col>
                                     </v-row>

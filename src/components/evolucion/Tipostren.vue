@@ -6,12 +6,11 @@
                     <v-row justify="space-between">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
-                            <p>{{count}}</p>
                         </v-col>
                         <v-col cols="10" v-if="count == 0">
                             <div class="border-box-quiz nimate__animated animate__backInLeft" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
-                                <v-card height="130" class="overflow-auto rounded-lg ma-1" >
-                                    <v-card-text class="font-size-22 ">
+                                <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1" >
+                                    <v-card-text class="" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
                                         Vamos a revisar rápidamente una manera en la que podemos clasificar los diferentes tipos de tren 
                                         motriz de acuerdo al nivel de emisiones de gases de efecto invernadero que generan.
                                         Los autos que ocupan motores a gasolina o diesel serían aquéllos que más emisiones generan. 
@@ -26,8 +25,8 @@
                         <v-col cols="8" v-if="count >= 1">
                             <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count >= 1 && count <= 7"
                             :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
-                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-size-22 ">
+                                <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
                                         A continuación vamos a analizar los componentes principales que conforman cada tipo de tren motriz y la función que desempeñan.
                                         <br><br>
                                         Vamos a iniciar con los vehículos con motor a combustión interna también llamados ICE.
@@ -47,8 +46,8 @@
                             </div>
                             <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count >= 8 && count <=14"
                             :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
-                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-size-22 ">
+                                <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
                                         Los vehículos semihíbridos (también conocidos como MHEV o mild hybrid), son el primer paso hacia 
                                         la electrificación.  Estos cuentan ya con un motor eléctrico pequeño y de baja potencia. Si bien no 
                                         se pueden mover únicamente con la fuerza de este motor eléctrico, si se tiene un pequeño beneficio 
@@ -68,8 +67,8 @@
                             </div>
                             <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count >= 15 && count <=21"
                             :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
-                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-size-22 ">
+                                <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
                                         Vehículos híbridos fuertes (también conocidos como Full HEV o híbridos autorecargables). 
                                         Estos son con seguridad los híbridos más conocidos y más comercializados a nivel mundial. 
                                         Se trata de sistemas que ya cuentan con motor o motores eléctricos suficientemente fuertes 
@@ -92,8 +91,8 @@
                             </div>
                             <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count>=22 && count <=28"
                             :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
-                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-size-22 ">
+                                <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
                                         En años recientes se ha incrementado el número de vehículos híbridos enchufables que se 
                                         ofrecen en diferentes marcas. Este tipo de autos, también conocidos como PHEV o plug-in 
                                         hybrid cuentan con uno o varios motores eléctricos de alta potencia que son capaces de mover 
@@ -120,8 +119,8 @@
                             </div>
                             <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count>=29 && count <=35"
                             :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
-                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-size-22 ">
+                                <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
                                         Finalmente hablaremos de los vehículos eléctricos a batería también conocidos como BEV. 
                                         En este tipo de unidades, el motor de combustible desaparece por completo y es el motor 
                                         o los motores eléctricos quienes son responsables del movimiento del auto. Las baterías 
@@ -158,28 +157,28 @@
 
                     <v-row justify="center" class="mx-5 animate__animated animate__backInLeft" :class="{'mt-4': windowHeight>900, 'mt-0': windowHeight<700}" v-if="count === 0">
                         <v-col cols="3">
-                            <v-img src="@/assets/evolucion/combustion.png" contain :max-height="windowHeight>900 ? '450': '270'"></v-img>
+                            <v-img src="@/assets/evolucion/combustion.png" contain :max-height="windowHeight>900 ? '450': '265'"></v-img>
                         </v-col>
                         <v-col cols="3">
-                            <v-img src="@/assets/evolucion/hibridos.png" contain :max-height="windowHeight>900 ? '450': '270'"></v-img>
+                            <v-img src="@/assets/evolucion/hibridos.png" contain :max-height="windowHeight>900 ? '450': '265'"></v-img>
                         </v-col>
                         <v-col cols="3">
-                            <v-img src="@/assets/evolucion/electricos.png" contain :max-height="windowHeight>900 ? '450': '270'"></v-img>
+                            <v-img src="@/assets/evolucion/electricos.png" contain :max-height="windowHeight>900 ? '450': '265'"></v-img>
                         </v-col>
                         <v-col cols="3">
-                            <v-img src="@/assets/evolucion/otros.png" contain :max-height="windowHeight>900 ? '450': '270'"></v-img>
+                            <v-img src="@/assets/evolucion/otros.png" contain :max-height="windowHeight>900 ? '450': '265'"></v-img>
                         </v-col>
                     </v-row>
 
                     <v-row justify="center" class="bg-gradient mx-5 animate__animated animate__backInRight" v-if="count === 0">
                         <v-col cols="3" align="center">
-                            <p class="font-weight-bold " :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">Altas</p>
+                            <p class="font-weight-bold " :class="{'font-size-30': windowHeight>900, 'font-size-20': windowHeight<700}">Altas</p>
                         </v-col>
                         <v-col cols="3" align="center">
-                            <p class="font-weight-bold " :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">Medias/bajas</p>
+                            <p class="font-weight-bold " :class="{'font-size-30': windowHeight>900, 'font-size-20': windowHeight<700}">Medias/bajas</p>
                         </v-col>
                         <v-col cols="6" align="center">
-                            <p class="font-weight-bold " :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">Cero emisiones</p>
+                            <p class="font-weight-bold " :class="{'font-size-30': windowHeight>900, 'font-size-20': windowHeight<700}">Cero emisiones</p>
                         </v-col>
                     </v-row>
 

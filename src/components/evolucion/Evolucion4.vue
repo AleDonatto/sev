@@ -1,6 +1,6 @@
 <template>
     <div>
-        <content-template title="PRÓXIMAMENTE" subtitle='<p>Evolución <br/> <span class="font-weight-bold">de la movilidad</span></p>'>
+        <content-template title="PRÓXIMAMENTE" subtitle='<p class="mt-5">Evolución <br/> <span class="font-weight-bold">de la movilidad</span></p>'>
             <template v-slot:content>
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
@@ -9,8 +9,8 @@
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
-                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-size-22 ">
+                                <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
                                         ¿Pero, qué nos depara el futuro? Bueno, debido a la amenaza global por el cambio climático, a los 
                                         adelantos tecnológicas y a la eventual escasez de combustibles fósiles, se puede anticipar que la 
                                         transición a vehículos "limpios" o 0 emisiones será acelerada. En varios países se anticipa que en 

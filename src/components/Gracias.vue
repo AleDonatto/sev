@@ -10,7 +10,7 @@
                     </v-row>
                     <v-row justify="start" class="mt-0 mb-16">
                         <v-col cols="5">
-                            <p class="font-avenir white--text px-10" :class="{'font-size-26':windowHeight>900, 'font-size-22': windowHeight<700}">
+                            <p class=" white--text px-10" :class="{'font-size-26':windowHeight>900, 'font-size-22': windowHeight<700}">
                                 Haz acabado el primer módulo de nuestra series de cursos que tenemos preparados para ti.
                                 <span class="font-weight-bold">Estamos muy contentos de que hayas formado una parte activa de este curso</span>
                                 y de parte del equipo de SEV agradecemos el tiempo que le dedicaste al curso. <br>

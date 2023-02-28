@@ -9,8 +9,8 @@
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
-                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-size-22 " v-if="count === 0">
+                                <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}" v-if="count === 0">
                                         Cuando se desea calcular el costo de carga de una batería, hay que tener en cuenta dos factores 
                                         principales: <br>
                                         1) la capacidad de la batería y su estado de carga, es decir, cuantos kilowatt hora 
@@ -18,7 +18,7 @@
                                         2) el precio del kilowatt hora suministrado en el cargador o por parte de 
                                         quien distribuye la corriente eléctrica.
                                     </v-card-text>
-                                    <v-card-text class="font-size-22 " v-if="count === 1">
+                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}" v-if="count === 1">
                                         En este ejemplo, calcularemos el costo de llenar una batería de 50 kilowatt hora desde el 20% 
                                         hasta el 100% de su capacidad. De tal manera que la carga total resultante es de 40 kilowatt hora. 
                                         Si el usuario paga una tarifa de consumo básico equivalente a $0.859 por kilowatt hora, el costo 
@@ -53,18 +53,18 @@
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" class="rounded-xl bg-color mx-10 px-5" v-if="count === 1">
-                        <v-col cols="3">
+                    <v-row no-gutters justify="center" class="rounded-xl bg-color mx-10 px-5 mt-3" v-if="count === 1">
+                        <v-col cols="3" class="mt-2">
                             <v-img src="@/assets/electricidad/costoLowBattery.png" contain :max-height="windowHeight>900 ? '130': '90'"></v-img>
                         </v-col>
-                        <v-col cols="2" align-self="center">
+                        <v-col cols="2" class="mt-2" align-self="center">
                             <v-img src="@/assets/electricidad/comparation.png" contain max-height="50"></v-img>
                         </v-col>
-                        <v-col cols="3">
+                        <v-col cols="3" class="mt-2">
                             <v-img src="@/assets/electricidad/costoCompleteBattery.png" contain :max-height="windowHeight>900 ? '130': '90'"></v-img>
                         </v-col>
 
-                        <v-col cols="12">
+                        <v-col cols="12" class="mt-3">
                             <p class="" :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">Ejercicio: ¿Cuánto cuesta cargar de 20% hasta 100% la batería de un vehículo eléctrico que cuenta con una batería de 50 kWh?</p>
                         </v-col>
                         <v-col cols="10">

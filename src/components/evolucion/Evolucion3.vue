@@ -1,6 +1,6 @@
 <template>
     <div>
-        <content-template title="ACTUALIDAD" subtitle='<p>Evolución <br/> <span class="font-weight-bold">de la movilidad</span></p>'>
+        <content-template title="ACTUALIDAD" subtitle='<p class="mt-5">Evolución <br/> <span class="font-weight-bold">de la movilidad</span></p>'>
             <template v-slot:content>
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
@@ -9,8 +9,8 @@
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
-                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="font-size-22 ">
+                                <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text class="" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
                                         Algo curioso es que en estos últimos 100 años nuevamente el cambio ha sido paulatino. Si observamos el 
                                         mercado automotriz actual vamos a encontrar que predominan los vehículos con motor a combustión 
                                         interna y que también se encuentran presentes los vehículos híbridos y los vehículos eléctricos. 
@@ -38,7 +38,7 @@
                         <v-col cols="4">
                             <v-img src="@/assets/evolucion/division.png" max-width="850"></v-img>
                             <div class="bg-gray-1 size-box text-center mx-1">
-                                <span class="text-center font-weigth-normal font-size-30 text-white">
+                                <span class="text-center font-weigth-normal text-white" :class="{'font-size-30': windowHeight>900, 'font-size-26':windowHeight<700}">
                                     Motores a combustión interna (ICE)
                                 </span>
                             </div>
@@ -46,7 +46,7 @@
                         <v-col cols="4">
                             <v-img src="@/assets/evolucion/division.png" max-width="850"></v-img>
                             <div class="bg-gray-2 size-box text-center mx-1">
-                                <span class=" front-weight-normal font-size-30 text-white">
+                                <span class=" front-weight-normal text-white" :class="{'font-size-30': windowHeight>900, 'font-size-26':windowHeight<700}">
                                     Autos híbridos (MHEV, Full HEV y PHEV)
                                 </span>
                             </div>
@@ -54,7 +54,7 @@
                         <v-col cols="4">
                             <v-img src="@/assets/evolucion/division.png" max-width="850"></v-img>
                             <div class="size-box bg-gray-3 text-center mx-1">
-                                <span class=" font-weight-normal font-size-30 text-white">
+                                <span class=" font-weight-normal text-white" :class="{'font-size-30': windowHeight>900, 'font-size-26':windowHeight<700}">
                                     Autos eléctricos (BEV)
                                 </span>
                             </div>

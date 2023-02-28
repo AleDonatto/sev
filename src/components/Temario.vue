@@ -7,7 +7,7 @@
             <!--:class="{'bg-instructions' : windowHeight > 900, 'bg-instructions-sm': windowHeight < 700}"-->
             <v-row class="m-0" >
               <v-col cols="4">
-                <h1 class="white--text font-lato font-weight-light text-center" :class="{'mt-7 font-size-96':windowHeight > 900, 'mt-0 font-size-50':windowHeight < 700}">Temario</h1>
+                <h1 class="white--text font-weight-light text-center" :class="{'mt-7 font-size-96':windowHeight > 900, 'mt-0 font-size-50':windowHeight < 700}">Temario</h1>
                 <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-19' : windowHeight < 700}">
                   Evolución de la movilidad: desde los primeros vehículos automóviles hasta las tecnologías 0 emisiones.
                 </p>

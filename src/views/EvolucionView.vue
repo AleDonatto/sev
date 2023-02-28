@@ -18,7 +18,7 @@
                 </div>
             </v-main>
             <v-footer dark padless app v-if="!(step === 7) && !(step === 9) && !(step === 11)">
-                <p>© {{date.getFullYear()}} Todos los derechos reservados</p>
+                <p class="mt-1 pl-5">© {{date.getFullYear()}} Todos los derechos reservados</p>
             </v-footer>
             
             <!--<v-footer color="black" class="">

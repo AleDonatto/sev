@@ -9,8 +9,8 @@
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
-                                <v-card height="130" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class=" font-size-22">
+                                <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
                                         La siguiente unidad que vamos a presentar se llama el Watt o vatio. Esta es mucho más conocida ya 
                                         que cuando tenemos, o teníamos, que reemplazar una bombilla en casa, debíamos decidir de cuantos 
                                         Watts debería de ser.
@@ -28,22 +28,22 @@
 
                     <v-row class="rounded-xl bg-color mx-10">
                         <v-col cols="12" align="center" class="animate__animated animate__backInDown">
-                            <p class="" :class="{'font-size-34': windowHeight>900, 'font-size-24': windowHeight<700}">
+                            <p class="" :class="{'font-size-34': windowHeight>900, 'font-size-22': windowHeight<700}">
                                 <span class="font-weight-bold">Watt:</span> unidad de medición de la potencia eléctrica
                             </p>
-                            <p class="font-weight-bold " :class="{'font-size-34': windowHeight>900, 'font-size-24': windowHeight<700}">Watt = Volt X Amper</p>
+                            <p class="font-weight-bold " :class="{'font-size-34': windowHeight>900, 'font-size-22': windowHeight<700}">Watt = Volt X Amper</p>
                         </v-col>
 
                         <v-col cols="5" align="center" class="animate__animated animate__backInLeft">
                             <v-img src="@/assets/electricidad/foco.png" contain :max-height="windowHeight>900 ? '230': '150'"></v-img>
-                            <p class="font-weight-bold  font-size-24">60 W</p>
+                            <p class="font-weight-bold  font-size-22">60 W</p>
                         </v-col>
                         <v-col cols="1" align="center">
                             <hr class="vertical-line">
                         </v-col>
                         <v-col cols="5" align="center" class="animate__animated animate__backInRight">
                             <v-img src="@/assets/electricidad/foco.png" contain :max-height="windowHeight>900 ? '230': '150'"></v-img>
-                            <p class="font-weight-bold  text-center font-size-24">100 W</p>
+                            <p class="font-weight-bold  text-center font-size-22">100 W</p>
                         </v-col>
                     </v-row>
 

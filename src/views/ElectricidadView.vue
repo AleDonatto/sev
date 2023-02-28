@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-app>
-            <v-main :class="{'bg-image' : step <= 1, 'bg-black': step === 16}">
+            <v-main :class="{'bg-image' : step <= 1, 'bg-black': step === 15}">
                 <div v-if="$route.path === '/fundamentos-de-electricidad'">
                     <Presentacion v-if="step === 0"/>
                     <ConceptosBasicos v-if="step === 1"/>
@@ -29,7 +29,7 @@
                 </div>
             </v-main>
             <v-footer dark padless app v-if="!(step === 0) && !(step === 18) && !(step === 20) && !(step === 22)">
-                <p>© {{ date.getFullYear() }} Todos los derechos reservados</p>
+                <p class="mt-1 pl-5">© {{ date.getFullYear() }} Todos los derechos reservados</p>
             </v-footer>
         </v-app>
         
