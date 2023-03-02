@@ -12,7 +12,7 @@
                                     <p class="white--text ml-7 text-left pl-10" :class="{'font-size-50': windowHeight>900, 'font-size-34':windowHeight<700}">Tipos de cargador, conectores y mejores prácticas</p>
 
                                     <v-btn rounded class="px-5 mt-10" color="#FDBE2E" @click="continueStep">
-                                        <span class="font-avenir font-size-30">Continuar</span>
+                                        <span class="font-size-30">Continuar</span>
                                     </v-btn>
                                 </div>
                                 

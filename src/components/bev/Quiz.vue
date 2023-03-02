@@ -34,7 +34,7 @@
                     <v-row justify="center">
                         <v-col cols="2" align="center">
                             <v-btn rounded color="#FDBD31" :disabled="answers.a1 !== 'cierto'" @click="checkQuiz">
-                                <span class="text-black text-none font-lato font-size-20">Continuar</span>
+                                <span class="text-black text-none font-size-20">Continuar</span>
                             </v-btn>
                         </v-col>
                     </v-row>
