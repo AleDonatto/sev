@@ -133,7 +133,7 @@
                         <v-col cols="2">
                             <v-btn class="" rounded color="#FDBD31" :disabled="(answers.a1 === false || answers.a2 === false || answers.a3 === false || answers.a4 === false || answers.a5 === false)"
                             @click="checkQuiz">
-                                <span class="text-black text-none font-lato font-size-20">Continuar</span>
+                                <span class="text-black text-none font-size-20">Continuar</span>
                             </v-btn>
                         </v-col>
                     </v-row>

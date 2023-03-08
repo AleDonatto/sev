@@ -22,7 +22,7 @@
                                             Con las flechas podremos ir saltando entre la página siguiente o la anterior.
                                         </p>
                                     </div>
-                                    <div v-if="countInstructions === 1">
+                                    <div v-if="countInstructions >= 1">
                                         <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-20': windowHeight < 700}">
                                             Con el botón del icono del parlante, podrás silenciar la narración de los textos.
                                         </p>
@@ -101,7 +101,7 @@ export default {
     },
     methods: {
         gotoModuloDirectivo(){
-            if(this.countInstructions === 1){
+            if(this.countInstructions >= 1){
                 this.$store.commit('StateAssign', {section:2})
                 this.$router.push('/modulo-directivo')
             }

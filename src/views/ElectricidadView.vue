@@ -28,7 +28,7 @@
                     <Correcto v-if="step === 21"/>
                 </div>
             </v-main>
-            <v-footer dark padless app v-if="!(step === 0) && !(step === 18) && !(step === 20) && !(step === 22)">
+            <v-footer dark padless app v-if="!(step === 0) && !(step === 17) && !(step === 19) && !(step === 21)">
                 <p class="mt-1 pl-5">© {{ date.getFullYear() }} Todos los derechos reservados</p>
             </v-footer>
         </v-app>

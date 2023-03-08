@@ -103,7 +103,7 @@
                     <v-row justify="center" :class="{'mt-15':windowHeight > 900, 'mt-4': windowHeight < 700}">
                         <v-col cols="2" align="center">
                             <v-btn rounded class="" color="#FDBE2E" :disabled="answers.a1 === false && answers.a2 === false && answers.a3 === false" @click="checkQuiz">
-                                <span class="text-black text-none font-lato font-size-20">Continuar</span>
+                                <span class="text-black text-none font-size-20">Continuar</span>
                             </v-btn>
                         </v-col>
                     </v-row>
