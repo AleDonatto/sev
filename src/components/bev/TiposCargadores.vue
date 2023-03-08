@@ -5,7 +5,7 @@
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img src="@/assets/evolucion/user.png" :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
@@ -26,23 +26,23 @@
                             <v-img src="@/assets/cargando/enchufe1.png" contain :max-height="windowHeight>900 ? '240': '140'"></v-img>
                         </v-col>
                         <v-col cols="3">
-                            <v-img src="@/assets/cargando/enchufe1.png" contain :max-height="windowHeight>900 ? '240': '140'"></v-img>
+                            <v-img src="@/assets/cargando/enchufe2.png" contain :max-height="windowHeight>900 ? '240': '140'"></v-img>
                         </v-col>
                         <v-col cols="3">
-                            <v-img src="@/assets/cargando/enchufe1.png" contain :max-height="windowHeight>900 ? '240': '140'"></v-img>
+                            <v-img src="@/assets/cargando/enchufe3.png" contain :max-height="windowHeight>900 ? '240': '140'"></v-img>
                         </v-col>
                         <v-col cols="3">
-                            <v-img src="@/assets/cargando/enchufe1.png" contain :max-height="windowHeight>900 ? '240': '140'"></v-img>
+                            <v-img src="@/assets/cargando/enchufe4.png" contain :max-height="windowHeight>900 ? '240': '140'"></v-img>
                         </v-col>
 
                         <v-col cols="4">
-                            <v-img src="@/assets/cargando/enchufe1.png" contain :max-height="windowHeight>900 ? '240': '120'"></v-img>
+                            <v-img src="@/assets/cargando/enchufe5.png" contain :max-height="windowHeight>900 ? '240': '120'"></v-img>
                         </v-col>
                         <v-col cols="4">
-                            <v-img src="@/assets/cargando/enchufe1.png" contain :max-height="windowHeight>900 ? '240': '120'"></v-img>
+                            <v-img src="@/assets/cargando/enchufe6.png" contain :max-height="windowHeight>900 ? '240': '120'"></v-img>
                         </v-col>
                         <v-col cols="4">
-                            <v-img src="@/assets/cargando/enchufe1.png" contain :max-height="windowHeight>900 ? '240': '120'"></v-img>
+                            <v-img src="@/assets/cargando/enchufe7.png" contain :max-height="windowHeight>900 ? '240': '120'"></v-img>
                         </v-col>
                     </v-row>
                 </div>

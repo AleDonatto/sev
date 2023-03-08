@@ -44,7 +44,7 @@
 
                     <v-row justify="center">
                         <v-col cols="12" align="center">
-                            <v-btn color="#FDBD31" class="rounded-xl text-none" @click="checkQuiz" :disabled="answers.a1 !== '2'">
+                            <v-btn color="#FDBD31" class="rounded-xl text-none" @click="checkQuiz" :disabled="answers.a1 !== '3'">
                                 <span class="font-weight-bold">Continuar</span>
                             </v-btn>
                         </v-col>
@@ -81,7 +81,7 @@ export default {
     },
     methods: {
         checkQuiz(){
-            if(this.answers.a1 === '2'){
+            if(this.answers.a1 === '3'){
                 const path = this.$route.path
                 this.$store.dispatch('NextStep', path)
                 //NextStep(path)

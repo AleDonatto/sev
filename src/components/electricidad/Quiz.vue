@@ -33,7 +33,7 @@
                     </v-row>
                     <v-row justify="center">
                         <v-col cols="12" align="center">
-                            <v-btn class="text-none" rounded color="#FDBD31" @click="checkQuiz" :disabled="answers.a1 !== 'falso'">
+                            <v-btn class="text-none" rounded color="#FDBD31" @click="checkQuiz" :disabled="answers.a1 !== 'cierto'">
                                 <span class="font-weight-bold">Continuar</span>
                             </v-btn>
                         </v-col>
@@ -70,7 +70,7 @@ export default {
     methods: {
         ...mapActions(['NextStep']),
         checkQuiz(){
-            if(this.answers.a1 === 'falso'){
+            if(this.answers.a1 === 'cierto'){
                 let route = this.$route.path
                 this.$store.dispatch('NextStep', route)
                 //NextStep(route)

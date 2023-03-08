@@ -47,13 +47,16 @@
                         </v-col>
                     </v-row>
 
-                    <v-snackbar v-model="snackbar" location="bottom right" color="#FDBD31" timeout="10000" class="mx-16" height="200" width="320" rounded="xl" multi-line vertical>
+                    <v-snackbar v-model="snackbar" bottom right color="#FDBD31" timeout="10000" class="mx-16" height="200" width="320" rounded="xl" multi-line vertical>
                         <template v-slot:actions>
                             <v-btn @click="snackbar = !snackbar"><span class="text-black">Cerrar</span></v-btn>
                         </template>
                         <p class="font-weight-bold text-black  font-size-20 px-5 py-4">
                             A mayor potencia eléctrica, mayor consumo de energía.
                         </p>
+                        <template v-slot:action>
+                            <v-btn @click="snackbar = !snackbar" text><span class="black--text">Cerrar</span></v-btn>
+                        </template>
                     </v-snackbar>
                 </div>
             </template>
@@ -70,7 +73,7 @@ import { mapState } from 'vuex';
 export default{
     data(){
         return {
-            snackbar: false
+            snackbar: true
         }
     },
     components: {

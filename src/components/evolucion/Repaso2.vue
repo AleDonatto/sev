@@ -53,7 +53,7 @@
                         <v-col cols="5" align-self="center">
                             <v-row>
                                 <v-col cols="12" :class="{'margin-top-md':windowHeight<700}">
-                                    <div class="box-zone-drag size-zone-drop text-center" @dragstart="drag" draggable="true" v-if="answers.a2 !== true">
+                                    <div class="box-zone-drag size-zone-drop text-center" @dragstart="drag" draggable="true" v-if="answers.a5 !== true">
                                         <p class="pa-2" id="electronicos">Eléctronicos</p>
                                     </div>
                                 </v-col>
@@ -63,7 +63,7 @@
                                     </div>
                                 </v-col>
                                 <v-col cols="12" :class="{'margin-top-md':windowHeight<700}">
-                                    <div class="box-zone-drag size-zone-drop text-center" @dragstart="drag" draggable="true" v-if="answers.a5 !== true">
+                                    <div class="box-zone-drag size-zone-drop text-center" @dragstart="drag" draggable="true" v-if="answers.a2 !== true">
                                         <p class="pa-2" id="semihibridos">Semihíbridos</p>
                                     </div>
                                 </v-col>
@@ -222,7 +222,7 @@ export default{
             ev.preventDefault()
             if(this.zoneTwo === null){
                 let data = ev.dataTransfer.getData("text")
-                if(data === 'electronicos'){
+                if(data === 'semihibridos'){
                     ev.target.appendChild(document.getElementById(data))
                     this.zoneTwo = true
                     this.answers.a2 = true
@@ -259,7 +259,7 @@ export default{
             ev.preventDefault()
             if(this.zoneFive === null){
                 let data = ev.dataTransfer.getData("text")
-                if(data === 'semihibridos'){
+                if(data === 'electronicos'){
                     ev.target.appendChild(document.getElementById(data))
                     this.zoneFive = true 
                     this.answers.a5 = true
