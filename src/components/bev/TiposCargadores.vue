@@ -23,26 +23,26 @@
 
                     <v-row justify="center" class="mx-10 px-5 py-5 rounded-xl bg-boxstep-content animate__animated animate__backInLeft">
                         <v-col cols="3">
-                            <v-img src="@/assets/cargando/enchufe1.png" contain :max-height="windowHeight>900 ? '240': '140'"></v-img>
+                            <v-img src="@/assets/cargando/conector1.png" contain :max-height="windowHeight>900 ? '240': '140'"></v-img>
                         </v-col>
                         <v-col cols="3">
-                            <v-img src="@/assets/cargando/enchufe2.png" contain :max-height="windowHeight>900 ? '240': '140'"></v-img>
+                            <v-img src="@/assets/cargando/conector2.png" contain :max-height="windowHeight>900 ? '240': '140'"></v-img>
                         </v-col>
                         <v-col cols="3">
-                            <v-img src="@/assets/cargando/enchufe3.png" contain :max-height="windowHeight>900 ? '240': '140'"></v-img>
+                            <v-img src="@/assets/cargando/conector3.png" contain :max-height="windowHeight>900 ? '240': '140'"></v-img>
                         </v-col>
                         <v-col cols="3">
-                            <v-img src="@/assets/cargando/enchufe4.png" contain :max-height="windowHeight>900 ? '240': '140'"></v-img>
+                            <v-img src="@/assets/cargando/conector4.png" contain :max-height="windowHeight>900 ? '240': '140'"></v-img>
                         </v-col>
 
                         <v-col cols="4">
-                            <v-img src="@/assets/cargando/enchufe5.png" contain :max-height="windowHeight>900 ? '240': '120'"></v-img>
+                            <v-img src="@/assets/cargando/conector5.png" contain :max-height="windowHeight>900 ? '240': '120'"></v-img>
                         </v-col>
                         <v-col cols="4">
-                            <v-img src="@/assets/cargando/enchufe6.png" contain :max-height="windowHeight>900 ? '240': '120'"></v-img>
+                            <v-img src="@/assets/cargando/conector6.png" contain :max-height="windowHeight>900 ? '240': '120'"></v-img>
                         </v-col>
                         <v-col cols="4">
-                            <v-img src="@/assets/cargando/enchufe7.png" contain :max-height="windowHeight>900 ? '240': '120'"></v-img>
+                            <v-img src="@/assets/cargando/conector7.png" contain :max-height="windowHeight>900 ? '240': '120'"></v-img>
                         </v-col>
                     </v-row>
                 </div>
