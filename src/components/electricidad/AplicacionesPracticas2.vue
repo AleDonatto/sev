@@ -109,9 +109,21 @@ export default{
     mounted(){
         //this.count = 0
         this.$store.commit('StateAssign', {count: 0})
+        this.$store.commit('StateAssing', {canNext: false})
+        this.playAudio()
     },
     computed: {
-        ...mapState(['windowHeight', 'windowSize', 'count'])
+        ...mapState(['windowHeight', 'windowSize', 'count']),
+    },
+    methods: {
+        playAudio(){
+            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.play()
+
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },4000)
+        }
     }
 }
 </script>

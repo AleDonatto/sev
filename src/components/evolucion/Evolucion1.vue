@@ -69,11 +69,6 @@
 
 <script>
 import ContentTemplate from "../templates/ContentTemplate.vue";
-import user from '../../assets/evolucion/user.png'
-import men from '../../assets/evolucion/men.png'
-import guerrero from '../../assets/evolucion/guerrero.png'
-import siglo from '../../assets/evolucion/siglo.png'
-import division from '../../assets/evolucion/division.png'
 import { mapState } from 'vuex';
 
 export default {
@@ -87,8 +82,18 @@ export default {
         ...mapState(['canNext', 'windowHeight', 'windowSize'])
     },
     mounted(){
-        this.$store.commit('StateAssign', {canNext:true})
+        this.$store.commit('StateAssign', {canNext:false})
         //this.canNext = true
+        this.playAudio()
+    },
+    methods: {
+        playAudio(){
+            window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-1.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },45500)
+        }
     }
 }
 </script>

@@ -69,8 +69,18 @@ export default {
     },
     mounted() {
         //this.canNext = true
-        this.$store.commit('StateAssign', {canNext: true})
+        this.$store.commit('StateAssign', {canNext: false})
+        this.playAudio()
     },
+    methods: {
+        playAudio(){
+            window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-4.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },28500)
+        }
+    }
 
 }
 </script>

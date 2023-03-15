@@ -44,7 +44,7 @@
                             </p>
                         </v-col>
                         <v-col cols="9" class="animate__animated animate__backInRight">
-                            <v-img src="@/assets/cargando/tableCargadores.png" contain :max-height="windowHeight<700 ? '310': ''"></v-img>
+                            <v-img src="@/assets/cargando/tableCargadores.png" contain :max-height="windowHeight<700 ? '305': '600'"></v-img>
                         </v-col>
                     </v-row>
                 </div>
@@ -68,10 +68,20 @@ export default {
         ContentTemplate,
     },
     mounted() {
-
+        this.$store.commit('StateAssign', {canNext: false})
+        this.playAudio()
     },
     computed: {
         ...mapState(['windowHeight', 'windowSize'])
+    },
+    methods: {
+        playAudio(){
+            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },4000)
+        }
     }
 }
 </script>

@@ -19,15 +19,15 @@ export default {
     //
   }),
   mounted(){
-    this.start() 
+    //this.start() 
     
     this.$store.commit('StateAssign', {windowSize:window.innerWidth})
     this.$store.commit('StateAssign', {windowHeight:window.innerHeight})
     window.addEventListener('resize', this.Resize)
-    //window.audio = document.createElement('audio')
-    /*setInterval(() => {
+    window.audio = document.createElement('audio')
+    setInterval(() => {
       this.$store.commit('StateAssign', {audioPaused: window.audio.paused})
-    },200)*/
+    },200)
   },
   methods: {
     Resize(){

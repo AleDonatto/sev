@@ -92,6 +92,7 @@ export default{
         ...mapState(['answeredQuiz3','canNext', 'windowHeight', 'windowSize'])
     },
     mounted() {
+        this.playAudio()
         if(this.answeredQuiz3 === false){
             //this.canNext = false
             this.$store.commit('StateAssign', {canNext: false})
@@ -107,6 +108,13 @@ export default{
                 this.$store.dispatch('NextStep', route)
                 //NextStep(route)
             }
+        },
+        playAudio(){
+            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.play()
+            /*setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },4000)*/
         }
     }
 }

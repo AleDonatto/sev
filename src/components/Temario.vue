@@ -19,11 +19,11 @@
                 </p>
                 
                 <div class="d-flex justify-center mt-4" >
-                  <router-link to="/instrucciones" class="decoration-none">
-                    <v-btn class="" rounded="" color="#FDBE2E">
-                      <span class=" font-size-30 font-weight-semibold" :class="{'font-size-30': windowHeight > 900, 'font-size-22': windowHeight < 700}">Continuar</span>
-                    </v-btn>
-                  </router-link>
+                  <v-btn class="" rounded color="#FDBE2E" :disabled="canNext === false" :dark="canNext === false">
+                    <router-link to="/instrucciones" class="decoration-none">
+                      <span class=" font-size-30 font-weight-semibold black--text" :class="{'font-size-30': windowHeight > 900, 'font-size-22': windowHeight < 700}">Continuar</span>
+                    </router-link>
+                  </v-btn>
                 </div>
               </v-col>
               <v-col cols="7">
@@ -49,8 +49,21 @@ export default{
   components: {
     MainTemplate
   },
+  mounted(){
+    this.$store.commit('StateAssign', {canNext: false})
+    this.playAudio()
+  },
   computed: {
-    ...mapState(['windowHeight', 'windowSize'])
+    ...mapState(['windowHeight', 'windowSize', 'canNext'])
+  },
+  methods: {
+    playAudio(){
+      window.audio.src = require('@/assets/audios/SEV-temario.mp3')
+      window.audio.play()
+      setTimeout(()=> {
+        this.$store.commit('StateAssign', {canNext:true})
+      },55500)
+    }
   }
 
 }

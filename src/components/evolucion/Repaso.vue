@@ -143,10 +143,13 @@ export default {
         ...mapState(['canNext', 'answeredQuiz1', 'windowHeight', 'windowSize'])
     },
     mounted() {
-        if(this.answeredQuiz1 === false){
+        this.$store.commit('StateAssign',{canNext: false})
+
+        this.playAudio()
+        /*if(this.answeredQuiz1 === false){
             //this.canNext = false
             this.$store.commit('StateAssign',{canNext: false})
-        }
+        }*/
     },
     methods: {
         ...mapActions(['NextStep']),
@@ -247,6 +250,14 @@ export default {
                     this.drags.d3 = false
                     break
             }
+        },
+
+        playAudio(){
+            window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-12.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },14500)
         }
     }
 }

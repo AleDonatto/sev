@@ -72,11 +72,19 @@ export default{
         ContentTemplate,
     },
     mounted() {
-        this.$store.commit('StateAssign', {canNext: true})
+        this.$store.commit('StateAssign', {canNext: false})
         //this.canNext =false
+        this.playAudio()
     },
     computed: {
-        ...mapState(['canNext', 'windowHeight', 'windowSize'])
+        ...mapState(['canNext', 'windowHeight', 'windowSize']),
+        playAudio(){
+            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },4000)
+        }
     }
 }
 </script>

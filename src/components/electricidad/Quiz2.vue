@@ -78,6 +78,9 @@ export default {
     mounted(){
         //this.canNext = true
         this.$store.commit('StateAssign', {canNext: true})
+        this.$store.commit('StateAssign', {canNext: false})
+
+        this.playAudio()
     },
     computed: {
         ...mapState(['canNext', 'windowHeight', 'windowSize'])
@@ -90,6 +93,13 @@ export default {
                 this.$store.dispatch('NextStep', path)
                 //NextStep(path)
             }
+        },
+        playAudio(){
+            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.play()
+            /*setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },4000)*/
         }
     }
 }

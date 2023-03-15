@@ -10,12 +10,12 @@
                             <v-col cols="5" align="center" class="height-box">
                                 <div class="mx-4 top-text" :class="{'top-text': windowHeight > 900, 'top-text-md': windowHeight < 700}">
                                     <h1 class="white--text font-size-h1 font-weight-bold text-center">Bienvenidos</h1>
-                                    <router-link to="/temario" class="decoration-none">
-                                        <v-btn class="white--text" rounded color="#929292">
-                                          <span class="font-weight-bold">Inicio</span>
-                                        <v-icon class="" color="white" end icon="mdi-chevron-right-circle"></v-icon>
-                                        </v-btn>
-                                    </router-link>
+                                    <v-btn class="white--text" rounded color="#929292" @click="initAudio" :disabled="disabled" :dark="disabled === true">
+                                      <!--<router-link to="/temario" class="decoration-none">-->
+                                        <span class="font-weight-bold white--text">Inicio</span>
+                                        <v-icon class="" color="white" end>mdi-chevron-right-circle</v-icon>
+                                      <!--</router-link>-->
+                                    </v-btn>
                                 </div>
                             </v-col>
                             <v-col cols="7">
@@ -36,19 +36,38 @@ import { mapState } from 'vuex';
 
 export default {
     components: {
-        MainTemplate
+      MainTemplate
     },
     data(){
-        return {}
+      return {
+        disabled: false
+      }
+    },
+    mounted(){
     },
     computed: {
-        ...mapState(['windowHeight', 'windowSize'])
+        ...mapState(['windowHeight', 'windowSize', 'canNext'])
+    },
+    methods: {
+      initAudio(){
+        //this.$router.push('/temario')
+
+        this.disabled = true
+        window.audio.src = require('@/assets/audios/SEV-Welcome.mp3')
+        window.audio.play()
+        
+        setTimeout(()=> {
+          //this.$store.commit('StateAssign', {canNext:true})
+          this.$router.push('/temario')
+        },17500)
+      }
     }
 
 }
 </script>
 
 <style scoped>
+
 .height-box{
   height: 490px;
 }

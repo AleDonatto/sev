@@ -83,8 +83,18 @@ export default{
         ...mapState(['canNext', 'windowHeight', 'windowSize'])
     },
     mounted(){
-        this.$store.commit('StateAssign', {canNext: true})
+        this.$store.commit('StateAssign', {canNext: false})
         //this.canNext = true
+        this.playAudio()
+    },
+    methods: {
+        playAudio(){
+            window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-3.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },23500)
+        }
     }
 }
 </script>

@@ -96,10 +96,19 @@ export default{
     mounted(){
         //this.count = 0
         this.$store.commit('StateAssign', {count: 0})
+        this.$store.commit('StateAssign', {canNext: false})
+        this.playAudio()
     },
     methods: {
         handleHide() {
             images.visible = false
+        },
+        playAudio(){
+            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },4000)
         }
     }
 }

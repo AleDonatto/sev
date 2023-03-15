@@ -9,6 +9,7 @@ export default new Vuex.Store({
   state: {
     step: 0,
     count: 0,
+    countShowImage: 1,
     windowSize:null,
     windowHeight:null,
     canNext:true,

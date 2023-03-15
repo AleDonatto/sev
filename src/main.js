@@ -12,7 +12,6 @@ import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
 Vue.config.productionTip = false
 Vue.use(CoolLightBox)
 
-
 new Vue({
   router,
   store,

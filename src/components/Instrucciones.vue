@@ -35,7 +35,7 @@
                                     </div>
                                     
                                     <div class="d-flex justify-center mt-4">
-                                        <v-btn class="" rounded color="#FDBE2E" @click="gotoModuloDirectivo">
+                                        <v-btn class="" rounded color="#FDBE2E" @click="gotoModuloDirectivo" :disabled="canNext === false" :dark="canNext === false">
                                             <span class=" font-size-30 font-weight-semibold" :class="{'font-size-30': windowHeight > 900, 'font-size-24': windowHeight < 700}">Continuar</span>
                                         </v-btn>
                                     </div>
@@ -67,7 +67,7 @@
                             <v-card-actions>
                             <v-row justify="center">
                                 <v-col cols="12" align="center">
-                                <v-btn class="bg-color-yellow px-10 py-2 mb-10" color="#FDBE2E" variant="text" rounded @click="dialog = false">
+                                <v-btn class="bg-color-yellow px-10 py-2 mb-10" color="#FDBE2E" variant="text" rounded @click="closeDialog" :disabled="canNext === false" >
                                     <span class="font-weight-bold">Continuar</span>
                                 </v-btn>
                                 </v-col>
@@ -97,7 +97,11 @@ export default {
         MainTemplate,
     },
     computed: {
-        ...mapState(['section', 'windowSize', 'windowHeight', 'count'])
+        ...mapState(['section', 'windowSize', 'windowHeight', 'count', 'canNext'])
+    },
+    mounted(){
+        this.$store.commit('StateAssign', {canNext: false})
+        this.playAudio()
     },
     methods: {
         gotoModuloDirectivo(){
@@ -106,7 +110,29 @@ export default {
                 this.$router.push('/modulo-directivo')
             }
             //this.section = 2
-            this.countInstructions = this.countInstructions + 1
+            //this.countInstructions = this.countInstructions + 1
+        },
+        playAudio(){
+            window.audio.src = require('@/assets/audios/SEV-instrucciones-modal.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },14500)
+        },
+        playAudioInstrucciones(){
+            window.audio.src = require('@/assets/audios/SEV-instrucciones.mp3')
+            window.audio.play()
+            setTimeout(() => {
+                this.countInstructions = this.countInstructions + 1
+            }, 25000);
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },46500)
+        },
+        closeDialog(){
+            this.dialog = false
+            this.$store.commit('StateAssign', {canNext: false})
+            this.playAudioInstrucciones()
         }
     }
 }

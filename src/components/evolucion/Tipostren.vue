@@ -1,6 +1,10 @@
 <template>
     <div>
-        <content-template title="" subtitle="Tipos de tren <br/> motriz más comúnes">
+        <content-template 
+        :title="count === 1 ? 'Motor a combustión interna (ICE)' : count === 2 ? 'Semihíbridos (MHEV)': 
+        count === 3 ? 'Motor híbrido fuerte Full (HEV)': count === 4 ? 'Motor híbrido enchufable (PHEV)': 
+        count === 5 ? 'Motor eléctricos a bateria (BEV)': count === 6 ? 'Motor eléctrico de celdas combustibles (FCEV)': ''" 
+        subtitle="Tipos de tren <br/> motriz más comúnes">
             <template v-slot:content>
                 <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
                     <v-row justify="space-between">
@@ -23,7 +27,7 @@
                             </div>
                         </v-col>
                         <v-col cols="8" v-if="count >= 1">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count >= 1 && count <= 7"
+                            <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count === 1"
                             :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
                                     <v-card-text class="" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
@@ -44,7 +48,7 @@
                                     </v-card-text>
                                 </v-card>
                             </div>
-                            <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count >= 8 && count <=14"
+                            <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count === 2"
                             :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
                                     <v-card-text class="" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
@@ -65,7 +69,7 @@
                                     </v-card-text>
                                 </v-card>
                             </div>
-                            <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count >= 15 && count <=21"
+                            <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count === 3"
                             :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
                                     <v-card-text class="" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
@@ -89,7 +93,7 @@
                                     </v-card-text>
                                 </v-card>
                             </div>
-                            <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count>=22 && count <=28"
+                            <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count===4"
                             :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
                                     <v-card-text class="" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
@@ -117,7 +121,7 @@
                                     </v-card-text>
                                 </v-card>
                             </div>
-                            <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count>=29 && count <=35"
+                            <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count===5"
                             :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
                                     <v-card-text class="" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
@@ -146,12 +150,12 @@
                             </div>
                         </v-col>
                         <v-col cols="2" align="end">
-                            <v-img src="@/assets/evolucion/combustion-interna.png" contain :max-height="windowHeight> 900 ? '190': windowHeight<660 ? '160': '170'" v-if="count >= 1 && count <= 7"></v-img>
-                            <v-img src="@/assets/evolucion/combustion-interna.png" contain :max-height="windowHeight> 900 ? '190': windowHeight<660 ? '160': '170'" v-if="count >= 8 && count <=14"></v-img>
-                            <v-img src="@/assets/evolucion/hibrido-fuerte.png" contain :max-height="windowHeight> 900 ? '190': windowHeight<660 ? '160': '170'" v-if="count >= 15 && count <=21"></v-img>
-                            <v-img src="@/assets/evolucion/combustion-interna.png" contain :max-height="windowHeight> 900 ? '190': windowHeight<660 ? '160': '170'" v-if="count>=22 && count <=28"></v-img>
-                            <v-img src="@/assets/evolucion/motor-bateria.png" contain :max-height="windowHeight> 900 ? '190': windowHeight<660 ? '160': '170'" v-if="count>=29 && count <=35"></v-img>
-                            <v-img src="@/assets/evolucion/combustion-interna.png" contain :max-height="windowHeight> 900 ? '190': windowHeight<660 ? '160': '170'" v-if="count>=36 && count<=42"></v-img>
+                            <v-img src="@/assets/evolucion/combustion-interna.png" contain :max-height="windowHeight> 900 ? '190': windowHeight<660 ? '160': '170'" v-if="count === 1"></v-img>
+                            <v-img src="@/assets/evolucion/combustion-interna.png" contain :max-height="windowHeight> 900 ? '190': windowHeight<660 ? '160': '170'" v-if="count === 2"></v-img>
+                            <v-img src="@/assets/evolucion/hibrido-fuerte.png" contain :max-height="windowHeight> 900 ? '190': windowHeight<660 ? '160': '170'" v-if="count === 3"></v-img>
+                            <v-img src="@/assets/evolucion/combustion-interna.png" contain :max-height="windowHeight> 900 ? '190': windowHeight<660 ? '160': '170'" v-if="count===4"></v-img>
+                            <v-img src="@/assets/evolucion/motor-bateria.png" contain :max-height="windowHeight> 900 ? '190': windowHeight<660 ? '160': '170'" v-if="count===5"></v-img>
+                            <v-img src="@/assets/evolucion/combustion-interna.png" contain :max-height="windowHeight> 900 ? '190': windowHeight<660 ? '160': '170'" v-if="count===6"></v-img>
                         </v-col>
                     </v-row>
 
@@ -183,75 +187,75 @@
                     </v-row>
 
                     <!--ICE-->
-                    <v-row justify="center" v-if="count >= 1 && count <= 7">
+                    <v-row justify="center" v-if="count === 1">
                         <v-col cols="12">
-                            <v-img src="@/assets/evolucion/icm/icm1.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 1"></v-img>
-                            <v-img src="@/assets/evolucion/icm/icm2.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 2"></v-img>
-                            <v-img src="@/assets/evolucion/icm/icm3.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 3"></v-img>
-                            <v-img src="@/assets/evolucion/icm/icm4.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 4"></v-img>
-                            <v-img src="@/assets/evolucion/icm/icm5.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 5"></v-img>
-                            <v-img src="@/assets/evolucion/icm/icm6.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 6"></v-img>
-                            <v-img src="@/assets/evolucion/icm/icm7.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 7"></v-img>
+                            <v-img src="@/assets/evolucion/icm/icm1.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 1"></v-img>
+                            <v-img src="@/assets/evolucion/icm/icm2.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 2"></v-img>
+                            <v-img src="@/assets/evolucion/icm/icm3.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 3"></v-img>
+                            <v-img src="@/assets/evolucion/icm/icm4.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 4"></v-img>
+                            <v-img src="@/assets/evolucion/icm/icm5.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 5"></v-img>
+                            <v-img src="@/assets/evolucion/icm/icm6.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 6"></v-img>
+                            <v-img src="@/assets/evolucion/icm/icm7.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 7"></v-img>
                         </v-col>
                     </v-row>
                     <!--MHEV-->
-                    <v-row justify="center" v-if="count >= 8 && count <=14">
+                    <v-row justify="center" v-if="count === 2">
                         <v-col cols="12">
-                            <v-img src="@/assets/evolucion/mhev/mhev1.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 8"></v-img>
-                            <v-img src="@/assets/evolucion/mhev/mhev2.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 9"></v-img>
-                            <v-img src="@/assets/evolucion/mhev/mhev3.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 10"></v-img>
-                            <v-img src="@/assets/evolucion/mhev/mhev4.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 11"></v-img>
-                            <v-img src="@/assets/evolucion/mhev/mhev5.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 12"></v-img>
-                            <v-img src="@/assets/evolucion/mhev/mhev6.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 13"></v-img>
-                            <v-img src="@/assets/evolucion/mhev/mhev7.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 14"></v-img>
+                            <v-img src="@/assets/evolucion/mhev/mhev1.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 1"></v-img>
+                            <v-img src="@/assets/evolucion/mhev/mhev2.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 2"></v-img>
+                            <v-img src="@/assets/evolucion/mhev/mhev3.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 3"></v-img>
+                            <v-img src="@/assets/evolucion/mhev/mhev4.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 4"></v-img>
+                            <v-img src="@/assets/evolucion/mhev/mhev5.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 5"></v-img>
+                            <v-img src="@/assets/evolucion/mhev/mhev6.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 6"></v-img>
+                            <v-img src="@/assets/evolucion/mhev/mhev7.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 7"></v-img>
                         </v-col>
                     </v-row>
                     <!--HEV-->
-                    <v-row justify="center" v-if="count >= 15 && count <=21">
+                    <v-row justify="center" v-if="count === 3">
                         <v-col cols="12">
-                            <v-img src="@/assets/evolucion/hev/hev1.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 15"></v-img>
-                            <v-img src="@/assets/evolucion/hev/hev2.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 16"></v-img>
-                            <v-img src="@/assets/evolucion/hev/hev3.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 17"></v-img>
-                            <v-img src="@/assets/evolucion/hev/hev4.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 18"></v-img>
-                            <v-img src="@/assets/evolucion/hev/hev5.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 19"></v-img>
-                            <v-img src="@/assets/evolucion/hev/hev6.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 20"></v-img>
-                            <v-img src="@/assets/evolucion/hev/hev7.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 21"></v-img>
+                            <v-img src="@/assets/evolucion/hev/hev1.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 1"></v-img>
+                            <v-img src="@/assets/evolucion/hev/hev2.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 2"></v-img>
+                            <v-img src="@/assets/evolucion/hev/hev3.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 3"></v-img>
+                            <v-img src="@/assets/evolucion/hev/hev4.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 4"></v-img>
+                            <v-img src="@/assets/evolucion/hev/hev5.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 5"></v-img>
+                            <v-img src="@/assets/evolucion/hev/hev6.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 6"></v-img>
+                            <v-img src="@/assets/evolucion/hev/hev7.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 7"></v-img>
                         </v-col>
                     </v-row>
                     <!--PHEV-->
-                    <v-row justify="center" v-if="count>=22 && count <=28">
+                    <v-row justify="center" v-if="count===4">
                         <v-col cols="12">
-                            <v-img src="@/assets/evolucion/phev/phev1.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 22"></v-img>
-                            <v-img src="@/assets/evolucion/phev/phev2.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 23"></v-img>
-                            <v-img src="@/assets/evolucion/phev/phev3.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 24"></v-img>
-                            <v-img src="@/assets/evolucion/phev/phev4.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 25"></v-img>
-                            <v-img src="@/assets/evolucion/phev/phev5.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 26"></v-img>
-                            <v-img src="@/assets/evolucion/phev/phev6.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 27"></v-img>
-                            <v-img src="@/assets/evolucion/phev/phev7.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 28"></v-img>
+                            <v-img src="@/assets/evolucion/phev/phev1.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 1"></v-img>
+                            <v-img src="@/assets/evolucion/phev/phev2.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 2"></v-img>
+                            <v-img src="@/assets/evolucion/phev/phev3.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 3"></v-img>
+                            <v-img src="@/assets/evolucion/phev/phev4.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 4"></v-img>
+                            <v-img src="@/assets/evolucion/phev/phev5.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 5"></v-img>
+                            <v-img src="@/assets/evolucion/phev/phev6.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 6"></v-img>
+                            <v-img src="@/assets/evolucion/phev/phev7.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 7"></v-img>
                         </v-col>
                     </v-row>
                     <!--BEV-->
-                    <v-row justify="center" v-if="count>=29 && count <=35">
+                    <v-row justify="center" v-if="count===5">
                         <v-col cols="12">
-                            <v-img src="@/assets/evolucion/pev/pev1.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 29"></v-img>
-                            <v-img src="@/assets/evolucion/pev/pev2.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 30"></v-img>
-                            <v-img src="@/assets/evolucion/pev/pev3.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 31"></v-img>
-                            <v-img src="@/assets/evolucion/pev/pev4.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 32"></v-img>
-                            <v-img src="@/assets/evolucion/pev/pev5.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 33"></v-img>
-                            <v-img src="@/assets/evolucion/pev/pev6.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 34"></v-img>
-                            <v-img src="@/assets/evolucion/pev/pev7.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 35"></v-img>
+                            <v-img src="@/assets/evolucion/pev/pev1.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 1"></v-img>
+                            <v-img src="@/assets/evolucion/pev/pev2.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 2"></v-img>
+                            <v-img src="@/assets/evolucion/pev/pev3.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 3"></v-img>
+                            <v-img src="@/assets/evolucion/pev/pev4.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 4"></v-img>
+                            <v-img src="@/assets/evolucion/pev/pev5.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 5"></v-img>
+                            <v-img src="@/assets/evolucion/pev/pev6.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 6"></v-img>
+                            <v-img src="@/assets/evolucion/pev/pev7.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 7"></v-img>
                         </v-col>
                     </v-row>
                     <!--fcev-->
-                    <v-row justify="center" v-if="count>=36 && count<=42">
+                    <v-row justify="center" v-if="count===6">
                         <v-col cols="12">
-                            <v-img src="@/assets/evolucion/fcev/fcev1.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 36"></v-img>
-                            <v-img src="@/assets/evolucion/fcev/fcev2.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 37"></v-img>
-                            <v-img src="@/assets/evolucion/fcev/fcev3.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 38"></v-img>
-                            <v-img src="@/assets/evolucion/fcev/fcev4.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 39"></v-img>
-                            <v-img src="@/assets/evolucion/fcev/fcev5.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 40"></v-img>
-                            <v-img src="@/assets/evolucion/fcev/fcev6.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 41"></v-img>
-                            <v-img src="@/assets/evolucion/fcev/fcev7.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="count === 42"></v-img>
+                            <v-img src="@/assets/evolucion/fcev/fcev1.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 1"></v-img>
+                            <v-img src="@/assets/evolucion/fcev/fcev2.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 2"></v-img>
+                            <v-img src="@/assets/evolucion/fcev/fcev3.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 3"></v-img>
+                            <v-img src="@/assets/evolucion/fcev/fcev4.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 4"></v-img>
+                            <v-img src="@/assets/evolucion/fcev/fcev5.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 5"></v-img>
+                            <v-img src="@/assets/evolucion/fcev/fcev6.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 6"></v-img>
+                            <v-img src="@/assets/evolucion/fcev/fcev7.png" contain :max-height="windowHeight> 900 ? '580': windowHeight<660 ? '320': '350'" class="animate__animated animate__backInDown" v-if="countShowImage === 7"></v-img>
                         </v-col>
                     </v-row>
                 </div>
@@ -274,13 +278,36 @@ export default {
         ContentTemplate,
     },
     computed: {
-        ...mapState(['canNext', 'windowHeight', 'windowSize', 'count'])
+        ...mapState(['canNext', 'windowHeight', 'windowSize', 'count','countShowImage']),
+        checkAudios: function () {
+            if(this.count === 1){
+                return this.playAudioStepICE()
+            }
+        }
     },
     mounted(){
         //this.canNext = true,
         //this.count = 0
         this.$store.commit('StateAssign', {count: 0})
-        this.$store.commit('StateAssign', {canNext: true})
+        this.$store.commit('StateAssign', {canNext: false})
+        this.playAudio()
+    },
+    methods: {
+        playAudio(){
+            window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-5.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },37500)
+        },
+        playAudioStepICE(){
+            this.$store.commit('StateAssign', {canNext: false})
+            window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-6.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },62500)
+        }
     }
 }
 </script>

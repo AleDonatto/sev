@@ -71,6 +71,7 @@ export default{
     mounted() {
         //this.canNext = false
         this.$store.commit('StateAssign', {canNext: false})
+        this.playAudio()
     },
     methods: {
         ...mapActions(['NextStep']),
@@ -81,6 +82,10 @@ export default{
                 //NextStep(path)
             }
         },
+        playAudio(){
+            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.play()
+        }
     }
 }
 </script>

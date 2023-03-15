@@ -75,6 +75,19 @@ export default{
     },
     computed: {
         ...mapState(['windowHeight', 'windowSize'])
+    },
+    mounted(){
+        this.$store.commit('StateAssign', {canNext: false})
+        this.playAudio()
+    },
+    methods: {
+        playAudio(){
+            window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-2.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },22500)
+        }
     }
 }
 </script>

@@ -68,6 +68,19 @@ export default {
     },
     computed: {
         ...mapState(['windowSize', 'windowHeight'])
+    },
+    mounted(){
+        this.$store.commit('StateAssign', {canNext: false})
+        this.playAudio()
+    },
+    methods: {
+        playAudio(){
+            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },4000)
+        }
     }
 }
 </script>
