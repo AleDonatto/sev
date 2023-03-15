@@ -40,8 +40,8 @@
                         <v-col cols="12" class="animate__animated animate__backInLeft">
                             <p class="" :class="{'font-size-24': windowHeight>900, 'font-size-19': windowHeight<700}">
                                 La autonomía hace referencia a la <span class="text-yellow-p">distancia que puede recorrer un vehículo eléctrico con una 
-                                carga completa de su batería</span>. Para SEV E-WAN la autonomía es de 200 km (versión Lite) y 335 km 
-                                (versión Bold) de acuerdo a la homologación NEDC.
+                                carga completa de su batería</span>. Para dar esta cifra, se debe hacer referencia a la homologación de acuerdo a la cuál 
+                                fueron realizadas las pruebas.
                             </p>
                             <p class="" :class="{'font-size-24': windowHeight>900, 'font-size-10': windowHeight<700}">Existen diferentes homologaciones.</p>
                             <ul class=" pl-5" :class="{'mt-5 font-size-24': windowHeight>900, 'mt-2 font-size-19': windowHeight<700}">
