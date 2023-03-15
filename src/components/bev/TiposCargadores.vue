@@ -73,11 +73,11 @@ export default{
     },
     methods: {
         playAudio(){
-            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.src = require('@/assets/audios/bev/SEV-bev-7.mp3')
             window.audio.play()
             setTimeout(()=> {
                 this.$store.commit('StateAssign', {canNext:true})
-            },4000)
+            },22500)
         }
     }
 }

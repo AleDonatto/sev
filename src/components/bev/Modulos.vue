@@ -40,64 +40,26 @@
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" class="mx-10 px-5 py-1 rounded-xl bg-boxstep-content" v-if="count === 0">
-                        <v-col cols="3" class="animate__animated animate__backInDown">
-                            <v-card class="rounded-lg" :height="windowHeight>900 ? '550': '330'">
-                                <template v-slot:title>
-                                    <div class="bg-yellow-p rounded-lg">
-                                        <p class="px-5 font-weight-bold  text-center" :class="{'py-2 font-size-28': windowHeight>900, 'font-size-20': windowHeight<700}">Modo 1</p>
-                                    </div>
-                                </template>
-                            </v-card>
-                        </v-col>
-                        <v-col cols="3" class="animate__animated animate__backInUp">
-                            <v-card class="rounded-lg" :height="windowHeight>900 ? '550': '330'">
-                                <template v-slot:title>
-                                    <div class="bg-yellow-p rounded-lg">
-                                        <p class="px-5 font-weight-bold  text-center" :class="{'py-2 font-size-28': windowHeight>900, 'font-size-20': windowHeight<700}">Modo 2</p>
-                                    </div>
-                                </template>
-                            </v-card>
-                        </v-col>
-                        <v-col cols="3" class="animate__animated animate__backInDown">
-                            <v-card class="rounded-lg" :height="windowHeight>900 ? '550': '330'">
-                                <template v-slot:title>
-                                    <div class="bg-yellow-p rounded-lg">
-                                        <p class="px-5 font-weight-bold  text-center" :class="{'py-2 font-size-28': windowHeight>900, 'font-size-20': windowHeight<700}">Modo 3</p>
-                                    </div>
-                                </template>
-                            </v-card>
-                        </v-col>
-                        <v-col cols="3" class="animate__animated animate__backInUp">
-                            <v-card class="rounded-lg" :height="windowHeight>900 ? '550': '330'">
-                                <template v-slot:title>
-                                    <div class="bg-yellow-p rounded-lg">
-                                        <p class="px-5 font-weight-bold  text-center" :class="{'py-2 font-size-28': windowHeight>900, 'font-size-20': windowHeight<700}">Modo 4</p>
-                                    </div>
-                                </template>
-                            </v-card>
-                        </v-col>
-                    </v-row>
-                    <v-row justify="center" class="h-100 mx-10 px-5 py-1 rounded-xl bg-boxstep-content" v-if="count === 1">
-                        <v-col cols="3" class="animate__animated animate__backInDown">
+                    <v-row justify="center" class="h-100 mx-10 px-5 py-1 rounded-xl bg-boxstep-content" v-if="countModos >= 1">
+                        <v-col cols="3" class="animate__animated animate__backInDown" v-if="countModos >= 1">
                             <v-card class="rounded-lg pa-0" :height="windowHeight>900 ? '550': '330'" :width="windowHeight>900 ? '280': '190'">
                                 <v-img src="@/assets/cargando/modo1.png" :height="windowHeight > 900 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
 
                             </v-card>
                         </v-col>
-                        <v-col cols="3" class="animate__animated animate__backInUp">
+                        <v-col cols="3" class="animate__animated animate__backInUp" v-if="countModos >= 2">
                             <v-card class="rounded-lg" :height="windowHeight>900 ? '550': '330'" :width="windowHeight>900 ? '280': '190'">
                                 <v-img src="@/assets/cargando/modo2.png" :height="windowHeight > 900 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
 
                             </v-card>
                         </v-col>
-                        <v-col cols="3" class="animate__animated animate__backInDown">
+                        <v-col cols="3" class="animate__animated animate__backInDown" v-if="countModos >= 3">
                             <v-card class="rounded-lg" :height="windowHeight>900 ? '550': '330'" :width="windowHeight>900 ? '280': '190'">
                                <v-img src="@/assets/cargando/modo3.png" :height="windowHeight > 900 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
 
                             </v-card>
                         </v-col>
-                        <v-col cols="3" class="animate__animated animate__backInUp">
+                        <v-col cols="3" class="animate__animated animate__backInUp" v-if="countModos >= 4">
                             <v-card class="rounded-lg" :height="windowHeight>900 ? '550': '330'" :width="windowHeight>900 ? '280': '190'">
                                 <v-img src="@/assets/cargando/modo4.png" :height="windowHeight > 900 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
                             </v-card>
@@ -116,7 +78,7 @@ import { mapState } from 'vuex';
 export default{
     data() {
         return {
-
+            countModos: 1
         }
     },
     computed: {
@@ -134,11 +96,35 @@ export default{
     },
     methods: {
         playAudio(){
-            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.src = require('@/assets/audios/bev/SEV-bev-2.mp3')
             window.audio.play()
             setTimeout(()=> {
-                this.$store.commit('StateAssign', {canNext:true})
-            },4000)
+                this.playAudioModo2()
+            },22500)
+        },
+        playAudioModo2(){
+            this.countModos = 2
+            window.audio.src = require('@/assets/audios/bev/SEV-bev-3.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.playAudioModo3()
+            },26500)
+        },
+        playAudioModo3(){
+            this.countModos = 3
+            window.audio.src = require('@/assets/audios/bev/SEV-bev-4.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.playAudioModo4()
+            },32500)
+        },
+        playAudioModo4(){
+            this.countModos = 4
+            window.audio.src = require('@/assets/audios/bev/SEV-bev-5.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext: true})
+            },30500)
         }
     }
 }

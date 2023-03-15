@@ -39,7 +39,14 @@ export default{
     ...mapState(['canNext', 'step'])
   },
   mounted(){
-    this.playAudioExcelente()
+    if(this.$route.path === '/cargando-un-bev' && this.step === 9){
+      this.playAudioMuyBien()
+    }else if(this.$route.path === '/cargando-un-bev' && this.step === 11){
+      this.playAudioIncreible()
+    }else{
+      this.playAudioExcelente()
+    }
+    
   },
   methods: {
     ...mapActions(['NextStep']),
@@ -53,10 +60,16 @@ export default{
     playAudioExcelente(){
       window.audio.src = require('@/assets/audios/SEV-excelente.mp3')
       window.audio.play()
-      setTimeout(()=> {
-        this.$store.commit('StateAssign', {canNext:true})
-      },4500)
-    }
+    },
+    playAudioMuyBien(){
+      window.audio.src = require('@/assets/audios/SEV-muybien.mp3')
+      window.audio.play()
+    },
+    playAudioIncreible(){
+      window.audio.src = require('@/assets/audios/SEV-increible.mp3')
+      window.audio.play()
+    },
+
   },
 
 }

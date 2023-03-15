@@ -13,7 +13,7 @@ export default new Vuex.Store({
     windowSize:null,
     windowHeight:null,
     canNext:true,
-    section: 2, 
+    section: 4, 
     audioInitialized: false,
 
     answeredQuiz1: false,

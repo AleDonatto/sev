@@ -32,6 +32,19 @@ export default {
     },
     components: {
         ContentTemplate
+    },
+    mounted(){
+        this.$store.commit('StateAssign', {canNext:false})
+        this.playAudio()
+    },
+    methods: {
+        playAudio(){
+            window.audio.src = require('@/assets/audios/bev/SEV-bev-1.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },22500)
+        }
     }
 }
 </script>

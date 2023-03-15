@@ -291,10 +291,6 @@ export default {
                 }
                 this.$store.commit('Increment')
                 //increment()
-            }else if(route === '/cargando-un-bev' && this.step === 2 && this.count<1){
-                //this.$store.dispatch('increment')
-                this.$store.commit('Increment')
-                //increment()
             }
             else{
                 this.$store.dispatch('NextStep', route)

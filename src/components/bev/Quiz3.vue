@@ -83,7 +83,7 @@ export default{
             }
         },
         playAudio(){
-            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.src = require('@/assets/audios/bev/SEV-bev-11.mp3')
             window.audio.play()
         }
     }
