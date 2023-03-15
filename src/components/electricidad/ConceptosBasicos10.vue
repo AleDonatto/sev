@@ -39,16 +39,16 @@
                             </p>
                         </v-col>
 
-                        <v-col cols="12" align="center" class="animate__animated animate__backInRight" v-if="count === 0">
+                        <v-col cols="12" align="center" class="animate__animated animate__backInRight" v-if="countShow === 0">
                             <v-img src="@/assets/electricidad/table.png" contain :max-height="windowHeight>900 ? '350': '180'"></v-img>
                         </v-col>
-                        <v-col cols="12" align="center" class="animate__animated animate__backInRight" v-if="count === 1">
+                        <v-col cols="12" align="center" class="animate__animated animate__backInRight" v-if="countShow === 1">
                             <v-img src="@/assets/electricidad/table1.png" contain :max-height="windowHeight>900 ? '350': '180'"></v-img>
                         </v-col>
-                        <v-col cols="12" align="center" class="animate__animated animate__backInRight" v-if="count === 2">
+                        <v-col cols="12" align="center" class="animate__animated animate__backInRight" v-if="countShow === 2">
                             <v-img src="@/assets/electricidad/table2.png" contain :max-height="windowHeight>900 ? '350': '180'"></v-img>
                         </v-col>
-                        <v-col cols="12" align="center" class="animate__animated animate__backInRight" v-if="count === 3">
+                        <v-col cols="12" align="center" class="animate__animated animate__backInRight" v-if="countShow === 3">
                             <v-img src="@/assets/electricidad/table3.png" contain :max-height="windowHeight>900 ? '350': '180'"></v-img>
                         </v-col>
                     </v-row>
@@ -65,7 +65,7 @@ import { mapState } from 'vuex';
 export default{
     data(){
         return{
-
+            countShow: 0
         }
     },
     components: {
@@ -82,11 +82,23 @@ export default{
     },
     methods: {
         playAudio(){
-            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-9.mp3')
             window.audio.play()
             setTimeout(()=> {
                 this.$store.commit('StateAssign', {canNext:true})
-            },4000)
+            },38500)
+
+            setTimeout(() => {
+                this.countShow = 1
+            }, 10000);
+
+            setTimeout(() => {
+                this.countShow = 2
+            }, 14000);
+
+            setTimeout(() => {
+                this.countShow = 3
+            }, 21000);
         }
     }
 }

@@ -32,13 +32,13 @@
                         <v-col cols="1" align="center" class="animate__animated animate__backInLeft">
                             <p class="vertical-text  font-weight-bold"  :class="{'font-size-30': windowHeight>900, 'font-size-20': windowHeight<700}">Consumo Historico</p>
                         </v-col>
-                        <v-col cols="11" class="animate__animated animate__backInRight" v-if="count === 0">
+                        <v-col cols="11" class="animate__animated animate__backInRight" v-if="counterImage === 0">
                             <v-img src="@/assets/electricidad/consumo.png" contain :max-height="windowHeight>900 ? '450': '260'"  @click="index = 0"></v-img>
                         </v-col>
-                        <v-col cols="11" class="animate__animated animate__backInRight" v-if="count === 1" align-self="center">
+                        <v-col cols="11" class="animate__animated animate__backInRight" v-if="counterImage === 1" align-self="center">
                             <v-img src="@/assets/electricidad/importante.png" contain :max-height="windowHeight>900 ? '450': '260'"  @click="index = 1"></v-img>
                         </v-col>
-                        <v-col cols="11" class="animate__animated animate__backInRight" v-if="count === 2" align-self="center">
+                        <v-col cols="11" class="animate__animated animate__backInRight" v-if="counterImage === 2" align-self="center">
                             <v-img src="@/assets/electricidad/consumo.png" contain :max-height="windowHeight>900 ? '310': '160'"  @click="index = 0"></v-img>
                             <v-img src="@/assets/electricidad/importante.png" contain :max-height="windowHeight>900 ? '210': '110'"  @click="index = 1"></v-img>
                         </v-col>
@@ -84,7 +84,8 @@ export default{
                     src: require('@/assets/electricidad/importante.png'),
                 },
             ],
-            index: null
+            index: null,
+            counterImage: 0
         }
     },
     components: {
@@ -104,11 +105,25 @@ export default{
             images.visible = false
         },
         playAudio(){
-            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-10.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.playAudioSecond()
+            },21500)
+
+            setTimeout(()=> {
+                this.counterImage = 1
+            },20000)
+            setTimeout(()=> {
+                this.counterImage = 2
+            },35000)
+        },
+        playAudioSecond(){
+            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-10-5.mp3')
             window.audio.play()
             setTimeout(()=> {
                 this.$store.commit('StateAssign', {canNext:true})
-            },4000)
+            },17500)
         }
     }
 }

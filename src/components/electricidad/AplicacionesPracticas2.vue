@@ -109,7 +109,7 @@ export default{
     mounted(){
         //this.count = 0
         this.$store.commit('StateAssign', {count: 0})
-        this.$store.commit('StateAssing', {canNext: false})
+        this.$store.commit('StateAssign', {canNext: false})
         this.playAudio()
     },
     computed: {
@@ -117,12 +117,11 @@ export default{
     },
     methods: {
         playAudio(){
-            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-11.mp3')
             window.audio.play()
-
             setTimeout(()=> {
                 this.$store.commit('StateAssign', {canNext:true})
-            },4000)
+            },58500)
         }
     }
 }

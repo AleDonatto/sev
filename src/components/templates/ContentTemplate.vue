@@ -284,20 +284,11 @@ export default {
                 }
                 this.$store.commit('Increment')
                 //increment()
-            }else if(route === '/fundamentos-de-electricidad' && this.step === 10 && this.count<3){
+            }else if(route === '/fundamentos-de-electricidad' && this.step === 12 && this.count<1){
                 //this.$store.dispatch('increment')
-                this.$store.commit('Increment')
-                //increment()
-            }else if(route === '/fundamentos-de-electricidad' && this.step === 11 && this.count<2){
-                //this.$store.dispatch('increment')
-                this.$store.commit('Increment')
-                //increment()
-            }else if(route === '/fundamentos-de-electricidad' && this.step === 13 && this.count<1){
-                //this.$store.dispatch('increment')
-                this.$store.commit('Increment')
-                //increment()
-            }else if(route === '/fundamentos-de-electricidad' && this.step === 14 && this.count<1){
-                //this.$store.dispatch('increment')
+                if(this.count === 0){
+                    this.playAudioAplicacionesP()
+                }
                 this.$store.commit('Increment')
                 //increment()
             }else if(route === '/cargando-un-bev' && this.step === 2 && this.count<1){
@@ -419,6 +410,14 @@ export default {
             setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:5})},24000)
             setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:6})},33000)
             setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:7})},52000)
+        },
+        playAudioAplicacionesP(){
+            this.$store.commit('StateAssign', {canNext:false})
+            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-12.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },72500)
         }
     },
 

@@ -40,6 +40,13 @@ export default {
             let route = this.$route.path
             this.$store.dispatch('NextStep', route)
             //NextStep(route)
+        },
+        playAudio(){
+            window.audio.src = require('@/assets/audios/SEV-excelente.mp3')
+            window.audio.play()
+            setTimeout(()=> {
+                this.$store.commit('StateAssign', {canNext:true})
+            },4500)
         }
     }
 }

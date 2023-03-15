@@ -77,7 +77,6 @@ export default {
     },
     mounted(){
         //this.canNext = true
-        this.$store.commit('StateAssign', {canNext: true})
         this.$store.commit('StateAssign', {canNext: false})
 
         this.playAudio()
@@ -95,7 +94,7 @@ export default {
             }
         },
         playAudio(){
-            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-17.mp3')
             window.audio.play()
             /*setTimeout(()=> {
                 this.$store.commit('StateAssign', {canNext:true})

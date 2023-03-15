@@ -255,9 +255,9 @@ export default {
         playAudio(){
             window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-12.mp3')
             window.audio.play()
-            setTimeout(()=> {
+            /*setTimeout(()=> {
                 this.$store.commit('StateAssign', {canNext:true})
-            },14500)
+            },14500)*/
         }
     }
 }

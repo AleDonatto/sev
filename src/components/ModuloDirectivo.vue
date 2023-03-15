@@ -143,8 +143,19 @@
     components: {
       MainTemplate,
     },
+    mounted(){
+      if(this.section === 3){
+        this.playAudioModuloElectricidad()
+      }
+    },
     computed: {
       ...mapState(['section', 'windowSize', 'windowHeight'])
+    },
+    methods: {
+      playAudioModuloElectricidad(){
+        window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-welcome.mp3')
+        window.audio.play()
+      }
     }
   }
 </script>

@@ -38,6 +38,9 @@ export default{
   computed: {
     ...mapState(['canNext', 'step'])
   },
+  mounted(){
+    this.playAudioExcelente()
+  },
   methods: {
     ...mapActions(['NextStep']),
     continuar(){
@@ -46,6 +49,13 @@ export default{
       console.log(route)
       this.$store.dispatch('NextStep', route)
       //NextStep(route)
+    },
+    playAudioExcelente(){
+      window.audio.src = require('@/assets/audios/SEV-excelente.mp3')
+      window.audio.play()
+      setTimeout(()=> {
+        this.$store.commit('StateAssign', {canNext:true})
+      },4500)
     }
   },
 

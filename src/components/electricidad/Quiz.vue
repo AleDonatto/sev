@@ -78,7 +78,7 @@ export default {
             }
         },
         playAudio(){
-            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-16.mp3')
             window.audio.play()
             /*setTimeout(()=> {
                 this.$store.commit('StateAssign', {canNext:true})

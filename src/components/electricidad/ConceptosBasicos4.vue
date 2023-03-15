@@ -12,7 +12,7 @@
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
                                     <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
                                         Un punto importante a considerar es que la corriente eléctrica puede ser transformada de 
-                                        corriente alterna a a corriente directa y viceversa.
+                                        corriente alterna a corriente directa y viceversa.
                                         <br><br>
                                         Un convertidor de corriente, como el que usamos para conectar nuestro teléfono móvil o nuestra 
                                         laptop hace precisamente la función de cambiar la corriente alterna del contacto de pared 
@@ -77,11 +77,11 @@ export default{
     },
     methods: {
         playAudio(){
-            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-3.mp3')
             window.audio.play()
             setTimeout(()=> {
                 this.$store.commit('StateAssign', {canNext:true})
-            },4000)
+            },47500)
         }
     }
 }

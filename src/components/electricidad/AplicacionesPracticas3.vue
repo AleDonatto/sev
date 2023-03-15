@@ -17,8 +17,7 @@
                                         se desean cargar; y <br>
                                         2) el precio del kilowatt hora suministrado en el cargador o por parte de 
                                         quien distribuye la corriente eléctrica.
-                                    </v-card-text>
-                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}" v-if="count === 1">
+                                        <br><br>
                                         En este ejemplo, calcularemos el costo de llenar una batería de 50 kilowatt hora desde el 20% 
                                         hasta el 100% de su capacidad. De tal manera que la carga total resultante es de 40 kilowatt hora. 
                                         Si el usuario paga una tarifa de consumo básico equivalente a $0.859 por kilowatt hora, el costo 
@@ -30,7 +29,7 @@
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" class="rounded-xl bg-color mx-10 px-5" v-if="count === 0">
+                    <v-row justify="center" class="rounded-xl bg-color mx-10 px-5" v-if="counterStep === 0">
                         <v-col cols="12" align="start" class="animate__animated animate__backInDown">
                             <p class="" :class="{'font-size-30': windowHeight>900, 'font-size-22': windowHeight<700}">El costo de carga de una bateria dependerá de: </p>
                         </v-col>
@@ -53,7 +52,7 @@
                         </v-col>
                     </v-row>
 
-                    <v-row no-gutters justify="center" class="rounded-xl bg-color mx-10 px-5 mt-3" v-if="count === 1">
+                    <v-row no-gutters justify="center" class="rounded-xl bg-color mx-10 px-5 mt-3" v-if="counterStep === 1">
                         <v-col cols="3" class="mt-2">
                             <v-img src="@/assets/electricidad/costoLowBattery.png" contain :max-height="windowHeight>900 ? '130': '90'"></v-img>
                         </v-col>
@@ -88,7 +87,9 @@ import { mapState } from 'vuex';
 
 export default{
     data(){
-        return {}
+        return {
+            counterStep: 0
+        }
     },
     components: {
         ContentTemplate
@@ -104,11 +105,15 @@ export default{
     },
     methods: {
         playAudio(){
-            window.audio.src = require('@/assets/audios/intro.mp3')
+            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-13.mp3')
             window.audio.play()
             setTimeout(()=> {
                 this.$store.commit('StateAssign', {canNext:true})
-            },4000)
+            },52500)
+
+            setTimeout(() => {
+                this.counterStep = 1
+            }, 19000);
         }
     }
 }
