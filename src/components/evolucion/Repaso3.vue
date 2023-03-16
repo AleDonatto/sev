@@ -57,7 +57,7 @@
 
                     <v-row justify="center" :class="{'mt-15': windowHeight>900, 'mt-0': windowHeight<700}">
                         <v-col cols="2">
-                            <v-btn class="" rounded color="#FDBD31" :disabled="answers.a1 !== 'battery-efficient'"
+                            <v-btn class="" rounded color="#FDBD31" :disabled="answers.a1 !== 'battery-electric'"
                             @click="checkQuiz">
                                 <span class="text-black text-none font-size-20">Continuar</span>
                             </v-btn>
@@ -103,7 +103,7 @@ export default{
     methods: {
         ...mapActions(['NextStep']),
         checkQuiz(){
-            if(this.answers.a1 === 'battery-efficient'){
+            if(this.answers.a1 === 'battery-electric'){
                 this.$store.commit('StateAssign', {answeredQuiz3: true})
                 //this.answeredQuiz3 = true
                 let route = this.$route.path

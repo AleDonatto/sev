@@ -21,7 +21,7 @@
                     <v-row justify="center" :class="{'mt-15': windowHeight > 900, 'mt-1' : windowHeight < 700}">
                         <v-col cols="2">
                             <div class="text-center border-box-drag px-5 py-3" draggable="true" @dragstart="drag" v-if="drags.d1 === true">
-                                <p id="gasolina_electricos">MCI híbridos hidrógeno-gasolina y eléctricos</p>
+                                <p id="gasolina_electricos">Motores a combustión interna híbridos hidrógeno-gasolina y eléctricos</p>
                             </div>
                         </v-col>
                         <!--<v-col cols="2">
@@ -31,7 +31,7 @@
                         </v-col>-->
                         <v-col cols="2">
                             <div class="texdt-center border-box-drag px-4 py-3" draggable="true" @dragstart="drag" v-if="drags.d2 === true">
-                                <p id="celda_hidrogeno">MCI eléctricos y vehículos de celdas de hidrógeno</p>
+                                <p id="celda_hidrogeno">Motores a combustión interna eléctricos y vehículos de celdas de hidrógeno</p>
                             </div>
                         </v-col>
                         <!--<v-col cols="2">
@@ -41,7 +41,7 @@
                         </v-col>-->
                         <v-col cols="2">
                             <div class="text-center border-box-drag px-5 py-3" draggable="true" @dragstart="drag"  v-if="drags.d3 === true">
-                                <p id="electrico_gasolina">MCI híbridos eléctrico-gasolina y eléctricos</p>
+                                <p id="electrico_gasolina">Motores a combustión interna híbridos eléctrico-gasolina y eléctricos</p>
                             </div>
                         </v-col>
                     </v-row>
