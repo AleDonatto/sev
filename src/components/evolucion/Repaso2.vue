@@ -8,7 +8,7 @@
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-instructions py-6 px-4" :class="{'mt-10': windowHeight>900, 'mt-2': windowHeight<700}">
+                            <div class="border-box-instructions py-6 px-4" :class="{'mt-10': windowHeight>900, 'mt-2': windowHeight<700}" v-if="boxText">
                                 <p class="" :class="{'font-size-24':windowHeight>900, 'font-size-19': windowHeight<700}">Acomoda de mayor a menor generación de emisiones contaminantes las siguentes tecnologías</p>
                             </div>
                         </v-col>
@@ -176,7 +176,7 @@ export default{
         }*/
     },
     computed: {
-        ...mapState(['canNext', 'answeredQuiz2', 'windowHeight', 'windowSize'])
+        ...mapState(['canNext', 'answeredQuiz2', 'windowHeight', 'windowSize', 'boxText', 'soundOn'])
     },
     methods: {
         ...mapActions(['NextStep']),
@@ -279,8 +279,11 @@ export default{
             }
         },
         playAudio(){
-            window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-13.mp3')
-            window.audio.play()
+            if(this.soundOn === true){
+                window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-13.mp3')
+                window.audio.play()
+            }
+            
             /*setTimeout(()=> {
                 this.$store.commit('StateAssign', {canNext:true})
             },6500)*/

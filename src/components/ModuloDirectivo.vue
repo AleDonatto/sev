@@ -149,12 +149,15 @@
       }
     },
     computed: {
-      ...mapState(['section', 'windowSize', 'windowHeight'])
+      ...mapState(['section', 'windowSize', 'windowHeight','soundOn'])
     },
     methods: {
       playAudioModuloElectricidad(){
-        window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-welcome.mp3')
-        window.audio.play()
+        if(this.soundOn === true){
+          window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-welcome.mp3')
+          window.audio.play()
+        }
+        
       }
     }
   }

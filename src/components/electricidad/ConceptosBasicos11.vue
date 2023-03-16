@@ -8,7 +8,7 @@
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }" v-if="boxText">
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
                                     <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
                                         En este ejemplo podemos notar como los consumos históricos 
@@ -92,12 +92,11 @@ export default{
         ContentTemplate,
     },
     computed: {
-        ...mapState(['windowHeight', 'windowSize', 'count'])
+        ...mapState(['windowHeight', 'windowSize', 'count','soundOn', 'boxText'])
     },
     mounted(){
         //this.count = 0
         this.$store.commit('StateAssign', {count: 0})
-        this.$store.commit('StateAssign', {canNext: false})
         this.playAudio()
     },
     methods: {
@@ -105,18 +104,24 @@ export default{
             images.visible = false
         },
         playAudio(){
-            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-10.mp3')
-            window.audio.play()
-            setTimeout(()=> {
-                this.playAudioSecond()
-            },21500)
+            if(this.soundOn === true){
+                this.$store.commit('StateAssign', {canNext: false})
+                window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-10.mp3')
+                window.audio.play()
+                setTimeout(()=> {
+                    this.playAudioSecond()
+                },21500)
 
-            setTimeout(()=> {
-                this.counterImage = 1
-            },20000)
-            setTimeout(()=> {
+                setTimeout(()=> {
+                    this.counterImage = 1
+                },20000)
+                setTimeout(()=> {
+                    this.counterImage = 2
+                },35000)
+            }else{
                 this.counterImage = 2
-            },35000)
+            }
+            
         },
         playAudioSecond(){
             window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-10-5.mp3')

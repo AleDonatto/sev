@@ -8,7 +8,7 @@
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-yellow mt-6">
+                            <div class="border-yellow mt-6" v-if="boxText">
                                 <p class=" font-size-24 px-5 py-5 mx-5">La baterías utilizadas en los vehículos SEV-E-wan son:</p>
                             </div>
                         </v-col>
@@ -73,7 +73,7 @@ export default {
         ContentTemplate,
     },
     computed: {
-        ...mapState(['canNext', 'windowHeight', 'windowSize'])
+        ...mapState(['canNext', 'windowHeight', 'windowSize', 'soundOn', 'boxText'])
     },
     mounted() {
         //this.canNext = false
@@ -89,8 +89,11 @@ export default {
             }
         },
         playAudio(){
-            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-18.mp3')
-            window.audio.play()
+            if(this.soundOn === true){
+                window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-18.mp3')
+                window.audio.play()
+            }
+            
         }
     }
 }

@@ -8,7 +8,7 @@
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }" v-if="boxText">
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
                                     <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
                                         Un punto importante a considerar es que la corriente eléctrica puede ser transformada de 
@@ -69,19 +69,21 @@ export default{
         ContentTemplate,
     },
     computed: {
-        ...mapState(['windowHeight', 'windowSize']),
+        ...mapState(['windowHeight', 'windowSize', 'soundOn', 'boxText']),
     },
     mounted() {
         this.playAudio()
-        this.$store.commit('StateAssign', {canNext: false})
     },
     methods: {
         playAudio(){
-            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-3.mp3')
-            window.audio.play()
-            setTimeout(()=> {
-                this.$store.commit('StateAssign', {canNext:true})
-            },47500)
+            if(this.soundOn === true){
+                this.$store.commit('StateAssign', {canNext: false})
+                window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-3.mp3')
+                window.audio.play()
+                setTimeout(()=> {
+                    this.$store.commit('StateAssign', {canNext:true})
+                },47500)
+            }   
         }
     }
 }

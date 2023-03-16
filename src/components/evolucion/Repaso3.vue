@@ -8,7 +8,7 @@
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9" align="start">
-                            <div class="box-color-instructions py-6 px-4" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
+                            <div class="box-color-instructions py-6 px-4" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}" v-if="boxText">
                                 <p class=" font-size-26">
                                     Las siglas <span class="text-yellow front-weight-bold">BEV</span> (por su acrónimo en inglés), corresponden a:
                                 </p>
@@ -89,7 +89,7 @@ export default{
 
     },
     computed: {
-        ...mapState(['answeredQuiz3','canNext', 'windowHeight', 'windowSize'])
+        ...mapState(['answeredQuiz3','canNext', 'windowHeight', 'windowSize','boxText','soundOn'])
     },
     mounted() {
         this.$store.commit('StateAssign', {canNext: false})
@@ -112,8 +112,11 @@ export default{
             }
         },
         playAudio(){
-            window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-14.mp3')
-            window.audio.play()
+            if(this.soundOn === true){
+                window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-14.mp3')
+                window.audio.play()
+            }
+            
             /*setTimeout(()=> {
                 this.$store.commit('StateAssign', {canNext:true})
             },4500)*/

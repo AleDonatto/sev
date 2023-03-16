@@ -13,19 +13,16 @@ export default new Vuex.Store({
     windowSize:null,
     windowHeight:null,
     canNext:true,
-    section: 4, 
+    section: 2, 
     audioInitialized: false,
 
     answeredQuiz1: false,
     answeredQuiz2: false,
     answeredQuiz3: false,
 
-    audioPaused:true,
-    mainMenuLoaded:false,
-    //liderazgo
-    option:0,
-    //estilos-liderazgo
-    opt:0,
+    audioPaused:false,
+    boxText: true,
+    soundOn: true,
   },
   actions,
   getters,

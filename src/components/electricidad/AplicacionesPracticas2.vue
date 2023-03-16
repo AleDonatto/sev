@@ -109,19 +109,22 @@ export default{
     mounted(){
         //this.count = 0
         this.$store.commit('StateAssign', {count: 0})
-        this.$store.commit('StateAssign', {canNext: false})
         this.playAudio()
     },
     computed: {
-        ...mapState(['windowHeight', 'windowSize', 'count']),
+        ...mapState(['windowHeight', 'windowSize', 'count', 'soundOn', 'boxText']),
     },
     methods: {
         playAudio(){
-            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-11.mp3')
-            window.audio.play()
-            setTimeout(()=> {
-                this.$store.commit('StateAssign', {canNext:true})
-            },58500)
+            if(this.soundOn === true){
+                this.$store.commit('StateAssign', {canNext: false})
+                window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-11.mp3')
+                window.audio.play()
+                setTimeout(()=> {
+                    this.$store.commit('StateAssign', {canNext:true})
+                },58500)
+            }
+            
         }
     }
 }

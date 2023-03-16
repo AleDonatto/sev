@@ -8,7 +8,7 @@
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }" v-if="boxText">
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
                                     <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}" v-if="count === 0">
                                         Cuando se desea calcular el costo de carga de una batería, hay que tener en cuenta dos factores 
@@ -96,20 +96,22 @@ export default{
     },
     mounted(){
         //this.count = 0
-        this.$store.commit('StateAssign', {count: 0}),
-        this.$store.commit('StateAssign', {canNext: false})
+        this.$store.commit('StateAssign', {count: 0})
         this.playAudio()
     },
     computed: {
-        ...mapState(['windowHeight', 'windowSize', 'count']),   
+        ...mapState(['windowHeight', 'windowSize', 'count', 'soundOn', 'boxText']),   
     },
     methods: {
         playAudio(){
-            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-13.mp3')
-            window.audio.play()
-            setTimeout(()=> {
-                this.$store.commit('StateAssign', {canNext:true})
-            },52500)
+            if(this.soundOn === true){
+                this.$store.commit('StateAssign', {canNext: false})
+                window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-13.mp3')
+                window.audio.play()
+                setTimeout(()=> {
+                    this.$store.commit('StateAssign', {canNext:true})
+                },52500)
+            }
 
             setTimeout(() => {
                 this.counterStep = 1

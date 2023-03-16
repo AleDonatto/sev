@@ -180,7 +180,7 @@
                     </v-row>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="() => {this.$store.commit('StateAssign', {step: 2})}"
-                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': wdindowHeight < 700}">
+                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
                     <v-row justify="center">
                         <v-col cols="10">
                             <span class="" :class="{'font-weight-bold': step === 2, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Modos de Carga</span>
@@ -219,12 +219,15 @@
             </v-row>
             <v-row justify="center">
                 <v-col cols="6" align="center">
-                    <v-btn color="black" fab>
+                    <v-btn color="black" fab @click="stopAudio" v-if="soundOn === true">
                         <v-icon color="white">mdi-volume-high</v-icon>
+                    </v-btn>
+                    <v-btn color="black" fab @click="playingAudio" v-if="soundOn === false">
+                        <v-icon color="white">mdi-volume-mute</v-icon>
                     </v-btn>
                 </v-col>
                 <v-col cols="6" align="center">
-                    <v-btn color="black" fab>
+                    <v-btn color="black" fab @click="actionsBoxText">
                         <v-icon color="white">mdi-comment-processing-outline</v-icon>
                     </v-btn>
                 </v-col>
@@ -259,7 +262,7 @@ export default {
         }
     },
     computed: {
-        ...mapState(['step', 'canNext', 'windowHeight', 'windowSize', 'count', 'countShowImage'])
+        ...mapState(['step', 'canNext', 'windowHeight', 'windowSize', 'count', 'countShowImage','boxText', 'soundOn'])
     },
     methods: {
         ...mapActions(['NextStep', 'PreviousStep',]),
@@ -312,108 +315,155 @@ export default {
             this.$router.push('/fundamentos-de-electricidad')
         },
         playAudioStepICE(){
-            this.$store.commit('StateAssign', {canNext: false})
-            this.$store.commit('StateAssign', {countShowImage:1})
-            window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-6.mp3')
-            window.audio.play()
-            setTimeout(()=> {
-                this.$store.commit('StateAssign', {canNext:true})
-            },62500)
+            if(this.soundOn === true){
+                this.$store.commit('StateAssign', {canNext: false})
+                this.$store.commit('StateAssign', {countShowImage:1})
+                window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-6.mp3')
+                window.audio.play()
+                setTimeout(()=> {
+                    this.$store.commit('StateAssign', {canNext:true})
+                },62500)
 
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:2})},21000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:3})},24000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:4})},30000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:5})},37000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:6})},44000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:7})},53000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:2})},21000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:3})},24000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:4})},30000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:5})},37000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:6})},44000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:7})},53000)
+            }else{
+                this.$store.commit('StateAssign', {countShowImage:7})
+            }
+            
         }, 
         playAudioStepMHEV(){
-            this.$store.commit('StateAssign', {canNext: false})
-            this.$store.commit('StateAssign', {countShowImage:1})
-            window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-7.mp3')
-            window.audio.play()
-            setTimeout(()=> {
-                this.$store.commit('StateAssign', {canNext:true})
-            },68500)
+            if(this.soundOn === true){
+                this.$store.commit('StateAssign', {canNext: false})
+                this.$store.commit('StateAssign', {countShowImage:1})
+                window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-7.mp3')
+                window.audio.play()
+                setTimeout(()=> {
+                    this.$store.commit('StateAssign', {canNext:true})
+                },68500)
 
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:2})},8000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:3})},37000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:4})},43000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:5})},48000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:6})},54000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:7})},61000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:2})},8000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:3})},37000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:4})},43000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:5})},48000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:6})},54000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:7})},61000)
+            }else{
+                this.$store.commit('StateAssign', {countShowImage:7})
+            }
         },
         playAudioStepHEV(){
-            this.$store.commit('StateAssign', {canNext: false})
-            this.$store.commit('StateAssign', {countShowImage:1})
-            window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-8.mp3')
-            window.audio.play()
-            setTimeout(()=> {
-                this.$store.commit('StateAssign', {canNext:true})
-            },75500)
+            if(this.soundOn === true){
+                this.$store.commit('StateAssign', {canNext: false})
+                this.$store.commit('StateAssign', {countShowImage:1})
+                window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-8.mp3')
+                window.audio.play()
+                setTimeout(()=> {
+                    this.$store.commit('StateAssign', {canNext:true})
+                },75500)
 
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:2})},11000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:3})},17000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:4})},22000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:5})},31000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:6})},39000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:7})},56000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:2})},11000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:3})},17000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:4})},22000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:5})},31000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:6})},39000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:7})},56000)
+            }else{
+                this.$store.commit('StateAssign', {countShowImage:7})
+            }
+            
         },
         playAudioStepPHEV(){
-            this.$store.commit('StateAssign', {canNext: false})
-            this.$store.commit('StateAssign', {countShowImage:1})
-            window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-9.mp3')
-            window.audio.play()
-            setTimeout(()=> {
-                this.$store.commit('StateAssign', {canNext:true})
-            },95500)
+            if(this.soundOn === true){
+                this.$store.commit('StateAssign', {canNext: false})
+                this.$store.commit('StateAssign', {countShowImage:1})
+                window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-9.mp3')
+                window.audio.play()
+                setTimeout(()=> {
+                    this.$store.commit('StateAssign', {canNext:true})
+                },95500)
 
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:2})},10000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:3})},22000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:4})},27000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:5})},32000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:6})},62000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:7})},72000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:2})},10000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:3})},22000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:4})},27000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:5})},32000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:6})},62000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:7})},72000)
+            }else{
+                this.$store.commit('StateAssign', {countShowImage:7})
+            }
+           
         },
         playAudioStepBEV(){
-            this.$store.commit('StateAssign', {canNext: false})
-            this.$store.commit('StateAssign', {countShowImage:1})
-            window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-10.mp3')
-            window.audio.play()
-            setTimeout(()=> {
-                this.$store.commit('StateAssign', {canNext:true})
-            },84500)
+            if(this.soundOn === true){
+                this.$store.commit('StateAssign', {canNext: false})
+                this.$store.commit('StateAssign', {countShowImage:1})
+                window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-10.mp3')
+                window.audio.play()
+                setTimeout(()=> {
+                    this.$store.commit('StateAssign', {canNext:true})
+                },84500)
 
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:2})},7000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:3})},16000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:4})},20000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:5})},24000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:6})},33000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:7})},52000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:2})},7000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:3})},16000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:4})},20000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:5})},24000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:6})},33000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:7})},52000)
+            }else{
+                this.$store.commit('StateAssign', {countShowImage:7})
+            }
+            
         },
         playAudioStepFCEV(){
-            this.$store.commit('StateAssign', {canNext: false})
-            this.$store.commit('StateAssign', {countShowImage:1})
-            window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-11.mp3')
-            window.audio.play()
-            setTimeout(()=> {
-                this.$store.commit('StateAssign', {canNext:true})
-            },84500)
+            if(this.soundOn === true){
+                this.$store.commit('StateAssign', {canNext: false})
+                this.$store.commit('StateAssign', {countShowImage:1})
+                window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-11.mp3')
+                window.audio.play()
+                setTimeout(()=> {
+                    this.$store.commit('StateAssign', {canNext:true})
+                },84500)
 
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:2})},7000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:3})},16000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:4})},20000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:5})},24000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:6})},33000)
-            setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:7})},52000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:2})},7000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:3})},16000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:4})},20000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:5})},24000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:6})},33000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:7})},52000)
+            }else{
+                this.$store.commit('StateAssign', {countShowImage:7})
+            }
+           
         },
         playAudioAplicacionesP(){
-            this.$store.commit('StateAssign', {canNext:false})
-            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-12.mp3')
-            window.audio.play()
-            setTimeout(()=> {
-                this.$store.commit('StateAssign', {canNext:true})
-            },72500)
+            if(this.soundOn === true){
+                this.$store.commit('StateAssign', {canNext:false})
+                window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-12.mp3')
+                window.audio.play()
+                setTimeout(()=> {
+                    this.$store.commit('StateAssign', {canNext:true})
+                },72500)
+            }
+        },
+        stopAudio(){
+            window.audio.pause()
+            window.audio.currentTime = 0;
+            this.$store.commit('StateAssign', {canNext:true})
+            this.$store.commit('StateAssign', {soundOn:false})
+            //console.log('stop audio')
+        },
+        playingAudio(){
+            //window.audio.play()
+            //this.$store.commit('StateAssign', {canNext:false})
+            this.$store.commit('StateAssign', {soundOn:true})
+            //console.log('reanudar audio')
+        },
+        actionsBoxText(){
+            this.$store.commit('StateAssign', {boxText: !this.boxText})
         }
     },
 

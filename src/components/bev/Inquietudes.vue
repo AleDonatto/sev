@@ -28,22 +28,25 @@ export default {
         return{}
     },
     computed: {
-        ...mapState(['windowHeight', 'windowSize'])
+        ...mapState(['windowHeight', 'windowSize', 'boxText', 'soundOn'])
     },
     components: {
         ContentTemplate
     },
     mounted(){
-        this.$store.commit('StateAssign', {canNext:false})
         this.playAudio()
     },
     methods: {
         playAudio(){
-            window.audio.src = require('@/assets/audios/bev/SEV-bev-1.mp3')
-            window.audio.play()
-            setTimeout(()=> {
-                this.$store.commit('StateAssign', {canNext:true})
-            },22500)
+            if(this.soundOn === true){
+                this.$store.commit('StateAssign', {canNext:false})
+                window.audio.src = require('@/assets/audios/bev/SEV-bev-1.mp3')
+                window.audio.play()
+                setTimeout(()=> {
+                    this.$store.commit('StateAssign', {canNext:true})
+                },22500)
+            }
+            
         }
     }
 }

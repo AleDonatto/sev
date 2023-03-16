@@ -8,7 +8,7 @@
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9" class="">
-                            <div class="border-yellow mt-6">
+                            <div class="border-yellow mt-6" v-if="boxText">
                                 <p class="font-size-24 mx-5 py-5 px-5">El voltaje y el amperaje determinan la potencia <span class="text-yellow-p">(watt):</span></p>
                             </div>
                         </v-col>
@@ -61,7 +61,7 @@ export default {
         ContentTemplate,
     },
     computed: {
-        ...mapState(['canNext', 'windowHeight', 'windowSize'])
+        ...mapState(['canNext', 'windowHeight', 'windowSize','boxText', 'soundOn'])
     },
     mounted(){
         //this.canNext = false
@@ -78,8 +78,10 @@ export default {
             }
         },
         playAudio(){
-            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-16.mp3')
-            window.audio.play()
+            if(this.soundOn === true){
+                window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-16.mp3')
+                window.audio.play()
+            }
             /*setTimeout(()=> {
                 this.$store.commit('StateAssign', {canNext:true})
             },4000)*/

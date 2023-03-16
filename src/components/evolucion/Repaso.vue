@@ -8,7 +8,7 @@
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-evolution" :class="{'mt-10': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                            <div class="border-box-evolution" :class="{'mt-10': windowHeight > 900, 'mt-3': windowHeight < 700 }" v-if="boxText">
                                 <p class="py-4 px-3">
                                     Menciona los tres tipos de trenes motrices que se desarrollaron a finales del siglo 19 y 
                                     que en la actualidad siguen siendo las opciones más comunes en la industria automotriz. 
@@ -140,7 +140,7 @@ export default {
         ContentTemplate
     },
     computed: {
-        ...mapState(['canNext', 'answeredQuiz1', 'windowHeight', 'windowSize'])
+        ...mapState(['canNext', 'answeredQuiz1', 'windowHeight', 'windowSize', 'boxText', 'soundOn'])
     },
     mounted() {
         this.$store.commit('StateAssign',{canNext: false})
@@ -253,8 +253,10 @@ export default {
         },
 
         playAudio(){
-            window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-12.mp3')
-            window.audio.play()
+            if(this.soundOn === true){
+                window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-12.mp3')
+                window.audio.play()
+            }
             /*setTimeout(()=> {
                 this.$store.commit('StateAssign', {canNext:true})
             },14500)*/

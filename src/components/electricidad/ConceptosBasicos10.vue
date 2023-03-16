@@ -74,31 +74,36 @@ export default{
     mounted(){
         //this.count = 0
         this.$store.commit('StateAssign', {count: 0})
-        this.$store.commit('StateAssign', {canNext: false})
         this.playAudio()
     },
     computed: {
-        ...mapState(['windowHeight', 'windowSize', 'count'])
+        ...mapState(['windowHeight', 'windowSize', 'count', 'soundOn', 'boxText'])
     },
     methods: {
         playAudio(){
-            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-9.mp3')
-            window.audio.play()
-            setTimeout(()=> {
-                this.$store.commit('StateAssign', {canNext:true})
-            },38500)
+            if(this.soundOn === true){
+                this.$store.commit('StateAssign', {canNext: false})
+                window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-9.mp3')
+                window.audio.play()
+                setTimeout(()=> {
+                    this.$store.commit('StateAssign', {canNext:true})
+                },38500)
 
-            setTimeout(() => {
-                this.countShow = 1
-            }, 10000);
+                setTimeout(() => {
+                    this.countShow = 1
+                }, 10000);
 
-            setTimeout(() => {
-                this.countShow = 2
-            }, 14000);
+                setTimeout(() => {
+                    this.countShow = 2
+                }, 14000);
 
-            setTimeout(() => {
+                setTimeout(() => {
+                    this.countShow = 3
+                }, 21000);
+            }else{
                 this.countShow = 3
-            }, 21000);
+            }
+            
         }
     }
 }

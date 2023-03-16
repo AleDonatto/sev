@@ -8,7 +8,7 @@
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz">
+                            <div class="border-box-quiz" v-if="boxText">
                                 <p class="py-5 px-4  font-size-24">
                                     Todos los vehículos eléctricos pueden cargar utilizando supercargadores de CD
                                 </p>
@@ -69,7 +69,7 @@ export default{
         this.playAudio()
     },
     computed: {
-        ...mapState(['canNext', 'windowHeight', 'windowSize'])
+        ...mapState(['canNext', 'windowHeight', 'windowSize','soundOn', 'boxText'])
     },
     methods: {
         ...mapActions(['NextStep']),
@@ -81,8 +81,11 @@ export default{
             }
         },
         playAudio(){
-            window.audio.src = require('@/assets/audios/bev/SEV-bev-10.mp3')
-            window.audio.play()
+            if(this.soundOn === true){
+                window.audio.src = require('@/assets/audios/bev/SEV-bev-10.mp3')
+                window.audio.play()
+            }
+            
         }
     }
 

@@ -56,20 +56,23 @@ export default {
     ContentTemplate,
   },
   computed: {
-    ...mapState(['windowHeight', 'windowSize'])
+    ...mapState(['windowHeight', 'windowSize', 'soundOn'])
   },
   mounted(){
-    this.$store.commit('StateAssign', {canNext:false})
 
     this.playAudio()
   },
   methods: {
     playAudio(){
-      window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-15.mp3')
-      window.audio.play()
-      setTimeout(()=> {
-        this.$store.commit('StateAssign', {canNext:true})
-      },14500)
+      if(this.soundOn === true){
+        this.$store.commit('StateAssign', {canNext:false})
+        window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-15.mp3')
+        window.audio.play()
+        setTimeout(()=> {
+          this.$store.commit('StateAssign', {canNext:true})
+        },14500)
+      }
+      
     }
   }
 }

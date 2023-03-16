@@ -8,7 +8,7 @@
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz">
+                            <div class="border-box-quiz" v-if="boxText">
                                 <p class="py-5 px-4  font-size-24">
                                     Cuando un vehículo eléctrico cuenta con capacidad de carga utilizando cargadores modo 4 de 
                                     corriente directa, se puede tener un tiempo de carga mucho más reducido (dependiendo de la 
@@ -66,7 +66,7 @@ export default{
         ContentTemplate
     },
     computed: {
-        ...mapState(['canNext', 'windowHeight', 'windowSize'])
+        ...mapState(['canNext', 'windowHeight', 'windowSize', 'soundOn', 'boxText'])
     },
     mounted() {
         //this.canNext = false
@@ -83,8 +83,11 @@ export default{
             }
         },
         playAudio(){
-            window.audio.src = require('@/assets/audios/bev/SEV-bev-11.mp3')
-            window.audio.play()
+            if(this.soundOn === true){
+                window.audio.src = require('@/assets/audios/bev/SEV-bev-11.mp3')
+                window.audio.play()
+            }
+            
         }
     }
 }

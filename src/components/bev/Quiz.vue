@@ -8,7 +8,7 @@
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz">
+                            <div class="border-box-quiz" v-if="boxText">
                                 <p class="py-5 px-4  font-size-24">El cable de carga portátil que normalmente se entrega con un vehículo eléctrico es un cargador modo 2</p>
                             </div>
                         </v-col>
@@ -61,7 +61,7 @@ export default {
         ContentTemplate
     },
     computed: {
-        ...mapState(['canNext', 'windowHeight', 'windowSize'])
+        ...mapState(['canNext', 'windowHeight', 'windowSize','boxText', 'soundOn'])
     },
     mounted(){
         //this.canNext = false
@@ -78,8 +78,11 @@ export default {
             }
         },
         playAudio(){
-            window.audio.src = require('@/assets/audios/bev/SEV-bev-9.mp3')
-            window.audio.play()
+            if(this.soundOn){
+                window.audio.src = require('@/assets/audios/bev/SEV-bev-9.mp3')
+                window.audio.play()
+            }
+            
         }
     },
 }

@@ -8,7 +8,7 @@
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="mt-6 border-yellow">
+                            <div class="mt-6 border-yellow" v-if="boxText">
                                 <p class=" font-size-24 mx-5 py-5 px-5">
                                     Los principales factores que determinan el tiempo de carga de una batería son:
                                 </p>
@@ -82,7 +82,7 @@ export default {
         this.playAudio()
     },
     computed: {
-        ...mapState(['canNext', 'windowHeight', 'windowSize'])
+        ...mapState(['canNext', 'windowHeight', 'windowSize','soundOn', 'boxText'])
     },
     methods: {
         ...mapActions(['NextStep']),
@@ -94,8 +94,11 @@ export default {
             }
         },
         playAudio(){
-            window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-17.mp3')
-            window.audio.play()
+            if(this.soundOn === true){
+                window.audio.src = require('@/assets/audios/electricidad/SEV-electricidad-17.mp3')
+                window.audio.play()
+            }
+            
             /*setTimeout(()=> {
                 this.$store.commit('StateAssign', {canNext:true})
             },4000)*/
