@@ -21,34 +21,34 @@
                             <v-radio-group v-model="answers.a1" v-if="answeredQuiz3 === false">
                                 <v-radio value="battery-efficient" class="my-4" color="#FDBD31" @input="answers.a1 = $event.target.value" >
                                     <template v-slot:label>
-                                        <p class=" font-size-24 mt-3">Battery Efficient Vehicle</p>
+                                        <p class=" font-size-24 mt-4">Battery Efficient Vehicle</p>
                                     </template>
                                 </v-radio>
                                 <v-radio value="beatifull-efficent" class="my-4" color="#FDBD31" @input="answers.a1 = $event.target.value">
                                     <template v-slot:label>
-                                        <p class=" font-size-24 mt-3">Beautiful Efficient Vehicle</p>
+                                        <p class=" font-size-24 mt-4">Beautiful Efficient Vehicle</p>
                                     </template>
                                 </v-radio>
                                 <v-radio value="battery-electric" class="my-4" color="#FDBD31" @input="answers.a1 = $event.target.value">
                                     <template v-slot:label>
-                                        <p class=" font-size-24 mt-3">Battery Electric Vehicle</p>
+                                        <p class=" font-size-24 mt-4">Battery Electric Vehicle</p>
                                     </template>
                                 </v-radio>
                             </v-radio-group>
                             <v-radio-group v-else v-model="response">
                                 <v-radio value="battery-efficient" class="my-4" color="#FDBD31" disabled>
                                     <template v-slot:label>
-                                        <p class=" font-size-24">Battery Efficient Vehicle</p>
+                                        <p class=" font-size-24 mt-3">Battery Efficient Vehicle</p>
                                     </template>
                                 </v-radio>
                                 <v-radio value="beatifull-efficent" class="my-4" color="#FDBD31" disabled>
                                     <template v-slot:label>
-                                        <p class=" font-size-24">Beautiful Efficient Vehicle</p>
+                                        <p class=" font-size-24 mt-3">Beautiful Efficient Vehicle</p>
                                     </template>
                                 </v-radio>
-                                <v-radio value="battery-electric" class="my-4" color="#FDBD31" disabled>
+                                <v-radio value="battery-electric" label="text" class="my-4" color="#FDBD31" disabled>
                                     <template v-slot:label>
-                                        <p class=" font-size-24">Battery Electric Vehicle</p>
+                                        <p class=" font-size-24 mt-3">Battery Electric Vehicle</p>
                                     </template>
                                 </v-radio>
                             </v-radio-group>
