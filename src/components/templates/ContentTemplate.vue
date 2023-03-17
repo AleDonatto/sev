@@ -237,7 +237,7 @@
             <v-app-bar app class="bg-appbar" :class="{'h-appbar': windowHeight>900, 'h-appbar-md':windowHeight<700}" >
                 <v-row>
                     <v-col cols="6" align="start" align-self="center">
-                        <h1 class="ml-7 mt-5" :class="{'font-size-20': windowHeight<700}">{{this.title}}</h1>
+                        <h1 class="ml-7 " :class="{'font-size-20 mt-5': windowHeight<700, 'mt-7': windowHeight>900}">{{this.title}}</h1>
                     </v-col>
                     <v-col cols="6" align="start" align-self="center">
                         <h1 class="white--text font-weight-thin m-left" :class="{'font-size-20 mt-0': windowHeight<700, 'mt-11': windowHeight>900}" v-html="this.subtitle"></h1> 
