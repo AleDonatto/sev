@@ -23,18 +23,8 @@
                     </v-row>
 
                     <v-row no-gutters class="mt-2 animate__animated animate__backInLeft">
-                        <v-col cols="6">
-                            <v-img src="@/assets/evolucion/camioneta.png" contain :max-height="windowHeight > 900 ? '220' : '130'"></v-img>
-                        </v-col>
-                        <v-col cols="6">
-                            <v-img src="@/assets/evolucion/trailer.png" contain :max-width="windowHeight>900 ?'550': '330'"></v-img>
-                        </v-col>
-
-                        <v-col cols="6">
-                            <v-img src="@/assets/evolucion/sedan.png" contain :max-height="windowHeight > 900 ? '220' : '130'"></v-img>
-                        </v-col>
-                        <v-col cols="6">
-                            <v-img src="@/assets/evolucion/nuevos.png" contain :max-height="windowHeight > 900 ? '220' : '130'"></v-img>
+                        <v-col cols="12">
+                            <v-img src="@/assets/evolucion/autos.png" contain :max-height="windowHeight > 900 ? '530' : '410'"></v-img>
                         </v-col>
                     </v-row>
 
