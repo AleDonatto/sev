@@ -1,6 +1,6 @@
 <template>
     <div>
-        <content-template title="" subtitle="<p class='font-avenir'>Cargando un BEV</p>">
+        <content-template title="" subtitle="<p class='mt-6'>Cargando un BEV</p>">
             <template v-slot:content>
                 <div class="">
                     <!--<v-row>
@@ -10,7 +10,7 @@
                     </v-row>-->
                     <v-row justify="end">
                         <v-col cols="12" align="end">
-                            <v-img src="@/assets/cargando/objeciones.png" contain :max-height="windowHeight> 900 ? '870': '560'"></v-img>
+                            <v-img src="@/assets/cargando/objeciones.png" contain :max-height="windowHeight> 900 ? '870': '590'"></v-img>
                         </v-col>
                     </v-row>
                 </div>

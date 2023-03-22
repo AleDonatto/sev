@@ -2,15 +2,15 @@
     <div>
         <content-template title="LOS INICIOS" subtitle='<p class="mt-5">Evolución <br/> <span class="font-weight-bold">de la movilidad</span></p>'>
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<750}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }" v-if="boxText">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 750 }" v-if="boxText">
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text class="" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
+                                    <v-card-text class="" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<750}">
                                         Es a fines del siglo XIX que se empieza a dar una evolución. En 1885 Karl Benz presentó al mundo su 
                                         "motorwagen"; considerado el primer automóvil con motor de combustión interna. Poco tiempo después, 
                                         Thomas Parker presentó un vehículo eléctrico en Gran Bretaña y Ferdinand Porsche el primer automóvil 
@@ -37,22 +37,22 @@
                         <v-col cols="4">
                             <v-img src="@/assets/evolucion/division.png" max-width="850"></v-img>
                             <div class="text-center bg-gray-1 size-box mx-1">
-                                <span class="font-weight-normal text-white" :class="{'font-size-34': windowHeight>900, 'font-size-26':windowHeight<700}">1885</span>
-                                <p class="font-weight-normal text-white mx-2" :class="{'font-size-22': windowHeight>900, 'font-size-19': windowHeight<700}">Benz motorwagen. Primer automóvil a gasolina.</p>
+                                <span class="font-weight-normal text-white" :class="{'font-size-34': windowHeight>900, 'font-size-26':windowHeight<750}">1885</span>
+                                <p class="font-weight-normal text-white mx-2" :class="{'font-size-22': windowHeight>900, 'font-size-19': windowHeight<750}">Benz motorwagen. Primer automóvil a gasolina.</p>
                             </div>
                         </v-col>
                         <v-col cols="4">
                             <v-img src="@/assets/evolucion/division.png" max-width="850"></v-img>
                             <div class="text-center bg-gray-2 size-box mx-1">
-                                <span class="font-weight-normal text-white" :class="{'font-size-34': windowHeight>900, 'font-size-26':windowHeight<700}">1895</span>
-                                <p class="font-weight-normal text-white" :class="{'font-size-22': windowHeight>900, 'font-size-19': windowHeight<700}">Thomas Parker. Auto eléctrico.</p>
+                                <span class="font-weight-normal text-white" :class="{'font-size-34': windowHeight>900, 'font-size-26':windowHeight<750}">1895</span>
+                                <p class="font-weight-normal text-white" :class="{'font-size-22': windowHeight>900, 'font-size-19': windowHeight<750}">Thomas Parker. Auto eléctrico.</p>
                             </div>
                         </v-col>
                         <v-col cols="4">
                             <v-img src="@/assets/evolucion/division.png" max-width="850"></v-img>
                             <div class="text-center bg-gray-3 size-box mx-1">
-                                <span class="font-weight-normal text-white" :class="{'font-size-34': windowHeight>900, 'font-size-26':windowHeight<700}">1898</span>
-                                <p class="font-weight-normal text-white" :class="{'font-size-22': windowHeight>900, 'font-size-19': windowHeight<700}">Ferdinand Porsche. Auto híbrido eléctrico-gasolina</p>
+                                <span class="font-weight-normal text-white" :class="{'font-size-34': windowHeight>900, 'font-size-26':windowHeight<750}">1898</span>
+                                <p class="font-weight-normal text-white" :class="{'font-size-22': windowHeight>900, 'font-size-19': windowHeight<750}">Ferdinand Porsche. Auto híbrido eléctrico-gasolina</p>
                             </div>
                         </v-col>
                     </v-row>

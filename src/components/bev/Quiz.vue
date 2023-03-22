@@ -2,14 +2,14 @@
     <div>
         <content-template title="REPASO DE SECCION" subtitle="Cargando un BEV">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-5': windowHeight<750}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-quiz" v-if="boxText">
-                                <p class="py-5 px-4  font-size-24">El cable de carga portátil que normalmente se entrega con un vehículo eléctrico es un cargador modo 2</p>
+                                <p class="py-5 px-4  font-size-24">El cable de carga portátil que normalmente se entrega con un vehículo eléctrico es un cargador modo 1</p>
                             </div>
                         </v-col>
                     </v-row>

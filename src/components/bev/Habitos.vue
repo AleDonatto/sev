@@ -1,16 +1,16 @@
 <template>
     <div>
-        <content-template subtitle="Habitos de Carga de un BEV">
+        <content-template subtitle="<p class='mt-6'>Habitos de Carga de un BEV</p>">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<750}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }" v-if="boxText">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 750 }" v-if="boxText">
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
+                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<750}">
                                         Algo que se puede percibir en la mayoría de los usuarios de vehículos eléctricos es que han 
                                         integrado los procesos de carga de sus vehículos fácilmente a su vida diaria. Va a ser en 
                                         los momentos en que no están ocupando el automóvil que aprovechan para conectarlo y recargar 
@@ -28,13 +28,13 @@
 
                     <v-row justify="center" class="bg-boxstep-content rounded-xl mx-10 px-5 py-5">
                         <v-col cols="12" class="animate__animated animate__backInDown">
-                            <p class="" :class="{'font-size-22': windowHeight>900, 'font-size-19': windowHeight<700}">
+                            <p class="" :class="{'font-size-22': windowHeight>900, 'font-size-19': windowHeight<750}">
                                 <span class="font-weight-bold">El comportamiento o hábitos de recarga de un</span> <span class="text-yellow-p font-weight-bold">BEV</span> por parte de un cliente son 
                                 muy distintos a los <span class="fonbt-weight-bold">hábitos de recarga de un tanque de combustible.</span>
                             </p>
                         </v-col>
                         <v-col cols="4" class="animate__animated animate__backInLeft">
-                            <ul class=" px-7" :class="{'font-size-22': windowHeight>900, 'font-size-19': windowHeight<700}">
+                            <ul class=" px-7" :class="{'font-size-22': windowHeight>900, 'font-size-19': windowHeight<750}">
                                 <li>
                                     La recarga de un vehículo eléctrico se puede integrar de manera fácil al día a día del usuario 
                                     aprovechando los periodos en los que el vehículo está estacionado.

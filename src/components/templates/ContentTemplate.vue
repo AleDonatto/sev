@@ -1,11 +1,11 @@
 <template>
     <div>
-        <v-navigation-drawer class="" app permanent color="#FDBD31" :width="windowHeight<700 ? '210': '280'">
+        <v-navigation-drawer class="" app permanent color="#FDBD31" :width="windowHeight<750 ? '210': '280'">
             <template v-slot:prepend>
-                <v-list-item :class="{'my-4': windowHeight > 900, 'my-2':windowHeight < 700}">
+                <v-list-item :class="{'my-4': windowHeight > 900, 'my-2':windowHeight < 750}">
                     <v-img src="@/assets/solo-logo.png" contain heigh max-height="40"></v-img>
                 </v-list-item>
-                <v-list-item class="text-center" :class="{'my-2': windowHeight > 900, 'my-1': windowHeight < 700}">
+                <v-list-item class="text-center" :class="{'my-2': windowHeight > 900, 'my-1': windowHeight < 750}">
                     <v-row justify="center">
                         <v-col cols="10">
                             <v-icon color="black" large>mdi-home</v-icon>
@@ -16,7 +16,7 @@
             
             <v-divider></v-divider>
 
-            <v-list dense nav class="pa-0 text-center" v-if="this.$route.path === '/evolucion-de-movilidad'" :width="windowHeight<700 ? '210': '280'">
+            <v-list dense nav class="pa-0 text-center" v-if="this.$route.path === '/evolucion-de-movilidad'" :width="windowHeight<750 ? '210': '280'">
                 
                 <v-list-item class=" bg-nav-yellow my-0 py-0" 
                 :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}" 
@@ -205,7 +205,7 @@
                 </v-list-item>
             </v-list>
 
-            <v-row justify="center" :class="{'mt-16':windowHeight > 900, 'mt-2': windowHeight < 700}">
+            <v-row justify="center" :class="{'mt-16':windowHeight > 900, 'mt-2': windowHeight < 750}">
                 <v-col cols="6" align="center">
                     <v-btn color="white" :disabled="step < 1" @click="retrocederPaso" fab>
                         <v-icon>mdi-arrow-left</v-icon>
@@ -234,13 +234,13 @@
             </v-row>
         </v-navigation-drawer>
         <div>
-            <v-app-bar app class="bg-appbar" :class="{'h-appbar': windowHeight>900, 'h-appbar-md':windowHeight<700}" >
+            <v-app-bar app class="bg-appbar" :class="{'h-appbar': windowHeight>900, 'h-appbar-md':windowHeight<750}" >
                 <v-row>
                     <v-col cols="6" align="start" align-self="center">
-                        <h1 class="ml-7 " :class="{'font-size-20 mt-5': windowHeight<700, 'mt-7': windowHeight>900}">{{this.title}}</h1>
+                        <h1 class="ml-7 " :class="{'font-size-20 mt-5': windowHeight<750, 'mt-7': windowHeight>900}">{{this.title}}</h1>
                     </v-col>
                     <v-col cols="6" align="start" align-self="center">
-                        <h1 class="white--text font-weight-thin m-left" :class="{'font-size-20 mt-0': windowHeight<700, 'mt-11': windowHeight>900}" v-html="this.subtitle"></h1> 
+                        <h1 class="white--text m-left text-h5" :class="{'font-size-20 mt-0': windowHeight<750, 'mt-11': windowHeight>900}" v-html="this.subtitle"></h1> 
                     </v-col>
                 </v-row> 
             </v-app-bar>

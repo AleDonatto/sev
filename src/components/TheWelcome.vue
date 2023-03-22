@@ -2,14 +2,15 @@
     <div class="content">  
         <main-template>
             <template v-slot:content>
-                <v-row :class="{'mt-3': windowHeight > 700, 'margin-top': windowHeight < 700}">
+                <v-row :class="{'mt-3': windowHeight > 750, 'margin-top': windowHeight < 750}">
                     <v-col cols="12" :class="{'bg-mensajes': windowHeight> 900, 'bg-mensajes-md': windowHeight< 900}">
                         <!--height-box bg-mensajes-->
                         <v-row class="size-bienvenidos">
                             <!--height-box-->
                             <v-col cols="5" align="center" class="height-box">
-                                <div class="mx-4 top-text" :class="{'top-text': windowHeight > 900, 'top-text-md': windowHeight < 700}">
+                                <div class="mx-4 top-text" :class="{'top-text': windowHeight > 900, 'top-text-md': windowHeight < 750}">
                                     <h1 class="white--text font-size-h1 font-weight-bold text-center">Bienvenidos</h1>
+                                    <p class="white--text">{{windowHeight}} -- {{windowSize}}</p>
                                     <v-btn class="white--text" rounded color="#929292" @click="initAudio" :disabled="disabled" :dark="disabled === true">
                                       <!--<router-link to="/temario" class="decoration-none">-->
                                         <span class="font-weight-bold white--text">Inicio</span>

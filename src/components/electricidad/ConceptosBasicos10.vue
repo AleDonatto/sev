@@ -1,26 +1,26 @@
 <template>
     <div>
-        <content-template>
+        <content-template title="ELECTRICIDAD" subtitle="<p class='mt-6'>Conceptos Básicos</p>">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<750}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 750 }">
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
+                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<750}">
                                         Una lámpara que tengamos en casa pero que no esté encendida no va a generar un consumo de 
                                         corriente eléctrica. Sin embargo, cuando está siendo utilizada va a consumir energía eléctrica 
                                         por todo el tiempo que permanezca en uso.
                                         <br><br>
                                         Cuando analizamos el recibo de cobro de la CFE vamos a notar que la unidad que se utiliza para 
-                                        el cobro de la energía eléctrica suministrada es el kilowatt hora.
+                                        el cobro de la energía eléctrica suministrada es el kilo watt hora.
                                         <br><br>
                                         Como ejemplo, si tuvieramos una lámpara que tiene 10 focos de 100 Watts cada uno, la 
-                                        potencia total sería de 1,000 Watts o 1 kilowatt. En caso de que se dejara encendida durante 
-                                        una hora, el consumo sería de 1 kilowatt hora.
+                                        potencia total sería de 1,000 Watts o 1 kilo watt. En caso de que se dejara encendida durante 
+                                        una hora, el consumo sería de 1 kilo watt hora.
                                     </v-card-text>
                                 </v-card>
                             </div>
@@ -29,11 +29,11 @@
 
                     <v-row justify="center" class="mx-10 bg-color rounded-xl">
                         <v-col cols="12" class="animate__animated animate__backInDown">
-                            <p class="" :class="{'font-size-24': windowHeight>900, 'font-size-20': windowHeight<700}">
-                                <span class="font-weight-bold">kWh:</span> El kilowatt hora es la undad de medida
+                            <p class="" :class="{'font-size-24': windowHeight>900, 'font-size-20': windowHeight<750}">
+                                <span class="font-weight-bold">kWh:</span> El kilo watt hora es la undad de medida
                                 de medida que se usa para medir el consumom energético.
                             </p>
-                            <p class="text-center px-10" :class="{'my-5 font-size-24': windowHeight>900, 'my-1 font-size-20': windowHeight<700}">
+                            <p class="text-center px-10" :class="{'my-5 font-size-24': windowHeight>900, 'my-1 font-size-20': windowHeight<750}">
                                 Si tengo una lampara con 10 focos de 100w cada uno y lo dejo encendido durante un hora,
                                 el consumo sera de un kWh.
                             </p>

@@ -2,14 +2,14 @@
     <div>
         <content-template subtitle="Tipos de tren <br/> motriz más comúnes">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<750}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                     </v-row>
 
-                    <v-row no-gutters justify="end" :class="{'margin-top': windowHeight>900, 'margin-top-md': windowHeight<700 && windowHeight>660, 'margin-top-sm': windowHeight<660}">
+                    <v-row no-gutters justify="end" :class="{'margin-top': windowHeight>900, 'margin-top-md': windowHeight<750 && windowHeight>660, 'margin-top-sm': windowHeight<660}">
                         <v-col cols="2"></v-col>
                         <v-col cols="10">
                             <v-row no-gutters>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-row>
-            <v-col cols="4" :class="{'size-height': windowHeight > 900, 'size-height-mb': windowHeight < 700}" style="background: rgba(253, 190, 46, 1)"> 
+            <v-col cols="4" :class="{'size-height': windowHeight > 900, 'size-height-mb': windowHeight < 750}" style="background: rgba(253, 190, 46, 1)"> 
                 <v-img src="../../assets/logosev.png" contain max-height="140"></v-img>
             </v-col>
             <v-col cols="2" class="size-height margin-left" >

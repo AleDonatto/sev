@@ -1,16 +1,16 @@
 <template>
     <div>
-        <content-template title="ELECTRICIDAD" subtitle="Conceptos Básicos">
+        <content-template title="ELECTRICIDAD" subtitle="<p class='mt-6'>Conceptos Básicos</p>">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<750}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 700 }" v-if="boxText">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 750 }" v-if="boxText">
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<700}">
+                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<750}">
                                         Abundando un poco en los diferentes tipos de corriente eléctrica.
                                         <br><br>
                                         La corriente alterna tiene como ventaja principal que puede ser transmitida a través de cableado 
@@ -27,11 +27,11 @@
                         </v-col>
                     </v-row>
 
-                    <v-row class="rounded-xl mx-10 bg-color" justify="center" :class="{'mt-10': windowHeight>900, 'mt-1': windowHeight<700}">
+                    <v-row class="rounded-xl mx-10 bg-color" justify="center" :class="{'mt-10': windowHeight>900, 'mt-1': windowHeight<750}">
                         <v-col cols="5" align="center" class="animate__animated animate__backInLeft">
-                            <p class="font-weight-bold " :class="{'font-size-30':windowHeight>900, 'font-size-22':windowHeight<700}">Corriente Alterna (CA)</p>
+                            <p class="font-weight-bold " :class="{'font-size-30':windowHeight>900, 'font-size-22':windowHeight<750}">Corriente Alterna (CA)</p>
                             <v-img src="@/assets/electricidad/taladro-alterna.png" contain :max-height="windowHeight>900 ? '320': '160'" class="mt-0"></v-img>
-                            <ul class="mt-2" :class="{'w-50': windowHeight>900, 'w-100':windowHeight<700}">
+                            <ul class="mt-2" :class="{'w-50': windowHeight>900, 'w-100':windowHeight<750}">
                                 <li class="text-left">Se puede transmitir largas distancias sin grandes pérdidas.</li>
                                 <li class="text-left">No se puede almacenar.</li>
                                 <li class="text-left">Es la que se encuentra en las conexiones “de pared”.</li>
@@ -41,9 +41,9 @@
                             <hr class="line-vertical">
                         </v-col>
                         <v-col cols="5" class="animate__animated animate__backInRight">
-                            <p class="font-weight-bold  text-center" :class="{'font-size-30':windowHeight>900, 'font-size-22':windowHeight<700}">Corriente Directa (CD)</p>
+                            <p class="font-weight-bold  text-center" :class="{'font-size-30':windowHeight>900, 'font-size-22':windowHeight<750}">Corriente Directa (CD)</p>
                             <v-img src="@/assets/electricidad/taladro-directo.png" contain :max-height="windowHeight>900 ? '320': '160'" class="mt-5"></v-img>
-                            <ul class="mt-2" :class="{'w-50': windowHeight>900, 'w-100':windowHeight<700}">
+                            <ul class="mt-2" :class="{'w-50': windowHeight>900, 'w-100':windowHeight<750}">
                                 <li class="text-left">No se puede transmitir largas distancias ya que habría grandes pérdidas de voltaje.</li>
                                 <li class="text-left">Se puede almacenar en baterías de manera eficiente</li>
                             </ul>

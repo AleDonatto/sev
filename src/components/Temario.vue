@@ -3,7 +3,7 @@
     <main-template>
       <template v-slot:content>
         <v-row class="m-0 p-0">
-          <v-col cols="12" class="p-0 m-0" :class="{'bg-temario': windowHeight > 900, 'bg-temario-md': windowHeight < 700}">
+          <v-col cols="12" class="p-0 m-0" :class="{'bg-temario': windowHeight > 900, 'bg-temario-md': windowHeight < 750}">
             <!--:class="{'bg-instructions' : windowHeight > 900, 'bg-instructions-sm': windowHeight < 700}"-->
             <v-row class="m-0" >
               <v-col cols="4">

@@ -22,10 +22,10 @@
                     <Einstein v-if="step === 15"/>
                     <Quiz v-if="step === 16"/>
                     <Correcto v-if="step === 17" />
-                    <Quiz2 v-if="step === 18" />
+                    <!--<Quiz2 v-if="step === 18" />
+                    <Correcto v-if="step === 19"/>-->
+                    <Quiz3 v-if="step === 18" />
                     <Correcto v-if="step === 19"/>
-                    <Quiz3 v-if="step === 20" />
-                    <Correcto v-if="step === 21"/>
                 </div>
             </v-main>
             <v-footer dark padless app v-if="!(step === 0) && !(step === 17) && !(step === 19) && !(step === 21)">

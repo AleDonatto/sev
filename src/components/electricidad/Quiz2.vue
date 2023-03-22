@@ -1,8 +1,8 @@
 <template>
     <div>
-        <content-template>
+        <content-template title="ELECTRICIDAD" subtitle="<p class='mt-6'>Aplicaciones Prácticas</p>">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<700}">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<750}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
@@ -21,8 +21,8 @@
                             <v-radio-group v-model="answers.a1" color="#FDBD31">
                                 <v-radio value="1" @input="answers.a1 = $event.target.value" color="#FDBD31">
                                     <template v-slot:label>
-                                        <p class=" font-size-24">
-                                            El tamaño de la batería, el nivel de carga deseado y la potencia del cargador
+                                        <p class=" font-size-24 mt-5">
+                                            La capacidad de la batería, el nivel de carga deseado y la potencia del cargador
                                         </p>
                                     </template>
                                 </v-radio>
@@ -38,7 +38,7 @@
                                 <v-radio value="3" @input="answers.a1 = $event.target.value" color="#FDBD31">
                                     <template v-slot:label>
                                         <p class=" font-size-24 mt-5">
-                                            El tamaño de la batería, la potencia del motor y el OBD
+                                            La capacidad de la batería, la potencia del motor y el OBD
                                         </p>
                                     </template>
                                 </v-radio>
