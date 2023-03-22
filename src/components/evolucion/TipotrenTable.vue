@@ -85,7 +85,22 @@ export default {
         ContentTemplate,
     },
     computed: {
-        ...mapState(['windowHeight', 'windowSize'])
+        ...mapState(['windowHeight', 'windowSize', 'canNext', 'soundOn'])
+    },
+    mounted(){
+        this.playAudio()
+    },
+    methods: {
+        playAudio(){
+            if(this.soundOn === true){
+                this.$store.commit('StateAssign', {canNext: false})
+                window.audio.src = require('@/assets/audios/evolucion/SEV-evolucion-15.mp3')
+                window.audio.play()
+                setTimeout(()=> {
+                    this.$store.commit('StateAssign', {canNext:true})
+                },6500)
+            }
+        },
     }
 }
 </script>

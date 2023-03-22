@@ -116,7 +116,7 @@ export default{
             window.audio.src = require('@/assets/audios/bev/SEV-bev-4.mp3')
             window.audio.play()
             setTimeout(()=> {
-                this.playAudioModo4()
+                this.$store.commit('StateAssign', {canNext: true})
             },32500)
         },
         playAudioModo4(){
