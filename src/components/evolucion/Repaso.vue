@@ -2,13 +2,13 @@
     <div>
         <content-template subtitle="<p class='mt-5 font-weight-bold'>REPASO</p>">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<750}">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<780}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-evolution" :class="{'mt-10': windowHeight > 900, 'mt-3': windowHeight < 750 }" v-if="boxText">
+                            <div class="border-box-evolution" :class="{'mt-10': windowHeight > 900, 'mt-3': windowHeight < 780 }" v-if="boxText">
                                 <p class="py-4 px-3">
                                     Menciona los tres tipos de trenes motrices que se desarrollaron a finales del siglo 19 y 
                                     que en la actualidad siguen siendo las opciones más comunes en la industria automotriz. 
@@ -18,7 +18,7 @@
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" :class="{'mt-15': windowHeight > 900, 'mt-1' : windowHeight < 750}">
+                    <v-row justify="center" :class="{'mt-15': windowHeight > 900, 'mt-1' : windowHeight < 780}">
                         <v-col cols="3">
                             <div class="text-center border-box-drag px-5 py-3" draggable="true" @dragstart="drag" v-if="drags.d1 === true">
                                 <p id="gasolina_electricos">Motores a combustión interna híbridos hidrógeno-gasolina y eléctricos</p>
@@ -46,11 +46,11 @@
                         </v-col>
                     </v-row>
 
-                    <v-row :class="{'mt-15':windowHeight>900, 'mt-4': windowHeight<750}" justify="center">
+                    <v-row :class="{'mt-15':windowHeight>900, 'mt-4': windowHeight<780}" justify="center">
                         <!--<v-col cols="4" align-self="center">
                             <v-row no-gutters>
                                 <v-col cols="2">
-                                    <v-img src="@/assets/evolucion/1.png" contain max-height="80" class="mt-6" :class="{'mt-6':windowHeight>900, 'mt-0':windowHeight<750}"></v-img>
+                                    <v-img src="@/assets/evolucion/1.png" contain max-height="80" class="mt-6" :class="{'mt-6':windowHeight>900, 'mt-0':windowHeight<780}"></v-img>
                                 </v-col>
                                 <v-col cols="10">
                                     <div @drop="dropZoneOne" @dragover="zoneDropOver" 
@@ -58,7 +58,7 @@
                                         'border-box-zone':answers.a1 === false, 
                                         'border-box-zone-correct text-center pt-5':answers.a1===true,
                                         'size-box-drop-lg': windowHeight>900, 
-                                        'size-box-drop-sm':windowHeight<750
+                                        'size-box-drop-sm':windowHeight<780
                                     }">
                                             <drag :transfer-data="{name:'hidrogeno-gasolina-electrico'}" :effect-allowed="['move']" drop-effect="move" >
                                                 <p>Arrastre aqui</p>
@@ -78,7 +78,7 @@
                                         'border-box-zone':answers.a2 === false, 
                                         'border-box-zone-correct text-center pt-5':answers.a2 === true,
                                         'size-box-drop-lg': windowHeight>900, 
-                                        'size-box-drop-sm':windowHeight<750
+                                        'size-box-drop-sm':windowHeight<780
                                     }">
                                             <drag :transfer-data="{name: 'vehiculos-celda-hidorgeno'}" :effect-allowed="['move']" drop-effect="move">
                                                 <p>Arrastre aqui</p>
@@ -93,14 +93,14 @@
                                         'border-box-zone': answers.a3 === false, 
                                         'border-box-zone-correct text-center pt-5':answers.a3 === true,
                                         'size-box-drop-lg': windowHeight>900, 
-                                        'size-box-drop-sm':windowHeight<750
+                                        'size-box-drop-sm':windowHeight<780
                                     }">
                                        
                                     </div>
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" :class="{'mt-15':windowHeight > 900, 'mt-4': windowHeight < 750}">
+                    <v-row justify="center" :class="{'mt-15':windowHeight > 900, 'mt-4': windowHeight < 780}">
                         <v-col cols="2" align="center">
                             <v-btn rounded class="" color="#FDBE2E" :disabled="answers.a3 === false" @click="checkQuiz">
                                 <span class="text-black text-none font-size-20">Continuar</span>

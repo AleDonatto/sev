@@ -2,15 +2,15 @@
     <div>
         <content-template subtitle="<p class='mt-6'>Cargando un BEV</p>">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<750}">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<780}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 750 }" v-if="boxText">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 780 }" v-if="boxText">
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<750}">
+                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<780}">
                                         Los cargadores Modo 1 son los cargadores portátiles que se suelen proporcionar a los compradores 
                                         de vehículos eléctricos o híbridos enchufables. Pueden trabajar entre 110 y 240 volts y 
                                         normalmente se conectan a las tomas domésticas. Dependiendo de las características de la 

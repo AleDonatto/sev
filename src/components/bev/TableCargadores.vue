@@ -2,15 +2,15 @@
     <div>
         <content-template subtitle="<p class='mt-6'>Tipos de cargadores</p>">
             <template v-slot:content>
-                <div class="" :class="{'mt-4': windowHeight>900, 'mt-3': windowHeight<750}">
+                <div class="" :class="{'mt-4': windowHeight>900, 'mt-3': windowHeight<780}">
                     <v-row justify="start" class="mb-0">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 750 }" v-if="boxText">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 780 }" v-if="boxText">
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<750}">
+                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<780}">
                                         Para los autos eléctricos es igual. En México la mayor parte de los cargadores corresponden al 
                                         Type 1 también conocido como SAE J 1772. Existen también varios del tipo GBT. Lo que es un hecho, 
                                         es que el conector del vehículo debe ser compatible con el del cargador, o bien, puede utilizarse 
@@ -27,24 +27,24 @@
 
                     <v-row justify="start" class="mx-10 px-5 py-5 rounded-xl bg-boxstep-content mt-0">
                         <v-col cols="3" align-self="center" align="end" class="animate__animated animate__backInLeft">
-                            <p class="font-weight-bold  text-right" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<750}">
+                            <p class="font-weight-bold  text-right" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<780}">
                                 No todos los
                             </p>
-                            <p class="font-weight-bold  text-right" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<750}">
+                            <p class="font-weight-bold  text-right" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<780}">
                                 conectores son
                             </p>
-                            <p class=" text-right" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<750}">
+                            <p class=" text-right" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<780}">
                                 <span class="font-weight-bold">Iguales,</span> hay que
                             </p>
-                            <p class="font-weight-bold  text-right text-yellow-p" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<750}">
+                            <p class="font-weight-bold  text-right text-yellow-p" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<780}">
                                 escoger el adecuado
                             </p>
-                            <p class=" text-right" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<750}">
+                            <p class=" text-right" :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<780}">
                                 pára cada vehiculos
                             </p>
                         </v-col>
                         <v-col cols="9" class="animate__animated animate__backInRight">
-                            <v-img src="@/assets/cargando/tableCargadores.png" contain :max-height="windowHeight<750 ? '305': '600'"></v-img>
+                            <v-img src="@/assets/cargando/tableCargadores.png" contain :max-height="windowHeight<780 ? '305': '600'"></v-img>
                         </v-col>
                     </v-row>
                 </div>

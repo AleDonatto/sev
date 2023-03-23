@@ -2,15 +2,15 @@
     <div>
         <content-template title="ELECTRICIDAD" subtitle="<p class='mt-6'>Aplicaciones Prácticas</p>">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<750}">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<780}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 750 }">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 780 }">
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<750}" v-if="count === 0">
+                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<780}" v-if="count === 0">
                                         Una de las interrogantes más comunes que se tienen en relación a un vehículo eléctrico gira en 
                                         torno al tiempo que lleva cargar la batería del mismo. Hay varios factores que influyen en este 
                                         proceso; entre ellos podemos mencionar los siguientes:
@@ -27,7 +27,7 @@
                                         cargar una batería. La potencia del cargador se mide en kilowatts
                                     </v-card-text>
 
-                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<750}" v-if="count === 1">
+                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<780}" v-if="count === 1">
                                         Ahora vamos a realizar un ejemplo: Si tenemos un vehículo que cuenta con una batería de 50 kWh y 
                                         deseamos que se cargue desde el 20% hasta el 100% de su capacidad utilizando un cargador que 
                                         trabaja con una corriente eléctrica de 220 volts y 10 amperios.
@@ -51,16 +51,16 @@
 
                     <v-row justify="center" class="bg-color mx-10 rounded-xl" v-if="count === 0">
                         <v-col cols="12" class="animate__animated animate__backInDown">
-                            <p class="text-center " :class="{'font-size-36': windowHeight>900, 'font-size-24': windowHeight<750}">El tiempo de carga de una batería dependerá principalmente de:</p>
+                            <p class="text-center " :class="{'font-size-36': windowHeight>900, 'font-size-24': windowHeight<780}">El tiempo de carga de una batería dependerá principalmente de:</p>
                         </v-col>
                         <v-col cols="12" align="start" class="px-10 animate__animated animate__backInLeft">
-                            <p class="" :class="{'font-size-36': windowHeight>900, 'font-size-24': windowHeight<750}">
+                            <p class="" :class="{'font-size-36': windowHeight>900, 'font-size-24': windowHeight<780}">
                                 <span class="font-weight-bold pr-3">1</span> La Capacidad de batería (kWh)
                             </p>
-                            <p class="" :class="{'font-size-36': windowHeight>900, 'font-size-24': windowHeight<750}">
+                            <p class="" :class="{'font-size-36': windowHeight>900, 'font-size-24': windowHeight<780}">
                                 <span class="text-yellow-p font-weight-bold pr-3">2</span> Estado de carga (% de bateria)
                             </p>
-                            <p class="" :class="{'font-size-36': windowHeight>900, 'font-size-24': windowHeight<750}">
+                            <p class="" :class="{'font-size-36': windowHeight>900, 'font-size-24': windowHeight<780}">
                                 <span class="font-weight-bold pr-3">3</span> La potencia del cargador utilizado (Voltaje X Amperaje/1,000) kW.
                             </p>
                         </v-col>
@@ -78,15 +78,15 @@
                         </v-col>
 
                         <v-col cols="12" class="mt-4">
-                            <p class="" :class="{'font-size-30': windowHeight>900, 'font-size-20': windowHeight<750}">
+                            <p class="" :class="{'font-size-30': windowHeight>900, 'font-size-20': windowHeight<780}">
                                 Ejemplo: Cuánto tiempo tardará en cargarse de 20% hasta 100% la batería de un vehículo eléctrico con 
                                 una batería de 50 kWh si se utiliza una cargador que trabaja a 220 volts y 10 amper?
                             </p>
                         </v-col>
                         <v-col cols="8">
-                            <p class="" :class="{'font-size-24': windowHeight>900, 'font-size-20': windowHeight<750}">Potencia del cargador: 220 V X 10 A /1000 = 2.2 kW</p>
-                            <p class="" :class="{'font-size-24': windowHeight>900, 'font-size-20': windowHeight<750}">50 kWh X 0.8 = 40 kWh</p>
-                            <p class="" :class="{'font-size-24': windowHeight>900, 'font-size-20': windowHeight<750}">40 kWh / 2.2 kW = 18.8 h</p>
+                            <p class="" :class="{'font-size-24': windowHeight>900, 'font-size-20': windowHeight<780}">Potencia del cargador: 220 V X 10 A /1000 = 2.2 kW</p>
+                            <p class="" :class="{'font-size-24': windowHeight>900, 'font-size-20': windowHeight<780}">50 kWh X 0.8 = 40 kWh</p>
+                            <p class="" :class="{'font-size-24': windowHeight>900, 'font-size-20': windowHeight<780}">40 kWh / 2.2 kW = 18.8 h</p>
                         </v-col>
                     </v-row>
                 </div>

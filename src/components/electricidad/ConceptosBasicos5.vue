@@ -2,15 +2,15 @@
     <div>
         <content-template title="ELECTRICIDAD" subtitle="<p class='mt-6'>Conceptos Básicos</p>">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<750}">
+                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<780}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 750 }" v-if="boxText">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 780 }" v-if="boxText">
                                 <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<750}">
+                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<780}">
                                         La segunda unidad que vamos a conocer se llama Amperio o Amper. Esta unidad mide la intensidad de 
                                         la corriente eléctrica, en palabras coloquiales, que tan "fuerte" es esta corriente.
                                         <br><br>
@@ -31,19 +31,19 @@
 
                     <v-row justify="center" class="rounded-xl bg-color mx-10">
                         <v-col cols="12" align="center" class="animate__animated animate__backInDown">
-                            <p class="" :class="{'font-size-30':windowHeight>900, 'font-size-24':windowHeight<750}"><span class="font-weight-bold">Amper:</span> unidad de medición de la intensidad de la corriente eléctrica</p>
+                            <p class="" :class="{'font-size-30':windowHeight>900, 'font-size-24':windowHeight<780}"><span class="font-weight-bold">Amper:</span> unidad de medición de la intensidad de la corriente eléctrica</p>
                         </v-col>
                         
                         <v-col cols="5" align="center" class="animate__animated animate__backInLeft mt-5">
                             <v-img src="@/assets/electricidad/cubito.png" contain :max-height="windowHeight>900 ? '230': '150'"></v-img>
-                            <p class="font-weight-bold mt-5" :class="{'font-size-30':windowHeight>900, 'font-size-24':windowHeight<750}">5 Volts, 1 Amper </p>
+                            <p class="font-weight-bold mt-5" :class="{'font-size-30':windowHeight>900, 'font-size-24':windowHeight<780}">5 Volts, 1 Amper </p>
                         </v-col>
                         <v-col cols="1">
                             <hr class="vertical-line">
                         </v-col>
                         <v-col cols="5" class="mt-5 animate__animated animate__backInRight">
                             <v-img src="@/assets/electricidad/cubo.png" contain :max-height="windowHeight>900 ? '230': '150'"></v-img>
-                            <p class="font-weight-bold text-center mt-5" :class="{'font-size-30':windowHeight>900, 'font-size-24':windowHeight<750}">5 Volts, 2.1 Amper</p>
+                            <p class="font-weight-bold text-center mt-5" :class="{'font-size-30':windowHeight>900, 'font-size-24':windowHeight<780}">5 Volts, 2.1 Amper</p>
                         </v-col>
 
                     </v-row>

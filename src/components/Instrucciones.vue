@@ -5,38 +5,38 @@
                 <v-row class="mt-3">
                     <v-col cols="12" class="p-0 m-0" :class="{
                         'bg-instructions': windowHeight>900, 
-                        'bg-instructions-md': windowHeight< 750 && windowHeight> 660, 
+                        'bg-instructions-md': windowHeight< 780 && windowHeight> 660, 
                         'bg-instructions-sm': windowHeight<660}">
                         <v-row class="">
                             <v-col cols="5">
                                 <div class="ml-5">
-                                    <h1 class="white--text font-weight-light text-center" :class="{'font-size-96': windowHeight > 900, 'font-size-50':windowHeight < 750}">Instrucciones</h1>
+                                    <h1 class="white--text font-weight-light text-center" :class="{'font-size-96': windowHeight > 900, 'font-size-50':windowHeight < 780}">Instrucciones</h1>
                                     <div v-if="countInstructions === 0">
-                                        <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-20': windowHeight < 750}">
+                                        <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-20': windowHeight < 780}">
                                             En las siguientes páginas del curso, encontrarás a la izquierda de la pantalla una barra, la cual funcionará como nuestro menú de 
                                             navegación, con el cual podrás ir avanzando página a página y regresar a páginas ya repasadas previamente.
                                         </p>
 
-                                        <p class="white--text font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-20': windowHeight < 750}">
+                                        <p class="white--text font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-20': windowHeight < 780}">
                                             Dentro de este menú tendremos una en la parte inferior 4 botones.
                                             Con las flechas podremos ir saltando entre la página siguiente o la anterior.
                                         </p>
                                     </div>
                                     <div v-if="countInstructions >= 1">
-                                        <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-20': windowHeight < 750}">
+                                        <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-20': windowHeight < 780}">
                                             Con el botón del icono del parlante, podrás silenciar la narración de los textos.
                                         </p>
-                                        <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-20': windowHeight < 750}">
+                                        <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-20': windowHeight < 780}">
                                             Con el botón con el icono del cuadro de texto, podrás ocultar en la pantalla, el cuadro de texto que está siendo narrado.
                                         </p>
-                                        <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-20': windowHeight < 750}">
+                                        <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-20': windowHeight < 780}">
                                             *Nota: No podrás avanzar a una sección que aún no ha sido repasada.
                                         </p>
                                     </div>
                                     
                                     <div class="d-flex justify-center mt-4">
                                         <v-btn class="" rounded color="#FDBE2E" @click="gotoModuloDirectivo" :disabled="canNext === false" :dark="canNext === false">
-                                            <span class=" font-size-30 font-weight-semibold" :class="{'font-size-30': windowHeight > 900, 'font-size-24': windowHeight < 750}">Continuar</span>
+                                            <span class=" font-size-30 font-weight-semibold" :class="{'font-size-30': windowHeight > 900, 'font-size-24': windowHeight < 780}">Continuar</span>
                                         </v-btn>
                                     </div>
                                 </div>

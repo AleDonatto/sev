@@ -1,14 +1,14 @@
 <template>
     <div>
         <v-row>
-            <v-col cols="4" :class="{'size-height': windowHeight > 900, 'size-height-mb': windowHeight < 750}" style="background: rgba(253, 190, 46, 1)"> 
+            <v-col cols="4" :class="{'size-height': windowHeight > 900, 'size-height-mb': windowHeight < 780}" style="background: rgba(253, 190, 46, 1)"> 
                 <v-img src="../../assets/logosev.png" contain max-height="140"></v-img>
             </v-col>
             <v-col cols="2" class="size-height margin-left" >
                 <svg class="" v-if="windowHeight > 900">
                     <polygon points="0 0, 0 400, 400 500, 70 0" style="fill:#FDBE2E;stroke:#FDBE2E;stroke-width:5"></polygon>
                 </svg>
-                <svg class="" v-else-if="windowHeight<700 && windowHeight>650">
+                <svg class="" v-else-if="windowHeight<780 && windowHeight>650">
                     <polygon points="0 0, 0 125, 140 125, 60 0" style="fill:#FDBE2E;stroke:#FDBE2E;stroke-width:5"></polygon>
                 </svg>
                 <svg class="" v-else>
