@@ -2,15 +2,15 @@
     <div>
         <content-template title="ELECTRICIDAD" subtitle="<p class='mt-6'>Conceptos Básicos</p>">
             <template v-slot:content>
-                <div :class="{'mt-10':windowHeight>900, 'mt-3':windowHeight<780}">
+                <div :class="{'mt-10':windowHeight>800, 'mt-3':windowHeight<780}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>800 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 780 }" v-if="boxText">
-                                <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<780}">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 800, 'mt-3': windowHeight < 780 }" v-if="boxText">
+                                <v-card :height="windowHeight > 800 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text :class="{'font-size-22': windowHeight>800, 'font-size-20': windowHeight<780}">
                                         Un punto importante a considerar es que la corriente eléctrica puede ser transformada de 
                                         corriente alterna a corriente directa y viceversa.
                                         <br><br>
@@ -34,9 +34,9 @@
                             <h1 :class="{'font-size-20': windowHeight<780}">Inversior de corriente o convertidor de corriente</h1>
                         </v-col>
                         <v-col cols="5" class="animate__animated animate__backInLeft">
-                            <v-img src="@/assets/electricidad/convertidor.png" contain :max-height="windowHeight>900 ? '220': '120'"></v-img>
-                            <p class="" :class="{'font-size-20 mx-7 mt-5':windowHeight>900, 'font-size-19 mx-1 mt-2': windowHeight<780}">Convertidor de corriente: cambia de corriente alterna a corriente directa.</p>
-                            <p class="" :class="{'font-size-20 mx-7 mt-3 mb-5':windowHeight>900, 'font-size-19  mx-1 mt-1 mb-1': windowHeight<780}">
+                            <v-img src="@/assets/electricidad/convertidor.png" contain :max-height="windowHeight>800 ? '220': '120'"></v-img>
+                            <p class="" :class="{'font-size-20 mx-7 mt-5':windowHeight>800, 'font-size-19 mx-1 mt-2': windowHeight<780}">Convertidor de corriente: cambia de corriente alterna a corriente directa.</p>
+                            <p class="" :class="{'font-size-20 mx-7 mt-3 mb-5':windowHeight>800, 'font-size-19  mx-1 mt-1 mb-1': windowHeight<780}">
                                 Ejemplo: el “cuadrito” para conectar un celular cambia de 110 V de CA (la toma de pared) a 5 V de CD (la salida a USB)
                             </p>
                         </v-col>
@@ -44,9 +44,9 @@
                             <hr class="vertical-line">
                         </v-col>
                         <v-col cols="5" class="animate__animated animate__backInRight">
-                            <v-img src="@/assets/electricidad/inversor.png" contain :max-height="windowHeight>900 ? '207': '120'"></v-img>
-                            <p class="" :class="{'font-size-20 mx-7 mt-5':windowHeight>900, 'font-size-19  mx-1 mt-2': windowHeight<780}">Inversor de corriente: cambia de corriente directa a corriente alterna.</p>
-                            <p class="" :class="{'font-size-20 mx-7 mt-3 mb-5':windowHeight>900, ' font-size-19 mx-1 mt-1 mb-1': windowHeight<780}">
+                            <v-img src="@/assets/electricidad/inversor.png" contain :max-height="windowHeight>800 ? '207': '120'"></v-img>
+                            <p class="" :class="{'font-size-20 mx-7 mt-5':windowHeight>800, 'font-size-19  mx-1 mt-2': windowHeight<780}">Inversor de corriente: cambia de corriente directa a corriente alterna.</p>
+                            <p class="" :class="{'font-size-20 mx-7 mt-3 mb-5':windowHeight>800, ' font-size-19 mx-1 mt-1 mb-1': windowHeight<780}">
                                 Ejemplo: un inversor de corriente para uso automotriz puede conectarse a la toma de accesorios de un auto 12 V de CD y transformarlo a 110 V de CA para conectar otros aparatos.
                             </p>
                         </v-col>

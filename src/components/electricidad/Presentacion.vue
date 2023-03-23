@@ -2,12 +2,12 @@
     <div>
         <main-template>
             <template v-slot:content>
-                <v-row :class="{'mt-3':windowHeight > 900}">
-                    <v-col cols="12" class="" :class="{'bg-presentacion': windowHeight> 900, 'bg-presentacion-md': windowHeight<780}">
+                <v-row :class="{'mt-3':windowHeight > 800}">
+                    <v-col cols="12" class="" :class="{'bg-presentacion': windowHeight> 800, 'bg-presentacion-md': windowHeight<780}">
                         <v-row class="">
                             <v-col cols="4" class="margin-top-text">
-                                <h1 class="font-lato text-uppercase white--text text-center" :class="{'font-size-72': windowHeight>900, 'font-size-48': windowHeight<780}">electricidad</h1>
-                                <p class="white--text font-size-50 text-center" :class="{'font-size-50': windowHeight > 900, 'font-size-36': windowHeight < 780}">Conceptos básicos para vehículos eléctricos</p>
+                                <h1 class="text-uppercase white--text text-center" :class="{'font-size-72': windowHeight>800, 'font-size-48': windowHeight<780}">electricidad</h1>
+                                <p class="white--text font-size-50 text-center" :class="{'font-size-50': windowHeight > 800, 'font-size-36': windowHeight < 780}">Conceptos básicos para vehículos eléctricos</p>
                                 <div class="d-flex justify-center">
                                     <v-btn @click="continueStep" rounded color="#FDBE2E" class="mt-10">
                                         <span class=" font-size-30 font-weight-semibold">Continuar</span>
@@ -95,7 +95,7 @@ export default {
 
 .bg-foco{
     background-image: url('../../assets/electricidad/foco.png');
-    height: 900px;
+    height: 800px;
 }
 
 .size-img{

@@ -3,31 +3,31 @@
     <main-template>
       <template v-slot:content>
         <v-row class="m-0 p-0">
-          <v-col cols="12" class="p-0 m-0" :class="{'bg-temario': windowHeight > 900, 'bg-temario-md': windowHeight < 780}">
-            <!--:class="{'bg-instructions' : windowHeight > 900, 'bg-instructions-sm': windowHeight < 700}"-->
+          <v-col cols="12" class="p-0 m-0" :class="{'bg-temario': windowHeight > 800, 'bg-temario-md': windowHeight < 800}">
+            <!--:class="{'bg-instructions' : windowHeight > 800, 'bg-instructions-sm': windowHeight < 800}"-->
             <v-row class="m-0" >
               <v-col cols="4">
-                <h1 class="white--text font-weight-light text-center" :class="{'mt-7 font-size-96':windowHeight > 900, 'mt-0 font-size-50':windowHeight < 700}">Temario</h1>
-                <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-19' : windowHeight < 700}">
+                <h1 class="white--text font-weight-light text-center" :class="{'mt-7 font-size-96':windowHeight > 800, 'mt-0 font-size-50':windowHeight < 800}">Temario</h1>
+                <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 800, 'font-size-19' : windowHeight < 800}">
                   Evolución de la movilidad: desde los primeros vehículos automóviles hasta las tecnologías 0 emisiones.
                 </p>
-                <p class="white--text  font-weight-regular ml-5 my-4" :class="{'font-size-22': windowHeight > 900, 'font-size-19' : windowHeight < 700}">
+                <p class="white--text  font-weight-regular ml-5 my-4" :class="{'font-size-22': windowHeight > 800, 'font-size-19' : windowHeight < 800}">
                   Fundamentos de electricidad en un vehículo eléctrico: cómo entenderlos y explicarlos de manera sencilla.
                 </p>
-                <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 900, 'font-size-19' : windowHeight < 700}">
+                <p class="white--text  font-weight-regular ml-5" :class="{'font-size-22': windowHeight > 800, 'font-size-19' : windowHeight < 800}">
                   Autos eléctricos: entendiendo un BEV (vehículo eléctrico a baterías) y aplicaciones reales.
                 </p>
                 
                 <div class="d-flex justify-center mt-4" >
                   <v-btn class="" rounded color="#FDBE2E" :disabled="canNext === false" :dark="canNext === false">
                     <router-link to="/instrucciones" class="decoration-none">
-                      <span class=" font-size-30 font-weight-semibold black--text" :class="{'font-size-30': windowHeight > 900, 'font-size-22': windowHeight < 700}">Continuar</span>
+                      <span class=" font-size-30 font-weight-semibold black--text" :class="{'font-size-30': windowHeight > 800, 'font-size-22': windowHeight < 800}">Continuar</span>
                     </router-link>
                   </v-btn>
                 </div>
               </v-col>
               <v-col cols="7">
-                <!--<v-img :src="cooper" class="position-image" :class="{'height-image':windowHeight > 900, 'height-image-sm':windowHeight < 700}"></v-img>-->
+                <!--<v-img :src="cooper" class="position-image" :class="{'height-image':windowHeight > 800, 'height-image-sm':windowHeight < 800}"></v-img>-->
               </v-col>
             </v-row>
           </v-col>

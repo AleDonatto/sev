@@ -2,14 +2,14 @@
     <div>
         <main-template>
             <template v-slot:content>
-                <v-row class="" :class="{'mt-3':windowHeight>900}">
-                    <v-col cols="12" :class="{'bg-cargando-bev':windowHeight>900, 'bg-cargando-bev-md': windowHeight<780}">
+                <v-row class="" :class="{'mt-3':windowHeight>800}">
+                    <v-col cols="12" :class="{'bg-cargando-bev':windowHeight>800, 'bg-cargando-bev-md': windowHeight<780}">
                         <v-row class="">
                             <v-col cols="5" align="center">
-                                <div :class="{'position-text':windowHeight>900, 'position-text-md': windowHeight<780}">
-                                    <h1 class="font-lato ml-7 text-left white--text text-uppercase font-weight-semibold px-10" :class="{'font-size-72':windowHeight> 900, 'font-size-48':windowHeight<780}">Cargando un BEV</h1>
+                                <div :class="{'position-text':windowHeight>800, 'position-text-md': windowHeight<780}">
+                                    <h1 class="font-lato ml-7 text-left white--text text-uppercase font-weight-semibold px-10" :class="{'font-size-72':windowHeight> 800, 'font-size-48':windowHeight<780}">Cargando un BEV</h1>
 
-                                    <p class="white--text ml-7 text-left pl-10" :class="{'font-size-50': windowHeight>900, 'font-size-34':windowHeight<780}">Tipos de cargador, conectores y mejores prácticas</p>
+                                    <p class="white--text ml-7 text-left pl-10" :class="{'font-size-50': windowHeight>800, 'font-size-34':windowHeight<780}">Tipos de cargador, conectores y mejores prácticas</p>
 
                                     <v-btn rounded class="px-5 mt-10" color="#FDBE2E" @click="continueStep">
                                         <span class="font-size-30">Continuar</span>

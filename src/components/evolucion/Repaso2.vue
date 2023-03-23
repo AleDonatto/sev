@@ -2,19 +2,19 @@
     <div>
         <content-template subtitle="<p class='mt-5 font-weight-bold'>REPASO</p>">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<780}">
+                <div class="" :class="{'mt-10': windowHeight>800, 'mt-3': windowHeight<780}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>800 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-instructions py-6 px-4" :class="{'mt-10': windowHeight>900, 'mt-2': windowHeight<780}" v-if="boxText">
-                                <p class="" :class="{'font-size-24':windowHeight>900, 'font-size-19': windowHeight<780}">Acomoda de mayor a menor generación de emisiones contaminantes las siguentes tecnologías</p>
+                            <div class="border-box-instructions py-6 px-4" :class="{'mt-10': windowHeight>800, 'mt-2': windowHeight<780}" v-if="boxText">
+                                <p class="" :class="{'font-size-24':windowHeight>800, 'font-size-19': windowHeight<780}">Acomoda de mayor a menor generación de emisiones contaminantes las siguentes tecnologías</p>
                             </div>
                         </v-col>
                     </v-row>
 
-                    <v-row class="mx-16" :class="{'mt-10': windowHeight>900, 'mt-0': windowHeight<780}" justify="center" v-if="answeredQuiz2 === false">
+                    <v-row class="mx-16" :class="{'mt-10': windowHeight>800, 'mt-0': windowHeight<780}" justify="center" v-if="answeredQuiz2 === false">
                         <v-col cols="5">
                             <v-row>
                                 <v-col cols="12" :class="{'margin-top-md':windowHeight<780}">
@@ -129,7 +129,7 @@
                         <v-col cols="5" align-self="center">
                         </v-col>
                     </v-row>
-                    <v-row justify="center" :class="{'mt-15': windowHeight>900, 'mt-0': windowHeight<780}">
+                    <v-row justify="center" :class="{'mt-7': windowHeight>800, 'mt-0': windowHeight<780}">
                         <v-col cols="2">
                             <v-btn class="" rounded color="#FDBD31" :disabled="(answers.a1 === false || answers.a2 === false || answers.a3 === false || answers.a4 === false || answers.a5 === false)"
                             @click="checkQuiz">

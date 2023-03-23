@@ -2,15 +2,15 @@
     <div>
         <content-template subtitle="<p class='mt-6'>Cargando un BEV</p>">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<780}">
+                <div class="" :class="{'mt-10': windowHeight>800, 'mt-3': windowHeight<780}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>800 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 780 }" v-if="boxText">
-                                <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<780}">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 800, 'mt-3': windowHeight < 780 }" v-if="boxText">
+                                <v-card :height="windowHeight > 800 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text :class="{'font-size-22': windowHeight>800, 'font-size-20': windowHeight<780}">
                                         Los cargadores Modo 1 son los cargadores portátiles que se suelen proporcionar a los compradores 
                                         de vehículos eléctricos o híbridos enchufables. Pueden trabajar entre 110 y 240 volts y 
                                         normalmente se conectan a las tomas domésticas. Dependiendo de las características de la 
@@ -37,26 +37,26 @@
 
                     <v-row justify="center" class="h-100 mx-10 px-5 py-1 rounded-xl bg-boxstep-content" v-if="countModos >= 1">
                         <v-col cols="3" class="animate__animated animate__backInDown" v-if="countModos >= 1">
-                            <v-card class="rounded-lg pa-0" :height="windowHeight>900 ? '550': '330'" :width="windowHeight>900 ? '280': '190'">
-                                <v-img src="@/assets/cargando/modo1.png" :height="windowHeight > 900 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
+                            <v-card class="rounded-lg pa-0" :height="windowHeight>800 ? '550': '330'" :width="windowHeight>800 ? '280': '190'">
+                                <v-img src="@/assets/cargando/modo1.png" :height="windowHeight > 800 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
 
                             </v-card>
                         </v-col>
                         <v-col cols="3" class="animate__animated animate__backInUp" v-if="countModos >= 2">
-                            <v-card class="rounded-lg" :height="windowHeight>900 ? '550': '330'" :width="windowHeight>900 ? '280': '190'">
-                                <v-img src="@/assets/cargando/modo2.png" :height="windowHeight > 900 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
+                            <v-card class="rounded-lg" :height="windowHeight>800 ? '550': '330'" :width="windowHeight>800 ? '280': '190'">
+                                <v-img src="@/assets/cargando/modo2.png" :height="windowHeight > 800 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
 
                             </v-card>
                         </v-col>
                         <v-col cols="3" class="animate__animated animate__backInDown" v-if="countModos >= 3">
-                            <v-card class="rounded-lg" :height="windowHeight>900 ? '550': '330'" :width="windowHeight>900 ? '280': '190'">
-                               <v-img src="@/assets/cargando/modo3.png" :height="windowHeight > 900 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
+                            <v-card class="rounded-lg" :height="windowHeight>800 ? '550': '330'" :width="windowHeight>800 ? '280': '190'">
+                               <v-img src="@/assets/cargando/modo3.png" :height="windowHeight > 800 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
 
                             </v-card>
                         </v-col>
                         <!--<v-col cols="3" class="animate__animated animate__backInUp" v-if="countModos >= 4">
-                            <v-card class="rounded-lg" :height="windowHeight>900 ? '550': '330'" :width="windowHeight>900 ? '280': '190'">
-                                <v-img src="@/assets/cargando/modo4.png" :height="windowHeight > 900 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
+                            <v-card class="rounded-lg" :height="windowHeight>800 ? '550': '330'" :width="windowHeight>800 ? '280': '190'">
+                                <v-img src="@/assets/cargando/modo4.png" :height="windowHeight > 800 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
                             </v-card>
                         </v-col>-->
                     </v-row>

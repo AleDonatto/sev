@@ -6,22 +6,22 @@
           <v-col cols="12" class="m-0 p-0" >
             <v-row class="">
               <v-col cols="7" align="center" class="animate__animated animate__backInLeft">
-                <v-img src="../assets/test2.png" :height="windowHeight>900 ? '530': '390'" :class="{'margin-top': windowHeight>900, 'margin-top-logo': windowHeight<750}"></v-img>
+                <v-img src="../assets/test2.png" :height="windowHeight>800 ? '530': '390'" :class="{'margin-top': windowHeight>800, 'margin-top-logo': windowHeight<800}"></v-img>
                 <!--<img src="../assets/logosvg.svg" width="750" height="100"/>-->
               </v-col>
 
               <v-col cols="5" v-if="section === 2" class="animate__animated animate__backInRight">
                 
-                <div class="op-evolucion" :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight>900" ></div>
-                <div class="op-evolucion-md" :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight<750" ></div>
+                <div class="op-evolucion" :class="{'margin-left-neg margin-top': windowHeight>800, 'margin-left-neg-md margin-top-md': windowHeight<800}" v-if="windowHeight>800" ></div>
+                <div class="op-evolucion-md" :class="{'margin-left-neg margin-top': windowHeight>800, 'margin-left-neg-md margin-top-md': windowHeight<800}" v-if="windowHeight<800" ></div>
                 <!--<option-evolucion-small :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight<750"></option-evolucion-small>
 
                 <option-evolucion :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight>900" ></option-evolucion>-->
               </v-col>
               <v-col cols="5" v-if="section === 3" class="animate__animated animate__backInRight">
 
-                <div class="op-electricidad" :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight>900" ></div>
-                <div class="op-electricidad-md" :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight<750" ></div>
+                <div class="op-electricidad" :class="{'margin-left-neg margin-top': windowHeight>800, 'margin-left-neg-md margin-top-md': windowHeight<800}" v-if="windowHeight>800" ></div>
+                <div class="op-electricidad-md" :class="{'margin-left-neg margin-top': windowHeight>800, 'margin-left-neg-md margin-top-md': windowHeight<800}" v-if="windowHeight<800" ></div>
                 
                 <!--<option-electricidad :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight>900"></option-electricidad>
                 <option-electricidad-small :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight<750"></option-electricidad-small>-->
@@ -29,8 +29,8 @@
               </v-col>
               <v-col cols="5" v-if="section === 4" class="animate__animated animate__backInRight">
                 
-                <div class="op-cargando" :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight>900" ></div>
-                <div class="op-cargando-md" :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight<750" ></div>
+                <div class="op-cargando" :class="{'margin-left-neg margin-top': windowHeight>800, 'margin-left-neg-md margin-top-md': windowHeight<800}" v-if="windowHeight>800" ></div>
+                <div class="op-cargando-md" :class="{'margin-left-neg margin-top': windowHeight>800, 'margin-left-neg-md margin-top-md': windowHeight<800}" v-if="windowHeight<800" ></div>
                 
                 <!--<option-cargando :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight>900"></option-cargando>
                 <option-cargando-small :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight<750"></option-cargando-small>-->
@@ -40,22 +40,22 @@
         </v-row>
 
         <v-row justify="end" no-gutters>
-          <v-col cols="5" align="end" v-if="section === 2" class="animate__animated animate__backInRight" :class="{'margin-top-options-md': windowHeight<750}">
+          <v-col cols="5" align="end" v-if="section === 2" class="animate__animated animate__backInRight" :class="{'margin-top-options-md': windowHeight<800}">
             <router-link to="/evolucion-de-movilidad">
-              <v-img src="../assets/welcome/opciones.png" contain :max-height="windowHeight > 900 ? '65': windowHeight<700 ? '45':'45'" width="100%" 
-                :class="{'margin-left': windowHeight> 900, 'margin-left-md': windowHeight<750 && windowHeight>690, 'margin-left-sm':windowHeight<690 }"></v-img>
+              <v-img src="../assets/welcome/opciones.png" contain :max-height="windowHeight > 800 ? '65': windowHeight<800 ? '45':'45'" width="100%" 
+                :class="{'margin-left': windowHeight> 800, 'margin-left-md': windowHeight<800 && windowHeight>690, 'margin-left-sm':windowHeight<690 }"></v-img>
             </router-link>
           </v-col>
-          <v-col cols="5" align="end" v-if="section === 3" class="animate__animated animate__backInRight" :class="{'margin-top-options-md': windowHeight<750}">
+          <v-col cols="5" align="end" v-if="section === 3" class="animate__animated animate__backInRight" :class="{'margin-top-options-md': windowHeight<800}">
             <router-link to="/fundamentos-de-electricidad">
-              <v-img src="../assets/welcome/optionsElectricidad.png" contain :max-height="windowHeight > 900 ? '65': windowHeight<700 ? '45':'45'" width="100%" 
-                :class="{'margin-left': windowHeight> 900, 'margin-left-md': windowHeight<750 && windowHeight>690, 'margin-left-sm':windowHeight<690 }"></v-img>
+              <v-img src="../assets/welcome/optionsElectricidad.png" contain :max-height="windowHeight > 800 ? '65': windowHeight<800 ? '45':'45'" width="100%" 
+                :class="{'margin-left': windowHeight> 800, 'margin-left-md': windowHeight<800 && windowHeight>690, 'margin-left-sm':windowHeight<690 }"></v-img>
             </router-link>
           </v-col>
-          <v-col cols="5" align="end" v-if="section === 4" class="animate__animated animate__backInRight" :class="{'margin-top-options-md': windowHeight<750}">
+          <v-col cols="5" align="end" v-if="section === 4" class="animate__animated animate__backInRight" :class="{'margin-top-options-md': windowHeight<800}">
             <router-link to="/cargando-un-bev">
-              <v-img src="../assets/welcome/cargandoOptions.png" contain :max-height="windowHeight > 900 ? '65': windowHeight<700 ? '45':'45'" width="100%"
-                :class="{'margin-left': windowHeight> 900, 'margin-left-md': windowHeight<750 && windowHeight>690, 'margin-left-sm':windowHeight<690 }"></v-img>
+              <v-img src="../assets/welcome/cargandoOptions.png" contain :max-height="windowHeight > 800 ? '65': windowHeight<800 ? '45':'45'" width="100%"
+                :class="{'margin-left': windowHeight> 800, 'margin-left-md': windowHeight<800 && windowHeight>690, 'margin-left-sm':windowHeight<690 }"></v-img>
             </router-link>
           </v-col>
         </v-row>

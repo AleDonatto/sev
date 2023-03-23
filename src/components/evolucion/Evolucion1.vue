@@ -2,15 +2,15 @@
     <div>
         <content-template title="LOS INICIOS" subtitle='<p class="mt-5">Evolución <br/> <span class="font-weight-bold">de la movilidad</span></p>'>
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<780}">
+                <div class="" :class="{'mt-10': windowHeight>800, 'mt-3': windowHeight<780}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img src="../../assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="../../assets/evolucion/user.png" contain :max-height="windowHeight>800 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 900, 'mt-3': windowHeight < 780 }" v-if="boxText">
-                                <v-card :height="windowHeight > 900 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text :class="{'font-size-22': windowHeight>900, 'font-size-20': windowHeight<780}">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 800, 'mt-3': windowHeight < 780 }" v-if="boxText">
+                                <v-card :height="windowHeight > 800 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
+                                    <v-card-text :class="{'font-size-22': windowHeight>800, 'font-size-20': windowHeight<780}">
                                         Como te lo podrás imaginar, la historia de la movilidad se remonta a tiempos muy remotos. 
                                         Hace más de 3,600 millones de años que los homínidos empezaron a caminar erguidos y de acuerdo a 
                                         su evolución, empezaron   a buscar formas más eficientes para moverse o para mover los objetos de su 
@@ -30,34 +30,34 @@
 
                     <v-row no-gutters class="mt-4 animate__animated animate__backInLeft">
                         <v-col cols="4">
-                            <v-img src="../../assets/evolucion/men.png" contain :max-height="windowHeight > 900 ? '240' : '190'"></v-img>
+                            <v-img src="../../assets/evolucion/men.png" contain :max-height="windowHeight > 800 ? '240' : '190'"></v-img>
                         </v-col>
                         <v-col cols="4" class="d-flex justify-space-between ">
                             <hr class="line-vertical">
-                            <v-img src="../../assets/evolucion/guerrero.png" contain :max-height="windowHeight > 900 ? '240' : '190'"></v-img>
+                            <v-img src="../../assets/evolucion/guerrero.png" contain :max-height="windowHeight > 800 ? '240' : '190'"></v-img>
                             <hr class="line-vertical">
                         </v-col>
                         <v-col cols="4" class="">
-                            <v-img src="../../assets/evolucion/siglo.png" contain :max-height="windowHeight > 900 ? '240' : '190'"></v-img>
+                            <v-img src="../../assets/evolucion/siglo.png" contain :max-height="windowHeight > 800 ? '240' : '190'"></v-img>
                         </v-col>
                         
                         <v-col cols="4">
                             <v-img src="../../assets/evolucion/division.png" max-width="850"></v-img>
                             <div class="text-center bg-gray-1 size-box mx-1">
-                                <span class="font-weight-normal text-white" :class="{'font-size-34': windowHeight>900, 'font-size-26':windowHeight<780}">3,600</span>
-                                <p class="font-weight-normal text-white" :class="{'font-size-22': windowHeight>900, 'font-size-19': windowHeight<780}">Millones de años</p>
+                                <span class="font-weight-normal text-white" :class="{'font-size-34': windowHeight>800, 'font-size-26':windowHeight<780}">3,600</span>
+                                <p class="font-weight-normal text-white" :class="{'font-size-22': windowHeight>800, 'font-size-19': windowHeight<780}">Millones de años</p>
                             </div>
                         </v-col>
                         <v-col cols="4">
                             <v-img src="../../assets/evolucion/division.png" max-width="850"></v-img>
                             <div class="text-center bg-gray-2 size-box mx-1 py-3">
-                                <span class="font-weigth-thin text-white" :class="{'font-size-34': windowHeight>900, 'font-size-26':windowHeight<780}">800 a.C</span>
+                                <span class="font-weigth-thin text-white" :class="{'font-size-34': windowHeight>800, 'font-size-26':windowHeight<780}">800 a.C</span>
                             </div>
                         </v-col>
                         <v-col cols="4">
                             <v-img src="../../assets/evolucion/division.png" max-width="850"></v-img>
                             <div class="text-center bg-gray-3 size-box mx-1 py-3">
-                                <span class="text-white" :class="{'font-size-34': windowHeight>900, 'font-size-26':windowHeight<780}">Fines del siglo XIX</span>
+                                <span class="text-white" :class="{'font-size-34': windowHeight>800, 'font-size-26':windowHeight<780}">Fines del siglo XIX</span>
                             </div>
                         </v-col>
                     </v-row>

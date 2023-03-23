@@ -2,10 +2,10 @@
     <div>
         <v-navigation-drawer class="" app permanent color="#FDBD31" :width="windowHeight<780 ? '210': '280'">
             <template v-slot:prepend>
-                <v-list-item :class="{'my-4': windowHeight > 900, 'my-2':windowHeight < 780}">
+                <v-list-item :class="{'my-4': windowHeight > 800, 'my-2':windowHeight < 780}">
                     <v-img src="@/assets/solo-logo.png" contain heigh max-height="40"></v-img>
                 </v-list-item>
-                <v-list-item class="text-center" :class="{'my-2': windowHeight > 900, 'my-1': windowHeight < 780}">
+                <v-list-item class="text-center" :class="{'my-2': windowHeight > 800, 'my-1': windowHeight < 780}">
                     <v-row justify="center">
                         <v-col cols="10">
                             <v-icon color="black" large>mdi-home</v-icon>
@@ -19,11 +19,11 @@
             <v-list dense nav class="pa-0 text-center" v-if="this.$route.path === '/evolucion-de-movilidad'" :width="windowHeight<780 ? '210': '280'">
                 
                 <v-list-item class=" bg-nav-yellow my-0 py-0" 
-                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}" 
+                :class="{'h-nav width-lg': windowHeight > 800, 'h-nav-md width-md': windowHeight < 700}" 
                 @click="() => {this.$store.commit('StateAssign', {step: 0})}" >
                     <v-row justify="center">
                         <v-col cols="10" align="center">
-                            <span class="" :class="{'font-weight-bold': step >= 0 && step <2, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
+                            <span class="" :class="{'font-weight-bold': step >= 0 && step <2, 'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">
                                 Inicio
                             </span>
                         </v-col>
@@ -31,66 +31,66 @@
                    
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" 
-                :class="{'h-nav width-lg' : windowHeight > 900, 'h-nav-md width-md' : windowHeight < 700}" 
+                :class="{'h-nav width-lg' : windowHeight > 800, 'h-nav-md width-md' : windowHeight < 700}" 
                 :disabled="step < 2"
                 @click="() => {this.$store.commit('StateAssign', {step: 2})}">
                     <v-row justify="center">
                         <v-col cols="">
-                            <span class="" :class="{'font-weight-bold': step === 2, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
+                            <span class="" :class="{'font-weight-bold': step === 2, 'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">
                                 Actualidad
                             </span>
                         </v-col>
                     </v-row>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" 
-                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}"
+                :class="{'h-nav width-lg': windowHeight > 800, 'h-nav-md width-md': windowHeight < 700}"
                 :disabled="step < 3"
                 @click="() => {this.$store.commit('StateAssign', {step: 3})}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="" :class="{'font-weight-bold': step === 3, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
+                            <span class="" :class="{'font-weight-bold': step === 3, 'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">
                                 Próximamente
                             </span>
                         </v-col>
                     </v-row>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" 
-                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}"
+                :class="{'h-nav width-lg': windowHeight > 800, 'h-nav-md width-md': windowHeight < 700}"
                 :disabled="step<4"
                 @click="() => {this.$store.commit('StateAssign', {step: 4})}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="" :class="{'font-weight-bold': step >= 4 && step <6, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
+                            <span class="" :class="{'font-weight-bold': step >= 4 && step <6, 'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">
                                 Tipos de tren motriz
                             </span>
                         </v-col>
                     </v-row>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" 
-                :class="{'h-nav width-lg':windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}"
+                :class="{'h-nav width-lg':windowHeight > 800, 'h-nav-md width-md': windowHeight < 700}"
                 :disabled="step <6"
                 @click="() => {this.$store.commit('StateAssign', {step: 6})}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="" :class="{'font-weight-bold': step >= 6, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
+                            <span class="" :class="{'font-weight-bold': step >= 6, 'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">
                                 Repaso de Sección
                             </span>
                         </v-col>
                     </v-row>
                 </v-list-item>
-                <v-list-item class="text-center bg-nav-black my-0 py-0 not-cursor" :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                <v-list-item class="text-center bg-nav-black my-0 py-0 not-cursor" :class="{'h-nav width-lg': windowHeight > 800, 'h-nav-md width-md': windowHeight < 700}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="white--text " :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
+                            <span class="white--text " :class="{'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">
                                 Electricidad
                             </span>
                         </v-col>
                     </v-row>
                 </v-list-item>
-                <v-list-item class="text-center bg-nav-black my-0 py-0 not-cursor" :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                <v-list-item class="text-center bg-nav-black my-0 py-0 not-cursor" :class="{'h-nav width-lg': windowHeight > 800, 'h-nav-md width-md': windowHeight < 700}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="white--text " :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">
+                            <span class="white--text " :class="{'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">
                                 Cargando un BEV
                             </span>
                         </v-col>
@@ -100,54 +100,54 @@
 
             <v-list density="compact" nav class="pa-0 " v-if="this.$route.path === '/fundamentos-de-electricidad'">
                 <v-list-item class="text-center bg-nav-black my-0 py-0" @click="moduloEvolucion"
-                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                :class="{'h-nav width-lg': windowHeight > 800, 'h-nav-md width-md': windowHeight < 700}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class=" white--text" :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Inicio</span>
+                            <span class=" white--text" :class="{'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">Inicio</span>
                         </v-col>
                     </v-row>
                 </v-list-item>
 
-                <v-list-item class="text-center bg-nav-yellow my-0 py-0" :class="{'h-nav width-lg' : windowHeight > 900, 'h-nav-md width-md' : windowHeight < 700}"
+                <v-list-item class="text-center bg-nav-yellow my-0 py-0" :class="{'h-nav width-lg' : windowHeight > 800, 'h-nav-md width-md' : windowHeight < 700}"
                 :disabled="step <1" @click="() => {this.$store.commit('StateAssign', {step: 1})}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="" :class="{'font-weight-bold': step === 1, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Fundamentos de Electricidad</span>
+                            <span class="" :class="{'font-weight-bold': step === 1, 'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">Fundamentos de Electricidad</span>
                         </v-col>
                     </v-row>
                 </v-list-item>
 
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="() => {this.$store.commit('StateAssign', {step: 2})}" :disabled="step<2"
-                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                :class="{'h-nav width-lg': windowHeight > 800, 'h-nav-md width-md': windowHeight < 700}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="" :class="{'font-weight-bold': step>=2 && step <12, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700 }">Conceptos Basicos</span>
+                            <span class="" :class="{'font-weight-bold': step>=2 && step <12, 'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700 }">Conceptos Basicos</span>
                         </v-col>
                     </v-row>
                 </v-list-item>
 
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="() => {this.$store.commit('StateAssign', {step: 12})}" :disabled="step<12"
-                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                :class="{'h-nav width-lg': windowHeight > 800, 'h-nav-md width-md': windowHeight < 700}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="" :class="{'font-weight-bold': step>=12 && step <17, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700 }">Aplicaciones Practicas</span>
+                            <span class="" :class="{'font-weight-bold': step>=12 && step <17, 'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700 }">Aplicaciones Practicas</span>
                         </v-col>
                     </v-row>
                 </v-list-item>
 
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="() => {this.$store.commit('StateAssign', {step: 17})}" :disabled="step<16"
-                :class="{'h-nav width-lg':windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                :class="{'h-nav width-lg':windowHeight > 800, 'h-nav-md width-md': windowHeight < 700}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="" :class="{'font-weight-bold': step >=17, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Repaso de Sección</span>
+                            <span class="" :class="{'font-weight-bold': step >=17, 'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">Repaso de Sección</span>
                         </v-col>
                     </v-row>
                 </v-list-item>
 
-                <v-list-item class="text-center bg-nav-black my-0 py-0 not-cursor" :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                <v-list-item class="text-center bg-nav-black my-0 py-0 not-cursor" :class="{'h-nav width-lg': windowHeight > 800, 'h-nav-md width-md': windowHeight < 700}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="white--text " :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Cargando un BEV</span>
+                            <span class="white--text " :class="{'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">Cargando un BEV</span>
                         </v-col>
                     </v-row>
                 </v-list-item>
@@ -155,57 +155,57 @@
 
             <v-list density="compact" nav class="pa-0" v-if="this.$route.path === '/cargando-un-bev'">
                 <v-list-item class="text-center bg-nav-black my-0 py-0" @click="moduloEvolucion"
-                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                :class="{'h-nav width-lg': windowHeight > 800, 'h-nav-md width-md': windowHeight < 700}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="white--text " :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Inicio</span>
+                            <span class="white--text " :class="{'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">Inicio</span>
                         </v-col>
                     </v-row>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-black my-0 py-0" value="actualidad"  @click="moduloElectricidad"
-                :class="{'h-nav width-lg' : windowHeight > 900, 'h-nav-md width-md' : windowHeight < 700}">
+                :class="{'h-nav width-lg' : windowHeight > 800, 'h-nav-md width-md' : windowHeight < 700}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="white--text " :class="{'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Electricidad</span>
+                            <span class="white--text " :class="{'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">Electricidad</span>
                         </v-col>
                     </v-row>
                 </v-list-item>
 
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="() => {this.$store.commit('StateAssign', {step: 1})}"
-                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                :class="{'h-nav width-lg': windowHeight > 800, 'h-nav-md width-md': windowHeight < 700}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="" :class="{'font-weight-bold': step === 1, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Cargando un BEV</span>
+                            <span class="" :class="{'font-weight-bold': step === 1, 'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">Cargando un BEV</span>
                         </v-col>
                     </v-row>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="() => {this.$store.commit('StateAssign', {step: 2})}"
-                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                :class="{'h-nav width-lg': windowHeight > 800, 'h-nav-md width-md': windowHeight < 700}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="" :class="{'font-weight-bold': step === 2, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Modos de Carga</span>
+                            <span class="" :class="{'font-weight-bold': step === 2, 'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">Modos de Carga</span>
                         </v-col>
                     </v-row>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="() => {this.$store.commit('StateAssign', {step: 3})}"
-                :class="{'h-nav width-lg':windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                :class="{'h-nav width-lg':windowHeight > 800, 'h-nav-md width-md': windowHeight < 700}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="" :class="{'font-weight-bold': step === 3, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Hábitos de carga</span>
+                            <span class="" :class="{'font-weight-bold': step === 3, 'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">Hábitos de carga</span>
                         </v-col>
                     </v-row>
                 </v-list-item>
                 <v-list-item class="text-center bg-nav-yellow my-0 py-0" @click="() => {this.$store.commit('StateAssign', {step: 4})}"
-                :class="{'h-nav width-lg': windowHeight > 900, 'h-nav-md width-md': windowHeight < 700}">
+                :class="{'h-nav width-lg': windowHeight > 800, 'h-nav-md width-md': windowHeight < 700}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="" :class="{'font-weight-bold': step >= 4, 'font-size-20': windowHeight>900, 'font-size-19': windowHeight<700}">Tipos de Cargadores</span>
+                            <span class="" :class="{'font-weight-bold': step >= 4, 'font-size-20': windowHeight>800, 'font-size-19': windowHeight<700}">Tipos de Cargadores</span>
                         </v-col>
                     </v-row>
                 </v-list-item>
             </v-list>
 
-            <v-row justify="center" :class="{'mt-16':windowHeight > 900, 'mt-2': windowHeight < 780}">
+            <v-row justify="center" :class="{'mt-16':windowHeight > 800, 'mt-2': windowHeight < 780}">
                 <v-col cols="6" align="center">
                     <v-btn color="white" :disabled="step < 1" @click="retrocederPaso" fab>
                         <v-icon>mdi-arrow-left</v-icon>
@@ -234,13 +234,13 @@
             </v-row>
         </v-navigation-drawer>
         <div>
-            <v-app-bar app class="bg-appbar" :class="{'h-appbar': windowHeight>900, 'h-appbar-md':windowHeight<780}" >
+            <v-app-bar app class="bg-appbar" :class="{'h-appbar': windowHeight>800, 'h-appbar-md':windowHeight<780}" >
                 <v-row>
                     <v-col cols="6" align="start" align-self="center">
-                        <h1 class="ml-7 " :class="{'font-size-20 mt-5': windowHeight<780, 'mt-7': windowHeight>900}">{{this.title}}</h1>
+                        <h1 class="ml-7 " :class="{'font-size-20 mt-5': windowHeight<780, 'mt-7': windowHeight>800}">{{this.title}}</h1>
                     </v-col>
                     <v-col cols="6" align="start" align-self="center">
-                        <h1 class="white--text m-left text-h5" :class="{'font-size-20 mt-0': windowHeight<780, 'mt-11': windowHeight>900}" v-html="this.subtitle"></h1> 
+                        <h1 class="white--text m-left text-h5" :class="{'font-size-20 mt-0': windowHeight<780, 'mt-11': windowHeight>800}" v-html="this.subtitle"></h1> 
                     </v-col>
                 </v-row> 
             </v-app-bar>
@@ -369,7 +369,7 @@ export default {
                 setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:3})},17000)
                 setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:4})},22000)
                 setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:5})},31000)
-                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:6})},39000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:6})},38000)
                 setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:7})},56000)
             }else{
                 this.$store.commit('StateAssign', {countShowImage:7})

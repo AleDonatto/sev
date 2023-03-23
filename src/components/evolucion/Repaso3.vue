@@ -2,13 +2,13 @@
     <div>
         <content-template subtitle="<p class='mt-5 font-weight-bold'>REPASO</p>">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<780}">
+                <div class="" :class="{'mt-10': windowHeight>800, 'mt-3': windowHeight<780}">
                     <v-row justify="start">
                         <v-col cols="2">
-                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>900 ? '170': windowHeight<660 ? '140': '170'"></v-img>
+                            <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>800 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9" align="start">
-                            <div class="box-color-instructions py-6 px-4" :class="{'mt-10': windowHeight>900, 'mt-3': windowHeight<780}" v-if="boxText">
+                            <div class="box-color-instructions py-6 px-4" :class="{'mt-10': windowHeight>800, 'mt-3': windowHeight<780}" v-if="boxText">
                                 <p class=" font-size-26">
                                     Las siglas <span class="text-yellow front-weight-bold">BEV</span> (por su acrónimo en inglés), corresponden a:
                                 </p>
@@ -16,7 +16,7 @@
                         </v-col>
                     </v-row>
                     
-                    <v-row class="mx-16" justify="center" :class="{'mt-10': windowHeight>900, 'mt-0': windowHeight<780}">
+                    <v-row class="mx-16" justify="center" :class="{'mt-10': windowHeight>800, 'mt-0': windowHeight<780}">
                         <v-col cols="12" lg="5" md="6">
                             <v-radio-group v-model="answers.a1" v-if="answeredQuiz3 === false">
                                 <v-radio value="battery-efficient" class="my-4" color="#FDBD31" @input="answers.a1 = $event.target.value" >
@@ -55,7 +55,7 @@
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" :class="{'mt-15': windowHeight>900, 'mt-0': windowHeight<780}">
+                    <v-row justify="center" :class="{'mt-15': windowHeight>800, 'mt-0': windowHeight<780}">
                         <v-col cols="2">
                             <v-btn class="" rounded color="#FDBD31" :disabled="answers.a1 !== 'battery-electric'"
                             @click="checkQuiz">
