@@ -8,8 +8,7 @@
                         <v-row class="size-bienvenidos">
                             <!--height-box-->
                             <v-col cols="5" align="center" class="height-box">
-                              <p class="white--text">{{windowHeight}} -- {{windowSize}}</p>
-                                <div class="mx-4 top-text" :class="{'top-text': windowHeight > 880, 'top-text-md': windowHeight < 880}">
+                              <div class="mx-4 top-text" :class="{'top-text': windowHeight > 880, 'top-text-md': windowHeight < 880}">
                                     <h1 class="white--text font-size-h1 font-weight-bold text-center">Bienvenidos</h1>
                                     <v-btn class="white--text" rounded color="#929292" @click="initAudio" :disabled="disabled" :dark="disabled === true">
                                       <!--<router-link to="/temario" class="decoration-none">-->
