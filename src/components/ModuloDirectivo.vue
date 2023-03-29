@@ -8,7 +8,6 @@
               <v-col cols="7" align="center" class="animate__animated animate__backInLeft">
                 <v-img src="../assets/test2.png" :height="windowHeight>800 ? '530': '410'" :class="{'margin-top': windowHeight>800, 'margin-top-logo': windowHeight<800}"></v-img>
                 <!--<img src="../assets/logosvg.svg" width="750" height="100"/>-->
-                <p>{{windowHeight}}</p>
               </v-col>
 
               <v-col cols="5" v-if="section === 2" class="animate__animated animate__backInRight">
