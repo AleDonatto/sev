@@ -2,15 +2,15 @@
     <div>
         <content-template title="ELECTRICIDAD" subtitle="<p class='mt-6'>Conceptos Básicos</p>">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>800, 'mt-3': windowHeight<780}">
+                <div class="" :class="{'mt-10': windowHeight>800, 'mt-3': windowHeight<800}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>800 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 800, 'mt-3': windowHeight < 780 }" v-if="boxText">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 800, 'mt-3': windowHeight < 800 }" v-if="boxText">
                                 <v-card :height="windowHeight > 800 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text :class="{'font-size-22': windowHeight>800, 'font-size-20': windowHeight<780}">
+                                    <v-card-text :class="{'font-size-22': windowHeight>800, 'font-size-20': windowHeight<800}">
                                         Regresando al ejemplo anterior. Si multiplicamos el voltaje por el amperaje de cada uno 
                                         de estos adaptadores USB, podremos notar que el de la izquierda trabaja a 5 Watts de potencia 
                                         mientras que el de la derecha trabaja a 10.2 Watts de potencia. Es por esto que carga más 
@@ -23,24 +23,24 @@
 
                     <v-row justify="center" class="mx-10 rounded-xl bg-color">
                         <v-col cols="12" align="start" class="animate__animated animate__backInDown">
-                            <p class="" :class="{'font-size-30': windowHeight>800, 'font-size-20': windowHeight<780}">
+                            <p class="" :class="{'font-size-30': windowHeight>800, 'font-size-20': windowHeight<800}">
                                 <span class="font-weight-bold">Watt:</span> Unidad de medicion de la potencía eléctrica.
                             </p>
-                            <p class="" :class="{'font-size-30': windowHeight>800, 'font-size-20': windowHeight<780}">
+                            <p class="" :class="{'font-size-30': windowHeight>800, 'font-size-20': windowHeight<800}">
                                 <span class="font-weight-bold">Watt:</span>Volt X Amper.
                             </p>
                         </v-col>
 
                         <v-col cols="5" align="center" class="animate__animated animate__backInLeft">
                             <v-img src="@/assets/electricidad/cubito.png" contain :max-height="windowHeight>800 ? '230': '140'"></v-img>
-                            <p class="font-weight-bold mt-2" :class="{'font-size-22': windowHeight>800, 'font-size-19': windowHeight<780}">5 Volts, <br> 1 Amper <br> 5 Watts</p>
+                            <p class="font-weight-bold mt-2" :class="{'font-size-22': windowHeight>800, 'font-size-19': windowHeight<800}">5 Volts, <br> 1 Amper <br> 5 Watts</p>
                         </v-col>
                         <v-col cols="1" align="center">
                             <hr class="vertical-line">
                         </v-col>
                         <v-col cols="5" align="center" class="animate__animated animate__backInRight">
                             <v-img src="@/assets/electricidad/cubo.png" contain :max-height="windowHeight>800 ? '230': '140'"></v-img>
-                            <p class="font-weight-bold mt-2" :class="{'font-size-22': windowHeight>800, 'font-size-19': windowHeight<780}">5 Volts, <br> 2.1 Amper <br> 10.2 Watts</p>
+                            <p class="font-weight-bold mt-2" :class="{'font-size-22': windowHeight>800, 'font-size-19': windowHeight<800}">5 Volts, <br> 2.1 Amper <br> 10.2 Watts</p>
                         </v-col>
                     </v-row>
 

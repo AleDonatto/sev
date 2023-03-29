@@ -6,31 +6,38 @@
           <v-col cols="12" class="m-0 p-0" >
             <v-row class="">
               <v-col cols="7" align="center" class="animate__animated animate__backInLeft">
-                <v-img src="../assets/test2.png" :height="windowHeight>800 ? '530': '390'" :class="{'margin-top': windowHeight>800, 'margin-top-logo': windowHeight<800}"></v-img>
+                <v-img src="../assets/test2.png" :height="windowHeight>800 ? '530': '410'" :class="{'margin-top': windowHeight>800, 'margin-top-logo': windowHeight<800}"></v-img>
                 <!--<img src="../assets/logosvg.svg" width="750" height="100"/>-->
+                <p>{{windowHeight}}</p>
               </v-col>
 
               <v-col cols="5" v-if="section === 2" class="animate__animated animate__backInRight">
                 
-                <div class="op-evolucion" :class="{'margin-left-neg margin-top': windowHeight>800, 'margin-left-neg-md margin-top-md': windowHeight<800}" v-if="windowHeight>800" ></div>
-                <div class="op-evolucion-md" :class="{'margin-left-neg margin-top': windowHeight>800, 'margin-left-neg-md margin-top-md': windowHeight<800}" v-if="windowHeight<800" ></div>
+                  <div class="op-evolucion margin-left-neg margin-top size-option" v-if="windowHeight>800" @click="() => {$router.push({path: '/evolucion-de-movilidad'})}"></div>
+                  <div class="op-evolucion margin-left-neg-md margin-top-md size-option-lg" v-if="windowHeight<800 && windowHeight>700" @click="() => {$router.push({path: '/evolucion-de-movilidad'})}"></div>
+                  <div class="op-evolucion margin-left-neg-md margin-top-md size-option-md" v-if="windowHeight<700" @click="() => {$router.push({path: '/evolucion-de-movilidad'})}"></div>
+               
                 <!--<option-evolucion-small :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight<750"></option-evolucion-small>
 
                 <option-evolucion :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight>900" ></option-evolucion>-->
               </v-col>
               <v-col cols="5" v-if="section === 3" class="animate__animated animate__backInRight">
-
-                <div class="op-electricidad" :class="{'margin-left-neg margin-top': windowHeight>800, 'margin-left-neg-md margin-top-md': windowHeight<800}" v-if="windowHeight>800" ></div>
-                <div class="op-electricidad-md" :class="{'margin-left-neg margin-top': windowHeight>800, 'margin-left-neg-md margin-top-md': windowHeight<800}" v-if="windowHeight<800" ></div>
+                <router-link to="/fundamentos-de-electricidad">
+                  <div class="op-electricidad margin-left-neg margin-top size-option" v-if="windowHeight>800" ></div>
+                  <div class="op-electricidad margin-left-neg-md margin-top-md size-option-lg" v-if="windowHeight<800 && windowHeight>700" ></div>
+                  <div class="op-electricidad margin-left-neg-md margin-top-md size-option-md" v-if="windowHeight<700" ></div>
+                </router-link>
                 
                 <!--<option-electricidad :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight>900"></option-electricidad>
                 <option-electricidad-small :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight<750"></option-electricidad-small>-->
 
               </v-col>
               <v-col cols="5" v-if="section === 4" class="animate__animated animate__backInRight">
-                
-                <div class="op-cargando" :class="{'margin-left-neg margin-top': windowHeight>800, 'margin-left-neg-md margin-top-md': windowHeight<800}" v-if="windowHeight>800" ></div>
-                <div class="op-cargando-md" :class="{'margin-left-neg margin-top': windowHeight>800, 'margin-left-neg-md margin-top-md': windowHeight<800}" v-if="windowHeight<800" ></div>
+                <router-link to="/cargando-un-bev">
+                  <div class="op-cargando margin-left-neg margin-top size-option" v-if="windowHeight>800" ></div>
+                  <div class="op-cargando margin-left-neg-md margin-top-md size-option-lg" v-if="windowHeight<800 && windowHeight>700" ></div>
+                  <div class="op-cargando margin-left-neg-md margin-top-md size-option-md" v-if="windowHeight<700" ></div>
+                </router-link>
                 
                 <!--<option-cargando :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight>900"></option-cargando>
                 <option-cargando-small :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight<750"></option-cargando-small>-->
@@ -41,22 +48,22 @@
 
         <v-row justify="end" no-gutters>
           <v-col cols="5" align="end" v-if="section === 2" class="animate__animated animate__backInRight" :class="{'margin-top-options-md': windowHeight<800}">
-            <router-link to="/evolucion-de-movilidad">
+            <!--<router-link to="/evolucion-de-movilidad">
               <v-img src="../assets/welcome/opciones.png" contain :max-height="windowHeight > 800 ? '65': windowHeight<800 ? '45':'45'" width="100%" 
                 :class="{'margin-left': windowHeight> 800, 'margin-left-md': windowHeight<800 && windowHeight>690, 'margin-left-sm':windowHeight<690 }"></v-img>
-            </router-link>
+            </router-link>-->
           </v-col>
           <v-col cols="5" align="end" v-if="section === 3" class="animate__animated animate__backInRight" :class="{'margin-top-options-md': windowHeight<800}">
-            <router-link to="/fundamentos-de-electricidad">
+            <!--<router-link to="/fundamentos-de-electricidad">
               <v-img src="../assets/welcome/optionsElectricidad.png" contain :max-height="windowHeight > 800 ? '65': windowHeight<800 ? '45':'45'" width="100%" 
                 :class="{'margin-left': windowHeight> 800, 'margin-left-md': windowHeight<800 && windowHeight>690, 'margin-left-sm':windowHeight<690 }"></v-img>
-            </router-link>
+            </router-link>-->
           </v-col>
           <v-col cols="5" align="end" v-if="section === 4" class="animate__animated animate__backInRight" :class="{'margin-top-options-md': windowHeight<800}">
-            <router-link to="/cargando-un-bev">
+            <!--<router-link to="/cargando-un-bev">
               <v-img src="../assets/welcome/cargandoOptions.png" contain :max-height="windowHeight > 800 ? '65': windowHeight<800 ? '45':'45'" width="100%"
                 :class="{'margin-left': windowHeight> 800, 'margin-left-md': windowHeight<800 && windowHeight>690, 'margin-left-sm':windowHeight<690 }"></v-img>
-            </router-link>
+            </router-link>-->
           </v-col>
         </v-row>
       </template>
@@ -92,56 +99,38 @@ export default{
       }
       
     },
-    textsvg(){
-      return './assets/welcome/evoluciontext.svg';
-    }
   }
 }
 </script>
   
 <style scoped>
   .op-evolucion{
-    background-image: url('../assets/welcome/evoluciontext-lg.png');
+    background-image: url('../assets/welcome/pruebas.png');
     background-size: contain;
-    height: 780px;
-    width: 1190px;
-  }
-
-  .op-evolucion-md{
-    background-image: url('../assets/welcome/evoluciontext-md.png');
-    background-size: contain;
-    height: 510px;
-    width: 780px;
   }
 
   .op-electricidad{
-    background-image: url('../assets/welcome/fundamentostext-lg.png');
+    background-image: url('../assets/welcome/pruebas2.png');
     background-size: contain;
-    height: 780px;
-    width: 1190px;
-  }
-
-  .op-electricidad-md{
-    background-image: url('../assets/welcome/fundamentostext-md.png');
-    background-size: contain;
-    height: 510px;
-    width: 780px;
   }
 
   .op-cargando{
-    background-image: url('../assets/welcome/cargandotext-lg.png');
+    background-image: url('../assets/welcome/pruebas3.png');
     background-size: contain;
-    height: 780px;
+  }
+
+  .size-option{
+    height: 815px;
     width: 1190px;
   }
-
-  .op-cargando-md{
-    background-image: url('../assets/welcome/cargandotext-md.png');
-    background-size: contain;
-    height: 510px;
-    width: 780px;
+  .size-option-lg{
+    height: 80vh;
+    width: 110vh;
   }
-
+  .size-option-md{
+    height: 80vh;
+    width: 115vh;
+  }
 
 
   .margin-left-neg{
@@ -162,34 +151,11 @@ export default{
   }
 
   .margin-top-md{
-    margin-top: -5vh;
+    margin-top: -4vh;
   }
 
   .margin-top-options-md{
     margin-top: -12vh;
   }
 
-  .margin-left{
-    margin-top: 0vh;
-    margin-left: 4vh;
-  }
-
-  .margin-left-md{
-    margin-top: 12vh;
-    margin-left: 6vh;
-  }
-
-  .margin-left-sm{
-    margin-top: 11vh;
-    margin-left: 5vh;
-  }
-
-  .logo {
-  width: 100px;
-  height: 100px;
-  margin-right: 10px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
 </style>

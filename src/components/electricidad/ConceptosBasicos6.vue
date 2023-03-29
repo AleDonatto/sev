@@ -2,15 +2,15 @@
     <div>
         <content-template title="ELECTRICIDAD" subtitle="<p class='mt-6'>Conceptos Básicos</p>">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>800, 'mt-3': windowHeight<780}">
+                <div class="" :class="{'mt-10': windowHeight>800, 'mt-3': windowHeight<800}">
                     <v-row class="" justify="start">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>800 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 800, 'mt-3': windowHeight < 780 }" v-if="boxText">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 800, 'mt-3': windowHeight < 800 }" v-if="boxText">
                                 <v-card :height="windowHeight > 800 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text :class="{'font-size-22': windowHeight>800, 'font-size-20': windowHeight<780}">
+                                    <v-card-text :class="{'font-size-22': windowHeight>800, 'font-size-20': windowHeight<800}">
                                         La siguiente unidad que vamos a presentar se llama el Watt o vatio. Esta es mucho más conocida ya 
                                         que cuando tenemos, o teníamos, que reemplazar una bombilla en casa, debíamos decidir de cuantos 
                                         Watts debería de ser.
@@ -28,10 +28,10 @@
 
                     <v-row class="rounded-xl bg-color mx-10">
                         <v-col cols="12" align="center" class="animate__animated animate__backInDown">
-                            <p class="" :class="{'font-size-34': windowHeight>800, 'font-size-22': windowHeight<780}">
+                            <p class="" :class="{'font-size-34': windowHeight>800, 'font-size-22': windowHeight<800}">
                                 <span class="font-weight-bold">Watt:</span> unidad de medición de la potencia eléctrica
                             </p>
-                            <p class="font-weight-bold " :class="{'font-size-34': windowHeight>800, 'font-size-22': windowHeight<780}">Watt = Volt X Amper</p>
+                            <p class="font-weight-bold " :class="{'font-size-34': windowHeight>800, 'font-size-22': windowHeight<800}">Watt = Volt X Amper</p>
                         </v-col>
 
                         <v-col cols="5" align="center" class="animate__animated animate__backInLeft">

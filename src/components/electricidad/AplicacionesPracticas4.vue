@@ -2,15 +2,15 @@
     <div>
         <content-template title="ELECTRICIDAD" subtitle="<p class='mt-6'>Aplicaciones Prácticas</p>">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>800, 'mt-3': windowHeight<780}">
+                <div class="" :class="{'mt-10': windowHeight>800, 'mt-3': windowHeight<800}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>800 ? '170': windowHeight<660 ? '140': '170'"></v-img>
                         </v-col>
                         <v-col cols="9">
-                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 800, 'mt-3': windowHeight < 780 }" v-if="boxText">
+                            <div class="border-box-quiz nimate__animated animate__backInLeft pa-1" :class="{'mt-5': windowHeight > 800, 'mt-3': windowHeight < 800 }" v-if="boxText">
                                 <v-card :height="windowHeight > 800 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
-                                    <v-card-text :class="{'font-size-22': windowHeight>800, 'font-size-20': windowHeight<780}">
+                                    <v-card-text :class="{'font-size-22': windowHeight>800, 'font-size-20': windowHeight<800}">
                                         Uno de los aspectos que más importa a los clientes potenciales de un vehículo eléctrico es la 
                                         autonomía. Esto se entiende como la distancia que se puede recorrer con una sola carga de la 
                                         batería de dicho automóvil.
@@ -38,13 +38,13 @@
 
                     <v-row justify="center" class="rounded-xl bg-color mx-10 px-5 py-5">
                         <v-col cols="12" class="animate__animated animate__backInLeft">
-                            <p class="" :class="{'font-size-24': windowHeight>800, 'font-size-19': windowHeight<780}">
+                            <p class="" :class="{'font-size-24': windowHeight>800, 'font-size-19': windowHeight<800}">
                                 La autonomía hace referencia a la <span class="text-yellow-p">distancia que puede recorrer un vehículo eléctrico con una 
                                 carga completa de su batería</span>. Para dar esta cifra, se debe hacer referencia a la homologación de acuerdo a la cuál 
                                 fueron realizadas las pruebas.
                             </p>
-                            <p class="" :class="{'font-size-24': windowHeight>800, 'font-size-10': windowHeight<780}">Existen diferentes homologaciones.</p>
-                            <ul class=" pl-5" :class="{'mt-5 font-size-24': windowHeight>800, 'mt-2 font-size-19': windowHeight<780}">
+                            <p class="" :class="{'font-size-24': windowHeight>800, 'font-size-10': windowHeight<800}">Existen diferentes homologaciones.</p>
+                            <ul class=" pl-5" :class="{'mt-5 font-size-24': windowHeight>800, 'mt-2 font-size-19': windowHeight<800}">
                                 <li>
                                     NEDC (New European Driving Cycle):
                                     <ul class="pl-6">

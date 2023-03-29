@@ -5,7 +5,7 @@
         <div class="bg-black m-0 p-0">
           <v-row justify="center" class="m-0 p-0 bg-black">
             <v-col cols="12" class="mb-5">
-              <v-img src="@/assets/electricidad/albert.png" contain :max-height="windowHeight>900 ? '840': '560'"></v-img>
+              <v-img src="@/assets/electricidad/albert.png" contain :max-height="windowHeight>900 ? '840': '610'"></v-img>
             </v-col>
           </v-row>
         </div>

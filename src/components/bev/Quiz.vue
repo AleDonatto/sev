@@ -2,7 +2,7 @@
     <div>
         <content-template title="REPASO DE SECCION" subtitle="Cargando un BEV">
             <template v-slot:content>
-                <div class="" :class="{'mt-10': windowHeight>800, 'mt-5': windowHeight<780}">
+                <div class="" :class="{'mt-10': windowHeight>800, 'mt-5': windowHeight<800}">
                     <v-row justify="start">
                         <v-col cols="2">
                             <v-img src="@/assets/evolucion/user.png" contain :max-height="windowHeight>800 ? '170': windowHeight<660 ? '140': '170'"></v-img>

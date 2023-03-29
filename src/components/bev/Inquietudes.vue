@@ -10,7 +10,7 @@
                     </v-row>-->
                     <v-row justify="end">
                         <v-col cols="12" align="end">
-                            <v-img src="@/assets/cargando/objeciones.png" contain :max-height="windowHeight> 900 ? '870': '590'"></v-img>
+                            <v-img src="@/assets/cargando/objeciones.png" contain :max-height="windowHeight> 900 ? '870': '620'"></v-img>
                         </v-col>
                     </v-row>
                 </div>
