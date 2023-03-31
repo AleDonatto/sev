@@ -62,6 +62,7 @@
                             <p class="text-center font-size-24">
                                 Para poder tener una mejor experiencia en este curso, te recomendamos el uso de dispositivos de pantallas 
                                 grandes, ya sea desde una laptop o una PC de escritorio, así como un par de auriculares para que puedas disfrutar el contenido narrado.
+                                Te recomendamos hacer uso del zoom del navegador, en caso de presentar algún problema con las dimensiones del contenido del curso
                             </p>
                             </v-card-text>
                             <v-card-actions>
@@ -117,7 +118,7 @@ export default {
             window.audio.play()
             setTimeout(()=> {
                 this.$store.commit('StateAssign', {canNext:true})
-            },14500)
+            },22500)
         },
         playAudioInstrucciones(){
             window.audio.src = require('@/assets/audios/SEV-instrucciones.mp3')
