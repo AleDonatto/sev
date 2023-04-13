@@ -183,7 +183,7 @@
                 :class="{'h-nav width-lg': windowHeight > 800, 'h-nav-md width-md': windowHeight < 800}">
                     <v-row justify="center">
                         <v-col cols="10">
-                            <span class="" :class="{'font-weight-bold': step === 2, 'font-size-20': windowHeight>800, 'font-size-19': windowHeight<800}">Modos de Carga</span>
+                            <span class="" :class="{'font-weight-bold': step === 2, 'font-size-20': windowHeight>800, 'font-size-19': windowHeight<800}">Niveles de Carga</span>
                         </v-col>
                     </v-row>
                 </v-list-item>
@@ -284,6 +284,9 @@ export default {
                 }
                 if(this.count === 4){
                     this.playAudioStepBEV()
+                }
+                if(this.count === 5){
+                    this.playAudioStepFCEV()
                 }
                 this.$store.commit('Increment')
                 //increment()
@@ -426,14 +429,14 @@ export default {
                 window.audio.play()
                 setTimeout(()=> {
                     this.$store.commit('StateAssign', {canNext:true})
-                },84500)
+                },58500)
 
                 setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:2})},8000)
                 setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:3})},16000)
                 setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:4})},20000)
                 setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:5})},24000)
                 setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:6})},33000)
-                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:7})},52000)
+                setTimeout(()=> {this.$store.commit('StateAssign', {countShowImage:7})},36000)
             }else{
                 this.$store.commit('StateAssign', {countShowImage:7})
             }

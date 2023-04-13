@@ -19,7 +19,7 @@
                                         el cobro de la energía eléctrica suministrada es el kilo watt hora.
                                         <br><br>
                                         Como ejemplo, si tuvieramos una lámpara que tiene 10 focos de 100 Watts cada uno, la 
-                                        potencia total sería de 1,000 Watts o 1 kilowatt. En caso de que se dejara encendida durante 
+                                        potencia total sería de 1,000 Watts o 1 kilo watt. En caso de que se dejara encendida durante 
                                         una hora, el consumo sería de 1 kilo watt hora.
                                     </v-card-text>
                                 </v-card>
@@ -34,7 +34,7 @@
                                 de medida que se usa para medir el consumom energético.
                             </p>
                             <p class="text-center px-10" :class="{'my-5 font-size-24': windowHeight>800, 'my-1 font-size-20': windowHeight<800}">
-                                Si tengo una lampara con 10 focos de 100w cada uno y lo dejo encendido durante un hora,
+                                Si tengo una lampara con 10 focos de 100 W cada uno y lo dejo encendido durante un hora,
                                 el consumo sera de un kWh.
                             </p>
                         </v-col>

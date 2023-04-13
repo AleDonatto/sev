@@ -11,11 +11,11 @@
               </v-col>
 
               <v-col cols="5" v-if="section === 2" class="animate__animated animate__backInRight">
-                
-                  <div class="op-evolucion margin-left-neg margin-top size-option" v-if="windowHeight>800" @click="() => {$router.push({path: '/evolucion-de-movilidad'})}"></div>
-                  <div class="op-evolucion margin-left-neg-md margin-top-md size-option-lg" v-if="windowHeight<800 && windowHeight>700" @click="() => {$router.push({path: '/evolucion-de-movilidad'})}"></div>
-                  <div class="op-evolucion margin-left-neg-md margin-top-md size-option-md" v-if="windowHeight<700" @click="() => {$router.push({path: '/evolucion-de-movilidad'})}"></div>
-               
+                <router-link to="/evolucion-de-movilidad">
+                  <div class="op-evolucion margin-left-neg margin-top size-option" v-if="windowHeight>800" ></div>
+                  <div class="op-evolucion margin-left-neg-md margin-top-md size-option-lg" v-if="windowHeight<800 && windowHeight>700" ></div>
+                  <div class="op-evolucion margin-left-neg-md margin-top-md size-option-md" v-if="windowHeight<700"></div>
+                </router-link>
                 <!--<option-evolucion-small :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight<750"></option-evolucion-small>
 
                 <option-evolucion :class="{'margin-left-neg margin-top': windowHeight>900, 'margin-left-neg-md margin-top-md': windowHeight<750}" v-if="windowHeight>900" ></option-evolucion>-->

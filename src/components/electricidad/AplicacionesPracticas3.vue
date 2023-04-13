@@ -41,15 +41,6 @@
                                 <span class="font-weight-bold text-yellow-p pr-3">2</span> El precio por kWh sumistrado.
                             </p>
                         </v-col>
-
-                        <v-col cols="12" class="animate__animated animate__backInLeft">
-                            <p class="" :class="{'font-size-30':windowHeight>800, 'font-size-22': windowHeight<800}">¿Cuanto cuesta cargar 20% hasta 100% de la bateria de un SEV E-WAN Bold (29.4 kWh)?</p>
-                        </v-col>
-
-                        <v-col cols="9" class="animate__animated animate__backInLeft">
-                            <p class="" :class="{'font-size-24':windowHeight>800, 'font-size-20': windowHeight<800}">Consumo básico: $0.859/kWh 🡪 23.5 X 0.859 = $20.18.</p>
-                            <p class="" :class="{'font-size-24':windowHeight>800, 'font-size-20': windowHeight<800}">Consumo excedente: $3.042/kWh 🡪 23.5 X 3.042 = $71.48.</p>
-                        </v-col>
                     </v-row>
 
                     <v-row no-gutters justify="center" class="rounded-xl bg-color mx-10 px-5 mt-3" v-if="counterStep === 1">

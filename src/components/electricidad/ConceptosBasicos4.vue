@@ -31,13 +31,13 @@
 
                     <v-row justify="center" class="bg-color rounded-xl mx-10" :class="{'margin-top': windowHeight<800}">
                         <v-col cols="12" align="center" class="animate__animated animate__backInDown">
-                            <h1 :class="{'font-size-20': windowHeight<800}">Inversior de corriente o convertidor de corriente</h1>
+                            <h1 :class="{'font-size-20': windowHeight<800}">Inversor de corriente o convertidor de corriente</h1>
                         </v-col>
                         <v-col cols="5" class="animate__animated animate__backInLeft">
                             <v-img src="@/assets/electricidad/convertidor.png" contain :max-height="windowHeight>800 ? '220': '120'"></v-img>
                             <p class="" :class="{'font-size-20 mx-7 mt-5':windowHeight>800, 'font-size-19 mx-1 mt-2': windowHeight<800}">Convertidor de corriente: cambia de corriente alterna a corriente directa.</p>
                             <p class="" :class="{'font-size-20 mx-7 mt-3 mb-5':windowHeight>800, 'font-size-19  mx-1 mt-1 mb-1': windowHeight<800}">
-                                Ejemplo: el “cuadrito” para conectar un celular cambia de 110 V de CA (la toma de pared) a 5 V de CD (la salida a USB)
+                                Ejemplo: el “cuadrito” para conectar un celular cambia de 110 V de CA (la toma de pared) a 5 V de CD (la salida a USB).
                             </p>
                         </v-col>
                         <v-col cols="1">

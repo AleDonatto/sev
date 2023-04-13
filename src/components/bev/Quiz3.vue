@@ -10,7 +10,7 @@
                         <v-col cols="9">
                             <div class="border-box-quiz" v-if="boxText">
                                 <p class="py-5 px-4  font-size-24">
-                                    Cuando un vehículo eléctrico cuenta con capacidad de carga utilizando cargadores modo 4 de 
+                                    Cuando un vehículo eléctrico cuenta con capacidad de carga utilizando cargadores Nivel 3 de 
                                     corriente directa, se puede tener un tiempo de carga mucho más reducido (dependiendo de la 
                                     potencia del cargador CD utilizado)
                                 </p>

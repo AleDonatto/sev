@@ -80,7 +80,7 @@
                                             para mover al vehículo y que almacenan la energía eléctrica en baterías de tracción de alto voltaje.
                                             <br><br>
                                             Las baterías de tracción son de alto voltaje pero tienen una capacidad de carga relativamente 
-                                            pequeña (0.9 a 2.5 kilowatthora) y que permiten un movimiento 100% eléctrico por distancias 
+                                            pequeña (0.9 a 2.5 kilo watt hora) y que permiten un movimiento 100% eléctrico por distancias 
                                             limitadas (normalmente de 3 a 5 km).
                                             <br><br>
                                             Es debido a estas limitantes al movimiento 100% eléctrico que la mayor parte del tiempo operan en 
@@ -126,7 +126,7 @@
                                 :class="{'mt-5': windowHeight > 800, 'mt-3': windowHeight < 800 }">
                                     <v-card :height="windowHeight > 800 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
                                         <v-card-text class="" :class="{'font-size-22': windowHeight>800, 'font-size-20': windowHeight<800}">
-                                            Finalmente hablaremos de los vehículos eléctricos a batería también conocidos como BEV. 
+                                            En este punto hablaremos de los vehículos eléctricos a batería también conocidos como BEV. 
                                             En este tipo de unidades, el motor de combustible desaparece por completo y es el motor 
                                             o los motores eléctricos quienes son responsables del movimiento del auto. Las baterías 
                                             de tracción son de alto voltaje y normalmente son de gran capacidad; desde 20 hasta 100 
@@ -146,6 +146,22 @@
                                             <br><br>
                                             Es por esto que resulta sumamente importante poder guiar a los compradores de este tipo de unidad 
                                             a una solución satisfactoria de acuerdo a sus necesidades.
+                                        </v-card-text>
+                                    </v-card>
+                                </div>
+                                <div class="border-box-quiz nimate__animated animate__backInLeft" v-if="count===6"
+                                :class="{'mt-5': windowHeight > 800, 'mt-3': windowHeight < 800 }">
+                                    <v-card :height="windowHeight > 800 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
+                                        <v-card-text class="" :class="{'font-size-22': windowHeight>800, 'font-size-20': windowHeight<800}">
+                                            Finalmente un tipo de tren motriz revolucionario y que se ha estado utilizando en algunos puntos del orbe desde 
+                                            hace casi una década es el que se conoce como vehículos eléctricos de celdas de combustible o fuel cell electric vehicles en inglés. 
+                                            <br><br>
+                                            En ellos se realiza una reacción entre el hidrógeno molecular  (H2) y el oxígeno (O2) presente en el aire conformando moléculas de 
+                                            agua (H2O) y generando corriente eléctrica. Esta corriente eléctrica entonces se utiliza para generar el movimiento con un motor eléctrico. 
+                                            <br><br>
+                                            Se trata de una tecnología  muy novedosa, que no genera emisiones contaminantes y que no depende de la carga de baterías de gran capacidad. 
+                                            El hidrógeno se recarga en un tanque tal como se hace habitualmente con los combustibles tradicionales. El punto crítico es que los puntos de 
+                                            abastecimiento de hidrógeno son sumamente escasos y, por lo mismo, la comercialización de este tipo de tecnologías es muy limitada.
                                         </v-card-text>
                                     </v-card>
                                 </div>

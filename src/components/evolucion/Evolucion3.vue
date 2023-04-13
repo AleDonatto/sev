@@ -80,7 +80,7 @@ export default{
         ContentTemplate,
     },
     computed: {
-        ...mapState(['canNext', 'windowHeight', 'windowSize', 'soundOns', 'boxText'])
+        ...mapState(['canNext', 'windowHeight', 'windowSize', 'soundOn', 'boxText'])
     },
     mounted(){
         //this.canNext = true

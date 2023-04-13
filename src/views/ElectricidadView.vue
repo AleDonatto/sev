@@ -24,7 +24,7 @@
                     <Correcto v-if="step === 17" />
                     <!--<Quiz2 v-if="step === 18" />
                     <Correcto v-if="step === 19"/>-->
-                    <Quiz3 v-if="step === 18" />
+                    <Quiz2 v-if="step === 18" />
                     <Correcto v-if="step === 19"/>
                 </div>
             </v-main>

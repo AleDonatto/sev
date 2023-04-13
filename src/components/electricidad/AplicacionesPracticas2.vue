@@ -16,7 +16,7 @@
                                         proceso; entre ellos podemos mencionar los siguientes:
                                         <br><br>
                                         La capacidad de la batería. Es decir, cuánta energía eléctrica puede almacenar. La unidad que se 
-                                        utiliza para esto es el kilo watt hora
+                                        utiliza para esto es el kilo watt hora.
                                         <br><br>
                                         Estado de carga de la batería. Es decir, qué tan llena o qué tan vacía se encuentra al momento 
                                         que se va a conectar y hasta qué nivel de carga se desea llegar.
@@ -24,7 +24,7 @@
                                         La potencia del cargador utilizado es otro factor importante. Así como podemos tener cargadores 
                                         normales y cargadores rápidos para un teléfono móvil; también para los vehículos eléctricos 
                                         existen diferentes tipos de cargadores. Mientras más potente sea el cargador, más rápido puede 
-                                        cargar una batería. La potencia del cargador se mide en kilowatts
+                                        cargar una batería. La potencia del cargador se mide en kilo watts.
                                     </v-card-text>
 
                                     <v-card-text :class="{'font-size-22': windowHeight>800, 'font-size-20': windowHeight<800}" v-if="count === 1">
@@ -33,16 +33,16 @@
                                         trabaja con una corriente eléctrica de 220 volts y 10 amperios.
                                         <br><br>
                                         La potencia del cargador se calcula multiplicando el voltaje por el amperaje. El resultado son 
-                                        2200 watts. Si dividimos entre 1000 para transformar a kilowatts, el resultado final es de 2.2 
-                                        kilowatts de potencia de cargador.
+                                        2200 watts. Si dividimos entre 1000 para transformar a kilo watts, el resultado final es de 2.2 
+                                        kilo watts de potencia de cargador.
                                         <br><br>
-                                        Si la batería tiene una capacidad de 50 kwh y queremos cargarla desde un 20 hasta un 100% de su 
-                                        capacidad, hay que calcular cuantos kwh se van a cargar efectivamente. El resultado se obtiene 
-                                        al multiplicar 50 kwh que es la capacidad de la batería por 0.8 ya que únicamente hace falta 
-                                        llenar el 80% de la misma. Siendo entonces necesario cargar 40 kwh.
+                                        Si la batería tiene una capacidad de 50 kWh y queremos cargarla desde un 20 hasta un 100% de su 
+                                        capacidad, hay que calcular cuantos kWh se van a cargar efectivamente. El resultado se obtiene 
+                                        al multiplicar 50 kWh que es la capacidad de la batería por 0.8 ya que únicamente hace falta 
+                                        llenar el 80% de la misma. Siendo entonces necesario cargar 40 kWh.
                                         <br><br>
-                                        Finalmente, vamos a dividir la carga requerida que son 40 kwh entre la potencia del cargador 
-                                        que son 2.2 kw y el resultado son 18.8 horas.
+                                        Finalmente, vamos a dividir la carga requerida que son 40 kWh entre la potencia del cargador 
+                                        que son 2.2 kW y el resultado son 18.8 horas.
                                     </v-card-text>
                                 </v-card>
                             </div>

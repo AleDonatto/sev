@@ -17,8 +17,8 @@
                                         un adaptador.
                                         <br><br>
                                         También es importante destacar que hay tomas de corriente y cargadores específicos para carga 
-                                        con corriente alterna (cargadores modo 2 y 3) y otros para carga con corriente directa 
-                                        (cargadores modo 4).
+                                        con corriente alterna (cargadores Nivel 1 y 2) y otros para carga con corriente directa 
+                                        (cargadores Nivel 3).
                                     </v-card-text>
                                 </v-card>
                             </div>
@@ -40,7 +40,7 @@
                                 escoger el adecuado
                             </p>
                             <p class=" text-right" :class="{'font-size-22': windowHeight>800, 'font-size-20': windowHeight<800}">
-                                pára cada vehiculos
+                                para cada vehiculo
                             </p>
                         </v-col>
                         <v-col cols="9" class="animate__animated animate__backInRight">

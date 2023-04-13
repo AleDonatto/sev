@@ -35,14 +35,14 @@
 
                         <v-col cols="5" class="center animate__animated animate__backInLeft" >
                             <v-img src="@/assets/electricidad/foco.png" contain :max-height="windowHeight>800 ? '230': '180'"></v-img>
-                            <p class="font-weight-bold text-center font-size-22">60W</p>
+                            <p class="font-weight-bold text-center font-size-22">60 W</p>
                         </v-col>
                         <v-col cols="1">
                             <hr class="vertical-line">
                         </v-col>
                         <v-col cols="5" align="center" class="animate__animated animate__backInRight">
                             <v-img class="" src="@/assets/electricidad/focoled.png" contain :max-height="windowHeight>800 ? '230': '180'"></v-img>
-                            <p class="font-weight-bold font-size-22">Consume 8W Reemplaza 60W</p>
+                            <p class="font-weight-bold font-size-22">Consume 8 W Reemplaza 60 W</p>
                         </v-col>
                     </v-row>
                 </div>
