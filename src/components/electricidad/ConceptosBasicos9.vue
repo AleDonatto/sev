@@ -16,7 +16,7 @@
                                         la unidad kilómetros. Un kilómetro es equivalente a mil metros.
                                         <br><br>
                                         En el caso de la potencia eléctrica, también se pueden utilizar este tipo de múltiplos. 
-                                        Un Kilo watt de potencia eléctrica kW es equivalente a 1,000 Watts.
+                                        Un Kilowatt de potencia eléctrica kW es equivalente a 1,000 Watts.
                                     </v-card-text>
                                 </v-card>
                             </div>

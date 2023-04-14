@@ -80,7 +80,7 @@
                                             para mover al vehículo y que almacenan la energía eléctrica en baterías de tracción de alto voltaje.
                                             <br><br>
                                             Las baterías de tracción son de alto voltaje pero tienen una capacidad de carga relativamente 
-                                            pequeña (0.9 a 2.5 kilo watt hora) y que permiten un movimiento 100% eléctrico por distancias 
+                                            pequeña (0.9 a 2.5 kilowatt hora) y que permiten un movimiento 100% eléctrico por distancias 
                                             limitadas (normalmente de 3 a 5 km).
                                             <br><br>
                                             Es debido a estas limitantes al movimiento 100% eléctrico que la mayor parte del tiempo operan en 
@@ -103,7 +103,7 @@
                                             hybrid cuentan con uno o varios motores eléctricos de alta potencia que son capaces de mover 
                                             al vehículo de manera 100% eléctrica. La diferencia principal con un Full Hybrid o híbrido 
                                             autorecargable es que en los PHEV las baterías de tracción suelen tener mayor capacidad 
-                                            (de 9 a 24 kilo watt hora o incluso más grandes en algunos casos).
+                                            (de 9 a 24 kilowatt hora o incluso más grandes en algunos casos).
                                             <br><br>
                                             Gracias a estas baterías de gran capacidad, pueden tener la capacidad de recorrer largas 
                                             distancias de manera 100% eléctrico (entre 24 a 80 kilómetros de autonomía es algo normal y 
@@ -130,7 +130,7 @@
                                             En este tipo de unidades, el motor de combustible desaparece por completo y es el motor 
                                             o los motores eléctricos quienes son responsables del movimiento del auto. Las baterías 
                                             de tracción son de alto voltaje y normalmente son de gran capacidad; desde 20 hasta 100 
-                                            kilo watt hora es habitual.
+                                            kilowatt hora es habitual.
                                             <br><br>
                                             Los BEV son los vehículos más ecológicos en el sentido de que no generan emisiones de gases de efecto invernadero.
                                             <br><br>

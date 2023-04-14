@@ -13,15 +13,15 @@
                                     <v-card-text :class="{'font-size-22': windowHeight>800, 'font-size-20': windowHeight<800}" v-if="count === 0">
                                         Cuando se desea calcular el costo de carga de una batería, hay que tener en cuenta dos factores 
                                         principales: <br>
-                                        1) la capacidad de la batería y su estado de carga, es decir, cuantos kilo watt hora 
+                                        1) la capacidad de la batería y su estado de carga, es decir, cuantos kilowatt hora 
                                         se desean cargar; y <br>
-                                        2) el precio del kilo watt hora suministrado en el cargador o por parte de 
+                                        2) el precio del kilowatt hora suministrado en el cargador o por parte de 
                                         quien distribuye la corriente eléctrica.
                                         <br><br>
-                                        En este ejemplo, calcularemos el costo de llenar una batería de 50 kilo watt hora desde el 20% 
-                                        hasta el 100% de su capacidad. De tal manera que la carga total resultante es de 40 kilo watt hora. 
-                                        Si el usuario paga una tarifa de consumo básico equivalente a $0.859 por kilo watt hora, el costo 
-                                        total es de $34.36; si la tarifa corresponde a un consumo excedente a $3.042 por kilo watt hora, 
+                                        En este ejemplo, calcularemos el costo de llenar una batería de 50 kilowatt hora desde el 20% 
+                                        hasta el 100% de su capacidad. De tal manera que la carga total resultante es de 40 kilowatt hora. 
+                                        Si el usuario paga una tarifa de consumo básico equivalente a $0.859 por kilowatt hora, el costo 
+                                        total es de $34.36; si la tarifa corresponde a un consumo excedente a $3.042 por kilowatt hora, 
                                         el costo será de $121.68.
                                     </v-card-text>
                                 </v-card>

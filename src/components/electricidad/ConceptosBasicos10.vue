@@ -16,11 +16,11 @@
                                         por todo el tiempo que permanezca en uso.
                                         <br><br>
                                         Cuando analizamos el recibo de cobro de la CFE vamos a notar que la unidad que se utiliza para 
-                                        el cobro de la energía eléctrica suministrada es el kilo watt hora.
+                                        el cobro de la energía eléctrica suministrada es el kilowatt hora.
                                         <br><br>
                                         Como ejemplo, si tuvieramos una lámpara que tiene 10 focos de 100 Watts cada uno, la 
-                                        potencia total sería de 1,000 Watts o 1 kilo watt. En caso de que se dejara encendida durante 
-                                        una hora, el consumo sería de 1 kilo watt hora.
+                                        potencia total sería de 1,000 Watts o 1 kilowatt. En caso de que se dejara encendida durante 
+                                        una hora, el consumo sería de 1 kilowatt hora.
                                     </v-card-text>
                                 </v-card>
                             </div>
@@ -30,7 +30,7 @@
                     <v-row justify="center" class="mx-10 bg-color rounded-xl">
                         <v-col cols="12" class="animate__animated animate__backInDown">
                             <p class="" :class="{'font-size-24': windowHeight>800, 'font-size-20': windowHeight<800}">
-                                <span class="font-weight-bold">kWh:</span> El kilo watt hora es la undad de medida
+                                <span class="font-weight-bold">kWh:</span> El kilowatt hora es la undad de medida
                                 de medida que se usa para medir el consumom energético.
                             </p>
                             <p class="text-center px-10" :class="{'my-5 font-size-24': windowHeight>800, 'my-1 font-size-20': windowHeight<800}">

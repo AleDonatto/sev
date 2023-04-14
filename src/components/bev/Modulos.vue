@@ -38,19 +38,19 @@
                     <v-row justify="center" class="h-100 mx-10 px-5 py-1 rounded-xl bg-boxstep-content" v-if="countModos >= 1">
                         <v-col cols="3" class="animate__animated animate__backInDown" v-if="countModos >= 1">
                             <v-card class="rounded-lg pa-0" :height="windowHeight>800 ? '550': '330'" :width="windowHeight>800 ? '280': '190'">
-                                <v-img src="@/assets/cargando/modo1.png" :height="windowHeight > 800 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
+                                <v-img src="@/assets/cargando/nivel1.png" :height="windowHeight > 800 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
 
                             </v-card>
                         </v-col>
                         <v-col cols="3" class="animate__animated animate__backInUp" v-if="countModos >= 2">
                             <v-card class="rounded-lg" :height="windowHeight>800 ? '550': '330'" :width="windowHeight>800 ? '280': '190'">
-                                <v-img src="@/assets/cargando/modo2.png" :height="windowHeight > 800 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
+                                <v-img src="@/assets/cargando/nivel2.png" :height="windowHeight > 800 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
 
                             </v-card>
                         </v-col>
                         <v-col cols="3" class="animate__animated animate__backInDown" v-if="countModos >= 3">
                             <v-card class="rounded-lg" :height="windowHeight>800 ? '550': '330'" :width="windowHeight>800 ? '280': '190'">
-                               <v-img src="@/assets/cargando/modo3.png" :height="windowHeight > 800 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
+                               <v-img src="@/assets/cargando/nivel3.png" :height="windowHeight > 800 ? '540': windowHeight<660 ? '320': '320'" contain></v-img>
 
                             </v-card>
                         </v-col>
@@ -97,7 +97,7 @@ export default{
                 window.audio.play()
                 setTimeout(()=> {
                     this.playAudioModo2()
-                },22500)
+                },27500)
             }else{
                 this.countModos = 4
             }
@@ -109,7 +109,7 @@ export default{
             window.audio.play()
             setTimeout(()=> {
                 this.playAudioModo3()
-            },26500)
+            },33500)
         },
         playAudioModo3(){
             this.countModos = 3
@@ -117,7 +117,7 @@ export default{
             window.audio.play()
             setTimeout(()=> {
                 this.$store.commit('StateAssign', {canNext: true})
-            },32500)
+            },30500)
         },
         playAudioModo4(){
             this.countModos = 4

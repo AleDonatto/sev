@@ -18,7 +18,7 @@
                                         <br><br>
                                         De hecho, en este caso particular, los páneles de generación de electricidad por medio de la luz 
                                         del Sol están generando más energía eléctrica que la que consume el dueño de esa residencia. 
-                                        Por eso se menciona en el recibo que se cuenta con un saldo a favor por 812 kilo watt hora.
+                                        Por eso se menciona en el recibo que se cuenta con un saldo a favor por 812 kilowatt hora.
                                     </v-card-text>
                                 </v-card>
                             </div>
