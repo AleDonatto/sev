@@ -12,7 +12,7 @@
                                 <v-card :height="windowHeight > 800 ? 130 : 110" class="overflow-auto rounded-lg ma-1">
                                     <v-card-text :class="{'font-size-22': windowHeight>800, 'font-size-20': windowHeight<800}">
                                         Como te lo podrás imaginar, la historia de la movilidad se remonta a tiempos muy remotos. 
-                                        Hace más de 3,600 millones de años que los homínidos empezaron a caminar erguidos y de acuerdo a 
+                                        Hace más de 3.6 millones de años que los homínidos empezaron a caminar erguidos y de acuerdo a 
                                         su evolución, empezaron   a buscar formas más eficientes para moverse o para mover los objetos de su 
                                         vida cotidiana.
                                         <br><br>
@@ -44,7 +44,7 @@
                         <v-col cols="4">
                             <v-img src="../../assets/evolucion/division.png" max-width="850"></v-img>
                             <div class="text-center bg-gray-1 size-box mx-1">
-                                <span class="font-weight-normal text-white" :class="{'font-size-34': windowHeight>800, 'font-size-26':windowHeight<800}">3,600</span>
+                                <span class="font-weight-normal text-white" :class="{'font-size-34': windowHeight>800, 'font-size-26':windowHeight<800}">3.6</span>
                                 <p class="font-weight-normal text-white" :class="{'font-size-22': windowHeight>800, 'font-size-19': windowHeight<800}">Millones de años</p>
                             </div>
                         </v-col>

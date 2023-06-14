@@ -36,14 +36,14 @@
 
                         <v-col cols="5" align="center" class="animate__animated animate__backInLeft">
                             <v-img src="@/assets/electricidad/foco.png" contain :max-height="windowHeight>800 ? '230': '150'"></v-img>
-                            <p class="font-weight-bold  font-size-22">60 W</p>
+                            <p class="font-weight-bold font-size-22">60 W</p>
                         </v-col>
                         <v-col cols="1" align="center">
                             <hr class="vertical-line">
                         </v-col>
                         <v-col cols="5" align="center" class="animate__animated animate__backInRight">
-                            <v-img src="@/assets/electricidad/foco.png" contain :max-height="windowHeight>800 ? '230': '150'"></v-img>
-                            <p class="font-weight-bold  text-center font-size-22">100 W</p>
+                            <v-img src="@/assets/electricidad/foco100.png" contain :max-height="windowHeight>800 ? '240': '150'"></v-img>
+                            <p class="font-weight-bold text-center font-size-22">100 W</p>
                         </v-col>
                     </v-row>
 

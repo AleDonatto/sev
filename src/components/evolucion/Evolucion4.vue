@@ -22,13 +22,25 @@
                         </v-col>
                     </v-row>
 
-                    <v-row no-gutters class="mt-2 animate__animated animate__backInLeft">
-                        <v-col cols="12">
-                            <v-img src="@/assets/evolucion/autos.png" contain :max-height="windowHeight > 800 ? '530' : '330'"></v-img>
+                    <v-row no-gutters class="mt-10 mb-10 animate__animated animate__backInLeft">
+                        <v-col cols="6" class="">
+                            <v-img src="@/assets/evolucion/sev1024.png" contain :max-height="windowHeight > 800 ? '170' : '150'"></v-img>
+                        </v-col>
+                        <v-col cols="6">
+                            <v-img src="@/assets/evolucion/sev1160.png" contain :max-height="windowHeight > 800 ? '170' : '150'"></v-img>
+                        </v-col>
+                        <v-col cols="4" class="mt-5">
+                            <v-img src="@/assets/evolucion/camioneta.png" contain :max-height="windowHeight > 800 ? '170' : '150'"></v-img>
+                        </v-col>
+                        <v-col cols="4" class="mt-5">
+                            <v-img src="@/assets/evolucion/sedan.png" contain :max-height="windowHeight > 800 ? '170' : '150'"></v-img>
+                        </v-col>
+                        <v-col cols="4" class="mt-5">
+                            <v-img src="@/assets/evolucion/trailer.png" contain :max-height="windowHeight > 800 ? '170' : '150'"></v-img>
                         </v-col>
                     </v-row>
 
-                    <v-row no-gutters class="animate__animated animate__backInRight">
+                    <v-row no-gutters class="mt-5 animate__animated animate__backInRight">
                         <v-col cols="12" align-self="center">
                             <div class="text-center bg-gray">
                                 <span class=" font-size-48 text-white" :class="{'font-size-48': windowHeight>800, 'font-size-30': windowHeight<800}">Autos eléctricos (BEV) y otras tecnologías 0 emisiones</span>
