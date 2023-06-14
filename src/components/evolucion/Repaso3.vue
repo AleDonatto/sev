@@ -9,7 +9,7 @@
                         </v-col>
                         <v-col cols="9" align="start">
                             <div class="box-color-instructions py-6 px-4" :class="{'mt-10': windowHeight>800, 'mt-3': windowHeight<800}" v-if="boxText">
-                                <p class=" font-size-26">
+                                <p class="" :class="{'font-size-26': windowHeight>800, 'font-size-20': windowHeight<800}">
                                     Las siglas <span class="text-yellow front-weight-bold">BEV</span> (por su acrónimo en inglés), corresponden a:
                                 </p>
                             </div>

@@ -9,7 +9,7 @@
                         </v-col>
                         <v-col cols="9">
                             <div class="border-box-evolution" :class="{'mt-10': windowHeight > 800, 'mt-3': windowHeight < 800 }" v-if="boxText">
-                                <p class="py-4 px-3">
+                                <p class="py-4 px-3" :class="{'font-size-22': windowHeight>800, 'font-size-19': windowHeight<800}">
                                     Menciona los tres tipos de trenes motrices que se desarrollaron a finales del siglo 19 y 
                                     que en la actualidad siguen siendo las opciones más comunes en la industria automotriz. 
                                     Arrastra la respuesta correcta a las casilla marcada.
@@ -21,7 +21,7 @@
                     <v-row justify="center" :class="{'mt-15': windowHeight > 800, 'mt-1' : windowHeight < 800}">
                         <v-col cols="3">
                             <div class="text-center border-box-drag px-5 py-3" draggable="true" @dragstart="drag" v-if="drags.d1 === true">
-                                <p id="gasolina_electricos">Motores a combustión interna, híbridos hidrógeno-gasolina y eléctricos</p>
+                                <p id="gasolina_electricos" :class="{'font-size-19': windowHeight>800, 'font-size-18' : windowHeight<800}">Motores a combustión interna, híbridos hidrógeno-gasolina y eléctricos</p>
                             </div>
                         </v-col>
                         <!--<v-col cols="2">
@@ -31,7 +31,7 @@
                         </v-col>-->
                         <v-col cols="3">
                             <div class="text-center border-box-drag px-4 py-3" draggable="true" @dragstart="drag" v-if="drags.d2 === true">
-                                <p id="celda_hidrogeno">Motores a combustión interna, eléctricos y vehículos de celdas de hidrógeno</p>
+                                <p id="celda_hidrogeno" :class="{'font-size-19': windowHeight>800, 'font-size-18' : windowHeight<800}">Motores a combustión interna, eléctricos y vehículos de celdas de hidrógeno</p>
                             </div>
                         </v-col>
                         <!--<v-col cols="2">
@@ -41,7 +41,7 @@
                         </v-col>-->
                         <v-col cols="3">
                             <div class="text-center border-box-drag px-5 py-3" draggable="true" @dragstart="drag"  v-if="drags.d3 === true">
-                                <p id="electrico_gasolina">Motores a combustión interna, híbridos eléctrico-gasolina y eléctricos</p>
+                                <p id="electrico_gasolina" :class="{'font-size-19': windowHeight>800, 'font-size-18' : windowHeight<800}">Motores a combustión interna, híbridos eléctrico-gasolina y eléctricos</p>
                             </div>
                         </v-col>
                     </v-row>
@@ -100,7 +100,7 @@
                         </v-col>
                     </v-row>
 
-                    <v-row justify="center" :class="{'mt-15':windowHeight > 800, 'mt-4': windowHeight < 800}">
+                    <v-row justify="center" :class="{'mt-15':windowHeight > 800, 'mt-2': windowHeight < 800}">
                         <v-col cols="2" align="center">
                             <v-btn rounded class="" color="#FDBE2E" :disabled="answers.a3 === false" @click="checkQuiz">
                                 <span class="text-black text-none font-size-20">Continuar</span>
