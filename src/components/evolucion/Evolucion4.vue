@@ -22,18 +22,20 @@
                         </v-col>
                     </v-row>
 
-                    <v-row no-gutters class="animate__animated animate__backInLeft" :class="{'mt-10 mb-10': windowHeight> 800 }">
-                        <v-col cols="6" class="">
-                            <v-img src="@/assets/evolucion/sev1024.png" contain :max-height="windowHeight > 800 ? '170' : '130'"></v-img>
+                    <v-row no-gutters class="animate__animated animate__backInLeft" justify="center" :class="{'mt-10 mb-10': windowHeight> 800 }">
+                        <v-col cols="5" class="" align="center">
+                            <v-img src="@/assets/evolucion/sev1024.png" contain :max-height="windowHeight > 800 ? '220' : '150'"></v-img>
                         </v-col>
-                        <v-col cols="6">
-                            <v-img src="@/assets/evolucion/sev1160.png" contain :max-height="windowHeight > 800 ? '170' : '130'"></v-img>
+                        <v-col cols="5" align="start">
+                            <v-img src="@/assets/evolucion/sev1160.png" contain :max-height="windowHeight > 800 ? '220' : '150'"></v-img>
+                        </v-col>
+                    </v-row>
+                    <v-row no-gutters class="animate__animated animate__backInLeft">
+                        <v-col cols="4" class="mt-5">
+                            <v-img src="@/assets/evolucion/sedan.png" contain :max-height="windowHeight > 800 ? '170' : '130'"></v-img>
                         </v-col>
                         <v-col cols="4" class="mt-5">
                             <v-img src="@/assets/evolucion/camioneta.png" contain :max-height="windowHeight > 800 ? '170' : '130'"></v-img>
-                        </v-col>
-                        <v-col cols="4" class="mt-5">
-                            <v-img src="@/assets/evolucion/sedan.png" contain :max-height="windowHeight > 800 ? '170' : '130'"></v-img>
                         </v-col>
                         <v-col cols="4" class="mt-5">
                             <v-img src="@/assets/evolucion/trailer.png" contain :max-height="windowHeight > 800 ? '170' : '130'"></v-img>
